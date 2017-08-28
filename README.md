@@ -7,3 +7,6 @@
 
 ## To Do List
 
+- [ ] Reset
+- [ ] Base(字体等)
+- [ ] Layout(基础布局)
