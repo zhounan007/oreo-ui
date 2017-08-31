@@ -1,3 +1,4 @@
+
 # ---> Node
 # Logs
 logs
@@ -28,3 +29,8 @@ build/Release
 # https://docs.npmjs.com/misc/faq#should-i-check-my-node-modules-folder-into-git
 node_modules
 
+dist
+build
+.babelrc
+.postcssrc.js
+package_webpack.json
