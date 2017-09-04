@@ -13,12 +13,9 @@ var pageManager = {
         var that = this;
 
         window.addEventListener('popstate', function () {
-            var p = that.hash();
-            if (p) {
-                that.loadPage(p);
-            }
+            that.loadPage(that.hash());
         })
-        $('.container a').on('click', function (e) {
+        $('.container').on('click', 'a', function (e) {
             var pageName = this.dataset.page;
             that.loadPage(pageName);
         })
