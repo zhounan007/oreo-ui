@@ -31,7 +31,6 @@ OREO_UI/
 - `variable` 存放各类`component` 变量
 - `components` 存放各类组件
 - `default.less` 默认主题
-
 - `dist`目录为自动生成,不要**修改**
 
 ## 如何使用
