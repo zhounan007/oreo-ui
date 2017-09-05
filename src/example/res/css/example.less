@@ -43,8 +43,22 @@ ul {
             color: #3d3d3d;
             font-weight: 400;
         }
+        .demo-name {
+            font-size: .38rem;
+            color: #404040;
+            text-align: left;
+        }
     }
     .page-body {
+        position: relative;
+        padding: 0.2rem;
+        h2 {
+            /* padding: .3rem 0 .18rem .3rem; */
+            color: #000;
+            font-size: .32rem;
+            font-weight: bolder;
+            padding: 0 0 0 0.5rem;
+        }
         .demo-list {
             margin: 0 .32rem .24rem;
             background-color: #fff;
@@ -73,6 +87,15 @@ ul {
         }
     }
     overflow: auto;
+}
+
+.demo-flex {
+    &-item {
+        text-align: center;
+        background: #bbbbbb;
+        padding: 0.2rem 0.1rem;
+        margin: 0.1rem;
+    }
 }
 
 .anima-slide-in {

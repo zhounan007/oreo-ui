@@ -52,6 +52,8 @@ $  gulp  // -s 启动服务 -w 实时监听 -p 服务端口,默认8086
 - [ ] Reset
 - [ ] Base(字体等)
 - [ ] Layout(基础布局)
+    - [x] Flex
+    - [x] Grid
 - [ ] Button(按钮)
 - [ ] Form(Input,Radio,CheckBox,Validate Code)
 - [ ] List(列表)

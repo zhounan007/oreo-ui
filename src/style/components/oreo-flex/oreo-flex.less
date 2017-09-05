@@ -1,0 +1,32 @@
+@import '../../base/fn.less';
+@flexPrefixCls: oreo-flex;
+.@{flexPrefixCls} {
+    display: flex;
+    align-items: center;
+    &-row {
+        flex-direction: row;
+    }
+    &-row-reverse {
+        flex-direction: row-reverse;
+    }
+    &-colum {
+        flex-direction: column;
+    }
+    &-colum-reverse {
+        flex-direction: row-reverse;
+    }
+    &-wrap {
+        flex-wrap: wrap;
+    }
+    &-nowrap {
+        flex-wrap: nowrap;
+    }
+    & &-item {
+        flex: 1;
+        min-width: 20PX;
+        // margin-left: @h-spacing-md;
+        // &:first-child {
+        //     margin-left: 0;
+        // }
+    }
+}
