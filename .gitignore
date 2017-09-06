@@ -34,3 +34,4 @@ build
 .babelrc
 .postcssrc.js
 package_webpack.json
+src/**/*.css

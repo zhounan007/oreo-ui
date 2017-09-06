@@ -1,0 +1,216 @@
+@import "../../base/fn.less";
+
+.o-input-title{
+    margin-top: .5rem;
+    margin-left: 3%
+}
+input{
+    padding: 0
+}
+// 默认input
+.o-input-box{
+    width: @oreoInputWidth;
+    height: @oreoInputHeight;
+    line-height: @oreoInputHeight;
+    margin: 0 auto;
+    border-radius: @radius-sm;
+    background: @fill-base;
+    overflow: hidden;
+    .o-input-default{
+        width: 100%;
+        height: inherit;
+        line-height: @oreoInputHeight;
+        font-size: @font-size-caption;
+        color: @color-text-base;
+        outline: @oreoInputOutline;
+        border: @border-width-sm solid @border-color-base;
+        border-radius: inherit;
+        padding-left: .2rem;
+    }
+    .o-input-default::-webkit-input-placeholder{
+        color: @color-text-placeholder;
+        font-size: @font-size-caption;
+    }
+}
+
+// 密码输入框
+.o-input-password-box{
+    border: @oreoBorder;
+    display: flex;
+    .o-input{
+        width: 100%;
+        flex: 1 1 auto;
+        .o-input-default{
+            border: 0;
+        }
+    }
+    .o-input-password-icon{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        .o-input-password{
+            .setArrow(right,.3rem,@brand-primary,2px);
+            margin-right: .2rem;
+            top: 0;
+        }
+    }
+}
+
+// 带删除按钮的input
+.o-input-delete-box{
+    border: @oreoBorder;
+    display: flex;
+    .o-input{
+        width: 100%;
+        flex: 1 1 auto;
+        .o-input-default{
+            border: 0;
+        }
+    }
+    .o-input-delete-icon{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        .o-input-delete{
+            .setArrow(right,.3rem,@brand-primary,2px);
+            margin-right: .2rem;
+            top: 0;
+        }
+    }
+}
+
+// disable
+.o-input-disable{
+    width: 100%;
+    color: @color-text-disabled;
+    background: @fill-disabled;
+    border: @border-width-sm solid @border-color-base;
+}
+
+// 多列显示状态
+.o-input-col-box{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .o-input-col2{
+        flex: 0 1 auto;
+        width: 50%;
+        height: inherit;
+        line-height: inherit;
+        font-size: 0.32rem;
+        color: inherit;
+        outline: none;
+        border-radius: inherit;
+        border: @oreoBorder;
+        text-align: center;
+    }
+    .o-input-line{
+        display: inline-block;
+        width: .5rem;
+        height: 2px;
+        background: #999;
+        vertical-align: middle;
+    }
+}
+
+// 常见列表式
+.o-input-item{
+    width: @oreoInputWidth;
+    margin: 0 auto;
+    background: @fill-base;
+    position: relative;
+    border: @oreoBorder;
+    border-radius: @radius-sm;
+    border-bottom: 0;
+    .o-input-right{
+        width: 100%;
+        height: @oreoInputHeight;
+        line-height: @oreoInputLineHeight;
+        background: @oreoInputWidth;
+        display: flex;
+        position: relative;
+        .o-input-hd{
+            font-size: @font-size-caption;
+            color: @color-text-base;
+            flex: 0 0 auto;
+            padding: @oreoInputGapH @oreoInputGapW;
+            &.o-input-hd-border{
+                border-right: @oreoBorder;
+            }
+        }
+        .o-input-bd{
+            width: 100%;
+            height: inherit;
+            .o-input{
+                width: 100%;
+                height: inherit;
+                font-size: @font-size-caption;
+                padding-left: @oreoInputGapW;
+                border: 0;
+                outline: @oreoInputOutline;
+                &::-webkit-input-placeholder{
+                    color: @color-text-placeholder;
+                    font-size: @font-size-subhead;
+                }
+            }
+            &::after{
+                .setBottomLine(@c: #C7C7C7);
+            }
+        }
+        .o-input-vcode{
+            width: @oreoInputVcodeWidth;
+            text-align: center;
+            border: 0;
+            color: @color-text-base-inverse;
+            background: @brand-success;
+            &.active{
+                color: @color-text-disabled;
+                background: @fill-disabled;
+            }
+        }
+    }
+}
+
+// 带图标
+.o-input-icon-box{
+    display: flex;
+    position: relative;
+    .o-input-text{
+        padding: 0 .2rem;
+        border-right: @oreoBorder;
+    }
+    .o-input-icon{
+        margin-left: .2rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        .o-input-icon{
+            .setArrow(left,.3rem,@brand-primary,2px);
+            margin-right: .2rem;
+            top: 0;
+        }
+        &.o-input-border-left{
+            border-left: @oreoBorder;
+            padding: 0 .2rem;
+        }
+    }
+    .o-input-icons{
+        height: inherit;
+        flex: 1 0 auto;
+        padding-left: .2rem;
+        .o-input{
+            width: 100%;
+            height: inherit;
+            border: 0;
+            outline: @oreoInputOutline;
+        }
+        &::after{
+            .setBottomLine(@c: #C7C7C7);
+        }
+    }
+    .o-input-icons::-webkit-input-placeholder{
+        color: @color-text-placeholder;
+        font-size: @font-size-caption;
+    }
+}
+
