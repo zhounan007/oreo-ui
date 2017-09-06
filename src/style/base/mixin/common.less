@@ -1,0 +1,26 @@
+.box-sizing() {
+    box-sizing: border-box;
+}
+
+.setHeight(@h: 0.55rem) {
+    height: @h;
+    line-height: @h;
+}
+
+.textOverflow {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.removeLeftOrTopLine {
+    &:before {
+        display: none;
+    }
+}
+
+.removeRightOrBottomLine {
+    &:after {
+        display: none;
+    }
+}

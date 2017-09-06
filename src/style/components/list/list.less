@@ -1,0 +1,194 @@
+@import "../../base/fn.less";
+@import "../../base/variable/list/list.less";
+
+//函数
+.flex(@justify, @align, @direction) when(@direction = row){
+    display: flex;
+    justify-content: @justify;
+    align-items: @align;
+    flex-direction: @direction;
+}
+.width100{
+    width: 100%;
+}
+.none{
+    display: none;
+}
+.block{
+    display:block;
+}
+
+.list-hd{
+    padding-left: @padding;
+}
+//向右指向的箭头
+.o-list-arrow-right{
+    .setArrow(right, @linkArrowSize, @linkArrowColor, @linkArrowBorder);
+    vertical-align: middle;
+    margin-top: .1rem;
+}
+.o-list-arrow-down{
+    transition: all .5s;
+    .setArrow(down, @linkArrowSize, @linkArrowColor, @linkArrowBorder);
+    vertical-align: middle;
+    margin-top: .1rem;
+}
+.o-list-arrow-top{
+    transition: all .5s;
+    .setArrow(top, @linkArrowSize, @linkArrowColor, @linkArrowBorder);
+}
+
+.o-list-hd{
+    padding-left: @padding;
+    height: @list-height;
+    line-height: @list-height;
+}
+.o-list-item{
+    background-color: @fill-base;
+    padding-left: @padding;
+    
+    .o-list-content{
+        height: auto;
+        padding-top: @padding;
+        padding-bottom: @padding;
+        padding-right: @padding;
+        position: relative;
+        &::after{
+            .setBottomLine(@c: @onepxColor);
+        }
+        &:last-child::after{
+            .setBottomLine(@c: transparent);
+        }
+        .flex(space-between, center, row);
+        .o-list-text{
+            font-size: @listTitleFontSize;
+            color: @listTitleColor;
+            width: auto;
+        }
+        .o-list-extra,.o-list-subtext{
+            font-size: @listSubTitleFontSize;
+            color: @listSubTitleColor;
+            span{
+                vertical-align: middle;
+            }
+        }
+    }
+    .o-list-inner{
+        padding-right: .3rem;
+        padding-top: .1rem;
+        padding-bottom: .1rem;
+        height: auto;
+        position: relative;
+        &:after{
+            .setBottomLine(@c: @onepxColor);
+        }
+        &:last-child:after{
+            .setBottomLine(@c: transparent);
+        }
+        &>div{
+            display: flex;
+            justify-content: space-between
+        }
+        
+    }
+
+    .o-list-withImg{
+        .flex(flex-start, center, row);
+        padding-top: @padding;
+        padding-bottom: @padding;
+        position: relative;
+        .img{
+            width:.9rem;
+            height:.9rem;
+            margin-right: @margin;
+        }
+        &:after{
+            .setBottomLine(@c: @onepxColor);
+        }
+        &:last-child:after{
+            .setBottomLine(@c: transparent);
+        }
+    }
+
+    .o-list-with-icon{
+        .flex(flex-start, center, row);
+        padding-top: @padding;
+        padding-bottom: @padding;
+        position: relative;
+        .icon{
+            width:.5rem;
+            height:.5rem;
+            margin-right: @margin;
+        }
+    }
+    
+    
+}
+.o-list-hover{
+    background-color: @fill-base;
+    .o-list-content{
+        .flex(space-between, center, row);
+        padding-left: @padding;
+        padding-right: @padding;
+        height: @list-height;
+        position: relative;
+        &:active{
+            background-color: @listHoverColor;
+        }
+        &:after{
+            .setBottomLine(@c: @onepxColor);
+        }
+        &:last-child:after{
+            .setBottomLine(@c: transparent);
+        }
+    }
+}
+.o-list-entire{
+    background-color: @fill-base;
+    .o-list-content{
+        height: auto;
+        padding: @padding;
+        position: relative;
+        &::after{
+            .setBottomLine(@c: @onepxColor);
+        }
+        &:last-child::after{
+            .setBottomLine(@c: transparent);
+        }
+        .flex(space-between, center, row);
+        .o-list-text{
+            font-size: @listTitleFontSize;
+            color: @listTitleColor;
+            width: auto;
+        }
+        .o-list-extra,.o-list-subtext{
+            font-size: @listSubTitleFontSize;
+            color: @listSubTitleColor;
+            span{
+                vertical-align: middle;
+            }
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+//按钮
+.o-btn{
+    padding: .08rem .16rem;
+    background-color: @fill-base;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+}
+
+
