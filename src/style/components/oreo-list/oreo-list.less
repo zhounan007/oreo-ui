@@ -1,5 +1,7 @@
 @import "../../base/fn.less";
 
+//变量
+@listPrefix: o-list;
 //函数
 .flex(@justify, @align, @direction) when(@direction = row){
     display: flex;
@@ -7,64 +9,64 @@
     align-items: @align;
     flex-direction: @direction;
 }
-.width100{
-    width: 100%;
-}
 .none{
     display: none;
 }
 .block{
     display:block;
 }
-
+h1, h2, h3, h4, h5, h6{
+    padding-left: @padding;
+}
 .list-hd{
     padding-left: @padding;
 }
 //向右指向的箭头
-.o-list-arrow-right{
+.@{listPrefix}-arrow-right{
     .setArrow(right, @linkArrowSize, @linkArrowColor, @linkArrowBorder);
     vertical-align: middle;
     margin-top: .1rem;
 }
-.o-list-arrow-down{
+.@{listPrefix}-arrow-down{
     transition: all .5s;
     .setArrow(down, @linkArrowSize, @linkArrowColor, @linkArrowBorder);
     vertical-align: middle;
     margin-top: .1rem;
 }
-.o-list-arrow-top{
+.@{listPrefix}-arrow-top{
     transition: all .5s;
     .setArrow(top, @linkArrowSize, @linkArrowColor, @linkArrowBorder);
 }
 
-.o-list-hd{
+.@{listPrefix}-hd{
     padding-left: @padding;
     height: @list-height;
     line-height: @list-height;
 }
-.o-list-item{
-    background-color: @fill-base;
+
+.@{listPrefix}-item{
+    background-color: @listBgWhite;
     padding-left: @padding;
     
-    .o-list-content{
+    .@{listPrefix}-content{
         height: auto;
         padding-top: @padding;
         padding-bottom: @padding;
         padding-right: @padding;
         position: relative;
+        .flex(space-between, center, row);
         &::after{
             .setBottomLine(@c: @onepxColor);
         }
         &:last-child::after{
             .setBottomLine(@c: transparent);
         }
-        .flex(space-between, center, row);
-        .o-list-text{
+        .@{listPrefix}-text{
             font-size: @listTitleFontSize;
             color: @listTitleColor;
             width: auto;
         }
-        .o-list-extra,.o-list-subtext{
+        .@{listPrefix}-extra,.@{listPrefix}-subtext{
             font-size: @listSubTitleFontSize;
             color: @listSubTitleColor;
             span{
@@ -72,12 +74,13 @@
             }
         }
     }
-    .o-list-inner{
+    .@{listPrefix}-inner{
         padding-right: .3rem;
         padding-top: .1rem;
         padding-bottom: .1rem;
         height: auto;
         position: relative;
+        width: 100%;
         &:after{
             .setBottomLine(@c: @onepxColor);
         }
@@ -85,13 +88,19 @@
             .setBottomLine(@c: transparent);
         }
         &>div{
-            display: flex;
-            justify-content: space-between
+            .flex(space-between, center, row);
+            .o-list-extra, .o-list-subtext{
+                font-size: @listSubTitleFontSize;
+                color: @listSubTitleColor;
+                span{
+                    vertical-align: middle;
+                }
+            }
         }
         
     }
 
-    .o-list-withImg{
+    .@{listPrefix}-withImg{
         .flex(flex-start, center, row);
         padding-top: @padding;
         padding-bottom: @padding;
@@ -109,23 +118,34 @@
         }
     }
 
-    .o-list-with-icon{
+    .@{listPrefix}-with-icon{
         .flex(flex-start, center, row);
-        padding-top: @padding;
-        padding-bottom: @padding;
         position: relative;
         .icon{
             width:.5rem;
             height:.5rem;
             margin-right: @margin;
         }
+        .o-list-line{
+            position: relative;
+            width:100%;
+            padding-top: @padding;
+            padding-bottom: @padding;
+            padding-right: @padding;
+            .flex(space-between, center, row);
+            
+        }
+        &:not(:last-child) .o-list-line:after{
+            .setBottomLine(@c: @onepxColor);
+        }
     }
     
     
 }
-.o-list-hover{
+
+.@{listPrefix}-hover{
     background-color: @fill-base;
-    .o-list-content{
+    .@{listPrefix}-content{
         .flex(space-between, center, row);
         padding-left: @padding;
         padding-right: @padding;
@@ -142,25 +162,25 @@
         }
     }
 }
-.o-list-entire{
+.@{listPrefix}-entire{
     background-color: @fill-base;
-    .o-list-content{
+    .@{listPrefix}-content{
         height: auto;
         padding: @padding;
         position: relative;
-        &::after{
+        .flex(space-between, center, row);
+        &:after{
             .setBottomLine(@c: @onepxColor);
         }
-        &:last-child::after{
+        &:last-child:after{
             .setBottomLine(@c: transparent);
         }
-        .flex(space-between, center, row);
-        .o-list-text{
+        .@{listPrefix}-text{
             font-size: @listTitleFontSize;
             color: @listTitleColor;
             width: auto;
         }
-        .o-list-extra,.o-list-subtext{
+        .@{listPrefix}-extra,.@{listPrefix}-subtext{
             font-size: @listSubTitleFontSize;
             color: @listSubTitleColor;
             span{

@@ -1,11 +1,146 @@
 <div class="page">
-    这个是 list 模版
+    <div class="container-flue">
+        <div class="list-hd">
+            <h1>list</h1>
+        </div>
+        <div class="o-list">
+            <h2>base list</h2>
+            <ul class="o-list-item">
+                <li class="o-list-content">
+                    <div class="o-list-text">Text</div>
+                    <div class="o-list-extra">extra</div>
+                </li>
+                <li class="o-list-content">
+                    <div class="o-list-text">Text</div>
+                    <div class="o-list-arrow-right"></div>
+                </li>
+                <li class="o-list-content">
+                    <div class="o-list-text">Text</div>
+                    <div class="o-list-extra">
+                        <span>extra</span>
+                        <span class="o-list-arrow-right"></span>
+                    </div>
+                </li>
+            </ul>
+        </div>
 
-    
-    <div calss="container">
-        <div class="list-box"></div>
+        <div class="o-list">
+            <h2>double row list</h2>
+            <ul class="o-list-item">
+                <li class="o-list-inner">
+                    <div>
+                        <div class="o-list-text">Text</div>
+                        <div class="o-list-extra">extra</div>
+                    </div>
+                    <div class="o-list-subtext">SubText</div>
+                    
+                </li>
+                <li class="o-list-withImg">
+                    <img class="img" src="https://zos.alipayobjects.com/rmsportal/dNuvNrtqUztHCwM.png" alt="">
+                    <div class="o-list-inner">
+                        <div>
+                            <div class="o-list-text">Text</div>
+                            <div class="o-list-extra">extra</div>
+                        </div>
+                        <div class="o-list-subtext">SubText</div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+        <div class="o-list">
+            <h2>button and 多级列表 list</h2>
+            <ul class="o-list-item">
+                <li class="o-list-content">
+                    <div class="o-list-text">Text</div>
+                    <div class="o-list-extra">
+                        <button class="o-btn o-btn-primary">确定</button>
+                    </div>
+                </li>
+                <li class="o-list-content">
+                    <div class="o-list-text">Text</div>
+                    <div class="o-list-arrow-down spread"></div>
+                </li>
+                <ul class="o-list-item none">
+                    <li class="o-list-content">
+                        <div class="o-list-text">Text</div>
+                        <div class="o-list-arrow-down spread"></div>
+                    </li>
+                    <li class="o-list-content">
+                        <div class="o-list-text">Text</div>
+                        <div class="o-list-arrow-down spread"></div>
+                    </li>
+                    <li class="o-list-content">
+                        <div class="o-list-text">Text</div>
+                        <div class="o-list-arrow-down spread"></div>
+                    </li>
+                    <li class="o-list-content">
+                        <div class="o-list-text">Text</div>
+                        <div class="o-list-arrow-down spread"></div>
+                    </li>
+                </ul>
+            </ul>
+        </div>
+
+        <div class="o-list">
+            <h2>具有active激活状态的list</h2>
+            <ul class="o-list-hover">
+                <li class="o-list-content">
+                    <div class="o-list-text">Text</div>
+                    <div class="o-list-extra">extra</div>
+                </li>
+                <li class="o-list-content">
+                    <div class="o-list-text">Text</div>
+                    <div class="o-list-arrow-down "></div>
+                </li>
+            </ul>
+        </div>
+
+        <div class="o-list">
+            <h2>细线宽度100%的list</h2>
+            <ul class="o-list-entire">
+                <li class="o-list-content">
+                    <div class="o-list-text">Text</div>
+                    <div class="o-list-extra">extra</div>
+                </li>
+                <li class="o-list-content">
+                    <div class="o-list-text">Text</div>
+                    <div class="o-list-arrow-down spread"></div>
+                </li>
+            </ul>
+        </div>
+
+        <div class="o-list">
+            <h2>带icon的list</h2>
+            <ul class="o-list-item">
+                <li class="o-list-with-icon">
+                    <img class="icon" src="https://zos.alipayobjects.com/rmsportal/dNuvNrtqUztHCwM.png" alt="">
+                    <div class="o-list-line">
+                        <div class="o-list-text">text</div>
+                        <div class="o-list-arrow-right"></div>
+                    </div>
+                </li>
+                <li class="o-list-with-icon">
+                    <img class="icon" src="https://zos.alipayobjects.com/rmsportal/dNuvNrtqUztHCwM.png" alt="">
+                    <div class="o-list-line">
+                        <div class="o-list-text">Text</div>
+                        <div class="o-list-arrow-right"></div>
+                    </div>
+                </li>
+            </ul>
+        </div>
     </div>
-
-
-    feature-test
 </div>
+<script type="text/javascript">
+    $('.spread').bind('click',function(e){
+        var $ul =  $(e.target).parent().next();
+        $(e.target).toggleClass('o-list-arrow-top');
+        if($ul.hasClass('none')){
+            $ul.addClass('block');
+            $ul.removeClass('none');
+        }else{
+            $ul.removeClass('block');
+            $ul.addClass('none');
+        }
+    })
+</script>
