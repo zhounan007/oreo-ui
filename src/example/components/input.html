@@ -8,29 +8,17 @@
         <div class="o-input-box">
             <input class="o-input-default" type="text" placeholder="请输入文本">
         </div>
-        <!-- 密码输入框 -->
-        <div class="o-input-title">密码输入框</div>
-        <div class="o-input-box o-input-password-box">
-            <div class="o-input"><input class="o-input-default" type="password" placeholder="请输入文本" value=""></div>
-            <div class="o-input-password-icon"><i class="o-input-password"></i></div>
-        </div>
-        <!-- 带取消按钮的输入框 -->
-        <div class="o-input-title">带取消按钮</div>
-        <div class="o-input-box o-input-delete-box">
-            <div class="o-input"><input class="o-input-default" type="text" placeholder="请输入文本" value=""></div>
-            <div class="o-input-delete-icon"><i class="o-input-delete"></i></div>
-        </div>
         <!-- 不可编辑状态 -->
         <div class="o-input-title">disabled</div>
         <div class="o-input-box">
-            <input class="o-input-disable" type="text" value="disabled" disabled>
+            <input class="o-input-disable o-input-default" type="text" value="disabled" disabled>
         </div>
         <!-- 多列显示 -->
         <div class="o-input-title">多列输入框</div>
         <div class="o-input-box o-input-col-box">
-            <input class="o-input-col2" type="text">
+            <input class="o-input-col2" type="text" placeholder="开始">
             <span class="o-input-line"></span>
-            <input class="o-input-col2" type="text">
+            <input class="o-input-col2" type="text" placeholder="结束">
         </div>
         <!-- 常见列表 -->
         <div class="o-input-title">常见列表</div>
@@ -50,59 +38,97 @@
                 <input class="o-input-vcode" id="btn" value="获取验证码">
             </div>
         </div>
+        <!-- 密码输入框 -->
+        <div class="o-input-title">密码输入框</div>
+        <div class="o-input-box o-input-iconBox o-input-eventIcon">
+            <div class="o-input"><input class="o-input-default o-input-password" type="password" placeholder="请输入文本" value=""></div>
+            <div class="o-input-password-box">
+                <img class="o-input-iconBtn o-input-password-icon" src="http://cdn-img.easyicon.net/png/11998/1199858.gif">
+            </div>
+        </div>
+        <!-- 带取消按钮的输入框 -->
+        <div class="o-input-title">带取消按钮</div>
+        <div class="o-input-box o-input-iconBox o-input-eventIcon">
+            <div class="o-input"><input class="o-input-default o-input-delete" type="text" placeholder="请输入文本" value=""></div>
+            <div class="o-input-delete-box">
+                <img class="o-input-iconBtn o-input-delete-icon" src="http://cdn-img.easyicon.net/png/5053/505338.gif">
+            </div>
+        </div>
+        <!-- 带上下选择图标的输入框 -->
+        <div class="o-input-title">带选择按钮</div>
+        <div class="o-input-box o-input-iconBox o-input-selectIcon">
+            <div class="o-input"><input class="o-input-default o-input-select" type="text" placeholder="请输入文本" value=""></div>
+            <div class="o-input-select-box">
+                <img class="o-input-iconBtn o-input-select-icon" src="http://cdn-img.easyicon.net/png/12090/1209003.gif">
+                <img class="o-input-iconBtn o-input-select-icon" src="http://cdn-img.easyicon.net/png/12090/1209032.gif">
+            </div>
+        </div>
         <!-- 带图标的输入框 -->
         <div class="o-input-title">带图标的输入框</div>
-        <!-- 图标在右侧 -->
-        <div class="o-input-box o-input-icon-box">
-            <div class="o-input-icon"><i class="o-input-icon"></i></div>
-            <div class="o-input-icons"><input class="o-input" type="text" placeholder="请输入文本"></div>
-        </div>
         <!-- 图标在左侧 -->
-        <div class="o-input-box o-input-icon-box">
-            <div class="o-input-icons"><input class="o-input" type="text" placeholder="请输入文本"></div>
-            <div class="o-input-icon"><i class="o-input-icon"></i></div>
+        <div class="o-input-box o-input-iconBox">
+            <div class="o-input-icon-box">
+                <img class="o-input-icon" src="http://cdn-img.easyicon.net/png/11821/1182112.gif">
+            </div>
+            <div class="o-input"><input class="o-input-default" type="text" placeholder="请输入用户名"></div>
         </div>
-        <div class="o-input-box o-input-icon-box">
-            <div class="o-input-text">名称</div>
-            <div class="o-input-icons"><input class="o-input" type="text" placeholder="请输入文本"></div>
-            <div class="o-input-icon o-input-border-left"><i class="o-input-icon"></i></div>
+        <!-- 图标在右侧 -->
+        <div class="o-input-box o-input-iconBox">
+            <div class="o-input"><input class="o-input-default" type="text" placeholder="请输入用户名"></div>
+            <div class="o-input-icon-box">
+                <img class="o-input-icon" src="http://cdn-img.easyicon.net/png/11821/1182112.gif">
+            </div>
+        </div>
+        <div class="o-input-box o-input-iconBox">
+            <div class="o-input-leftTit">名称</div>
+            <div class="o-input"><input class="o-input-default" type="text" placeholder="请输入用户名"></div>
+            <div class="o-input-icon-box">
+                <img class="o-input-icon" src="http://cdn-img.easyicon.net/png/11821/1182112.gif">
+            </div>
+        </div>
+        <!-- 标题过长 -->
+        <div class="o-input-title">标题过长</div>
+        <div class="o-input-box o-input-iconBox">
+            <div class="o-input-leftTit o-input-text-max">标题过长标题过长</div>
+            <div class="o-input"><input class="o-input-default" type="text" placeholder="请输入用户名"></div>
         </div>
 
     </div>
-    <script>
-        // 验证码倒计时
-        $(function() {
-            var wait = 60;
+</div>
+<script>
+    // 验证码倒计时
+    $(function() {
+        var wait = 60;
 
-            function time(val) {
-                if (wait == 0) {
-                    val.removeAttribute("disabled");
-                    val.value = "获取验证码";
-                    wait = 60;
-                    $('.o-input-vcode').removeClass('active')
-                } else {
-                    val.setAttribute("disabled", true);
-                    val.value = wait + "s";
-                    wait--;
-                    setTimeout(function() {
-                            time(val)
-                        },
-                        1000)
-                }
+        function time(val) {
+            if (wait == 0) {
+                val.removeAttribute("disabled");
+                val.value = "获取验证码";
+                wait = 60;
+                $('.o-input-vcode').removeClass('active')
+            } else {
+                val.setAttribute("disabled", true);
+                val.value = wait + "s";
+                wait--;
+                setTimeout(function() {
+                        time(val)
+                    },
+                    1000)
             }
-            $('.o-input-vcode').on('click', function() {
-                $(this).addClass('active')
-                time(this);
-            })
-        });
-
-        // 密码输入框
-        $(function() {
-            $(".o-input-password-icon").on("touchstart", function() {
-                $('.o-input-default').attr('type', 'text')
-            });
-            $(".o-input-password-icon").on("touchend", function() {
-                $('.o-input-default').attr('type', 'password')
-            });
+        }
+        $('.o-input-vcode').on('click', function() {
+            $(this).addClass('active')
+            time(this);
         })
-    </script>
+    });
+
+    // 密码输入框
+    $(function() {
+        $(".o-input-password-box").on("touchstart", function() {
+            $('.o-input-password').attr('type', 'text')
+        });
+        $(".o-input-password-box").on("touchend", function() {
+            $('.o-input-password').attr('type', 'password')
+        });
+    })
+</script>
