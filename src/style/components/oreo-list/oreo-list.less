@@ -9,14 +9,11 @@
     align-items: @align;
     flex-direction: @direction;
 }
-.none{
+.o-list-none{
     display: none;
 }
-.block{
+.o-list-block{
     display:block;
-}
-h1, h2, h3, h4, h5, h6{
-    padding-left: @padding;
 }
 .list-hd{
     padding-left: @padding;
@@ -40,8 +37,21 @@ h1, h2, h3, h4, h5, h6{
 
 .@{listPrefix}-hd{
     padding-left: @padding;
-    height: @list-height;
-    line-height: @list-height;
+    height: @list-min-height;
+    line-height: @list-min-height;
+}
+
+.o-list-extra{
+    font-size: @listSubTitleFontSize;
+    color: @listExtraColor;
+    span{
+        vertical-align: middle;
+    }
+}
+.@{listPrefix}-subtext{
+    font-size: @listSubTitleFontSize;
+    color: @listSubTitleColor;
+    margin-top: @listSubTitleMarginTop;
 }
 
 .@{listPrefix}-item{
@@ -49,12 +59,11 @@ h1, h2, h3, h4, h5, h6{
     padding-left: @padding;
     
     .@{listPrefix}-content{
-        height: auto;
-        padding-top: @padding;
-        padding-bottom: @padding;
+        min-height: @list-min-height;
         padding-right: @padding;
         position: relative;
-        .flex(space-between, center, row);
+        display: flex;
+        align-items: center;
         &::after{
             .setBottomLine(@c: @onepxColor);
         }
@@ -62,64 +71,52 @@ h1, h2, h3, h4, h5, h6{
             .setBottomLine(@c: transparent);
         }
         .@{listPrefix}-text{
+            flex: 1;
             font-size: @listTitleFontSize;
             color: @listTitleColor;
-            width: auto;
         }
         .@{listPrefix}-extra,.@{listPrefix}-subtext{
             font-size: @listSubTitleFontSize;
             color: @listSubTitleColor;
-            span{
-                vertical-align: middle;
-            }
         }
     }
     .@{listPrefix}-inner{
-        padding-right: .3rem;
-        padding-top: .1rem;
-        padding-bottom: .1rem;
-        height: auto;
+        padding-right: @padding;
+        padding-top: @padding;
+        padding-bottom: @padding;
+        min-height: @list-min-height;
         position: relative;
-        width: 100%;
-        &:after{
+        flex: 1;
+        &:not(:last-child):after{
             .setBottomLine(@c: @onepxColor);
         }
-        &:last-child:after{
-            .setBottomLine(@c: transparent);
+        & div{
+            display: flex;
+            align-items: center; 
         }
-        &>div{
-            .flex(space-between, center, row);
-            .o-list-extra, .o-list-subtext{
-                font-size: @listSubTitleFontSize;
-                color: @listSubTitleColor;
-                span{
-                    vertical-align: middle;
-                }
-            }
+        & .@{listPrefix}-text{
+            flex: 1;
         }
         
     }
 
     .@{listPrefix}-withImg{
         .flex(flex-start, center, row);
-        padding-top: @padding;
-        padding-bottom: @padding;
         position: relative;
         .img{
             width:.9rem;
             height:.9rem;
             margin-right: @margin;
         }
-        &:after{
+        &:not(:last-child):after{
             .setBottomLine(@c: @onepxColor);
-        }
-        &:last-child:after{
-            .setBottomLine(@c: transparent);
         }
     }
 
-    .@{listPrefix}-with-icon{
-        .flex(flex-start, center, row);
+    .@{listPrefix}-icon{
+        // min-height: @list-min-height;
+        display: flex;
+        align-items: center;
         position: relative;
         .icon{
             width:.5rem;
@@ -128,11 +125,14 @@ h1, h2, h3, h4, h5, h6{
         }
         .o-list-line{
             position: relative;
-            width:100%;
-            padding-top: @padding;
-            padding-bottom: @padding;
+            min-height: @list-min-height;
             padding-right: @padding;
-            .flex(space-between, center, row);
+            flex: 1;
+            display: flex;
+            align-items: center;
+            .@{listPrefix}-text{
+                flex: 1;
+            }
             
         }
         &:not(:last-child) .o-list-line:after{
@@ -146,10 +146,10 @@ h1, h2, h3, h4, h5, h6{
 .@{listPrefix}-hover{
     background-color: @fill-base;
     .@{listPrefix}-content{
-        .flex(space-between, center, row);
-        padding-left: @padding;
+        display: flex;
+        align-items: center;
         padding-right: @padding;
-        height: @list-height;
+        min-height: @list-min-height;
         position: relative;
         &:active{
             background-color: @listHoverColor;
@@ -160,15 +160,20 @@ h1, h2, h3, h4, h5, h6{
         &:last-child:after{
             .setBottomLine(@c: transparent);
         }
+        .o-list-text{
+            flex: 1;
+        }
     }
 }
 .@{listPrefix}-entire{
     background-color: @fill-base;
     .@{listPrefix}-content{
-        height: auto;
-        padding: @padding;
+        min-height: @list-min-height;
+        padding-right: @padding;
+        padding-left: @padding;
         position: relative;
-        .flex(space-between, center, row);
+        display: flex;
+        align-items: center;
         &:after{
             .setBottomLine(@c: @onepxColor);
         }
@@ -179,6 +184,7 @@ h1, h2, h3, h4, h5, h6{
             font-size: @listTitleFontSize;
             color: @listTitleColor;
             width: auto;
+            flex: 1;
         }
         .@{listPrefix}-extra,.@{listPrefix}-subtext{
             font-size: @listSubTitleFontSize;
