@@ -1,9 +1,13 @@
-@import "../../../theme/default.less"; 
 
 
 //margin值
 @margin: .3rem;
 @padding: .3rem;
+@list-min-height: .9rem;
+@listSubTitleMarginTop: .2rem;
+
+//小图标的尺寸
+@list-icon-size: .5rem;
 
 //link箭头(左右，上下)
 @linkArrowColor: @border-color-base;
@@ -12,7 +16,7 @@
 @linkArrowPaddingTop: .1rem;
 
 //list行高
-@listRowHeight: @list-height;
+@listRowHeight: @list-min-height;
 
 //细线的色值
 @onepxColor: @border-color-base;
@@ -24,4 +28,8 @@
 @listTitleFontSize: @font-size-subhead;
 @listSubTitleFontSize: @font-size-base;
 @listTitleColor: @color-text-paragraph;
-@listSubTitleColor: @color-icon-base;
+@listSubTitleColor: #535353;
+@listExtraColor: @color-icon-base;
+
+//list中背景白色
+@listBgWhite: @fill-base;

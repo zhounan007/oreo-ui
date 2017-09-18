@@ -1,6 +1,7 @@
 @import "../../base/fn.less";
-@import "../../base/variable/list/list.less";
 
+//变量
+@listPrefix: o-list;
 //函数
 .flex(@justify, @align, @direction) when(@direction = row){
     display: flex;
@@ -8,129 +9,147 @@
     align-items: @align;
     flex-direction: @direction;
 }
-.width100{
-    width: 100%;
-}
-.none{
+.o-list-none{
     display: none;
 }
-.block{
+.o-list-block{
     display:block;
 }
-
 .list-hd{
     padding-left: @padding;
 }
 //向右指向的箭头
-.o-list-arrow-right{
+.@{listPrefix}-arrow-right{
     .setArrow(right, @linkArrowSize, @linkArrowColor, @linkArrowBorder);
     vertical-align: middle;
     margin-top: .1rem;
 }
-.o-list-arrow-down{
+.@{listPrefix}-arrow-down{
     transition: all .5s;
     .setArrow(down, @linkArrowSize, @linkArrowColor, @linkArrowBorder);
     vertical-align: middle;
     margin-top: .1rem;
 }
-.o-list-arrow-top{
+.@{listPrefix}-arrow-top{
     transition: all .5s;
     .setArrow(top, @linkArrowSize, @linkArrowColor, @linkArrowBorder);
 }
 
-.o-list-hd{
+.@{listPrefix}-hd{
     padding-left: @padding;
-    height: @list-height;
-    line-height: @list-height;
+    height: @list-min-height;
+    line-height: @list-min-height;
 }
-.o-list-item{
-    background-color: @fill-base;
+
+.o-list-extra{
+    font-size: @listSubTitleFontSize;
+    color: @listExtraColor;
+    span{
+        vertical-align: middle;
+    }
+}
+.@{listPrefix}-subtext{
+    font-size: @listSubTitleFontSize;
+    color: @listSubTitleColor;
+    margin-top: @listSubTitleMarginTop;
+}
+
+.@{listPrefix}-item{
+    background-color: @listBgWhite;
     padding-left: @padding;
     
-    .o-list-content{
-        height: auto;
-        padding-top: @padding;
-        padding-bottom: @padding;
+    .@{listPrefix}-content{
+        min-height: @list-min-height;
         padding-right: @padding;
         position: relative;
+        display: flex;
+        align-items: center;
         &::after{
             .setBottomLine(@c: @onepxColor);
         }
         &:last-child::after{
             .setBottomLine(@c: transparent);
         }
-        .flex(space-between, center, row);
-        .o-list-text{
+        .@{listPrefix}-text{
+            flex: 1;
             font-size: @listTitleFontSize;
             color: @listTitleColor;
-            width: auto;
         }
-        .o-list-extra,.o-list-subtext{
+        .@{listPrefix}-extra,.@{listPrefix}-subtext{
             font-size: @listSubTitleFontSize;
             color: @listSubTitleColor;
-            span{
-                vertical-align: middle;
-            }
         }
     }
-    .o-list-inner{
-        padding-right: .3rem;
-        padding-top: .1rem;
-        padding-bottom: .1rem;
-        height: auto;
+    .@{listPrefix}-inner{
+        padding-right: @padding;
+        padding-top: @padding;
+        padding-bottom: @padding;
+        min-height: @list-min-height;
         position: relative;
-        &:after{
+        flex: 1;
+        &:not(:last-child):after{
             .setBottomLine(@c: @onepxColor);
         }
-        &:last-child:after{
-            .setBottomLine(@c: transparent);
-        }
-        &>div{
+        & div{
             display: flex;
-            justify-content: space-between
+            align-items: center; 
+        }
+        & .@{listPrefix}-text{
+            flex: 1;
         }
         
     }
 
-    .o-list-withImg{
+    .@{listPrefix}-withImg{
         .flex(flex-start, center, row);
-        padding-top: @padding;
-        padding-bottom: @padding;
         position: relative;
         .img{
             width:.9rem;
             height:.9rem;
             margin-right: @margin;
         }
-        &:after{
+        &:not(:last-child):after{
             .setBottomLine(@c: @onepxColor);
-        }
-        &:last-child:after{
-            .setBottomLine(@c: transparent);
         }
     }
 
-    .o-list-with-icon{
-        .flex(flex-start, center, row);
-        padding-top: @padding;
-        padding-bottom: @padding;
+    .@{listPrefix}-icon{
+        // min-height: @list-min-height;
+        display: flex;
+        align-items: center;
         position: relative;
         .icon{
             width:.5rem;
             height:.5rem;
             margin-right: @margin;
         }
+        .o-list-line{
+            position: relative;
+            min-height: @list-min-height;
+            padding-right: @padding;
+            flex: 1;
+            display: flex;
+            align-items: center;
+            .@{listPrefix}-text{
+                flex: 1;
+            }
+            
+        }
+        &:not(:last-child) .o-list-line:after{
+            .setBottomLine(@c: @onepxColor);
+        }
     }
     
     
 }
-.o-list-hover{
+
+.@{listPrefix}-hover{
     background-color: @fill-base;
-    .o-list-content{
-        .flex(space-between, center, row);
-        padding-left: @padding;
+    .@{listPrefix}-content{
+        display: flex;
+        align-items: center;
         padding-right: @padding;
-        height: @list-height;
+        min-height: @list-min-height;
         position: relative;
         &:active{
             background-color: @listHoverColor;
@@ -141,27 +160,33 @@
         &:last-child:after{
             .setBottomLine(@c: transparent);
         }
+        .o-list-text{
+            flex: 1;
+        }
     }
 }
-.o-list-entire{
+.@{listPrefix}-entire{
     background-color: @fill-base;
-    .o-list-content{
-        height: auto;
-        padding: @padding;
+    .@{listPrefix}-content{
+        min-height: @list-min-height;
+        padding-right: @padding;
+        padding-left: @padding;
         position: relative;
-        &::after{
+        display: flex;
+        align-items: center;
+        &:after{
             .setBottomLine(@c: @onepxColor);
         }
-        &:last-child::after{
+        &:last-child:after{
             .setBottomLine(@c: transparent);
         }
-        .flex(space-between, center, row);
-        .o-list-text{
+        .@{listPrefix}-text{
             font-size: @listTitleFontSize;
             color: @listTitleColor;
             width: auto;
+            flex: 1;
         }
-        .o-list-extra,.o-list-subtext{
+        .@{listPrefix}-extra,.@{listPrefix}-subtext{
             font-size: @listSubTitleFontSize;
             color: @listSubTitleColor;
             span{
