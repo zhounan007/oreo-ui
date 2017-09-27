@@ -1,0 +1,100 @@
+@import "../../base/fn.less";
+@oreoSelectCls: oreo-select;
+@oreoCheckBoxCls:oreo-checkBox;
+@oreoRadioCls:oreo-radio;
+
+// checkBox
+.@{oreoSelectCls}{
+    width: @oreocheckBoxWidth;
+    &-header{
+        color: #888;
+        padding: .1rem .3rem;
+    }
+    &-item{
+        background: #fff;
+        border: 1px solid @border-color-base;
+        padding: @oreocheckBoxItemPadding;
+        .@{oreoSelectCls}-list{
+            .setHeight(@h: 0.8rem);
+            display: flex;
+            position: relative;
+            .@{oreoCheckBoxCls}-frame,.@{oreoRadioCls}-frame{
+                width: @oreocheckBoxInputSize;
+                height: @oreocheckBoxInputSize;
+                outline: 0;
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+                -webkit-appearance: none;
+                background-color: transparent;
+                border: 0;
+            }
+            .@{oreoCheckBoxCls}-content,.@{oreoRadioCls}-content{
+                margin-left: @oreocheckBoxInputGrap;
+                flex: 1;
+                text-align: left;
+            }
+            &.oreo-select-bottomLine{
+                &::after{
+                    .setBottomLine(@c: #C7C7C7);
+                }
+            }
+            // disabled
+            &.disabled-select{
+                color: @color-text-disabled;
+            }
+            // checkBox-flex
+            &.checkBox-left{
+                .@{oreoCheckBoxCls}-content{
+                    // flex: 1;
+                    text-align: right;
+                }
+            }
+            &.checkBox-right,&.radio-right{
+                .@{oreoCheckBoxCls}-frame,.@{oreoRadioCls}-frame{
+                    right: 0;
+                }
+                .@{oreoCheckBoxCls}-content,.@{oreoRadioCls}-content{
+                    margin-left: 0;
+                    margin-right: @oreocheckBoxInputGrap;
+                }
+            }
+            // checkbox和radio的字体图标设置
+            input[type=checkbox]:after,
+            input[type=radio]:after {
+                .setHeight(@h: .36rem);  
+                .setIcon(@c: #C7C7C7,@s:.32rem);         
+                color: #fff;
+                border: 1px solid #ccc;
+            }
+            input[type=checkbox]:after{
+                content: "\f00c";
+            }
+            input[type=radio]:after{
+                content: "\f00c";
+                border-radius: 50%;   
+            }
+            input[type=checkbox]:checked:after,
+            input[type=radio]:checked:after {
+                color: #4cb0ff;
+            }
+            input[type=checkbox]:disabled:after,
+            input[type=radio]:disabled:after {
+                color: transparent;
+                background: #eee;                
+            }
+            input[type=checkbox]:disabled:checked:after,
+            input[type=radio]:disabled:checked:after {
+                color: #ccc;
+                background: #eee;
+                border: 1px solid #ccc;
+            }
+        }
+        // inline-block
+        &.inlineBlock-checkBox, &.inlineBlock-radio{
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+    }
+}
