@@ -2,7 +2,26 @@
 
 //变量
 @btnPrefix: o-button;
-
+.primary{
+    background-color: @btnPrimary;
+    border-color: @btnPrimary;
+    color: @fill-base;
+}
+.warning{
+    background-color: @btnWarning;
+    border-color: @btnWarning;
+    color: @fill-base;
+}
+.success{
+    background-color: @btnSuccess;
+    border-color: @btnSuccess;
+    color: @fill-base;
+}
+.error{
+    background-color: @btnError;
+    border-color: @btnError;
+    color: @fill-base;
+}
 .@{btnPrefix}{
     text-decoration: none;
     display: block;
@@ -16,10 +35,27 @@
     margin-top: @margin;
     margin-bottom: @margin;
     background-color: @btnDefaultColor;
+    user-select: none;
+    -webkit-user-select: none;
+    &-default:active{
+        background-color: darken(@btnDefaultColor, 10%);
+        border-color: darken(@btnDefaultColor, 10%);
+    }
     &-primary{
-        background-color: @btnPrimary;
-        border-color: @btnPrimary;
-        color: @fill-base;
+        .primary;
+        box-shadow: 10px 10px 10 inset;
+    }
+    &-primary:active{
+        background-color: darken(@btnPrimary, 10%);
+        border-color: darken(@btnPrimary, 10%)
+    }
+    &-primary-disabled{
+        .primary;
+        opacity: .5;
+    }
+    &-primary-shadow{
+        .primary;
+        box-shadow: 0px 5px 5px #b1b1b1;
     }
     &-disabled{
         background-color: @btnDisabled;
@@ -29,25 +65,55 @@
     }
     &-icon{
         & img{
-            width:30px;
-            height:30px;
+            width: @imgSize;
+            height: @imgSize;
             vertical-align: middle;
         }
     }
     &-warning{
-        background-color: @btnWarning;
-        border-color: @btnWarning;
-        color: @fill-base;
+        .warning;
+        
+    }
+    &-warning:active{
+        background-color: darken(@btnWarning, 10%);
+        border-color: darken(@btnWarning, 10%)
+    }
+    &-warning-disabled{
+        .warning;
+        opacity: .5
     }
     &-success{
         background-color: @btnSuccess;
         border-color: @btnSuccess;
         color: @fill-base;
     }
+    &-success:active{
+        background-color: darken(@btnSuccess, 10%);
+        border-color: darken(@btnSuccess, 10%)
+    }
+    &-success-disabled{
+        background-color: @btnSuccess;
+        border-color: @btnSuccess;
+        color: @fill-base;
+        opacity: .5;
+    }
     &-error{
         background-color: @btnError;
         border-color: @btnError;
         color: @fill-base;
+    }
+    &-error:active{
+        background-color: darken(@btnError, 10%);
+        border-color: darken(@btnError, 10%)
+    }
+    &-error-disabled{
+        background-color: @btnError;
+        border-color: @btnError;
+        color: @fill-base;
+        opacity: .5;
+    }
+    &-capsule{
+        border-radius: 2rem;
     }
     &-flat-default{
         border-color: @btnBlack;
@@ -57,24 +123,37 @@
         border-color: @btnPrimary;
         color: @btnPrimary;
     }
+    &-flat-primary:active{
+        transition: all 500ms;
+        .primary;
+    }
     &-flat-warning{
         border-color: @btnWarning;
         color: @btnWarning;
+    }
+    &-flat-warning:active{
+        .warning;
     }
     &-flat-success{
         border-color: @btnSuccess;
         color: @btnSuccess;
     }
+    &-flat-success:active{
+        .success;
+    }
     &-flat-error{
         border-color: @btnError;
         color: @btnError;
     }
-    
-    &-inline, &-small{
+    &-flat-error:active{
+        .error;
+    }
+    &-inline{
         display: inline-block;
         padding: 0 @padding;
     }
     &-small{
+        padding: 0 @padding;
         height: auto;
         line-height: 2.0;
         font-size: @font-size-base;
@@ -94,11 +173,11 @@
         &:last-child{
             border-top-left-radius: 0;
             border-bottom-left-radius: 0;
+            border-left-width: 0;
         }
         &:not(:first-child):not(:last-child){
             border-radius: 0;
             border-left-width: 0;
-            border-right-width: 0;
         }
     }
 }
