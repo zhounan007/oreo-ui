@@ -1,0 +1,702 @@
+<!DOCTYPE html>
+<html style="font-size:50px;">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <title>Oreo UI Library</title>
+    <link rel="stylesheet" href="./oreo_ui.css">
+    <link rel="stylesheet" href="./res/css/example.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="page">
+
+            OREO UI 框架 .......
+            <a href="javascript:;" data-page="button">Button</a>
+
+            <a href="javascript:;" data-page="list">List</a>
+
+            <a href="javascript:;" data-page="form">Form</a>
+        </div>
+    </div>
+</body>
+<script type="text/html" id="tpl_button">
+<div class="page">
+    <div class="page-hd">
+        Button
+    </div>
+    <div class="page-body">
+        
+        
+        <a href="javascript:;" class="o-button">默认button</a>
+
+
+        <a href="javascript:;" class="o-button o-button-primary">primary</a>
+
+
+        <a href="javascript:;" class="o-button o-button-disabled">disabled</a>
+
+
+        <a href="javascript:;" class="o-button o-button-icon">
+            <img src="https://zos.alipayobjects.com/rmsportal/dNuvNrtqUztHCwM.png" alt="">
+            <span>icon button</span>
+        </a>
+        
+        <a href="javascript:;" class="o-button o-button-warning">警告类</a>
+
+        <a href="javascript:;" class="o-button o-button-success">成功类</a>        
+
+        <a href="javascript:;" class="o-button o-button-error">错误类</a>
+
+        <a href="javascript:;" class="o-button o-button-flat-default">无背景类</a>
+
+        <a href="javascript:;" class="o-button o-button-flat-primary">无背景类</a>
+
+        <a href="javascript:;" class="o-button o-button-flat-warning">无背景类</a>
+
+        <a href="javascript:;" class="o-button o-button-flat-success">无背景类</a>
+
+        <a href="javascript:;" class="o-button o-button-flat-error">无背景类</a>
+        
+        <div class="inline">
+            <a href="javascritp:;" class="o-button o-button-inline">行内类</a>
+            
+            <a href="javascritp:;" class="o-button o-button-small">小尺寸</a>
+        
+            <a href="javascript:;" class="o-button o-button-small o-button-primary">小尺寸</a>
+        </div>
+        
+        <div class="o-button-group">
+            <a href="javascript:;" class="o-button">按钮</a>
+            <a href="javascript:;" class="o-button">按钮</a>
+            <a href="javascript:;" class="o-button">按钮</a>
+        </div>
+        <div class="o-button-group o-button-capsule">
+            <a href="javascript:;" class="o-button">按钮</a>
+            <a href="javascript:;" class="o-button">按钮</a>
+            <a href="javascript:;" class="o-button">按钮</a>
+        </div>
+        <div class="o-button-group">
+            <a href="javascript:;" class="o-button o-button-primary">按钮</a>
+            <a href="javascript:;" class="o-button o-button-primary">按钮</a>
+            <a href="javascript:;" class="o-button o-button-primary">按钮</a>
+        </div>
+        <div class="o-button-group o-button-icon">
+            <a href="javascript:;" class="o-button">
+                <img src="https://zos.alipayobjects.com/rmsportal/dNuvNrtqUztHCwM.png" alt="">
+                <span>按钮</span>
+            </a>
+            <a href="javascript:;" class="o-button">
+                <img src="https://zos.alipayobjects.com/rmsportal/dNuvNrtqUztHCwM.png" alt="">
+                <span>按钮</span>
+            </a>
+            <a href="javascript:;" class="o-button">
+                <img src="https://zos.alipayobjects.com/rmsportal/dNuvNrtqUztHCwM.png" alt="">
+                <span>按钮</span>
+            </a>
+        </div>
+    </div>
+</div>
+</script>
+<script type="text/html" id="tpl_flex">
+<div class="page">
+   <div class="page-hd">
+        <div class="demo-name">Flex 布局</div>
+        <div class="demo-subtitle"></div>
+    </div>
+    <div class="page-body">
+        
+
+        <h2>Basic,Row</h2>
+
+        <div class="oreo-flex demo-flex">
+            <div class="oreo-flex-item ">
+                <div class="demo-flex-item">Item</div>
+            </div>
+             <div class="oreo-flex-item ">
+                <div class="demo-flex-item">Item</div>
+            </div>
+        </div>
+
+
+        <div class="oreo-flex demo-flex">
+            <div class="oreo-flex-item demo-flex-item">Item</div>
+            <div class="oreo-flex-item demo-flex-item">Item</div>
+            <div class="oreo-flex-item demo-flex-item">Item</div>
+        </div>
+
+        <div class="oreo-flex demo-flex">
+            <div class="oreo-flex-item demo-flex-item">Item</div>
+            <div class="oreo-flex-item demo-flex-item">Item</div>
+            <div class="oreo-flex-item demo-flex-item">Item</div>
+            <div class="oreo-flex-item demo-flex-item">Item</div>
+        </div>
+
+        <div class="oreo-flex demo-flex">
+            <div class="demo-flex-item">Item</div>
+            <div class="oreo-flex-item demo-flex-item">Item</div>
+        </div>
+
+         <div class="oreo-flex demo-flex">
+            <div class="demo-flex-item">Item</div>
+            <div class="oreo-flex-item demo-flex-item">Item</div>
+            <div class="oreo-flex-item demo-flex-item">Item</div>
+        </div>
+
+
+        <h2>Basic,Colum</h2>
+
+        <div class="oreo-flex oreo-flex-colum demo-flex">
+            <div class="demo-flex-item">Item</div>
+            <div class="oreo-flex-item demo-flex-item">Item</div>
+            <div class="oreo-flex-item demo-flex-item">Item</div>
+        </div>
+
+        <h2>Basic,Wrap</h2>
+
+        <div class="oreo-flex oreo-flex-wrap demo-flex">
+            <div class="demo-flex-item" style="width:33%;">Item</div>
+            <div class="demo-flex-item" style="width:33%;">Item</div>
+            <div class="demo-flex-item" style="width:33%;">Item</div>
+            <div class="demo-flex-item" style="width:33%;">Item</div>
+            <div class="demo-flex-item" style="width:33%;">Item</div>
+        </div>
+
+    </div>
+</div>
+</script>
+<script type="text/html" id="tpl_form">
+<div class="page">
+   <div class="page-hd">
+        <div class="demo-name">Form 表单</div>
+        <div class="demo-subtitle">包含Input,RadioBox,Switch</div>
+    </div>
+    <div class="page-body" >
+        
+
+        <h2>Basic</h2>
+
+        <div class="oreo-grid oreo-grid-line">
+            <div class="oreo-flex">
+                <div class="oreo-flex-item oreo-grid-item">
+                    <div class="oreo-grid-item-content">
+                        
+                        <label class="oreo-switch">
+                            <input type="checkbox">
+                            <div class="oreo-switch-checkbox"></div>
+                        </label>
+                    </div>
+                </div>
+                <div class="oreo-flex-item oreo-grid-item">
+                    <div class="oreo-grid-item-content">
+                        Grid
+                    </div>
+                </div>
+                <div class="oreo-flex-item oreo-grid-item">
+                    <div class="oreo-grid-item-content">
+                        Grid
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+
+
+
+        
+
+    </div>
+</div>
+</script>
+<script type="text/html" id="tpl_grid">
+<div class="page">
+   <div class="page-hd">
+        <div class="demo-name">Grid 布局</div>
+        <div class="demo-subtitle">该布局基于flex,支持多列</div>
+    </div>
+    <div class="page-body" style="padding:0;">
+        
+
+        <h2>Basic</h2>
+
+        <div class="oreo-grid oreo-grid-line">
+            <div class="oreo-flex">
+                <div class="oreo-flex-item oreo-grid-item">
+                    <div class="oreo-grid-item-content">
+                        Grid
+                    </div>
+                </div>
+                <div class="oreo-flex-item oreo-grid-item">
+                    <div class="oreo-grid-item-content">
+                        Grid
+                    </div>
+                </div>
+                <div class="oreo-flex-item oreo-grid-item">
+                    <div class="oreo-grid-item-content">
+                        Grid
+                    </div>
+                </div>
+            </div>
+            <div class="oreo-flex">
+                <div class="oreo-flex-item oreo-grid-item">
+                    <div class="oreo-grid-item-content">
+                        Grid
+                    </div>
+                </div>
+                <div class="oreo-flex-item oreo-grid-item">
+                    <div class="oreo-grid-item-content">
+                        Grid
+                    </div>
+                </div>
+                <div class="oreo-flex-item oreo-grid-item">
+                    <div class="oreo-grid-item-content">
+                        Grid
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <h2>Grid-line,Icon</h2>
+
+        <div class="oreo-grid oreo-grid-line">
+            <div class="oreo-flex">
+                <div class="oreo-flex-item oreo-grid-item">
+                    <div class="oreo-grid-item-content">
+                        <img class="oreo-grid-item-icon" src="http://owz1rt8et.bkt.clouddn.com/icon/icon.png" alt="">
+                        <div class="oreo-grid-item-text">Grid</div>
+                    </div>
+                </div>
+                <div class="oreo-flex-item oreo-grid-item">
+                    <div class="oreo-grid-item-content">
+                        <img class="oreo-grid-item-icon" src="http://owz1rt8et.bkt.clouddn.com/icon/icon.png" alt="">
+                        <div class="oreo-grid-item-text">Grid</div>
+                    </div>
+                </div>
+                <div class="oreo-flex-item oreo-grid-item">
+                   <div class="oreo-grid-item-content">
+                        <img class="oreo-grid-item-icon" src="http://owz1rt8et.bkt.clouddn.com/icon/icon.png" alt="">
+                        <div class="oreo-grid-item-text">Grid</div>
+                    </div>
+                </div>
+                <div class="oreo-flex-item oreo-grid-item">
+                   <div class="oreo-grid-item-content">
+                        <img class="oreo-grid-item-icon" src="http://owz1rt8et.bkt.clouddn.com/icon/icon.png" alt="">
+                        <div class="oreo-grid-item-text">Grid</div>
+                    </div>
+                </div>
+            </div>
+             <div class="oreo-flex">
+                <div class="oreo-flex-item oreo-grid-item">
+                    <div class="oreo-grid-item-content">
+                        <img class="oreo-grid-item-icon" src="http://owz1rt8et.bkt.clouddn.com/icon/icon.png" alt="">
+                        <div class="oreo-grid-item-text">Grid</div>
+                    </div>
+                </div>
+                <div class="oreo-flex-item oreo-grid-item">
+                    <div class="oreo-grid-item-content">
+                        <img class="oreo-grid-item-icon" src="http://owz1rt8et.bkt.clouddn.com/icon/icon.png" alt="">
+                        <div class="oreo-grid-item-text">Grid</div>
+                    </div>
+                </div>
+                <div class="oreo-flex-item oreo-grid-item">
+                   <div class="oreo-grid-item-content">
+                        <img class="oreo-grid-item-icon" src="http://owz1rt8et.bkt.clouddn.com/icon/icon.png" alt="">
+                        <div class="oreo-grid-item-text">Grid</div>
+                    </div>
+                </div>
+                <div class="oreo-flex-item oreo-grid-item">
+                   <div class="oreo-grid-item-content">
+                        <img class="oreo-grid-item-icon" src="http://owz1rt8et.bkt.clouddn.com/icon/icon.png" alt="">
+                        <div class="oreo-grid-item-text">Grid</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <h2>Grid-square</h2>
+        <div class="oreo-grid oreo-grid-line oreo-grid-square">
+            <div class="oreo-flex">
+                <div class="oreo-flex-item oreo-grid-item">
+                    <div class="oreo-grid-item-content">
+                        <img class="oreo-grid-item-icon" src="http://owz1rt8et.bkt.clouddn.com/icon/icon.png" alt="">
+                        <div class="oreo-grid-item-text">Grid</div>
+                    </div>
+                </div>
+                <div class="oreo-flex-item oreo-grid-item">
+                    <div class="oreo-grid-item-content">
+                        <img class="oreo-grid-item-icon" src="http://owz1rt8et.bkt.clouddn.com/icon/icon.png" alt="">
+                        <div class="oreo-grid-item-text">Grid</div>
+                    </div>
+                </div>
+                <div class="oreo-flex-item oreo-grid-item">
+                   <div class="oreo-grid-item-content">
+                        <img class="oreo-grid-item-icon" src="http://owz1rt8et.bkt.clouddn.com/icon/icon.png" alt="">
+                        <div class="oreo-grid-item-text">Grid</div>
+                    </div>
+                </div>
+            </div>
+             <div class="oreo-flex">
+                <div class="oreo-flex-item oreo-grid-item">
+                    <div class="oreo-grid-item-content">
+                        <img class="oreo-grid-item-icon" src="http://owz1rt8et.bkt.clouddn.com/icon/icon.png" alt="">
+                        <div class="oreo-grid-item-text">Grid</div>
+                    </div>
+                </div>
+                <div class="oreo-flex-item oreo-grid-item">
+                    <div class="oreo-grid-item-content">
+                        <img class="oreo-grid-item-icon" src="http://owz1rt8et.bkt.clouddn.com/icon/icon.png" alt="">
+                        <div class="oreo-grid-item-text">Grid</div>
+                    </div>
+                </div>
+                <div class="oreo-flex-item oreo-grid-item">
+                   <div class="oreo-grid-item-content">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+</script>
+<script type="text/html" id="tpl_home">
+<div class="page">
+    <div class="page-hd">
+        <div class="demo-title">OREO UI</div>
+        <div class="demo-subtitle">一款基于移动端UI库, 本库仅提供各类常用Css样式, 如需使用功能, 请下载Vue版. Coming soon...</div>
+    </div>
+    <div class="page-body">
+        <ul>
+            <li class="demo-list">
+                <div class="demo-list-header">
+                    表单 Form
+                </div>
+                <div class="demo-list-body">
+                    <a href="javascript:;" class="demo-list-item" data-page="button">Button</a>
+                    <a href="javascript:;" class="demo-list-item" data-page="input">Input</a>
+                    <a href="javascript:;" class="demo-list-item" data-page="form">Form</a>
+                    <a href="javascript:;" class="demo-list-item" data-page="list">list</a>
+
+                </div>
+            </li>
+            <li class="demo-list">
+                <div class="demo-list-header">
+                    布局 Layout
+                </div>
+                <div class="demo-list-body">
+                    <a href="javascript:;" class="demo-list-item" data-page="flex">Flex</a>
+                    <a href="javascript:;" class="demo-list-item" data-page="grid">Grid</a>
+                </div>
+            </li>
+            <li class="demo-list">
+                <div class="demo-list-header">
+                    表单
+                </div>
+                <div class="demo-list-body">
+                </div>
+            </li>
+            <li class="demo-list">
+                <div class="demo-list-header">
+                    表单
+                </div>
+                <div class="demo-list-body">
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
+</script>
+<script type="text/html" id="tpl_input">
+<div class="page">
+    <div class="page-hd">
+        input
+        
+    </div>
+    <div class="page-body">
+        <!-- 输入框 -->
+        <div class="o-input-title">文本框</div>
+        <div class="o-input-box">
+            <input class="o-input-default" type="text" placeholder="请输入文本">
+        </div>
+        <!-- 不可编辑状态 -->
+        <div class="o-input-title">disabled</div>
+        <div class="o-input-box">
+            <input class="o-input-disable o-input-default" type="text" value="disabled" disabled>
+        </div>
+        <!-- 多列显示 -->
+        <div class="o-input-title">多列输入框</div>
+        <div class="o-input-box o-input-col-box">
+            <input class="o-input-col2" type="text" placeholder="开始">
+            <span class="o-input-line"></span>
+            <input class="o-input-col2" type="text" placeholder="结束">
+        </div>
+        <!-- 常见列表 -->
+        <div class="o-input-title">常见列表</div>
+        <div class="o-input-item">
+            <!-- 输入框在右 -->
+            <div class="o-input-right">
+                <div class="o-input-hd o-input-hd-border"><label class="o-input-label">手机号</label></div>
+                <div class="o-input-bd "><input class="o-input" type="text" placeholder="请输入手机号"></div>
+            </div>
+            <div class="o-input-right">
+                <div class="o-input-hd o-input-hd-border"><label class="o-input-label">QQ号</label></div>
+                <div class="o-input-bd"><input class="o-input" type="text" placeholder="请输入QQ号"></div>
+            </div>
+            <div class="o-input-right">
+                <div class="o-input-hd o-input-hd-border"><label class="o-input-label">手机号</label></div>
+                <div class="o-input-bd"><input class="o-input" type="text" placeholder="请输入手机号"></div>
+                <input class="o-input-vcode" id="btn" value="获取验证码">
+            </div>
+        </div>
+        <!-- 密码输入框 -->
+        <div class="o-input-title">密码输入框</div>
+        <div class="o-input-box o-input-iconBox o-input-eventIcon">
+            <div class="o-input"><input class="o-input-default o-input-password" type="password" placeholder="请输入文本" value=""></div>
+            <div class="o-input-password-box">
+                <img class="o-input-iconBtn o-input-password-icon" src="http://cdn-img.easyicon.net/png/11998/1199858.gif">
+            </div>
+        </div>
+        <!-- 带取消按钮的输入框 -->
+        <div class="o-input-title">带取消按钮</div>
+        <div class="o-input-box o-input-iconBox o-input-eventIcon">
+            <div class="o-input"><input class="o-input-default o-input-delete" type="text" placeholder="请输入文本" value=""></div>
+            <div class="o-input-delete-box">
+                <img class="o-input-iconBtn o-input-delete-icon" src="http://cdn-img.easyicon.net/png/5053/505338.gif">
+            </div>
+        </div>
+        <!-- 带上下选择图标的输入框 -->
+        <div class="o-input-title">带选择按钮</div>
+        <div class="o-input-box o-input-iconBox o-input-selectIcon">
+            <div class="o-input"><input class="o-input-default o-input-select" type="text" placeholder="请输入文本" value=""></div>
+            <div class="o-input-select-box">
+                <img class="o-input-iconBtn o-input-select-icon" src="http://cdn-img.easyicon.net/png/12090/1209003.gif">
+                <img class="o-input-iconBtn o-input-select-icon" src="http://cdn-img.easyicon.net/png/12090/1209032.gif">
+            </div>
+        </div>
+        <!-- 带图标的输入框 -->
+        <div class="o-input-title">带图标的输入框</div>
+        <!-- 图标在左侧 -->
+        <div class="o-input-box o-input-iconBox">
+            <div class="o-input-icon-box">
+                <img class="o-input-icon" src="http://cdn-img.easyicon.net/png/11821/1182112.gif">
+            </div>
+            <div class="o-input"><input class="o-input-default" type="text" placeholder="请输入用户名"></div>
+        </div>
+        <!-- 图标在右侧 -->
+        <div class="o-input-box o-input-iconBox">
+            <div class="o-input"><input class="o-input-default" type="text" placeholder="请输入用户名"></div>
+            <div class="o-input-icon-box">
+                <img class="o-input-icon" src="http://cdn-img.easyicon.net/png/11821/1182112.gif">
+            </div>
+        </div>
+        <div class="o-input-box o-input-iconBox">
+            <div class="o-input-leftTit">名称</div>
+            <div class="o-input"><input class="o-input-default" type="text" placeholder="请输入用户名"></div>
+            <div class="o-input-icon-box">
+                <img class="o-input-icon" src="http://cdn-img.easyicon.net/png/11821/1182112.gif">
+            </div>
+        </div>
+        <!-- 标题过长 -->
+        <div class="o-input-title">标题过长</div>
+        <div class="o-input-box o-input-iconBox">
+            <div class="o-input-leftTit o-input-text-max">标题过长标题过长</div>
+            <div class="o-input"><input class="o-input-default" type="text" placeholder="请输入用户名"></div>
+        </div>
+
+    </div>
+</div>
+<script>
+    // 验证码倒计时
+    $(function() {
+        var wait = 60;
+
+        function time(val) {
+            if (wait == 0) {
+                val.removeAttribute("disabled");
+                val.value = "获取验证码";
+                wait = 60;
+                $('.o-input-vcode').removeClass('active')
+            } else {
+                val.setAttribute("disabled", true);
+                val.value = wait + "s";
+                wait--;
+                setTimeout(function() {
+                        time(val)
+                    },
+                    1000)
+            }
+        }
+        $('.o-input-vcode').on('click', function() {
+            $(this).addClass('active')
+            time(this);
+        })
+    });
+
+    // 密码输入框
+    $(function() {
+        $(".o-input-password-box").on("touchstart", function() {
+            $('.o-input-password').attr('type', 'text')
+        });
+        $(".o-input-password-box").on("touchend", function() {
+            $('.o-input-password').attr('type', 'password')
+        });
+    })
+</script>
+</script>
+<script type="text/html" id="tpl_list">
+<div class="page">
+    <div class="container-flue">
+        <div class="list-hd">
+            <h1>list</h1>
+        </div>
+        <div class="o-list">
+            <h2>base list</h2>
+            <ul class="o-list-item">
+                <li class="o-list-content">
+                    <div class="o-list-text">标题文字</div>
+                    <div class="o-list-extra">额外补充</div>
+                </li>
+                <li class="o-list-content">
+                    <div class="o-list-text">标题文字</div>
+                    <div class="o-list-arrow-right"></div>
+                </li>
+                <li class="o-list-content">
+                    <div class="o-list-text">标题文字</div>
+                    <div class="o-list-extra">
+                        <span>额外补充</span>
+                        <span class="o-list-arrow-right"></span>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+        <div class="o-list">
+            <h2>double row list</h2>
+            <ul class="o-list-item">
+                <li class="o-list-inner">
+                    <div class="o-list-title">
+                        <div class="o-list-text">标题文字</div>
+                        <div class="o-list-extra">额外补充</div>
+                    </div>
+                    <div class="o-list-subtext">副级标题</div>
+                    
+                </li>
+                <li class="o-list-withImg">
+                    <img class="img" src="https://zos.alipayobjects.com/rmsportal/dNuvNrtqUztHCwM.png" alt="">
+                    <div class="o-list-inner">
+                        <div>
+                            <div class="o-list-text">标题文字</div>
+                            <div class="o-list-extra">额外补充</div>
+                        </div>
+                        <div class="o-list-subtext">副级标题</div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+        <div class="o-list">
+            <h2>button and 多级列表 list</h2>
+            <ul class="o-list-item">
+                <li class="o-list-content">
+                    <div class="o-list-text">标题文字</div>
+                    <div class="o-list-extra">
+                        <button class="o-btn o-btn-primary">确定</button>
+                    </div>
+                </li>
+                <li class="o-list-content">
+                    <div class="o-list-text">标题文字</div>
+                    <div class="o-list-arrow-down o-list-spread"></div>
+                </li>
+                <ul class="o-list-item none">
+                    <li class="o-list-content">
+                        <div class="o-list-text">标题文字</div>
+                        <div class="o-list-arrow-down spread"></div>
+                    </li>
+                    <li class="o-list-content">
+                        <div class="o-list-text">标题文字</div>
+                        <div class="o-list-arrow-down spread"></div>
+                    </li>
+                    <li class="o-list-content">
+                        <div class="o-list-text">标题文字</div>
+                        <div class="o-list-arrow-down spread"></div>
+                    </li>
+                    <li class="o-list-content">
+                        <div class="o-list-text">标题文字</div>
+                        <div class="o-list-arrow-down spread"></div>
+                    </li>
+                </ul>
+            </ul>
+        </div>
+
+        <div class="o-list">
+            <h2>具有active激活状态的list</h2>
+            <ul class="o-list-item o-list-hover">
+                <li class="o-list-content">
+                    <div class="o-list-text">标题文字</div>
+                    <div class="o-list-extra">额外补充</div>
+                </li>
+                <li class="o-list-content">
+                    <div class="o-list-text">标题文字</div>
+                    <div class="o-list-arrow-down "></div>
+                </li>
+            </ul>
+        </div>
+
+        <div class="o-list">
+            <h2>细线宽度100%的list</h2>
+            <ul class="o-list-entire">
+                <li class="o-list-content">
+                    <div class="o-list-text">标题文字</div>
+                    <div class="o-list-extra">额外补充</div>
+                </li>
+                <li class="o-list-content">
+                    <div class="o-list-text">标题文字</div>
+                    <div class="o-list-arrow-down spread"></div>
+                </li>
+            </ul>
+        </div>
+
+        <div class="o-list">
+            <h2>带icon的list</h2>
+            <ul class="o-list-item">
+                <li class="o-list-icon">
+                    <img class="icon" src="https://zos.alipayobjects.com/rmsportal/dNuvNrtqUztHCwM.png" alt="">
+                    <div class="o-list-line">
+                        <div class="o-list-text">标题文字</div>
+                        <div class="o-list-arrow-right"></div>
+                    </div>
+                </li>
+                <li class="o-list-icon">
+                    <img class="icon" src="https://zos.alipayobjects.com/rmsportal/dNuvNrtqUztHCwM.png" alt="">
+                    <div class="o-list-line">
+                        <div class="o-list-text">标题文字</div>
+                        <div class="o-list-arrow-right"></div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+    $('.o-list-spread').bind('click',function(e){
+        var $ul =  $(e.target).parent().next();
+        $(e.target).toggleClass('o-list-arrow-top');
+        if($ul.hasClass('o-list-none')){
+            $ul.addClass('o-list-block');
+            $ul.removeClass('o-list-none');
+        }else{
+            $ul.removeClass('o-list-block');
+            $ul.addClass('o-list-none');
+        }
+    })
+</script>
+</script>
+
+<script src="./res/script/zepto.min.js"></script>
+<script src="./res/script/index.js"></script>
+
+</html>
