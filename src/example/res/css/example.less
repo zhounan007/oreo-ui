@@ -87,6 +87,9 @@ ul {
         }
     }
     overflow: auto;
+    &::-webkit-scrollbar {
+        display: none;
+    }
 }
 
 .demo-flex {
@@ -119,11 +122,13 @@ ul {
 
 @keyframes slideOut {
     0% {
-        transform: translateZ(0);
-        opacity: 1
+        // transform: translateZ(0);
+        transform: translate3d(-100%,0,0);
+        opacity: 0
     }
     to {
-        transform: translate3d(101%, 0, 0);
-        opacity: 0
+        // transform: translate3d(101%, 0, 0);
+        transform: translateX(0);
+        opacity: 1
     }
 }

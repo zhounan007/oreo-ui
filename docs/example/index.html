@@ -9,6 +9,7 @@
     <title>Oreo UI Library</title>
     <link rel="stylesheet" href="./oreo_ui.css">
     <link rel="stylesheet" href="./res/css/example.css">
+    <link rel="stylesheet" href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.css">
 </head>
 
 <body>
@@ -31,29 +32,27 @@
     </div>
     <div class="page-body">
         
-        
-        <a href="javascript:;" class="o-button">默认button</a>
-
-
-        <a href="javascript:;" class="o-button o-button-primary">primary</a>
-
-
+        <h2>block 类</h2>
+        <a href="javascript:;" class="o-button o-button-default">默认button</a>
+        <a href="javascript:;" class="o-button o-button-primary o-button-primary-shadow">primary</a>
+        <a href="javascript:;" class="o-button o-button-primary-disabled">primary Disabled</a>
         <a href="javascript:;" class="o-button o-button-disabled">disabled</a>
-
-
+        <a href="javascript:;" class="o-button o-button-warning">警告类</a>
+        <a href="javascript:;" class="o-button o-button-warning-disabled">警告disabled类</a>
+        <a href="javascript:;" class="o-button o-button-success">成功类</a>        
+        <a href="javascript:;" class="o-button o-button-success-disabled">成功disabled类</a>        
+        <a href="javascript:;" class="o-button o-button-error">错误类</a>
+        <a href="javascript:;" class="o-button o-button-error-disabled">错误类</a>
+        <a href="javascript:;" class="o-button o-button-default o-button-capsule">胶囊状类</a>
+       
+        <h2>Block , icon 类</h2>
         <a href="javascript:;" class="o-button o-button-icon">
             <img src="https://zos.alipayobjects.com/rmsportal/dNuvNrtqUztHCwM.png" alt="">
             <span>icon button</span>
         </a>
-        
-        <a href="javascript:;" class="o-button o-button-warning">警告类</a>
 
-        <a href="javascript:;" class="o-button o-button-success">成功类</a>        
-
-        <a href="javascript:;" class="o-button o-button-error">错误类</a>
-
+        <h2>Block , 无背景类</h2>
         <a href="javascript:;" class="o-button o-button-flat-default">无背景类</a>
-
         <a href="javascript:;" class="o-button o-button-flat-primary">无背景类</a>
 
         <a href="javascript:;" class="o-button o-button-flat-warning">无背景类</a>
@@ -62,14 +61,19 @@
 
         <a href="javascript:;" class="o-button o-button-flat-error">无背景类</a>
         
+        <h2>inline-block类</h2>
         <div class="inline">
             <a href="javascritp:;" class="o-button o-button-inline">行内类</a>
+            <a href="javascritp:;" class="o-button o-button-inline o-button-primary">行内类</a>
             
-            <a href="javascritp:;" class="o-button o-button-small">小尺寸</a>
+        </div>  
+
+        <h2>block , 小尺寸</h2>  
+        <a href="javascritp:;" class="o-button o-button-small">小尺寸</a>
+    
+        <a href="javascript:;" class="o-button o-button-small o-button-primary">小尺寸</a>
         
-            <a href="javascript:;" class="o-button o-button-small o-button-primary">小尺寸</a>
-        </div>
-        
+        <h2>block 组</h2>
         <div class="o-button-group">
             <a href="javascript:;" class="o-button">按钮</a>
             <a href="javascript:;" class="o-button">按钮</a>
@@ -85,6 +89,8 @@
             <a href="javascript:;" class="o-button o-button-primary">按钮</a>
             <a href="javascript:;" class="o-button o-button-primary">按钮</a>
         </div>
+
+        <h2>带icon button组</h2>
         <div class="o-button-group o-button-icon">
             <a href="javascript:;" class="o-button">
                 <img src="https://zos.alipayobjects.com/rmsportal/dNuvNrtqUztHCwM.png" alt="">
@@ -171,51 +177,200 @@
 </script>
 <script type="text/html" id="tpl_form">
 <div class="page">
-   <div class="page-hd">
-        <div class="demo-name">Form 表单</div>
+   
+    <div class="page-hd">
+         <div class="demo-name">Form 表单</div>
         <div class="demo-subtitle">包含Input,RadioBox,Switch</div>
     </div>
-    <div class="page-body" >
-        
-
-        <h2>Basic</h2>
-
-        <div class="oreo-grid oreo-grid-line">
-            <div class="oreo-flex">
-                <div class="oreo-flex-item oreo-grid-item">
-                    <div class="oreo-grid-item-content">
-                        
-                        <label class="oreo-switch">
-                            <input type="checkbox">
-                            <div class="oreo-switch-checkbox"></div>
-                        </label>
-                    </div>
+    <div class="page-body">
+        <h2>checkBox</h2>
+        <!-- block checkBlock -->
+        <div class="oreo-select">
+            <div class="oreo-select-header">Block</div>
+            <div class="oreo-select-item block-checkBox">
+                <div class="oreo-select-list oreo-select-bottomLine">
+                    <input class="oreo-checkBox-frame" type="checkbox" value="" />
+                    <label class="oreo-checkBox-content textOverflow">超长文本选项超长文本选项超长文本选项超长文本选项</label>
                 </div>
-                <div class="oreo-flex-item oreo-grid-item">
-                    <div class="oreo-grid-item-content">
-                        Grid
-                    </div>
+                <div class="oreo-select-list oreo-select-bottomLine">
+                    <input class="oreo-checkBox-frame" type="checkbox" value="" />
+                    <label class="oreo-checkBox-content textOverflow">复选框</label>
                 </div>
-                <div class="oreo-flex-item oreo-grid-item">
-                    <div class="oreo-grid-item-content">
-                        Grid
+                <div class="oreo-select-list disabled-select oreo-select-bottomLine">
+                    <input class="oreo-checkBox-frame" type="checkbox" value="" disabled/>
+                    <label class="oreo-checkBox-content textOverflow">复选框</label>
+                </div>
+                <div class="oreo-select-list disabled-select">
+                    <input class="oreo-checkBox-frame" type="checkbox" value="" disabled checked/>
+                    <label class="oreo-checkBox-content textOverflow">复选框</label>
+                </div>
+            </div>
+        </div>
+        <!-- left checkBlock -->
+        <div class="oreo-select">
+            <div class="oreo-select-header">Block space-between</div>
+            <div class="oreo-select-item block-checkBox">
+                <div class="oreo-select-list checkBox-left oreo-select-bottomLine">
+                    <input class="oreo-checkBox-frame" type="checkbox" value="" />
+                    <label class="oreo-checkBox-content textOverflow">超长文本选项超长文本选项超长文本选项超长文本选项</label>
+                </div>
+                <div class="oreo-select-list checkBox-left oreo-select-bottomLine">
+                    <input class="oreo-checkBox-frame" type="checkbox" value="" />
+                    <label class="oreo-checkBox-content textOverflow">复选框 居左</label>
+                </div>
+                <div class="oreo-select-list oreo-select-bottomLine checkBox-left disabled-select">
+                    <input class="oreo-checkBox-frame" type="checkbox" value="" disabled/>
+                    <label class="oreo-checkBox-content textOverflow">复选框 居左</label>
+                </div>
+                <div class="oreo-select-list checkBox-right oreo-select-bottomLine">
+                    <input class="oreo-checkBox-frame" type="checkbox" value="" />
+                    <label class="oreo-checkBox-content textOverflow">复选框 居右</label>
+                </div>
+                <div class="oreo-select-list checkBox-right disabled-select">
+                    <input class="oreo-checkBox-frame" type="checkbox" value="" disabled/>
+                    <label class="oreo-checkBox-content textOverflow">复选框 居右</label>
+                </div>
+            </div>
+        </div>
+        <!-- inline-block -->
+        <div class="oreo-select">
+            <div class="oreo-select-header">inline-block</div>
+            <div class="oreo-select-item inlineBlock-checkBox">
+                <div class="oreo-select-list checkBox-left">
+                    <input class="oreo-checkBox-frame" type="checkbox" value="" />
+                    <label class="oreo-checkBox-content textOverflow">复选框</label>
+                </div>
+                <div class="oreo-select-list checkBox-left">
+                    <input class="oreo-checkBox-frame" type="checkbox" value="" />
+                    <label class="oreo-checkBox-content textOverflow">复选框</label>
+                </div>
+                <div class="oreo-select-list checkBox-left">
+                    <input class="oreo-checkBox-frame" type="checkbox" value="" />
+                    <label class="oreo-checkBox-content textOverflow">复选框</label>
+                </div>
+                <div class="oreo-select-list checkBox-left">
+                    <input class="oreo-checkBox-frame" type="checkbox" value="" />
+                    <label class="oreo-checkBox-content textOverflow">复选框</label>
+                </div>
+            </div>
+        </div>
+        <h2>radio</h2>
+        <!-- block radio -->
+        <div class="oreo-select">
+            <div class="oreo-select-header">Block</div>
+            <div class="oreo-select-item block-radio">
+                <div class="oreo-select-list oreo-select-bottomLine">
+                    <input class="oreo-radio-frame" name="radio" type="radio" />
+                    <label class="oreo-radio-content textOverflow">超长文本选项超长文本选项超长文本选项超长文本选项</label>
+                </div>
+                <div class="oreo-select-list oreo-select-bottomLine">
+                    <input class="oreo-radio-frame" name="radio" type="radio" />
+                    <label class="oreo-radio-content textOverflow">单选框</label>
+                </div>
+                <div class="oreo-select-list oreo-select-bottomLine disabled-select">
+                    <input class="oreo-radio-frame" type="radio" disabled checked/>
+                    <label class="oreo-radio-content textOverflow">复选框</label>
+                </div>
+                <div class="oreo-select-list oreo-select-bottomLine radio-right">
+                    <input class="oreo-radio-frame" name="radio" type="radio" />
+                    <label class="oreo-radio-content textOverflow">单选框</label>
+                </div>
+                <div class="oreo-select-list radio-right">
+                    <input class="oreo-radio-frame" name="radio" type="radio" />
+                    <label class="oreo-radio-content textOverflow">单选框</label>
+                </div>
+            </div>
+        </div>
+        <!-- inline-block radio -->
+        <div class="oreo-select">
+            <div class="oreo-select-header">Block</div>
+            <div class="oreo-select-item inlineBlock-radio">
+                <div class="oreo-select-list">
+                    <input class="oreo-radio-frame" name="radio" type="radio" value="" />
+                    <label class="oreo-radio-content textOverflow">单选框</label>
+                </div>
+                <div class="oreo-select-list">
+                    <input class="oreo-radio-frame" name="radio" type="radio" value="" />
+                    <label class="oreo-radio-content textOverflow">单选框</label>
+                </div>
+                <div class="oreo-select-list">
+                    <input class="oreo-radio-frame" name="radio" type="radio" value="" />
+                    <label class="oreo-radio-content textOverflow">单选框</label>
+                </div>
+            </div>
+        </div>
+        <!-- 全选  全不选 -->
+        <h2>全选 全不选</h2>
+        <div class="oreo-select">
+            <div class="oreo-select-header">selectAll unselectAll</div>
+            <div class="oreo-select-item block-checkBox oreo-selectAll">
+                <div class="oreo-select-list oreo-selectAll-hd oreo-select-bottomLine">
+                    <input class="oreo-checkBox-frame" type="checkbox" name="selectAll" />
+                    <label class="oreo-checkBox-content textOverflow">全选/取消全选</label>
+                </div>
+                <div class="oreo-selectAll-bd">
+                    <div class="oreo-select-list">
+                        <input class="oreo-checkBox-frame" type="checkbox" name="selectAll" />
+                        <label class="oreo-checkBox-content textOverflow">超长文本选项超长文本选项超长文本选项超长文本选项</label>
+                    </div>
+                    <div class="oreo-select-list">
+                        <input class="oreo-checkBox-frame" type="checkbox" name="selectAll" />
+                        <label class="oreo-checkBox-content textOverflow">全选全不选</label>
+                    </div>
+                    <div class="oreo-select-list">
+                        <input class="oreo-checkBox-frame" type="checkbox" name="selectAll" />
+                        <label class="oreo-checkBox-content textOverflow">复选框</label>
                     </div>
                 </div>
             </div>
-            
         </div>
-
-
-
-        
-
     </div>
 </div>
+<script type="text/javascript">
+    // 全选 全不选
+    $(function() {
+        var oInput = $("input[name='selectAll']");
+        var isCheckAll = function() {
+            for (var i = 1, n = 0; i < oInput.length; i++) {
+                oInput[i].checked && n++
+            }
+            oInput[0].checked = n == oInput.length - 1;
+        };
+        $(oInput[0]).on('click', function() {
+            for (var i = 1; i < oInput.length; i++) {
+                oInput[i].checked = this.checked
+            }
+            isCheckAll()
+        })
+        for (var i = 1; i < oInput.length; i++) {
+            $(oInput[i]).on('click', function() {
+                isCheckAll()
+            })
+        }
+    })
+
+
+    $(function() {
+        $('.oreo-select-list').on('click', function() {
+            var childInput = $(this).children('input');
+            var isChecked = childInput.prop("checked"),
+                isDisabled = childInput.prop("disabled");
+            isChecked = !isChecked;
+            if (!isDisabled) {
+                isChecked ? childInput.attr('checked', isChecked) : childInput.removeAttr('checked')
+            }
+        })
+    })
+</script>
+
 </script>
 <script type="text/html" id="tpl_grid">
 <div class="page">
    <div class="page-hd">
-        <div class="demo-name">Grid 布局</div>
+        <div class="demo-name">
+            <a href="/" class="oreo-icon oreo-icon-home">
+            </a>
+        Grid 布局</div>
         <div class="demo-subtitle">该布局基于flex,支持多列</div>
     </div>
     <div class="page-body" style="padding:0;">
@@ -417,94 +572,82 @@
         
     </div>
     <div class="page-body">
-        <!-- 输入框 -->
-        <div class="o-input-title">文本框</div>
-        <div class="o-input-box">
-            <input class="o-input-default" type="text" placeholder="请输入文本">
+        <!-- 默认输入框 -->
+        <div class="oreo-input-header">default</div>
+        <div class="oreo-input border">
+            <input class="oreo-input-default" type="text" placeholder="请输入文本">
         </div>
         <!-- 不可编辑状态 -->
-        <div class="o-input-title">disabled</div>
-        <div class="o-input-box">
-            <input class="o-input-disable o-input-default" type="text" value="disabled" disabled>
+        <div class="oreo-input-header">disabled</div>
+        <div class="oreo-input">
+            <input class="oreo-input-default oreo-input-disable" type="text" value="disabled" disabled>
         </div>
         <!-- 多列显示 -->
-        <div class="o-input-title">多列输入框</div>
-        <div class="o-input-box o-input-col-box">
-            <input class="o-input-col2" type="text" placeholder="开始">
-            <span class="o-input-line"></span>
-            <input class="o-input-col2" type="text" placeholder="结束">
-        </div>
-        <!-- 常见列表 -->
-        <div class="o-input-title">常见列表</div>
-        <div class="o-input-item">
-            <!-- 输入框在右 -->
-            <div class="o-input-right">
-                <div class="o-input-hd o-input-hd-border"><label class="o-input-label">手机号</label></div>
-                <div class="o-input-bd "><input class="o-input" type="text" placeholder="请输入手机号"></div>
-            </div>
-            <div class="o-input-right">
-                <div class="o-input-hd o-input-hd-border"><label class="o-input-label">QQ号</label></div>
-                <div class="o-input-bd"><input class="o-input" type="text" placeholder="请输入QQ号"></div>
-            </div>
-            <div class="o-input-right">
-                <div class="o-input-hd o-input-hd-border"><label class="o-input-label">手机号</label></div>
-                <div class="o-input-bd"><input class="o-input" type="text" placeholder="请输入手机号"></div>
-                <input class="o-input-vcode" id="btn" value="获取验证码">
-            </div>
+        <div class="oreo-input-header">多列输入框</div>
+        <div class="oreo-input oreo-input-cols">
+            <input class="oreo-input-default cols-frame" type="text" placeholder="1">
+            <span class="cols-line"></span>
+            <input class="oreo-input-default cols-frame" type="text" placeholder="2">
         </div>
         <!-- 密码输入框 -->
-        <div class="o-input-title">密码输入框</div>
-        <div class="o-input-box o-input-iconBox o-input-eventIcon">
-            <div class="o-input"><input class="o-input-default o-input-password" type="password" placeholder="请输入文本" value=""></div>
-            <div class="o-input-password-box">
-                <img class="o-input-iconBtn o-input-password-icon" src="http://cdn-img.easyicon.net/png/11998/1199858.gif">
-            </div>
+        <div class="oreo-input-header">密码输入框</div>
+        <div class="oreo-input oreo-input-iconBox">
+            <input class="oreo-input-default oreo-input-password" type="password" placeholder="请输入文本" value="">
+            <i class="oreo-input-icon oreo-input-password-icon"></i>
         </div>
         <!-- 带取消按钮的输入框 -->
-        <div class="o-input-title">带取消按钮</div>
-        <div class="o-input-box o-input-iconBox o-input-eventIcon">
-            <div class="o-input"><input class="o-input-default o-input-delete" type="text" placeholder="请输入文本" value=""></div>
-            <div class="o-input-delete-box">
-                <img class="o-input-iconBtn o-input-delete-icon" src="http://cdn-img.easyicon.net/png/5053/505338.gif">
-            </div>
+        <div class="oreo-input-header">带取消按钮</div>
+        <div class="oreo-input oreo-input-iconBox border">
+            <input class="oreo-input-default oreo-input-delete" type="text" placeholder="请输入文本" value="">
+            <i class="oreo-input-icon"></i>
         </div>
-        <!-- 带上下选择图标的输入框 -->
-        <div class="o-input-title">带选择按钮</div>
-        <div class="o-input-box o-input-iconBox o-input-selectIcon">
-            <div class="o-input"><input class="o-input-default o-input-select" type="text" placeholder="请输入文本" value=""></div>
-            <div class="o-input-select-box">
-                <img class="o-input-iconBtn o-input-select-icon" src="http://cdn-img.easyicon.net/png/12090/1209003.gif">
-                <img class="o-input-iconBtn o-input-select-icon" src="http://cdn-img.easyicon.net/png/12090/1209032.gif">
+        <div class="oreo-input-header">带选择按钮</div>
+        <div class="oreo-input oreo-input-iconBox border">
+            <input class="oreo-input-default oreo-input-select" type="number" placeholder="请输入文本" value="">
+            <div class="oreo-input-select-box">
+                <i class="oreo-input-select-up"></i>
+                <i class="oreo-input-select-down"></i>
             </div>
         </div>
         <!-- 带图标的输入框 -->
-        <div class="o-input-title">带图标的输入框</div>
-        <!-- 图标在左侧 -->
-        <div class="o-input-box o-input-iconBox">
-            <div class="o-input-icon-box">
-                <img class="o-input-icon" src="http://cdn-img.easyicon.net/png/11821/1182112.gif">
-            </div>
-            <div class="o-input"><input class="o-input-default" type="text" placeholder="请输入用户名"></div>
+        <div class="oreo-input-header">图标在左</div>
+        <div class="oreo-input oreo-input-iconBox border">
+            <i class="oreo-input-icon oreo-input-icon-person"></i>
+            <input class="oreo-input-default" type="text" placeholder="请输入用户名">
         </div>
-        <!-- 图标在右侧 -->
-        <div class="o-input-box o-input-iconBox">
-            <div class="o-input"><input class="o-input-default" type="text" placeholder="请输入用户名"></div>
-            <div class="o-input-icon-box">
-                <img class="o-input-icon" src="http://cdn-img.easyicon.net/png/11821/1182112.gif">
-            </div>
+        <div class="oreo-input-header">图标在右</div>
+        <div class="oreo-input oreo-input-iconBox border">
+            <input class="oreo-input-default" type="text" placeholder="请输入用户名">
+            <i class="oreo-input-icon oreo-input-icon-person"></i>
         </div>
-        <div class="o-input-box o-input-iconBox">
-            <div class="o-input-leftTit">名称</div>
-            <div class="o-input"><input class="o-input-default" type="text" placeholder="请输入用户名"></div>
-            <div class="o-input-icon-box">
-                <img class="o-input-icon" src="http://cdn-img.easyicon.net/png/11821/1182112.gif">
-            </div>
+        <div class="oreo-input-header">图标在右</div>
+        <div class="oreo-input oreo-input-iconBox border">
+            <div class="oreo-icon-title">名称</div>
+            <input class="oreo-input-default" type="text" placeholder="请输入用户名">
+            <i class="oreo-input-icon oreo-input-icon-person"></i>
         </div>
         <!-- 标题过长 -->
-        <div class="o-input-title">标题过长</div>
-        <div class="o-input-box o-input-iconBox">
-            <div class="o-input-leftTit o-input-text-max">标题过长标题过长</div>
-            <div class="o-input"><input class="o-input-default" type="text" placeholder="请输入用户名"></div>
+        <div class="oreo-input-header">标题过长</div>
+        <div class="oreo-input oreo-input-iconBox border">
+            <div class="oreo-icon-title oreo-input-text-max textOverflow">标题过长标题过长</div>
+            <div class="oreo-input-case"><input class="oreo-input-default" type="text" placeholder="请输入用户名"></div>
+        </div>
+        <!-- 常见列表 -->
+        <div class="oreo-input-header">常见列表</div>
+        <div class="oreo-input-item border">
+            <div class="oreo-input-list oreo-input-bottomLine">
+                <label class="input-list-title">手机号</label>
+                <input class="input-list-frame" type="number" placeholder="请输入手机号">
+            </div>
+            <div class="oreo-input-list oreo-input-bottomLine">
+                <label class="input-list-title">QQ号</label>
+                <input class="input-list-frame" type="number" placeholder="请输入QQ号">
+            </div>
+            <div class="oreo-input-list">
+                <label class="input-list-title">验证码</label>
+                <input class="input-list-frame" type="text" placeholder="请输入验证码">
+                <input class="input-list-vcode" id="btn" type="button" value="获取验证码">
+            </div>
         </div>
 
     </div>
@@ -519,32 +662,67 @@
                 val.removeAttribute("disabled");
                 val.value = "获取验证码";
                 wait = 60;
-                $('.o-input-vcode').removeClass('active')
+                $('.oreo-input-vcode').removeClass('active')
             } else {
                 val.setAttribute("disabled", true);
                 val.value = wait + "s";
                 wait--;
                 setTimeout(function() {
-                        time(val)
-                    },
-                    1000)
+                    time(val)
+                }, 1000)
             }
         }
-        $('.o-input-vcode').on('click', function() {
-            $(this).addClass('active')
+        $('.input-list-vcode').on('click', function() {
+            $(this).addClass('active');
             time(this);
         })
     });
 
     // 密码输入框
     $(function() {
-        $(".o-input-password-box").on("touchstart", function() {
-            $('.o-input-password').attr('type', 'text')
+        $(".oreo-input-password-icon").on("touchstart", function() {
+            $('.oreo-input-password').attr('type', 'text');
+            $('.oreo-input-password-icon').addClass('password-visible');
         });
-        $(".o-input-password-box").on("touchend", function() {
-            $('.o-input-password').attr('type', 'password')
+        $(".oreo-input-password-icon").on("touchend", function() {
+            $('.oreo-input-password').attr('type', 'password');
+            $('.oreo-input-password-icon').removeClass('password-visible');
         });
-    })
+    });
+
+    // 带取消按钮
+    $('.oreo-input-delete').bind('input propertychange', function() {
+        var deleteText = $('.oreo-input-delete').val();
+        $('.oreo-input-delete').attr("value", deleteText);
+        if (deleteText != '') {
+            $('.oreo-input-delete').siblings().addClass('oreo-input-delete-icon');
+            $('.oreo-input-delete-icon').on('click', function() {
+                $('.oreo-input-delete').siblings().removeClass('oreo-input-delete-icon');
+                $('.oreo-input-delete').val('');
+            })
+        } else {
+            $('.oreo-input-delete').siblings().removeClass('oreo-input-delete-icon');
+        }
+
+    });
+
+    // 带选择按钮
+    $(function() {
+        $('.oreo-input-select-up').on('click', function() {
+            if ($('.oreo-input-select').val() != '') {
+                var up = $('.oreo-input-select').val();
+                up++;
+                $('.oreo-input-select').val(up)
+            }
+        });
+        $('.oreo-input-select-down').on('click', function() {
+            if ($('.oreo-input-select').val() != '') {
+                var up = $('.oreo-input-select').val();
+                up--;
+                $('.oreo-input-select').val(up)
+            }
+        })
+    });
 </script>
 </script>
 <script type="text/html" id="tpl_list">
