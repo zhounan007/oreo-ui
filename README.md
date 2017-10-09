@@ -71,7 +71,7 @@ $  gulp  // -s 启动服务 -w 实时监听 -p 服务端口,默认8086
 
 ## Change Log
 
-[Change Log](./CHANGELOG.md)
+[Change Log](./docs/CHANGELOG.md)
 
 
 ## Support
