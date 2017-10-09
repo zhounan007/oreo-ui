@@ -7,17 +7,23 @@
 
 [class^="oreo-icon-"],
 [class*=" oreo-icon-"] {
+    position: relative;
     display: inline-block;
     vertical-align: middle;
     font: normal normal normal 14px/1 "oreo-ui";
     font-size: inherit;
     text-rendering: auto;
     -webkit-font-smoothing: antialiased;
+
     &:before {
         // 平滑升级
         display: inline-block;
         margin-left: .2em;
         margin-right: .2em;
+        // position: absolute;
+        // left: 50%;
+        // top: 50%;
+        // transform: translate(-50%,-50%);
     }
 }
 
@@ -25,4 +31,7 @@
 
 .@{iconPrefixCls}-home:before {
     content: "\ee8f";
+}
+.@{iconPrefixCls}-user:before{
+    content:"\ee9d";
 }

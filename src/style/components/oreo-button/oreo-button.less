@@ -1,195 +1,69 @@
-@import "../../base/variable/oreo-button.less";
+@import '../../base/fn.less';
+@buttonPrefixCls: oreo-button;
 
-//变量
-@btnPrefix: o-button;
-.primary{
-    background-color: @btnPrimary;
-    border-color: @btnPrimary;
-    color: @fill-base;
-}
-.warning{
-    background-color: @btnWarning;
-    border-color: @btnWarning;
-    color: @fill-base;
-}
-.success{
-    background-color: @btnSuccess;
-    border-color: @btnSuccess;
-    color: @fill-base;
-}
-.error{
-    background-color: @btnError;
-    border-color: @btnError;
-    color: @fill-base;
-}
-.@{btnPrefix}{
-    text-decoration: none;
+.@{buttonPrefixCls} {
     display: block;
-    border: 1px solid @btnDefaultWidthColor;
+    position: relative;
+
+    outline: 0;
+    padding: 0;
     text-align: center;
-    height: @btnHeight;
-    line-height: @btnHeight;
-    font-size: @btnDefaultFontSize;
-    color: @btnDefaultFontSizeColor;
-    border-radius: @btnBorderRadius;
-    margin-top: @margin;
-    margin-bottom: @margin;
-    background-color: @btnDefaultColor;
-    user-select: none;
-    -webkit-user-select: none;
-    &-default:active{
-        background-color: darken(@btnDefaultColor, 10%);
-        border-color: darken(@btnDefaultColor, 10%);
-    }
-    &-primary{
-        .primary;
-        box-shadow: 10px 10px 10 inset;
-    }
-    &-primary:active{
-        background-color: darken(@btnPrimary, 10%);
-        border-color: darken(@btnPrimary, 10%)
-    }
-    &-primary-disabled{
-        .primary;
-        opacity: .5;
-    }
-    &-primary-shadow{
-        .primary;
-        box-shadow: 0px 5px 5px #b1b1b1;
+    
+    font-size: @font-size-headline;    
+    color: @brand-primary;
+    background: @fill-base;
+    border: @border-width-sm solid @brand-primary;
+    border-radius: @radius-md;
+    .setHeight(@button-height);
+    &:active{
+        background: rgba(0,122,255,.15);
     }
     &-disabled{
-        background-color: @btnDisabled;
-        border-color: @btnDisabled;
-        color: #ccc;
-        cursor: not-allowed;
+        color: @color-text-disabled;
+        background: @fill-disabled;
+        border: 0;
     }
-    &-icon{
-        & img{
-            width: @imgSize;
-            height: @imgSize;
-            vertical-align: middle;
+    &-primary{
+        color: @color-text-base-inverse;
+        background: @brand-primary;
+        border: @border-width-sm solid @brand-primary;
+        &.@{buttonPrefixCls}-disabled{
+           opacity: .7!important;
+        }
+        &:active{
+             background-color: @brand-primary-tap;
         }
     }
-    &-warning{
-        .warning;
-        
-    }
-    &-warning:active{
-        background-color: darken(@btnWarning, 10%);
-        border-color: darken(@btnWarning, 10%)
-    }
-    &-warning-disabled{
-        .warning;
-        opacity: .5
-    }
     &-success{
-        background-color: @btnSuccess;
-        border-color: @btnSuccess;
-        color: @fill-base;
-    }
-    &-success:active{
-        background-color: darken(@btnSuccess, 10%);
-        border-color: darken(@btnSuccess, 10%)
-    }
-    &-success-disabled{
-        background-color: @btnSuccess;
-        border-color: @btnSuccess;
-        color: @fill-base;
-        opacity: .5;
+        color: @color-text-base-inverse;
+        background: @brand-success;
+        border: @border-width-sm solid @brand-success;
+        &.@{buttonPrefixCls}-disabled{
+           opacity: .7!important;
+        }
+        &:active{
+             background-color: @brand-success-tap;
+        }
     }
     &-error{
-        background-color: @btnError;
-        border-color: @btnError;
-        color: @fill-base;
-    }
-    &-error:active{
-        background-color: darken(@btnError, 10%);
-        border-color: darken(@btnError, 10%)
-    }
-    &-error-disabled{
-        background-color: @btnError;
-        border-color: @btnError;
-        color: @fill-base;
-        opacity: .5;
-    }
-    &-capsule{
-        border-radius: 2rem;
-    }
-    &-flat-default{
-        border-color: @btnBlack;
-        color: @btnBlack;
-    }
-    &-flat-primary{
-        border-color: @btnPrimary;
-        color: @btnPrimary;
-    }
-    &-flat-primary:active{
-        transition: all 500ms;
-        .primary;
-    }
-    &-flat-warning{
-        border-color: @btnWarning;
-        color: @btnWarning;
-    }
-    &-flat-warning:active{
-        .warning;
-    }
-    &-flat-success{
-        border-color: @btnSuccess;
-        color: @btnSuccess;
-    }
-    &-flat-success:active{
-        .success;
-    }
-    &-flat-error{
-        border-color: @btnError;
-        color: @btnError;
-    }
-    &-flat-error:active{
-        .error;
+        color: @color-text-base-inverse;
+        background: @brand-error;
+        border: @border-width-sm solid @brand-error;
+        &.@{buttonPrefixCls}-disabled{
+           opacity: .7!important;
+        }
+        &:active{
+             background-color: @brand-error-tap;
+        }
     }
     &-inline{
         display: inline-block;
-        padding: 0 @padding;
+        padding: 0 @h-spacing-lg;
+    }
+    &-round{
+        border-radius: @radius-max;
     }
     &-small{
-        padding: 0 @padding;
-        height: auto;
-        line-height: 2.0;
-        font-size: @font-size-base;
-    }
-}
-.@{btnPrefix}-group{
-    display: flex;
-    justify-content: flex-start;
-    margin-top: @margin;
-    & .@{btnPrefix}{
-        padding: 0 @padding;
-        margin: 0;
-        &:first-child{
-            border-top-right-radius: 0;
-            border-bottom-right-radius: 0;
-        }
-        &:last-child{
-            border-top-left-radius: 0;
-            border-bottom-left-radius: 0;
-            border-left-width: 0;
-        }
-        &:not(:first-child):not(:last-child){
-            border-radius: 0;
-            border-left-width: 0;
-        }
-    }
-}
-.@{btnPrefix}-capsule{
-    .@{btnPrefix}{
-        &:first-child{
-            border-top-left-radius: 2rem;
-            border-bottom-left-radius: 2rem;
-        }
-        &:last-child{
-            border-top-right-radius: 2rem;
-            border-bottom-right-radius:2rem;
-        }
+        .setHeight(@button-height-sm);
     }
 }

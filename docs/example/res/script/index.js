@@ -6,36 +6,36 @@ var pageManager = {
     _config: [],
     _defaultPage: '',
     _pageIndex: '',
-    setDefault: function(page) {
+    setDefault: function (page) {
 
     },
-    bindEvent: function() {
+    bindEvent: function () {
         var that = this;
 
-        window.addEventListener('popstate', function() {
+        window.addEventListener('popstate', function () {
             // that.loadPage(that.hash());
             location.hash.indexOf('#')[1] === 0 ? that.loadPage(that.hash()) : that.loadPage('home');
 
             $('.home').addClass('anima-slide-out');
-            $('.home').on('animationend webkitAnimationEnd', function() {
+            $('.home').on('animationend webkitAnimationEnd', function () {
                 $(this).removeClass('anima-slide-out');
             });
         })
-        $('.container').on('click', 'a', function(e) {
+        $('.container').on('click', '.home .oreo-list-item-link', function (e) {
             var pageName = this.dataset.page;
             that.loadPage(pageName);
         })
     },
-    hash: function() {
+    hash: function () {
         return location.hash.indexOf('#') === 0 ? location.hash.substring(1) : '';
     },
-    go: function() {
+    go: function () {
 
     },
-    back: function() {
+    back: function () {
 
     },
-    _find: function(name) {
+    _find: function (name) {
         var page;
         for (var i in this._pages) {
             if (name == i) {
@@ -45,13 +45,13 @@ var pageManager = {
         }
         return page;
     },
-    loadPage: function(pageName) {
+    loadPage: function (pageName) {
         var page = this._find(pageName || 'home');
         if (!page) return;
         var tpl = $(page.template).html();
 
         $page = $(tpl).addClass('anima-slide-in').addClass(pageName);
-        $page.on('animationend webkitAnimationEnd', function() {
+        $page.on('animationend webkitAnimationEnd', function () {
             $(this).removeClass('anima-slide-in')
         })
         $('.container').html($page);
@@ -62,7 +62,7 @@ var pageManager = {
             _pageIndex: this._pageIndex
         }, pageName, location.href.split("#")[0] + "#" + pageName);
     },
-    initPage: function() {
+    initPage: function () {
         var pages = {},
             tpls = $('script[type="text/html"]');
 
@@ -78,7 +78,7 @@ var pageManager = {
         }
         this._pages = pages;
     },
-    init: function() {
+    init: function () {
         this.bindEvent();
         this.initPage();
 

@@ -4,10 +4,10 @@
 
 > 一款基于移动端的UI库.
 
-- Simple and lightweight (~18kB gzipped)
+<!-- - Simple and lightweight (~18kB gzipped)
 - No statically built html files
-- Multiple themes
+- Multiple themes -->
 
 
-[GitHub](https://github.com/QingWei-Li/docsify/)
+[GitHub](https://github.com/zhounan007/oreo-ui)
 [Get Started](#/)

@@ -1,219 +1,137 @@
-@import "../../base/fn.less";
+@import '../../base/fn.less';
+@listPrefixCls: oreo-list;
 
-//变量
-@listPrefix: o-list;
-//函数
-.flex(@justify, @align, @direction) when(@direction = row){
-    display: flex;
-    justify-content: @justify;
-    align-items: @align;
-    flex-direction: @direction;
-}
-.o-list-none{
-    display: none;
-}
-.o-list-block{
-    display:block;
-}
-.list-hd{
-    padding-left: @padding;
-}
-//向右指向的箭头
-.@{listPrefix}-arrow-right{
-    .setArrow(right, @linkArrowSize, @linkArrowColor, @linkArrowBorder);
-    vertical-align: middle;
-    margin-top: .1rem;
-}
-.@{listPrefix}-arrow-down{
-    transition: all .5s;
-    .setArrow(down, @linkArrowSize, @linkArrowColor, @linkArrowBorder);
-    vertical-align: middle;
-    margin-top: .1rem;
-}
-.@{listPrefix}-arrow-top{
-    transition: all .5s;
-    .setArrow(top, @linkArrowSize, @linkArrowColor, @linkArrowBorder);
-}
-
-.@{listPrefix}-hd{
-    padding-left: @padding;
-    height: @list-min-height;
-    line-height: @list-min-height;
-}
-
-.o-list-extra{
-    font-size: @listSubTitleFontSize;
-    color: @listExtraColor;
-    span{
-        vertical-align: middle;
+.@{listPrefixCls} {
+    position: relative;
+    &.no-header {
+        margin-top: .7rem;
     }
-}
-.@{listPrefix}-subtext{
-    font-size: @listSubTitleFontSize;
-    color: @listSubTitleColor;
-    margin-top: @listSubTitleMarginTop;
-}
-
-.@{listPrefix}-item{
-    background-color: @listBgWhite;
-    padding-left: @padding;
-    
-    .@{listPrefix}-content{
-        min-height: @list-min-height;
-        padding-right: @padding;
+    &.@{listPrefixCls}-line {
+        .@{listPrefixCls}-body {
+            &:before {
+                .setTopLine(@border-color-base);
+                //  .setTopLine(red);
+            }
+            &:after {
+                .setBottomLine(@border-color-base);
+                // .setBottomLine(red);
+            }
+        }
+    }
+    &-header {
+        padding: @list-header-padding;
+        font-size: @font-size-title;
+        color: @color-text-caption;
+        display: inline-block;
+        width: 100%;
+        box-sizing: border-box;
+    }
+    &-footer {
+        padding: @list-footer-padding;
+        font-size: @font-size-base;
+        color: @color-text-caption;
+    }
+    &-body {
+        position: relative;
+        background-color: @fill-base;
+        &>div:not(:last-child) {
+            .@{listPrefixCls}-item-line:after {
+                .setBottomLine(@border-color-base);
+            }
+        }
+    }
+    &-item {
         position: relative;
         display: flex;
+        padding-left: @h-spacing-md;
+        min-height: @list-item-height;
+        background-color: @fill-base;
+        overflow: hidden;
+        transition: background-color .2s;
         align-items: center;
-        &::after{
-            .setBottomLine(@c: @onepxColor);
+        justify-content: center;
+        img,i{
+            width: 22px;
+            vertical-align: middle;
         }
-        &:last-child::after{
-            .setBottomLine(@c: transparent);
-        }
-        .@{listPrefix}-text{
-            flex: 1;
-            font-size: @listTitleFontSize;
-            color: @listTitleColor;
-        }
-        .@{listPrefix}-extra,.@{listPrefix}-subtext{
-            font-size: @listSubTitleFontSize;
-            color: @listSubTitleColor;
-        }
-    }
-    .@{listPrefix}-inner{
-        padding-right: @padding;
-        padding-top: @padding;
-        padding-bottom: @padding;
-        min-height: @list-min-height;
-        position: relative;
-        flex: 1;
-        &:not(:last-child):after{
-            .setBottomLine(@c: @onepxColor);
-        }
-        & div{
-            display: flex;
-            align-items: center; 
-        }
-        & .@{listPrefix}-text{
-            flex: 1;
-        }
-        
-    }
 
-    .@{listPrefix}-withImg{
-        .flex(flex-start, center, row);
-        position: relative;
-        .img{
-            width:.9rem;
-            height:.9rem;
-            margin-right: @margin;
+        &-thumb {
+            &:first-child {
+                margin-right:@h-spacing-md;
+            }
         }
-        &:not(:last-child):after{
-            .setBottomLine(@c: @onepxColor);
-        }
-    }
-
-    .@{listPrefix}-icon{
-        // min-height: @list-min-height;
-        display: flex;
-        align-items: center;
-        position: relative;
-        .icon{
-            width:.5rem;
-            height:.5rem;
-            margin-right: @margin;
-        }
-        .o-list-line{
+        &-line {
             position: relative;
-            min-height: @list-min-height;
-            padding-right: @padding;
-            flex: 1;
             display: flex;
+            flex: 1;
+            padding-right: @h-spacing-md;
+            overflow: hidden;
             align-items: center;
-            .@{listPrefix}-text{
+            min-height: @list-item-height;
+            .@{listPrefixCls}-item-content {
                 flex: 1;
+                color: @color-text-base;
+                font-size: @font-size-headline;
+                // width: auto;
+                // overflow: hidden;
+                // text-overflow: ellipsis;
+                // white-space: nowrap;
             }
-            
-        }
-        &:not(:last-child) .o-list-line:after{
-            .setBottomLine(@c: @onepxColor);
-        }
-    }
-    
-    
-}
+            .@{listPrefixCls}-item-extra {
+                flex-basis: 36%;
+                color: @color-text-caption;
+                font-size: @fonit-size-caption;
+                text-align: right;
+            }
+            .@{listPrefixCls}-arrow{
+                visibility: hidden;
+                display: block;
+                width: @icon-size-xxs;
+                height: @icon-size-xxs;
+                margin-left: @h-spacing-sm;
+                .svg-background('right');
+                background-size: contain;
+                background-repeat: no-repeat;
+                background-position: 50% 50%;
 
-.@{listPrefix}-hover{
-    background-color: @fill-base;
-    .@{listPrefix}-content{
-        display: flex;
-        align-items: center;
-        padding-right: @padding;
-        min-height: @list-min-height;
-        position: relative;
-        &:active{
-            background-color: @listHoverColor;
-        }
-        &:after{
-            .setBottomLine(@c: @onepxColor);
-        }
-        &:last-child:after{
-            .setBottomLine(@c: transparent);
-        }
-        .o-list-text{
-            flex: 1;
-        }
-    }
-}
-.@{listPrefix}-entire{
-    background-color: @fill-base;
-    .@{listPrefix}-content{
-        min-height: @list-min-height;
-        padding-right: @padding;
-        padding-left: @padding;
-        position: relative;
-        display: flex;
-        align-items: center;
-        &:after{
-            .setBottomLine(@c: @onepxColor);
-        }
-        &:last-child:after{
-            .setBottomLine(@c: transparent);
-        }
-        .@{listPrefix}-text{
-            font-size: @listTitleFontSize;
-            color: @listTitleColor;
-            width: auto;
-            flex: 1;
-        }
-        .@{listPrefix}-extra,.@{listPrefix}-subtext{
-            font-size: @listSubTitleFontSize;
-            color: @listSubTitleColor;
-            span{
-                vertical-align: middle;
+                transition: transform .3s;
+                &-down{
+                    visibility: visible;
+                    transform: rotate(90deg);
+                }
+                &-up{
+                    visibility: visible;
+                    transform: rotate(270deg);
+                }
             }
         }
+        &.@{listPrefixCls}-item-multi {
+            .@{listPrefixCls}-item-line {
+                padding: @list-multi-item-padding;
+            }
+            .@{listPrefixCls}-item-content {
+                .@{listPrefixCls}-item-title {}
+                .@{listPrefixCls}-item-brief {
+                    color: @color-text-caption;
+                    font-size: @font-size-caption-sm;
+                    line-height: @line-height-paragraph;
+                }
+            }
+        }
+        &.@{listPrefixCls}-item-link {
+            cursor: pointer;
+            // .@{listPrefixCls}-item-extra {
+            //     &:after {
+            //         content: '';
+            //         .setArrow(right, 8px, @color-icon-base, 2px);
+            //     }
+            // }
+            .@{listPrefixCls}-arrow{
+                 visibility: visible;
+            }
+            &:active{
+                background: @fill-tap;
+            }
+        }
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-//按钮
-.o-btn{
-    padding: .08rem .16rem;
-    background-color: @fill-base;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    outline: none;
-}
-
-

@@ -50,13 +50,28 @@ $  gulp  // -s 启动服务 -w 实时监听 -p 服务端口,默认8086
 ## To Do List
 
 - [ ] Reset
-- [ ] Base(字体等)
+- [ ] Font(字体等)
 - [ ] Layout(基础布局)
     - [x] Flex
     - [x] Grid
 - [ ] Button(按钮)
-- [ ] Form(Input,Radio,CheckBox,Validate Code)
+- [ ] Form(表单)
+    - [ ] Input
+    - [ ] Radio
+    - [ ] CheckBox
+    - [ ] Textarea
 - [ ] List(列表)
+- [ ] Dialog(对话框)
+- [ ] Modal()
+- [ ] Toast(对话框)
+- [ ] Navbar(导航条)
+- [ ] Tabbar(标签栏)
+- [ ] Tab(标签页)
+
+
+## Change Log
+
+[Change Log](./CHANGELOG.md)
 
 
 ## Support

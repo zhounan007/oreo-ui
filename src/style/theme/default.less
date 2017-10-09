@@ -31,10 +31,12 @@
 // 全局/品牌色
 @brand-primary: #108ee9;
 @brand-primary-tap: #1284d6;
-@brand-success: #6abf47;
+@brand-success: #1AAD19;
+@brand-success-tap:#179B16;
 @brand-warning: #fefcec;
 @brand-warning-tap: #ee9b4b;
-@brand-error: #f4333c;
+@brand-error: #E64340;
+@brand-error-tap: #CE3C39;
 @brand-hot: #f96268;        // 用于推荐/促销/折扣
 @brand-important: #ff5b05;  // 用于小红点
 
@@ -67,8 +69,6 @@
 
 
 @font-size-icontext: 20px;
-@font-size-caption-sm: 24px;
-@font-size-base: 28px;
 @font-size-subhead: 30px;
 @font-size-caption: 32rem;
 @font-size-heading: 34rem;
@@ -85,10 +85,11 @@
 
 // 圆角
 // ---
-@radius-xs: 4px;
-@radius-sm: 6px;
-@radius-md: 10px;
-@radius-lg: 14px;
+@radius-xs: 2px;
+@radius-sm: 3px;
+@radius-md: 5px;
+@radius-lg: 7px;
+@radius-max:200px; // 设置圆角
 @radius-circle: 50%;
 
 // 边框尺寸
@@ -100,9 +101,9 @@
 // 间距
 // ---
 // 水平间距
-@h-spacing-sm: 10px;
-@h-spacing-md: 16px;
-@h-spacing-lg: 30px;
+@h-spacing-sm: 5px;
+@h-spacing-md: 8px;
+@h-spacing-lg: 15px;
 
 // 垂直间距
 @v-spacing-xs: 3px;
@@ -114,12 +115,14 @@
 // 高度
 // ---
 @option-height: 84px;           // action-sheet、popover 等组件的选项高度
+
 @line-height-base: 1;           // 单行行高
+
 @line-height-paragraph: 1.5;    // 多行行高
 
 // 图标尺寸
 // ---
-@icon-size-xxs: 3px;
+@icon-size-xxs:15px;
 @icon-size-xs: 36px;
 @icon-size-sm: 42px;
 @icon-size-md: 44px;       // 导航条上的图标、grid的图标大小
@@ -131,12 +134,20 @@
 
 // 组件变量
 // ---
+// list
+@list-item-height-sm: 35px;
+@list-item-height: 45px;
+
+// input
+@input-label-width: 17px;  
+
+// switch
 
 // button
-@button-height: 84px;
-@button-font-size: 36px;
+@button-height: 42px;
+@button-height-sm: 30px;
 
-@button-height-sm: 60px;
+@button-font-size: 36px;
 @button-font-size-sm: 26px;
 
 @across-button-height: 100px;   // 通栏按钮高度
@@ -154,12 +165,12 @@
 @modal-font-size-heading: 36px;
 
 // list
-@list-title-height: 60px;
-@list-item-height-sm: 70px;
-@list-item-height: 90px;
+// @list-title-height: 60px;
+// @list-item-height-sm: 70px;
+// @list-item-height: 90px;
 
 // input
-@input-label-width: 34px;       // InputItem、TextareaItem 文字长度基础值
+// @input-label-width: 34px;       // InputItem、TextareaItem 文字长度基础值
 @input-font-size: 34px;
 @input-color-icon: #ccc; // input clear icon 的背景色
 @input-color-icon-tap: @brand-primary;

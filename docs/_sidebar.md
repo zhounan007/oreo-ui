@@ -10,4 +10,4 @@
   - [Button](markdown.md)
   - [Modal](language-highlight.md)
 
-- [Changelog](changelog.md)
+- [Changelog](CHANGELOG.md)

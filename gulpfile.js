@@ -170,7 +170,7 @@ gulp.task('build:example', ['build:example:assets', 'build:example:style', 'buil
 gulp.task('release', ['build:style', 'build:example', 'build:docs:style'])
 
 gulp.task('watch', ['release'], function () {
-    gulp.watch('src/style/**/*', ['build:style']);
+    gulp.watch('src/style/**/*', ['build:style','build:docs:style']);
     gulp.watch('src/example/res/css/example.less', ['build:example:style']);
     gulp.watch('src/example/**/*.?(png|jpg|gif|js)', ['build:example:assets']);
     gulp.watch('src/**/*.html', ['build:example:html']);

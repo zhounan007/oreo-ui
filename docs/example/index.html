@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html style="font-size:50px;">
+<html style="font-size:50px;" data-dpr="2">
 
 <head>
     <meta charset="utf-8">
@@ -9,7 +9,6 @@
     <title>Oreo UI Library</title>
     <link rel="stylesheet" href="./oreo_ui.css">
     <link rel="stylesheet" href="./res/css/example.css">
-    <link rel="stylesheet" href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.css">
 </head>
 
 <body>
@@ -26,84 +25,75 @@
     </div>
 </body>
 <script type="text/html" id="tpl_button">
-<div class="page">
-    <div class="page-hd">
-        Button
+<style>
+    .demo-button{
+        margin:0 10px;
+    }
+    .demo-button .oreo-button{
+        margin:1em 0;
+    }
+</style>
+<div class="page ">
+   <div class="page-hd">
+        <div class="demo-name">
+            <a href="./" class="oreo-icon-home demo-home oreo-icon"></a>
+        Button 按钮</div>
+        <div class="demo-subtitle"></div>
     </div>
-    <div class="page-body">
-        
-        <h2>block 类</h2>
-        <a href="javascript:;" class="o-button o-button-default">默认button</a>
-        <a href="javascript:;" class="o-button o-button-primary o-button-primary-shadow">primary</a>
-        <a href="javascript:;" class="o-button o-button-primary-disabled">primary Disabled</a>
-        <a href="javascript:;" class="o-button o-button-disabled">disabled</a>
-        <a href="javascript:;" class="o-button o-button-warning">警告类</a>
-        <a href="javascript:;" class="o-button o-button-warning-disabled">警告disabled类</a>
-        <a href="javascript:;" class="o-button o-button-success">成功类</a>        
-        <a href="javascript:;" class="o-button o-button-success-disabled">成功disabled类</a>        
-        <a href="javascript:;" class="o-button o-button-error">错误类</a>
-        <a href="javascript:;" class="o-button o-button-error-disabled">错误类</a>
-        <a href="javascript:;" class="o-button o-button-default o-button-capsule">胶囊状类</a>
-       
-        <h2>Block , icon 类</h2>
-        <a href="javascript:;" class="o-button o-button-icon">
-            <img src="https://zos.alipayobjects.com/rmsportal/dNuvNrtqUztHCwM.png" alt="">
-            <span>icon button</span>
-        </a>
+    <div class="page-body" style="padding:0;">
 
-        <h2>Block , 无背景类</h2>
-        <a href="javascript:;" class="o-button o-button-flat-default">无背景类</a>
-        <a href="javascript:;" class="o-button o-button-flat-primary">无背景类</a>
+        <h2>Basic</h2>
 
-        <a href="javascript:;" class="o-button o-button-flat-warning">无背景类</a>
+        <div class="demo-button">
+            <a href="javascript:;" class="oreo-button">Baisc Button</a>
 
-        <a href="javascript:;" class="o-button o-button-flat-success">无背景类</a>
+            <a href="javascript:;" class="oreo-button oreo-button-primary">Primary Button</a>
 
-        <a href="javascript:;" class="o-button o-button-flat-error">无背景类</a>
-        
-        <h2>inline-block类</h2>
-        <div class="inline">
-            <a href="javascritp:;" class="o-button o-button-inline">行内类</a>
-            <a href="javascritp:;" class="o-button o-button-inline o-button-primary">行内类</a>
-            
-        </div>  
+            <a href="javascript:;" class="oreo-button oreo-button-disabled">Disabled Baisc Button</a>
 
-        <h2>block , 小尺寸</h2>  
-        <a href="javascritp:;" class="o-button o-button-small">小尺寸</a>
-    
-        <a href="javascript:;" class="o-button o-button-small o-button-primary">小尺寸</a>
-        
-        <h2>block 组</h2>
-        <div class="o-button-group">
-            <a href="javascript:;" class="o-button">按钮</a>
-            <a href="javascript:;" class="o-button">按钮</a>
-            <a href="javascript:;" class="o-button">按钮</a>
-        </div>
-        <div class="o-button-group o-button-capsule">
-            <a href="javascript:;" class="o-button">按钮</a>
-            <a href="javascript:;" class="o-button">按钮</a>
-            <a href="javascript:;" class="o-button">按钮</a>
-        </div>
-        <div class="o-button-group">
-            <a href="javascript:;" class="o-button o-button-primary">按钮</a>
-            <a href="javascript:;" class="o-button o-button-primary">按钮</a>
-            <a href="javascript:;" class="o-button o-button-primary">按钮</a>
+            <a href="javascript:;" class="oreo-button oreo-button-primary oreo-button-disabled">Disabled Primary Button</a>
         </div>
 
-        <h2>带icon button组</h2>
-        <div class="o-button-group o-button-icon">
-            <a href="javascript:;" class="o-button">
-                <img src="https://zos.alipayobjects.com/rmsportal/dNuvNrtqUztHCwM.png" alt="">
-                <span>按钮</span>
-            </a>
-            <a href="javascript:;" class="o-button">
-                <img src="https://zos.alipayobjects.com/rmsportal/dNuvNrtqUztHCwM.png" alt="">
-                <span>按钮</span>
-            </a>
-            <a href="javascript:;" class="o-button">
-                <img src="https://zos.alipayobjects.com/rmsportal/dNuvNrtqUztHCwM.png" alt="">
-                <span>按钮</span>
-            </a>
+
+
+
+        <h2>Small</h2>
+
+        <div class="demo-button">
+            <a href="javascript:;" class="oreo-button oreo-button-small">Small Button</a>
+
+            <a href="javascript:;" class="oreo-button oreo-button-primary oreo-button-small">Small Primary Button</a>
+        </div>
+
+        <h2>Round</h2>
+
+        <div class="demo-button">
+            <a href="javascript:;" class="oreo-button oreo-button-round">Round Button</a>
+
+            <a href="javascript:;" class="oreo-button oreo-button-primary oreo-button-small oreo-button-round">Small Primary Button</a>
+        </div>
+
+
+        <h2>Success,Error</h2>
+
+        <div class="demo-button">
+            <a href="javascript:;" class="oreo-button oreo-button-success">Success Button</a>
+
+            <a href="javascript:;" class="oreo-button oreo-button-error ">Error Button</a>
+        </div>
+
+        <h2>Inline</h2>
+
+        <div class="demo-button">
+            <a href="javascript:;" class="oreo-button oreo-button-inline">Inline Button</a>
+
+            <a href="javascript:;" class="oreo-button oreo-button-primary oreo-button-inline">Inline Primary Button</a>
+
+            <a href="javascript:;" class="oreo-button oreo-button-inline oreo-button-small">Small Button</a>
+
+            <a href="javascript:;" class="oreo-button oreo-button-primary oreo-button-inline oreo-button-small">Inline Small Primary Button</a>
+
+            <a href="javascript:;" class="oreo-button oreo-button-success oreo-button-inline oreo-button-small">Inline Small Success Button</a>
         </div>
     </div>
 </div>
@@ -111,7 +101,9 @@
 <script type="text/html" id="tpl_flex">
 <div class="page">
    <div class="page-hd">
-        <div class="demo-name">Flex 布局</div>
+    <div class="demo-name">
+            <a href="./" class="oreo-icon-home demo-home"></a>
+        Flex 布局</div>
         <div class="demo-subtitle"></div>
     </div>
     <div class="page-body">
@@ -177,201 +169,116 @@
 </script>
 <script type="text/html" id="tpl_form">
 <div class="page">
-   
-    <div class="page-hd">
-         <div class="demo-name">Form 表单</div>
-        <div class="demo-subtitle">包含Input,RadioBox,Switch</div>
+   <div class="page-hd">
+        <div class="demo-name">
+            <a href="./" class="oreo-icon-home demo-home oreo-icon"></a>
+        Form 表格</div>
+        <div class="demo-subtitle">Input,Radio,Checkbox,Switch,Textarea</div>
     </div>
-    <div class="page-body">
-        <h2>checkBox</h2>
-        <!-- block checkBlock -->
-        <div class="oreo-select">
-            <div class="oreo-select-header">Block</div>
-            <div class="oreo-select-item block-checkBox">
-                <div class="oreo-select-list oreo-select-bottomLine">
-                    <input class="oreo-checkBox-frame" type="checkbox" value="" />
-                    <label class="oreo-checkBox-content textOverflow">超长文本选项超长文本选项超长文本选项超长文本选项</label>
-                </div>
-                <div class="oreo-select-list oreo-select-bottomLine">
-                    <input class="oreo-checkBox-frame" type="checkbox" value="" />
-                    <label class="oreo-checkBox-content textOverflow">复选框</label>
-                </div>
-                <div class="oreo-select-list disabled-select oreo-select-bottomLine">
-                    <input class="oreo-checkBox-frame" type="checkbox" value="" disabled/>
-                    <label class="oreo-checkBox-content textOverflow">复选框</label>
-                </div>
-                <div class="oreo-select-list disabled-select">
-                    <input class="oreo-checkBox-frame" type="checkbox" value="" disabled checked/>
-                    <label class="oreo-checkBox-content textOverflow">复选框</label>
-                </div>
-            </div>
-        </div>
-        <!-- left checkBlock -->
-        <div class="oreo-select">
-            <div class="oreo-select-header">Block space-between</div>
-            <div class="oreo-select-item block-checkBox">
-                <div class="oreo-select-list checkBox-left oreo-select-bottomLine">
-                    <input class="oreo-checkBox-frame" type="checkbox" value="" />
-                    <label class="oreo-checkBox-content textOverflow">超长文本选项超长文本选项超长文本选项超长文本选项</label>
-                </div>
-                <div class="oreo-select-list checkBox-left oreo-select-bottomLine">
-                    <input class="oreo-checkBox-frame" type="checkbox" value="" />
-                    <label class="oreo-checkBox-content textOverflow">复选框 居左</label>
-                </div>
-                <div class="oreo-select-list oreo-select-bottomLine checkBox-left disabled-select">
-                    <input class="oreo-checkBox-frame" type="checkbox" value="" disabled/>
-                    <label class="oreo-checkBox-content textOverflow">复选框 居左</label>
-                </div>
-                <div class="oreo-select-list checkBox-right oreo-select-bottomLine">
-                    <input class="oreo-checkBox-frame" type="checkbox" value="" />
-                    <label class="oreo-checkBox-content textOverflow">复选框 居右</label>
-                </div>
-                <div class="oreo-select-list checkBox-right disabled-select">
-                    <input class="oreo-checkBox-frame" type="checkbox" value="" disabled/>
-                    <label class="oreo-checkBox-content textOverflow">复选框 居右</label>
-                </div>
-            </div>
-        </div>
-        <!-- inline-block -->
-        <div class="oreo-select">
-            <div class="oreo-select-header">inline-block</div>
-            <div class="oreo-select-item inlineBlock-checkBox">
-                <div class="oreo-select-list checkBox-left">
-                    <input class="oreo-checkBox-frame" type="checkbox" value="" />
-                    <label class="oreo-checkBox-content textOverflow">复选框</label>
-                </div>
-                <div class="oreo-select-list checkBox-left">
-                    <input class="oreo-checkBox-frame" type="checkbox" value="" />
-                    <label class="oreo-checkBox-content textOverflow">复选框</label>
-                </div>
-                <div class="oreo-select-list checkBox-left">
-                    <input class="oreo-checkBox-frame" type="checkbox" value="" />
-                    <label class="oreo-checkBox-content textOverflow">复选框</label>
-                </div>
-                <div class="oreo-select-list checkBox-left">
-                    <input class="oreo-checkBox-frame" type="checkbox" value="" />
-                    <label class="oreo-checkBox-content textOverflow">复选框</label>
-                </div>
-            </div>
-        </div>
-        <h2>radio</h2>
-        <!-- block radio -->
-        <div class="oreo-select">
-            <div class="oreo-select-header">Block</div>
-            <div class="oreo-select-item block-radio">
-                <div class="oreo-select-list oreo-select-bottomLine">
-                    <input class="oreo-radio-frame" name="radio" type="radio" />
-                    <label class="oreo-radio-content textOverflow">超长文本选项超长文本选项超长文本选项超长文本选项</label>
-                </div>
-                <div class="oreo-select-list oreo-select-bottomLine">
-                    <input class="oreo-radio-frame" name="radio" type="radio" />
-                    <label class="oreo-radio-content textOverflow">单选框</label>
-                </div>
-                <div class="oreo-select-list oreo-select-bottomLine disabled-select">
-                    <input class="oreo-radio-frame" type="radio" disabled checked/>
-                    <label class="oreo-radio-content textOverflow">复选框</label>
-                </div>
-                <div class="oreo-select-list oreo-select-bottomLine radio-right">
-                    <input class="oreo-radio-frame" name="radio" type="radio" />
-                    <label class="oreo-radio-content textOverflow">单选框</label>
-                </div>
-                <div class="oreo-select-list radio-right">
-                    <input class="oreo-radio-frame" name="radio" type="radio" />
-                    <label class="oreo-radio-content textOverflow">单选框</label>
-                </div>
-            </div>
-        </div>
-        <!-- inline-block radio -->
-        <div class="oreo-select">
-            <div class="oreo-select-header">Block</div>
-            <div class="oreo-select-item inlineBlock-radio">
-                <div class="oreo-select-list">
-                    <input class="oreo-radio-frame" name="radio" type="radio" value="" />
-                    <label class="oreo-radio-content textOverflow">单选框</label>
-                </div>
-                <div class="oreo-select-list">
-                    <input class="oreo-radio-frame" name="radio" type="radio" value="" />
-                    <label class="oreo-radio-content textOverflow">单选框</label>
-                </div>
-                <div class="oreo-select-list">
-                    <input class="oreo-radio-frame" name="radio" type="radio" value="" />
-                    <label class="oreo-radio-content textOverflow">单选框</label>
-                </div>
-            </div>
-        </div>
-        <!-- 全选  全不选 -->
-        <h2>全选 全不选</h2>
-        <div class="oreo-select">
-            <div class="oreo-select-header">selectAll unselectAll</div>
-            <div class="oreo-select-item block-checkBox oreo-selectAll">
-                <div class="oreo-select-list oreo-selectAll-hd oreo-select-bottomLine">
-                    <input class="oreo-checkBox-frame" type="checkbox" name="selectAll" />
-                    <label class="oreo-checkBox-content textOverflow">全选/取消全选</label>
-                </div>
-                <div class="oreo-selectAll-bd">
-                    <div class="oreo-select-list">
-                        <input class="oreo-checkBox-frame" type="checkbox" name="selectAll" />
-                        <label class="oreo-checkBox-content textOverflow">超长文本选项超长文本选项超长文本选项超长文本选项</label>
+    <div class="page-body" style="padding:0;">
+
+        <h2>Input</h2>
+
+        <div class="oreo-list oreo-list-line">
+            <div class="oreo-list-header">不同状态的Input</div>
+            <div class="oreo-list-body">
+                <div class="oreo-list-item oreo-input">
+                    <div class="oreo-input-label">姓名</div>
+                    <div class="oreo-input-control">
+                        <input type="text" placeholder="请输入真实姓名">
                     </div>
-                    <div class="oreo-select-list">
-                        <input class="oreo-checkBox-frame" type="checkbox" name="selectAll" />
-                        <label class="oreo-checkBox-content textOverflow">全选全不选</label>
+                </div>
+                <div class="oreo-list-item oreo-input">
+                    <div class="oreo-input-label">姓名</div>
+                    <div class="oreo-input-control">
+                        <input type="text" value="Mr.庄周">
                     </div>
-                    <div class="oreo-select-list">
-                        <input class="oreo-checkBox-frame" type="checkbox" name="selectAll" />
-                        <label class="oreo-checkBox-content textOverflow">复选框</label>
+                </div>
+                <div class="oreo-list-item oreo-input oreo-input-disabled">
+                    <div class="oreo-input-label">姓名</div>
+                    <div class="oreo-input-control">
+                        <input type="text" value="不可编辑" disabled>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="oreo-list oreo-list-line">
+            <div class="oreo-list-header">不带Label标签</div>
+            <div class="oreo-list-body">
+                <div class="oreo-list-item oreo-input">
+                    <div class="oreo-input-control">
+                        <input type="text" placeholder="请输入真实姓名">
+                    </div>
+                </div>
+                <div class="oreo-list-item oreo-input">
+                    <div class="oreo-input-control">
+                        <input type="password" placeholder="请输入密码">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <h2>Switch</h2>
+
+        <div class="oreo-list">
+            <div class="oreo-list-body">
+                <div class="oreo-list-item">
+                    <div class="oreo-list-item-line">
+                        <div class="oreo-list-item-content">关闭状态</div> 
+                        <div class="oreo-list-item-extra">
+                            <label class="oreo-switch">
+                                <input type="checkbox">
+                                <div class="oreo-switch-box"></div>
+                            </label>
+                        </div> 
+                    </div>
+                </div>
+                <div class="oreo-list-item">
+                    <div class="oreo-list-item-line">
+                        <div class="oreo-list-item-content">开启状态</div> 
+                        <div class="oreo-list-item-extra">
+                            <label class="oreo-switch">
+                                <input type="checkbox" checked>
+                                <div class="oreo-switch-box"></div>
+                            </label>
+                        </div> 
+                    </div>
+                </div>
+                <div class="oreo-list-item">
+                    <div class="oreo-list-item-line">
+                        <div class="oreo-list-item-content">不可点击状态</div> 
+                        <div class="oreo-list-item-extra">
+                            <label class="oreo-switch">
+                                <input type="checkbox" disabled>
+                                <div class="oreo-switch-box"></div>
+                            </label>
+                        </div> 
+                    </div>
+                </div>
+                 <div class="oreo-list-item">
+                    <div class="oreo-list-item-line">
+                        <div class="oreo-list-item-content">不可点击开启状态</div> 
+                        <div class="oreo-list-item-extra">
+                            <label class="oreo-switch">
+                                <input type="checkbox" disabled checked>
+                                <div class="oreo-switch-box"></div>
+                            </label>
+                        </div> 
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
-<script type="text/javascript">
-    // 全选 全不选
-    $(function() {
-        var oInput = $("input[name='selectAll']");
-        var isCheckAll = function() {
-            for (var i = 1, n = 0; i < oInput.length; i++) {
-                oInput[i].checked && n++
-            }
-            oInput[0].checked = n == oInput.length - 1;
-        };
-        $(oInput[0]).on('click', function() {
-            for (var i = 1; i < oInput.length; i++) {
-                oInput[i].checked = this.checked
-            }
-            isCheckAll()
-        })
-        for (var i = 1; i < oInput.length; i++) {
-            $(oInput[i]).on('click', function() {
-                isCheckAll()
-            })
-        }
-    })
-
-
-    $(function() {
-        $('.oreo-select-list').on('click', function() {
-            var childInput = $(this).children('input');
-            var isChecked = childInput.prop("checked"),
-                isDisabled = childInput.prop("disabled");
-            isChecked = !isChecked;
-            if (!isDisabled) {
-                isChecked ? childInput.attr('checked', isChecked) : childInput.removeAttr('checked')
-            }
-        })
-    })
-</script>
-
 </script>
 <script type="text/html" id="tpl_grid">
 <div class="page">
    <div class="page-hd">
         <div class="demo-name">
-            <a href="/" class="oreo-icon oreo-icon-home">
-            </a>
+            <a href="./" class="oreo-icon-home demo-home"></a>
         Grid 布局</div>
-        <div class="demo-subtitle">该布局基于flex,支持多列</div>
+        <div class="demo-subtitle">该布局基于flex,支持多列及图文排列</div>
     </div>
     <div class="page-body" style="padding:0;">
         
@@ -416,7 +323,7 @@
         </div>
 
 
-        <h2>Grid-line,Icon</h2>
+        <h2>Basic,Icon,Text</h2>
 
         <div class="oreo-grid oreo-grid-line">
             <div class="oreo-flex">
@@ -473,7 +380,7 @@
             </div>
         </div>
 
-        <h2>Grid-square</h2>
+        <h2>Grid-item,Square</h2>
         <div class="oreo-grid oreo-grid-line oreo-grid-square">
             <div class="oreo-flex">
                 <div class="oreo-flex-item oreo-grid-item">
@@ -519,7 +426,7 @@
 </div>
 </script>
 <script type="text/html" id="tpl_home">
-<div class="page">
+<div class="page home">
     <div class="page-hd">
         <div class="demo-title">OREO UI</div>
         <div class="demo-subtitle">一款基于移动端UI库, 本库仅提供各类常用Css样式, 如需使用功能, 请下载Vue版. Coming soon...</div>
@@ -530,12 +437,34 @@
                 <div class="demo-list-header">
                     表单 Form
                 </div>
+
                 <div class="demo-list-body">
-                    <a href="javascript:;" class="demo-list-item" data-page="button">Button</a>
+                    <div class="oreo-list ">
+                        <div class="oreo-list-body">
+                            <div class="oreo-list-item oreo-list-item-link" data-page="button">
+                                <div class="oreo-list-item-line">
+                                    <div class="oreo-list-item-content">Button</div>
+                                    <div class="oreo-list-arrow"></div>
+                                </div>
+                            </div>
+                            <div class="oreo-list-item oreo-list-item-link" data-page="form">
+                                <div class="oreo-list-item-line">
+                                    <div class="oreo-list-item-content">Form</div>
+                                    <div class="oreo-list-arrow"></div>
+                                </div>
+                            </div>
+                            <div class="oreo-list-item oreo-list-item-link" data-page="list">
+                                <div class="oreo-list-item-line">
+                                    <div class="oreo-list-item-content">List</div>
+                                    <div class="oreo-list-arrow"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- <a href="javascript:;" class="demo-list-item" data-page="button">Button</a>
                     <a href="javascript:;" class="demo-list-item" data-page="input">Input</a>
                     <a href="javascript:;" class="demo-list-item" data-page="form">Form</a>
-                    <a href="javascript:;" class="demo-list-item" data-page="list">list</a>
-
+                    <a href="javascript:;" class="demo-list-item" data-page="list">List</a> -->
                 </div>
             </li>
             <li class="demo-list">
@@ -543,20 +472,39 @@
                     布局 Layout
                 </div>
                 <div class="demo-list-body">
+                    <div class="oreo-list ">
+                        <div class="oreo-list-body">
+                            <div class="oreo-list-item oreo-list-item-link" data-page="flex">
+                                <div class="oreo-list-item-line">
+                                    <div class="oreo-list-item-content">Flex</div>
+                                    <div class="oreo-list-arrow"></div>
+                                </div>
+                            </div>
+                            <div class="oreo-list-item oreo-list-item-link" data-page="grid">
+                                <div class="oreo-list-item-line">
+                                    <div class="oreo-list-item-content">Grid</div>
+                                    <div class="oreo-list-arrow"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- 
+                <div class="demo-list-body">
                     <a href="javascript:;" class="demo-list-item" data-page="flex">Flex</a>
                     <a href="javascript:;" class="demo-list-item" data-page="grid">Grid</a>
-                </div>
+                </div> -->
             </li>
             <li class="demo-list">
                 <div class="demo-list-header">
-                    表单
+                    导航 Navigation
                 </div>
                 <div class="demo-list-body">
                 </div>
             </li>
             <li class="demo-list">
                 <div class="demo-list-header">
-                    表单
+                    操作反馈 Feedback
                 </div>
                 <div class="demo-list-body">
                 </div>
@@ -727,151 +675,115 @@
 </script>
 <script type="text/html" id="tpl_list">
 <div class="page">
-    <div class="container-flue">
-        <div class="list-hd">
-            <h1>list</h1>
-        </div>
-        <div class="o-list">
-            <h2>base list</h2>
-            <ul class="o-list-item">
-                <li class="o-list-content">
-                    <div class="o-list-text">标题文字</div>
-                    <div class="o-list-extra">额外补充</div>
-                </li>
-                <li class="o-list-content">
-                    <div class="o-list-text">标题文字</div>
-                    <div class="o-list-arrow-right"></div>
-                </li>
-                <li class="o-list-content">
-                    <div class="o-list-text">标题文字</div>
-                    <div class="o-list-extra">
-                        <span>额外补充</span>
-                        <span class="o-list-arrow-right"></span>
+   <div class="page-hd">
+        <div class="demo-name">
+            <a href="./" class="oreo-icon-home demo-home oreo-icon"></a>
+        List 列表</div>
+        <div class="demo-subtitle">支持单行,多行,图标模式</div>
+    </div>
+    <div class="page-body" style="padding:0;">
+
+        <h2>Basic</h2>
+
+        <div class="oreo-list oreo-list-line">
+            <div class="oreo-list-header">带说明的列表项</div>
+            <div class="oreo-list-body">
+                <div class="oreo-list-item">
+                    <div class="oreo-list-item-line">
+                        <div class="oreo-list-item-content">标题</div> 
+                        <div class="oreo-list-item-extra">内容</div> 
                     </div>
-                </li>
-            </ul>
+                </div>
+            </div>
         </div>
 
-        <div class="o-list">
-            <h2>double row list</h2>
-            <ul class="o-list-item">
-                <li class="o-list-inner">
-                    <div class="o-list-title">
-                        <div class="o-list-text">标题文字</div>
-                        <div class="o-list-extra">额外补充</div>
+        <div class="oreo-list ">
+            <div class="oreo-list-header">带图标,带链接,不带border</div>
+            <div class="oreo-list-body">
+                <div class="oreo-list-item oreo-list-item-link">
+                    <div class="oreo-list-item-thumb">
+                        <img src="http://owz1rt8et.bkt.clouddn.com/icon/icon.png" alt="">
                     </div>
-                    <div class="o-list-subtext">副级标题</div>
-                    
-                </li>
-                <li class="o-list-withImg">
-                    <img class="img" src="https://zos.alipayobjects.com/rmsportal/dNuvNrtqUztHCwM.png" alt="">
-                    <div class="o-list-inner">
-                        <div>
-                            <div class="o-list-text">标题文字</div>
-                            <div class="o-list-extra">额外补充</div>
-                        </div>
-                        <div class="o-list-subtext">副级标题</div>
+                    <div class="oreo-list-item-line">
+                        <div class="oreo-list-item-content">标题</div> 
+                        <div class="oreo-list-item-extra"></div> 
+                        <div class="oreo-list-arrow"></div> 
                     </div>
-                </li>
-            </ul>
+                </div>
+                <div class="oreo-list-item oreo-list-item-link">
+                    <div class="oreo-list-item-thumb">
+                        <i class="oreo-icon-user"  style="font-size:16px;"></i>
+                    </div>
+                    <div class="oreo-list-item-line">
+                        <div class="oreo-list-item-content">标题</div> 
+                        <div class="oreo-list-item-extra">这是一个链接</div> 
+                        <div class="oreo-list-arrow"></div> 
+                    </div>
+                </div>
+            </div>
         </div>
 
-        <div class="o-list">
-            <h2>button and 多级列表 list</h2>
-            <ul class="o-list-item">
-                <li class="o-list-content">
-                    <div class="o-list-text">标题文字</div>
-                    <div class="o-list-extra">
-                        <button class="o-btn o-btn-primary">确定</button>
+        <div class="oreo-list oreo-list-line">
+            <div class="oreo-list-header">多行,带图标,带链接</div>
+            <div class="oreo-list-body">
+                <div class="oreo-list-item oreo-list-item-link oreo-list-item-multi">
+                    <div class="oreo-list-item-line">
+                        <div class="oreo-list-item-content">
+                            <div class="oreo-list-item-title">标题</div>
+                            <div class="oreo-list-item-brief">描述性文字好长好长好长好长好长好长好长好长好长好长</div>
+                        </div> 
+                        <div class="oreo-list-item-extra">扩展内容</div> 
                     </div>
-                </li>
-                <li class="o-list-content">
-                    <div class="o-list-text">标题文字</div>
-                    <div class="o-list-arrow-down o-list-spread"></div>
-                </li>
-                <ul class="o-list-item none">
-                    <li class="o-list-content">
-                        <div class="o-list-text">标题文字</div>
-                        <div class="o-list-arrow-down spread"></div>
-                    </li>
-                    <li class="o-list-content">
-                        <div class="o-list-text">标题文字</div>
-                        <div class="o-list-arrow-down spread"></div>
-                    </li>
-                    <li class="o-list-content">
-                        <div class="o-list-text">标题文字</div>
-                        <div class="o-list-arrow-down spread"></div>
-                    </li>
-                    <li class="o-list-content">
-                        <div class="o-list-text">标题文字</div>
-                        <div class="o-list-arrow-down spread"></div>
-                    </li>
-                </ul>
-            </ul>
+                </div>
+               <div class="oreo-list-item oreo-list-item-link oreo-list-item-multi">
+                    <div class="oreo-list-item-thumb">
+                        <img src="http://owz1rt8et.bkt.clouddn.com/icon/icon.png" alt="">
+                    </div>
+                    <div class="oreo-list-item-line">
+                        <div class="oreo-list-item-content">
+                            标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题
+                            <div class="oreo-list-item-brief">描述性文字好长好长好长好长好长好长好长好长好长好长</div>
+                        </div> 
+                        <div class="oreo-list-arrow"></div> 
+                    </div>
+                </div>
+            </div>
         </div>
 
-        <div class="o-list">
-            <h2>具有active激活状态的list</h2>
-            <ul class="o-list-item o-list-hover">
-                <li class="o-list-content">
-                    <div class="o-list-text">标题文字</div>
-                    <div class="o-list-extra">额外补充</div>
-                </li>
-                <li class="o-list-content">
-                    <div class="o-list-text">标题文字</div>
-                    <div class="o-list-arrow-down "></div>
-                </li>
-            </ul>
+        <div class="oreo-list oreo-list-line">
+            <div class="oreo-list-header">多行,带图标,带链接</div>
+            <div class="oreo-list-body">
+                <div class="oreo-list-item oreo-list-item-link oreo-list-item-multi">
+                    <div class="oreo-list-item-thumb">
+                        <img src="http://owz1rt8et.bkt.clouddn.com/icon/icon.png" alt="">
+                    </div>
+                    <div class="oreo-list-item-line">
+                        <div class="oreo-list-item-content">
+                            <div class="oreo-list-item-title">标题</div>
+                            <div class="oreo-list-item-brief">描述性文字好长好长好长好长好长好长好长好长好长好长</div>
+                        </div> 
+                        <div class="oreo-list-item-extra">扩展内容</div> 
+                        <div class="oreo-list-arrow"></div> 
+                    </div>
+                </div>
+               <div class="oreo-list-item oreo-list-item-link oreo-list-item-multi">
+                    <div class="oreo-list-item-thumb">
+                        <img src="http://owz1rt8et.bkt.clouddn.com/icon/icon.png" alt="">
+                    </div>
+                    <div class="oreo-list-item-line">
+                        <div class="oreo-list-item-content">
+                            标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题
+                            <div class="oreo-list-item-brief">描述性文字好长好长好长好长好长好长好长好长好长好长</div>
+                        </div> 
+                        <div class="oreo-list-arrow"></div> 
+                    </div>
+                </div>
+            </div>
+            <div class="oreo-list-footer">列表Footer</div>
         </div>
 
-        <div class="o-list">
-            <h2>细线宽度100%的list</h2>
-            <ul class="o-list-entire">
-                <li class="o-list-content">
-                    <div class="o-list-text">标题文字</div>
-                    <div class="o-list-extra">额外补充</div>
-                </li>
-                <li class="o-list-content">
-                    <div class="o-list-text">标题文字</div>
-                    <div class="o-list-arrow-down spread"></div>
-                </li>
-            </ul>
-        </div>
-
-        <div class="o-list">
-            <h2>带icon的list</h2>
-            <ul class="o-list-item">
-                <li class="o-list-icon">
-                    <img class="icon" src="https://zos.alipayobjects.com/rmsportal/dNuvNrtqUztHCwM.png" alt="">
-                    <div class="o-list-line">
-                        <div class="o-list-text">标题文字</div>
-                        <div class="o-list-arrow-right"></div>
-                    </div>
-                </li>
-                <li class="o-list-icon">
-                    <img class="icon" src="https://zos.alipayobjects.com/rmsportal/dNuvNrtqUztHCwM.png" alt="">
-                    <div class="o-list-line">
-                        <div class="o-list-text">标题文字</div>
-                        <div class="o-list-arrow-right"></div>
-                    </div>
-                </li>
-            </ul>
-        </div>
     </div>
 </div>
-<script type="text/javascript">
-    $('.o-list-spread').bind('click',function(e){
-        var $ul =  $(e.target).parent().next();
-        $(e.target).toggleClass('o-list-arrow-top');
-        if($ul.hasClass('o-list-none')){
-            $ul.addClass('o-list-block');
-            $ul.removeClass('o-list-none');
-        }else{
-            $ul.removeClass('o-list-block');
-            $ul.addClass('o-list-none');
-        }
-    })
-</script>
 </script>
 
 <script src="./res/script/zepto.min.js"></script>
