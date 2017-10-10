@@ -1,0 +1,37 @@
+@font-face {
+    font-weight: normal;
+    font-style: normal;
+    font-family: "oreo-ui";
+    src: url('//at.alicdn.com/t/font_430541_e3t9a2c0flp7gb9.ttf') format('truetype');
+}
+
+[class^="oreo-icon-"],
+[class*=" oreo-icon-"] {
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+    font: normal normal normal 14px/1 "oreo-ui";
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+
+    &:before {
+        // 平滑升级
+        display: inline-block;
+        margin-left: .2em;
+        margin-right: .2em;
+        // position: absolute;
+        // left: 50%;
+        // top: 50%;
+        // transform: translate(-50%,-50%);
+    }
+}
+
+@iconPrefixCls: oreo-icon;
+
+.@{iconPrefixCls}-home:before {
+    content: "\ee8f";
+}
+.@{iconPrefixCls}-user:before{
+    content:"\ee9d";
+}

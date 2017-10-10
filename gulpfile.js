@@ -11,6 +11,10 @@ var rename = require('gulp-rename');
 var sourcemaps = require('gulp-sourcemaps');
 var bs = require('browser-sync').create('OREO_UI Server');
 var tap = require("gulp-tap");
+var postcss = require("gulp-postcss");
+var px2rem = require("postcss-px2rem");
+
+
 var option = {
     base: 'src'
 };
@@ -24,7 +28,9 @@ var config = {
         example_components: 'src/example/components'
     },
     dist: __dirname + '/dist',
+    docs: __dirname + '/docs',
     AUTOPREFIXER_BROWSERS: ["Android >= 4", "Explorer >= 10", "iOS >= 7"],
+    remUnit: 50,
     banner: [
         '/*!',
         ' * Oreo UI v<%= pkg.version %> (<%= pkg.homepage %>)',
@@ -48,14 +54,57 @@ function getFolders(dir) {
 
 gulp.task('build:style', function () {
 
-    gulp.src(config.src.main, option)
+    gulp.src(config.src.main, {
+            base: 'src/style'
+        })
         .pipe(sourcemaps.init())
         .pipe(less().on('error', function (e) {
             console.error(e.message);
             this.emit('end')
         }))
-        .pipe(postcss([autoprefixer(config.AUTOPREFIXER_BROWSERS)]))
+        .pipe(postcss(
+            [
+                autoprefixer(config.AUTOPREFIXER_BROWSERS)
+            ]
+        ))
+        .pipe(header(config.banner, {
+            pkg: pkg
+        }))
         .pipe(sourcemaps.write())
+        .pipe(gulp.dest(config.dist))
+        .pipe(bs.reload({
+            stream: true
+        }))
+        .pipe(cleancss())
+        .pipe(rename(function (path) {
+            path.basename += '.min';
+        }))
+        .pipe(gulp.dest(config.dist));
+})
+
+gulp.task('build:rem', function () {
+
+    gulp.src(config.src.main, {
+            base: 'src/style'
+        })
+        .pipe(sourcemaps.init())
+        .pipe(less().on('error', function (e) {
+            console.error(e.message);
+            this.emit('end')
+        }))
+        .pipe(postcss(
+            [
+                autoprefixer(config.AUTOPREFIXER_BROWSERS),
+                px2rem({remUnit: config.remUnit})
+            ]
+        ))
+        .pipe(header(config.banner, {
+            pkg: pkg
+        }))
+        .pipe(sourcemaps.write())
+        .pipe(rename(function (path) {
+            path.basename += '.rem';
+        }))
         .pipe(gulp.dest(config.dist))
         .pipe(bs.reload({
             stream: true
@@ -69,7 +118,7 @@ gulp.task('build:style', function () {
 
 gulp.task('build:example:assets', function () {
     gulp.src(config.src.example_assets, option)
-        .pipe(gulp.dest(config.dist))
+        .pipe(gulp.dest(config.docs))
         .pipe(bs.reload({
             stream: true
         }));
@@ -83,7 +132,7 @@ gulp.task('build:example:style', function () {
         }))
         .pipe(postcss([autoprefixer(config.AUTOPREFIXER_BROWSERS)]))
         .pipe(cleancss())
-        .pipe(gulp.dest(config.dist))
+        .pipe(gulp.dest(config.docs))
         .pipe(bs.reload({
             stream: true
         }));
@@ -134,18 +183,43 @@ gulp.task('build:example:html', function () {
             contents = contents.replace(/<script\s+type="text\/html"\s*><\/script>/gi, tpls.join(''));
             file.contents = new Buffer(contents);
         }))
-        .pipe(gulp.dest(config.dist))
+        .pipe(gulp.dest(config.docs))
         .pipe(bs.reload({
             stream: true
         }));
 })
 
+gulp.task('build:docs:style', function () {
+    gulp.src(config.src.main, {
+            base: 'src/style'
+        })
+        .pipe(sourcemaps.init())
+        .pipe(less().on('error', function (e) {
+            console.error(e.message);
+            this.emit('end')
+        }))
+        .pipe(postcss([autoprefixer(config.AUTOPREFIXER_BROWSERS)]))
+        .pipe(header(config.banner, {
+            pkg: pkg
+        }))
+        .pipe(sourcemaps.write())
+        .pipe(gulp.dest(__dirname + '/docs/example'))
+        .pipe(bs.reload({
+            stream: true
+        }))
+        .pipe(cleancss())
+        .pipe(rename(function (path) {
+            path.basename += '.min';
+        }))
+        .pipe(gulp.dest(__dirname + '/docs/example'));
+})
+
 gulp.task('build:example', ['build:example:assets', 'build:example:style', 'build:example:html'])
 
-gulp.task('release', ['build:style', 'build:example'])
+gulp.task('release', ['build:style','build:rem', 'build:example', 'build:docs:style'])
 
 gulp.task('watch', ['release'], function () {
-    gulp.watch('src/style/**/*', ['build:style']);
+    gulp.watch('src/style/**/*', ['build:style','build:rem', 'build:docs:style']);
     gulp.watch('src/example/res/css/example.less', ['build:example:style']);
     gulp.watch('src/example/**/*.?(png|jpg|gif|js)', ['build:example:assets']);
     gulp.watch('src/**/*.html', ['build:example:html']);
@@ -155,7 +229,7 @@ gulp.task('server', function () {
     yargs.p = yargs.p || 8086;
     bs.init({
         server: {
-            baseDir: './dist'
+            baseDir: './docs'
         },
         ui: {
             port: yargs.p + 1,
@@ -164,7 +238,7 @@ gulp.task('server', function () {
             }
         },
         port: yargs.p,
-        startPath: '/example'
+        startPath: '/'
     })
 })
 

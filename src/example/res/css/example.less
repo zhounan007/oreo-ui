@@ -48,6 +48,9 @@ ul {
             color: #404040;
             text-align: left;
         }
+        .demo-home{
+            padding-right: 10px;
+        }
     }
     .page-body {
         position: relative;
@@ -72,6 +75,7 @@ ul {
                 font-size: .32rem;
             }
             &-body {
+                margin: 0 10px;
                 position: relative;
                 background-color: #fff; // border-top: 1px solid #ddd;
             }
@@ -87,6 +91,9 @@ ul {
         }
     }
     overflow: auto;
+    &::-webkit-scrollbar {
+        display: none;
+    }
 }
 
 .demo-flex {
@@ -119,11 +126,13 @@ ul {
 
 @keyframes slideOut {
     0% {
-        transform: translateZ(0);
-        opacity: 1
+        // transform: translateZ(0);
+        transform: translate3d(-100%,0,0);
+        opacity: 0
     }
     to {
-        transform: translate3d(101%, 0, 0);
-        opacity: 0
+        // transform: translate3d(101%, 0, 0);
+        transform: translateX(0);
+        opacity: 1
     }
 }

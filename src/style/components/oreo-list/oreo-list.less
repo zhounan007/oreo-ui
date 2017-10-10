@@ -1,0 +1,137 @@
+@import '../../base/fn.less';
+@listPrefixCls: oreo-list;
+
+.@{listPrefixCls} {
+    position: relative;
+    &.no-header {
+        margin-top: .7rem;
+    }
+    &.@{listPrefixCls}-line {
+        .@{listPrefixCls}-body {
+            &:before {
+                .setTopLine(@border-color-base);
+                //  .setTopLine(red);
+            }
+            &:after {
+                .setBottomLine(@border-color-base);
+                // .setBottomLine(red);
+            }
+        }
+    }
+    &-header {
+        padding: @list-header-padding;
+        font-size: @font-size-title;
+        color: @color-text-caption;
+        display: inline-block;
+        width: 100%;
+        box-sizing: border-box;
+    }
+    &-footer {
+        padding: @list-footer-padding;
+        font-size: @font-size-base;
+        color: @color-text-caption;
+    }
+    &-body {
+        position: relative;
+        background-color: @fill-base;
+        &>div:not(:last-child) {
+            .@{listPrefixCls}-item-line:after {
+                .setBottomLine(@border-color-base);
+            }
+        }
+    }
+    &-item {
+        position: relative;
+        display: flex;
+        padding-left: @h-spacing-md;
+        min-height: @list-item-height;
+        background-color: @fill-base;
+        overflow: hidden;
+        transition: background-color .2s;
+        align-items: center;
+        justify-content: center;
+        img,i{
+            width: 22px;
+            vertical-align: middle;
+        }
+
+        &-thumb {
+            &:first-child {
+                margin-right:@h-spacing-md;
+            }
+        }
+        &-line {
+            position: relative;
+            display: flex;
+            flex: 1;
+            padding-right: @h-spacing-md;
+            overflow: hidden;
+            align-items: center;
+            min-height: @list-item-height;
+            .@{listPrefixCls}-item-content {
+                flex: 1;
+                color: @color-text-base;
+                font-size: @font-size-headline;
+                // width: auto;
+                // overflow: hidden;
+                // text-overflow: ellipsis;
+                // white-space: nowrap;
+            }
+            .@{listPrefixCls}-item-extra {
+                flex-basis: 36%;
+                color: @color-text-caption;
+                font-size: @fonit-size-caption;
+                text-align: right;
+            }
+            .@{listPrefixCls}-arrow{
+                visibility: hidden;
+                display: block;
+                width: @icon-size-xxs;
+                height: @icon-size-xxs;
+                margin-left: @h-spacing-sm;
+                .svg-background('right');
+                background-size: contain;
+                background-repeat: no-repeat;
+                background-position: 50% 50%;
+
+                transition: transform .3s;
+                &-down{
+                    visibility: visible;
+                    transform: rotate(90deg);
+                }
+                &-up{
+                    visibility: visible;
+                    transform: rotate(270deg);
+                }
+            }
+        }
+        &.@{listPrefixCls}-item-multi {
+            .@{listPrefixCls}-item-line {
+                padding: @list-multi-item-padding;
+            }
+            .@{listPrefixCls}-item-content {
+                .@{listPrefixCls}-item-title {}
+                .@{listPrefixCls}-item-brief {
+                    color: @color-text-caption;
+                    font-size: @font-size-caption-sm;
+                    line-height: @line-height-paragraph;
+                }
+            }
+        }
+        &.@{listPrefixCls}-item-link {
+            cursor: pointer;
+            // .@{listPrefixCls}-item-extra {
+            //     &:after {
+            //         content: '';
+            //         .setArrow(right, 8px, @color-icon-base, 2px);
+            //     }
+            // }
+            .@{listPrefixCls}-arrow{
+                 visibility: visible;
+            }
+            &:active{
+                background: @fill-tap;
+            }
+        }
+    }
+}
