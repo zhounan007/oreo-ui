@@ -23,8 +23,8 @@ OREO_UI/
     │       └── oreo_ui.less  
     │
     ├── src/example/
-    ├── dist/style/
-    └── dist/example/ 
+    ├── dist/
+    └── docs/example/ 
 
 ```
 - `oreo_ui.less` 入口
@@ -32,10 +32,16 @@ OREO_UI/
 - `components` 存放各类组件
 - `default.less` 默认主题
 - `dist`目录为自动生成,不要**修改**
+- `docs` 文档
 
 ## 如何使用
 
-`/dist/style/oreo_ui.css`, `/dist/style/oreo_ui.min.css` 直接引用即可
+> 包含 `px` 和 `rem` 两种类型, `rem` 是基于750设计文档 1rem = 100px;
+
+`/dist/oreo_ui.css`, `/dist/oreo_ui.min.css` 
+
+`/dist/oreo_ui.rem.css`, `/dist/oreo_ui.rem.min.css` 
+
 
 如果想在本地运行,请安装`Node`环境。
 
@@ -76,4 +82,8 @@ $  gulp  // -s 启动服务 -w 实时监听 -p 服务端口,默认8086
 
 ## Support
 
-Design By Mobile Internet Front-end Web Team
+> Oreo UI 参考或使用了以下开源项目代码
+
+- Ant Design
+- Ant Design Mobile
+- WeUI

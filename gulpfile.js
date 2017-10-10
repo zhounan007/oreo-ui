@@ -11,6 +11,10 @@ var rename = require('gulp-rename');
 var sourcemaps = require('gulp-sourcemaps');
 var bs = require('browser-sync').create('OREO_UI Server');
 var tap = require("gulp-tap");
+var postcss = require("gulp-postcss");
+var px2rem = require("postcss-px2rem");
+
+
 var option = {
     base: 'src'
 };
@@ -26,6 +30,7 @@ var config = {
     dist: __dirname + '/dist',
     docs: __dirname + '/docs',
     AUTOPREFIXER_BROWSERS: ["Android >= 4", "Explorer >= 10", "iOS >= 7"],
+    remUnit: 50,
     banner: [
         '/*!',
         ' * Oreo UI v<%= pkg.version %> (<%= pkg.homepage %>)',
@@ -57,8 +62,49 @@ gulp.task('build:style', function () {
             console.error(e.message);
             this.emit('end')
         }))
-        .pipe(postcss([autoprefixer(config.AUTOPREFIXER_BROWSERS)]))
+        .pipe(postcss(
+            [
+                autoprefixer(config.AUTOPREFIXER_BROWSERS)
+            ]
+        ))
+        .pipe(header(config.banner, {
+            pkg: pkg
+        }))
         .pipe(sourcemaps.write())
+        .pipe(gulp.dest(config.dist))
+        .pipe(bs.reload({
+            stream: true
+        }))
+        .pipe(cleancss())
+        .pipe(rename(function (path) {
+            path.basename += '.min';
+        }))
+        .pipe(gulp.dest(config.dist));
+})
+
+gulp.task('build:rem', function () {
+
+    gulp.src(config.src.main, {
+            base: 'src/style'
+        })
+        .pipe(sourcemaps.init())
+        .pipe(less().on('error', function (e) {
+            console.error(e.message);
+            this.emit('end')
+        }))
+        .pipe(postcss(
+            [
+                autoprefixer(config.AUTOPREFIXER_BROWSERS),
+                px2rem({remUnit: config.remUnit})
+            ]
+        ))
+        .pipe(header(config.banner, {
+            pkg: pkg
+        }))
+        .pipe(sourcemaps.write())
+        .pipe(rename(function (path) {
+            path.basename += '.rem';
+        }))
         .pipe(gulp.dest(config.dist))
         .pipe(bs.reload({
             stream: true
@@ -153,6 +199,9 @@ gulp.task('build:docs:style', function () {
             this.emit('end')
         }))
         .pipe(postcss([autoprefixer(config.AUTOPREFIXER_BROWSERS)]))
+        .pipe(header(config.banner, {
+            pkg: pkg
+        }))
         .pipe(sourcemaps.write())
         .pipe(gulp.dest(__dirname + '/docs/example'))
         .pipe(bs.reload({
@@ -167,10 +216,10 @@ gulp.task('build:docs:style', function () {
 
 gulp.task('build:example', ['build:example:assets', 'build:example:style', 'build:example:html'])
 
-gulp.task('release', ['build:style', 'build:example', 'build:docs:style'])
+gulp.task('release', ['build:style','build:rem', 'build:example', 'build:docs:style'])
 
 gulp.task('watch', ['release'], function () {
-    gulp.watch('src/style/**/*', ['build:style','build:docs:style']);
+    gulp.watch('src/style/**/*', ['build:style','build:rem', 'build:docs:style']);
     gulp.watch('src/example/res/css/example.less', ['build:example:style']);
     gulp.watch('src/example/**/*.?(png|jpg|gif|js)', ['build:example:assets']);
     gulp.watch('src/**/*.html', ['build:example:html']);
