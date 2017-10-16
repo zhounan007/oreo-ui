@@ -1,0 +1,65 @@
+@import '../../base/fn.less';
+@navbarPrefixCls: oreo-navbar;
+
+.@{navbarPrefixCls}{
+    position: relative;
+    display: flex;  
+    justify-content: space-between; 
+
+    height: @navbar-height;
+    padding: 0 @h-spacing-sm;
+    background-color: @fill-base;
+    font-size: @font-size-headline;
+    color: @brand-primary;
+    &:after{
+        .setBottomLine(@fill-base);
+    }
+    &.@{navbarPrefixCls}-fixed{
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: @navbar-zindex;
+    }
+    &.@{navbarPrefixCls}-dark{
+        color: @color-text-base-inverse;
+        background-color: @brand-primary;
+        .@{navbarPrefixCls}-center{
+            color: @color-text-base-inverse;
+        }
+
+        &:after{
+            .setBottomLine(@brand-primary);
+        }
+    }
+    &-left,&-right{
+        display: flex;
+
+        flex: 1;
+        flex-shrink: 0;
+        align-items: center;
+        justify-content: flex-start;
+        padding: 0 @h-spacing-md;
+
+        a{
+            display: flex;
+        }
+        i{
+
+        }
+    }
+    &-right{
+        justify-content: flex-end;
+    }
+    &-center{
+        display: flex;
+        flex-shrink: 10;
+        align-items: center;
+
+        width: 50%;
+        font-size:@font-size-display-sm;
+        color: @color-text-base;
+        justify-content: center;
+        .textOverflow();
+    }
+}
