@@ -1,15 +1,13 @@
-# oreo_ui
+# Oreo-UI (奥利奥UI)
 
 前端UI库... 针对移动端涉及到的各类`Css`样式
-
-
 
 
 ## 目录结构
 
 ```
 
-OREO_UI/
+OREO-UI/
     ├── src/style/
     │       ├── base/
     │       │   ├── mixin/
@@ -22,8 +20,10 @@ OREO_UI/
     │       └── oreo_ui.less  
     │
     ├── src/example/
-    ├── dist/
-    └── docs/example/ 
+    ├── docs/example/ 
+    └── libs/
+        ├── rem/
+        └── px/
 
 ```
 - `oreo_ui.less` 入口

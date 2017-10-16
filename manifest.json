@@ -1,0 +1,10 @@
+{
+    "base": "./src/style/base/base.less",
+    "oreo-button": "./src/style/components/oreo-button/oreo-button.less",
+    "oreo-flex": "./src/style/components/oreo-flex/oreo-flex.less",
+    "oreo-input": "./src/style/components/oreo-form/oreo-input.less",
+    "oreo-switch": "./src/style/components/oreo-form/oreo-switch.less",
+    "oreo-textarea": "./src/style/components/oreo-form/oreo-textarea.less",
+    "oreo-grid": "./src/style/components/oreo-grid/oreo-grid.less",
+    "oreo-list": "./src/style/components/oreo-list/oreo-list.less"
+}
