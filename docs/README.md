@@ -1,4 +1,4 @@
-# oreo_ui
+# oreo-ui
 
 前端UI库... 针对移动端涉及到的各类`Css`样式
 
@@ -10,7 +10,7 @@
 
 ```
 
-OREO_UI/
+OREO-UI/
     ├── src/style/
     │       ├── base/
     │       │   ├── mixin/

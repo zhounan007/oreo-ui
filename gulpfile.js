@@ -14,6 +14,8 @@ var tap = require("gulp-tap");
 var postcss = require("gulp-postcss");
 var px2rem = require("postcss-px2rem");
 
+var manifest = require('./manifest.json');
+
 
 var option = {
     base: 'src'
@@ -27,7 +29,7 @@ var config = {
         example_html: 'src/example/index.html',
         example_components: 'src/example/components'
     },
-    dist: __dirname + '/dist',
+    dist: __dirname + '/lib',
     docs: __dirname + '/docs',
     AUTOPREFIXER_BROWSERS: ["Android >= 4", "Explorer >= 10", "iOS >= 7"],
     remUnit: 50,
@@ -95,7 +97,9 @@ gulp.task('build:rem', function () {
         .pipe(postcss(
             [
                 autoprefixer(config.AUTOPREFIXER_BROWSERS),
-                px2rem({remUnit: config.remUnit})
+                px2rem({
+                    remUnit: config.remUnit
+                })
             ]
         ))
         .pipe(header(config.banner, {
@@ -214,12 +218,56 @@ gulp.task('build:docs:style', function () {
         .pipe(gulp.dest(__dirname + '/docs/example'));
 })
 
+
+
+gulp.task('build:components:px', function () {
+    Object.keys(manifest).forEach(function (item) {
+        var base = manifest[item].substring(0, manifest[item].lastIndexOf('/'))
+        gulp.src(manifest[item], {
+                base: base
+            })
+            .pipe(less().on('error', function (e) {
+                console.error(e.message);
+                this.emit('end')
+            }))
+            .pipe(postcss([autoprefixer(config.AUTOPREFIXER_BROWSERS)]))
+            .pipe(bs.reload({
+                stream: true
+            }))
+            .pipe(cleancss())
+            .pipe(gulp.dest(__dirname + '/lib/px/'));
+    })
+})
+gulp.task('build:components:rem', function () {
+    Object.keys(manifest).forEach(function (item) {
+        var base = manifest[item].substring(0, manifest[item].lastIndexOf('/'))
+        gulp.src(manifest[item], {
+                base: base
+            })
+            .pipe(less().on('error', function (e) {
+                console.error(e.message);
+                this.emit('end')
+            }))
+            .pipe(postcss([
+                autoprefixer(config.AUTOPREFIXER_BROWSERS),
+                px2rem({
+                    remUnit: config.remUnit
+                })
+            ]))
+            .pipe(bs.reload({
+                stream: true
+            }))
+            .pipe(cleancss())
+            .pipe(gulp.dest(__dirname + '/lib/rem/'));
+    })
+})
+
 gulp.task('build:example', ['build:example:assets', 'build:example:style', 'build:example:html'])
 
-gulp.task('release', ['build:style','build:rem', 'build:example', 'build:docs:style'])
+gulp.task('release', ['build:style', 'build:rem', 'build:components:px', 'build:components:rem', 'build:example', 'build:docs:style'])
 
 gulp.task('watch', ['release'], function () {
-    gulp.watch('src/style/**/*', ['build:style','build:rem', 'build:docs:style']);
+    gulp.watch('src/style/**/*', ['build:style', 'build:rem', 'build:components:px', 'build:components:rem', 'build:docs:style']);
     gulp.watch('src/example/res/css/example.less', ['build:example:style']);
     gulp.watch('src/example/**/*.?(png|jpg|gif|js)', ['build:example:assets']);
     gulp.watch('src/**/*.html', ['build:example:html']);

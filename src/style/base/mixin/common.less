@@ -26,12 +26,12 @@
 }
 
 @svg-bg-img: '';
-.svg-background-i(@svg){
+.svg-background-i(@svg) {
     @url: `encodeURIComponent(@{svg}) `;
     background-image: url("data:image/svg+xml;charset=utf-8,@{url}");
 }
 
-.svg-background(@svg) when (@svg = 'right') {
-   @svg-bg-img: '<svg width="16" height="26" viewBox="0 0 16 26" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g id="UI-KIT_基础元件" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g id="9.9基础元件" transform="translate(-5809.000000, -8482.000000)" fill="#C7C7CC"><polygon id="Disclosure-Indicator" points="5811 8482 5809 8484 5820.5 8495 5809 8506 5811 8508 5825 8495"></polygon></g></g></svg>';
-  .svg-background-i(@svg-bg-img);
+.svg-background(@svg) when (@svg ='right') {
+    @svg-bg-img: '<svg width="16" height="26" viewBox="0 0 16 26" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g id="UI-KIT_基础元件" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g id="9.9基础元件" transform="translate(-5809.000000, -8482.000000)" fill="#C7C7CC"><polygon id="Disclosure-Indicator" points="5811 8482 5809 8484 5820.5 8495 5809 8506 5811 8508 5825 8495"></polygon></g></g></svg>';
+    .svg-background-i(@svg-bg-img);
 }
