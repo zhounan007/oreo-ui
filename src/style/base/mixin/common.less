@@ -7,19 +7,19 @@
     line-height: @h;
 }
 
-.textOverflow {
+.textOverflow() {
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
 }
 
-.removeLeftOrTopLine {
+.removeLeftOrTopLine() {
     &:before {
         display: none;
     }
 }
 
-.removeRightOrBottomLine {
+.removeRightOrBottomLine() {
     &:after {
         display: none;
     }
