@@ -70,7 +70,7 @@ $  gulp  // -s 启动服务 -w 实时监听 -p 服务端口,默认8086
 - [ ] Dialog(对话框)
 - [ ] Modal()
 - [ ] Toast(对话框)
-- [ ] Navbar(导航条)
+- [x] Navbar(导航条)
 - [ ] Tabbar(标签栏)
 - [ ] Tab(标签页)
 
