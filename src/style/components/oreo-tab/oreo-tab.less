@@ -1,0 +1,51 @@
+@import "../../base/fn.less";
+@tabPrefixCls: oreo-tab;
+
+.@{tabPrefixCls}{
+    // 标签栏
+    .oreo-tabs-tab{
+        width: 100%;
+        .setHeight(@h: @tab-height);
+        display: flex;
+        justify-content: space-around;
+        background: @fill-base;
+        position: relative;
+        &:after{
+            .setBottomLine(@border-color-base)
+        }
+        .@{tabPrefixCls}-item{
+            width: inherit;
+            text-align: center;
+            position: relative;
+            &.line{
+                color: @brand-primary;
+            }
+            &.line::after{
+                .setBottomLine(@brand-primary);
+                height: @tab-item-height;
+            }
+        }
+    }
+    // 内容区域
+    .@{tabPrefixCls}-content{
+        width: 100%;
+        height: @tab-pane-height;
+        margin: 0 auto;
+        position: relative;
+        .@{tabPrefixCls}-tabpane{
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: @tab-pane-zindex;
+            width: inherit;
+            height: inherit;
+            background: @fill-base;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            &.active{
+                z-index: @tab-paneActive-zindex;
+            }
+        }
+    }
+}
