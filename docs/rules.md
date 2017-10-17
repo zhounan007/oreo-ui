@@ -1,7 +1,13 @@
 ## 字体 Font
 
 
+### 字体 Font-family
 
+```css
+
+font-family:-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,"Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei",SimSun, sans-serif;
+
+```
 
 
 ### 大小 Size
@@ -10,9 +16,6 @@
 
 若以 iphone 6为准,字体为2倍字体
 
-<div>
-
-</div>
 
 ```css
 Caption 12px

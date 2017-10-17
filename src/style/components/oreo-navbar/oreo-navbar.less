@@ -27,7 +27,9 @@
         .@{navbarPrefixCls}-center{
             color: @color-text-base-inverse;
         }
-
+        a{
+            color: @color-text-base-inverse;
+        }
         &:after{
             .setBottomLine(@brand-primary);
         }
@@ -43,9 +45,13 @@
 
         a{
             display: flex;
+            align-items: center;
+            justify-content: center;
+            .setHeight(@navbar-height);
         }
-        i{
-
+        i,svg,img{
+            width: @icon-size-md;
+            .setHeight( @icon-size-md);    
         }
     }
     &-right{

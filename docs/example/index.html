@@ -9,6 +9,9 @@
     <title>Oreo UI Library</title>
     <link rel="stylesheet" href="./oreo_ui.css">
     <link rel="stylesheet" href="./res/css/example.css">
+    <script src="./res/script/zepto.min.js"></script>
+    <script src="./res/script/fx_methods.js"></script>
+    
 </head>
 
 <body>
@@ -24,16 +27,70 @@
         </div>
     </div>
 </body>
+<script type="text/html" id="tpl_badge">
+<div class="page">
+   <div class="page-hd">
+        <div class="demo-name">
+            <a href="./" class="oreo-icon-home demo-home oreo-icon"></a>
+        Badge 徽章</div>
+        <div class="demo-subtitle"></div>
+    </div>
+    <div class="page-body" style="padding:0;">
+
+        <h2>Basic</h2>
+
+        <div class="oreo-list">
+            <div class="oreo-list-body">
+                <div class="oreo-list-item oreo-list-item-link">
+                    <div class="oreo-list-item-thumb" style="position:relative;">
+                        <img src="http://owz1rt8et.bkt.clouddn.com/icon/icon.png" alt="">
+                        <sup class="oreo-badge-dot" style="position:absolute;top:0;right:-5px;"></sup>
+                    </div>
+                    <div class="oreo-list-item-line">
+                        <div class="oreo-list-item-content">标题</div> 
+                        <div class="oreo-list-item-extra">
+                            你有新的消息
+                            <span class="oreo-badge-dot"></span>
+                        </div> 
+                        <div class="oreo-list-arrow"></div> 
+                    </div>
+                </div>
+                <div class="oreo-list-item oreo-list-item-link">
+                    <div class="oreo-list-item-line">
+                        <div class="oreo-list-item-content">标题</div> 
+                        <div class="oreo-list-item-extra">
+                            你有新的消息
+                            <span class="oreo-badge-text">New</span>
+                        </div> 
+                        <div class="oreo-list-arrow"></div> 
+                    </div>
+                </div>
+                <div class="oreo-list-item oreo-list-item-link">
+                    <div class="oreo-list-item-line">
+                        <div class="oreo-list-item-content">标题</div> 
+                        <div class="oreo-list-item-extra">
+                            <span class="oreo-badge-text">9</span>
+                        </div> 
+                        <div class="oreo-list-arrow"></div>
+                    </div>
+                </div>
+                <div class="oreo-list-item oreo-list-item-link">
+                    <div class="oreo-list-item-line">
+                        <div class="oreo-list-item-content">
+                            标题
+                            <span class="oreo-badge-text">自动缴费</span>
+                            <span class="oreo-badge-text">方便快捷</span>
+                        </div>  
+                        <div class="oreo-list-arrow"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</script>
 <script type="text/html" id="tpl_button">
-<style>
-    .demo-button{
-        margin:0 10px;
-    }
-    .demo-button .oreo-button{
-        margin:1em 0;
-    }
-</style>
-<div class="page ">
+<div class="page">
    <div class="page-hd">
         <div class="demo-name">
             <a href="./" class="oreo-icon-home demo-home oreo-icon"></a>
@@ -472,6 +529,12 @@
                                     <div class="oreo-list-arrow"></div>
                                 </div>
                             </div>
+                            <div class="oreo-list-item oreo-list-item-link" data-page="badge">
+                                <div class="oreo-list-item-line">
+                                    <div class="oreo-list-item-content">Badge</div>
+                                    <div class="oreo-list-arrow"></div>
+                                </div>
+                            </div>
                             <div class="oreo-list-item oreo-list-item-link" data-page="form">
                                 <div class="oreo-list-item-line">
                                     <div class="oreo-list-item-content">Form</div>
@@ -484,6 +547,7 @@
                                     <div class="oreo-list-arrow"></div>
                                 </div>
                             </div>
+                            
                         </div>
                     </div>
                     <!-- <a href="javascript:;" class="demo-list-item" data-page="button">Button</a>
@@ -533,6 +597,18 @@
                                     <div class="oreo-list-arrow"></div>
                                 </div>
                             </div>
+                            <div class="oreo-list-item oreo-list-item-link" data-page="tabbar">
+                                <div class="oreo-list-item-line">
+                                    <div class="oreo-list-item-content">Tabbar</div>
+                                    <div class="oreo-list-arrow"></div>
+                                </div>
+                            </div>
+                            <div class="oreo-list-item oreo-list-item-link" data-page="tab">
+                                <div class="oreo-list-item-line">
+                                    <div class="oreo-list-item-content">Tab</div>
+                                    <div class="oreo-list-arrow"></div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -542,6 +618,28 @@
                     操作反馈 Feedback
                 </div>
                 <div class="demo-list-body">
+                    <div class="oreo-list ">
+                        <div class="oreo-list-body">
+                            <div class="oreo-list-item oreo-list-item-link" data-page="modal">
+                                <div class="oreo-list-item-line">
+                                    <div class="oreo-list-item-content">Modal</div>
+                                    <div class="oreo-list-arrow"></div>
+                                </div>
+                            </div>
+                            <div class="oreo-list-item oreo-list-item-link" data-page="toast">
+                                <div class="oreo-list-item-line">
+                                    <div class="oreo-list-item-content">Toast</div>
+                                    <div class="oreo-list-arrow"></div>
+                                </div>
+                            </div>
+                            <div class="oreo-list-item oreo-list-item-link" data-page="dialog">
+                                <div class="oreo-list-item-line">
+                                    <div class="oreo-list-item-content">Dialog</div>
+                                    <div class="oreo-list-arrow"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </li>
         </ul>
@@ -820,6 +918,131 @@
     </div>
 </div>
 </script>
+<script type="text/html" id="tpl_modal">
+<div class="page demo-modal">
+    <div class="page-hd">
+        <div class="demo-name">
+            <a href="./" class="oreo-icon-home demo-home oreo-icon"></a> Modal 模态框</div>
+        <div class="demo-subtitle"></div>
+    </div>
+    <div class="page-body" style="padding:0;">
+
+        <h2>Basic</h2>
+
+        <div class="demo-button">
+            <a href="javascript:;" class="oreo-button oreo-button-small oreo-button-primary" data-type="top">Modal Top</a>
+
+            <a href="javascript:;" class="oreo-button oreo-button-small oreo-button-primary" data-type="bottom">Modal bottom</a>
+
+            <a href="javascript:;" class="oreo-button oreo-button-small oreo-button-primary" data-type="left">Modal Top</a>
+
+            <a href="javascript:;" class="oreo-button oreo-button-small oreo-button-primary" data-type="right">Modal Top</a>
+        </div>
+
+        <h2>Max,Min</h2>
+        
+        <div class="demo-button">
+            <a href="javascript:;" class="oreo-button oreo-button-small oreo-button-primary" data-type="max">Modal Max</a>
+
+            <a href="javascript:;" class="oreo-button oreo-button-small oreo-button-primary" data-type="min">Modal Min</a>    
+        </div>
+    </div>
+
+    <div class="oreo-modal oreo-modal-backdrop oreo-modal-top" style="display:none;" id="demo-modal-top">
+        <div class="oreo-modal-content">
+            <p>scroll down to close</p>
+            <p>scroll down to close</p>
+            <p>scroll down to close</p>
+            <p>scroll down to close</p>
+            <p>scroll down to close</p>
+            <p>scroll down to close</p>
+            <p>scroll down to close</p>
+            <p>scroll down to close</p>
+            <p>scroll down to close</p>
+            <p>scroll down to close</p>
+        </div>
+    </div>
+    <div class="oreo-modal oreo-modal-backdrop oreo-modal-bottom" style="display:none;" id="demo-modal-bottom">
+        <div class="oreo-modal-content">
+            <p>scroll down to close</p>
+            <p>scroll down to close</p>
+            <p>scroll down to close</p>
+            <p>scroll down to close</p>
+            <p>scroll down to close</p>
+            <p>scroll down to close</p>
+            <p>scroll down to close</p>
+            <p>scroll down to close</p>
+            <p>scroll down to close</p>
+            <p>scroll down to close</p>
+        </div>
+    </div>
+    <div class="oreo-modal oreo-modal-backdrop oreo-modal-left" style="display:none;" id="demo-modal-left">
+        <div class="oreo-modal-content">
+            <p>scroll down to close</p>
+            <p>scroll down to close</p>
+            <p>scroll down to close</p>
+            <p>scroll down to close</p>
+            <p>scroll down to close</p>
+            <p>scroll down to close</p>
+            <p>scroll down to close</p>
+            <p>scroll down to close</p>
+            <p>scroll down to close</p>
+            <p>scroll down to close</p>
+        </div>
+    </div>
+    <div class="oreo-modal oreo-modal-backdrop oreo-modal-right" style="display:none;" id="demo-modal-right">
+        <div class="oreo-modal-content">
+            <p>scroll down to close</p>
+            <p>scroll down to close</p>
+            <p>scroll down to close</p>
+            <p>scroll down to close</p>
+            <p>scroll down to close</p>
+            <p>scroll down to close</p>
+            <p>scroll down to close</p>
+            <p>scroll down to close</p>
+            <p>scroll down to close</p>
+            <p>scroll down to close</p>
+        </div>
+    </div>
+    <div class="oreo-modal oreo-modal-backdrop oreo-modal-max" style="display:none;" id="demo-modal-max">
+        <div class="oreo-modal-content">
+            <p>scroll down to close</p>
+            <p>scroll down to close</p>
+            <p>scroll down to close</p>
+            <p>scroll down to close</p>
+            <p>scroll down to close</p>
+            <p>scroll down to close</p>
+            <p>scroll down to close</p>
+            <p>scroll down to close</p>
+            <p>scroll down to close</p>
+            <p>scroll down to close</p>
+            <a href="javascript:;" class="oreo-button oreo-button-small oreo-button-primary oreo-button-inline demo-close">Close</a>    
+        </div>
+    </div>
+    <div class="oreo-modal oreo-modal-backdrop oreo-modal-min" style="display:none;" id="demo-modal-min">
+        <div class="oreo-modal-content">
+            <div style="width:260px;">
+                <img src="http://owz1rt8et.bkt.clouddn.com/assets/TB_splash.jpg_.webp" style="width:100%;display:block;">
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('.demo-modal .demo-button .oreo-button').on('click', function () {
+                $('#demo-modal-' + this.dataset.type).fadeIn(200);
+            })
+            $('.demo-modal .oreo-modal-backdrop').on('click', function (event) {
+                if (event.target !== event.currentTarget) return;
+                $(this).fadeOut(200);
+            })
+            $('.demo-modal .demo-close').on('click', function (event) {
+                $('.demo-close').parents('.oreo-modal').fadeOut(200);
+            })
+        })
+    </script>
+</div>
+</script>
 <script type="text/html" id="tpl_navbar">
 <div class="page demo-navbar">
    <div class="page-hd">
@@ -834,7 +1057,10 @@
 
         <div class="oreo-navbar">
             <div class="oreo-navbar-left">
-                <span>Back</span>
+                <a href="javascript:;" >
+                    <i class="oreo-icon-back"></i>
+                    <span>Back</span>
+                </a>
             </div>
             <div class="oreo-navbar-center">Default theme</div>
             <div class="oreo-navbar-right">
@@ -844,11 +1070,15 @@
 
         <div class="oreo-navbar oreo-navbar-dark">
             <div class="oreo-navbar-left">
-                <span>Back</span>
+                <a href="javascript:;" >
+                    <i class="oreo-icon-back"></i>
+                </a>
             </div>
             <div class="oreo-navbar-center">Dark theme</div>
             <div class="oreo-navbar-right">
-                Forward                
+                <a href="javascript:;">
+                    <i class="oreo-icon-ellipsis"></i>
+                </a>                
             </div>
         </div>
 
@@ -858,14 +1088,234 @@
             </div>
             <div class="oreo-navbar-center">Fixed Navbar</div>
             <div class="oreo-navbar-right">
-                Forward                
+                <a href="javascript:;">
+                    <i class="oreo-icon-ellipsis"></i>
+                </a>               
             </div>
         </div>
     </div>
 </div>
 </script>
+<script type="text/html" id="tpl_tab">
+<div class="page">
+    <div class="page-hd">
+        <div class="demo-name">
+            <a href="./" class="oreo-icon-home demo-home oreo-icon"></a>
+            tabbar</div>
+    </div>
+    <div class="page-body" style="padding:0;">
+        <h2>Basic</h2>
+        <div class="oreo-tab">
+            <nav class="oreo-tabs-tab">
+                <div class="oreo-tab-item oreo-tab-item-active">标签一</div>
+                <div class="oreo-tab-item">标签二</div>
+                <div class="oreo-tab-item">标签三</div>
+                <div class="oreo-tab-item">标签四</div>
+                <div class="oreo-tab-item">标签五</div>
+            </nav>
+            <div class="oreo-tab-content">
+                <div class="oreo-tab-panel active">页面一</div>
+                <div class="oreo-tab-panel">页面二</div>
+                <div class="oreo-tab-panel">页面三</div>
+                <div class="oreo-tab-panel">页面四</div>
+                <div class="oreo-tab-panel">页面五</div>
+            </div>
+        </div>
+    </div>
+</div>
 
-<script src="./res/script/zepto.min.js"></script>
+<script type="text/javascript">
+    $(function() {
+        $('.oreo-tabs-tab .oreo-tab-item').on('click', function() {
+            var index = $(this).index();
+            $('.oreo-tab-content .oreo-tab-panel').eq(index).addClass('oreo-tab-panel-active').siblings().removeClass('oreo-tab-panel-active');
+            $(this).addClass('oreo-tab-item-active').siblings().removeClass('oreo-tab-item-active');
+        });
+    });
+</script>
+</script>
+<script type="text/html" id="tpl_tabbar">
+<div class="page">
+    <div class="page-hd">
+        <div class="demo-name">
+            <a href="./" class="oreo-icon-home demo-home oreo-icon"></a>
+            tabbar</div>
+    </div>
+    <div class="page-body" style="padding:0;">
+        <div id="tabbar" class="oreo-control-content oreo-active">
+            <h2 class="title">这第1个子页面</h2>
+            <div class="oreo-list-header">Switch</div>
+            <div class="oreo-list">
+                <div class="oreo-list-body">
+                    <div class="oreo-list-item">
+                        <div class="oreo-list-item-line">
+                            <div class="oreo-list-item-content">关闭状态</div>
+                            <div class="oreo-list-item-extra">
+                                <label class="oreo-switch">
+                                                    <input type="checkbox">
+                                                    <div class="oreo-switch-box"></div>
+                                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="oreo-list-item">
+                        <div class="oreo-list-item-line">
+                            <div class="oreo-list-item-content">开启状态</div>
+                            <div class="oreo-list-item-extra">
+                                <label class="oreo-switch">
+                                                    <input type="checkbox" checked>
+                                                    <div class="oreo-switch-box"></div>
+                                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="tabbar-with-chat" class="oreo-control-content">
+            <h2 class="title">第2个子页面</h2>
+            <div class="oreo-list-header">Grid-item,Square</div>
+            <div class="oreo-grid oreo-grid-line oreo-grid-square">
+                <div class="oreo-flex">
+                    <div class="oreo-flex-item oreo-grid-item">
+                        <div class="oreo-grid-item-content">
+                            <span class="oreo-tabbar-icon oreo-icon-home"></span>
+                            <div class="oreo-grid-item-text">Grid</div>
+                        </div>
+                    </div>
+                    <div class="oreo-flex-item oreo-grid-item">
+                        <div class="oreo-grid-item-content">
+                            <span class="oreo-tabbar-icon oreo-icon-home"></span>
+                            <div class="oreo-grid-item-text">Grid</div>
+                        </div>
+                    </div>
+                    <div class="oreo-flex-item oreo-grid-item">
+                        <div class="oreo-grid-item-content">
+                            <span class="oreo-tabbar-icon oreo-icon-home"></span>
+                            <div class="oreo-grid-item-text">Grid</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="oreo-flex">
+                    <div class="oreo-flex-item oreo-grid-item">
+                        <div class="oreo-grid-item-content">
+                            <span class="oreo-tabbar-icon oreo-icon-home"></span>
+                            <div class="oreo-grid-item-text">Grid</div>
+                        </div>
+                    </div>
+                    <div class="oreo-flex-item oreo-grid-item">
+                        <div class="oreo-grid-item-content">
+                            <span class="oreo-tabbar-icon oreo-icon-home"></span>
+                            <div class="oreo-grid-item-text">Grid</div>
+                        </div>
+                    </div>
+                    <div class="oreo-flex-item oreo-grid-item">
+                        <div class="oreo-grid-item-content">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="tabbar-with-contact" class="oreo-control-content">
+            <h2 class="title">第3个子页面</h2>
+            <div class="oreo-list oreo-list-line">
+                <div class="oreo-list-header">不同状态的Input</div>
+                <div class="oreo-list-body">
+                    <div class="oreo-list-item oreo-input">
+                        <div class="oreo-input-label">姓名</div>
+                        <div class="oreo-input-control">
+                            <input type="text" placeholder="请输入真实姓名">
+                        </div>
+                    </div>
+                    <div class="oreo-list-item oreo-input">
+                        <div class="oreo-input-label">姓名</div>
+                        <div class="oreo-input-control">
+                            <input type="text" value="Mr.庄周">
+                        </div>
+                    </div>
+                    <div class="oreo-list-item oreo-input oreo-input-disabled">
+                        <div class="oreo-input-label">姓名</div>
+                        <div class="oreo-input-control">
+                            <input type="text" value="不可编辑" disabled>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="tabbar-with-map" class="oreo-control-content">
+            <h2 class="title">第4个子页面</h2>
+            <div class="oreo-list ">
+                <div class="oreo-list-header">带图标,带链接,不带border</div>
+                <div class="oreo-list-body">
+                    <div class="oreo-list-item oreo-list-item-link">
+                        <div class="oreo-list-item-thumb">
+                            <span class="oreo-tabbar-icon oreo-icon-home"></span>
+                        </div>
+                        <div class="oreo-list-item-line">
+                            <div class="oreo-list-item-content">标题</div>
+                            <div class="oreo-list-item-extra"></div>
+                            <div class="oreo-list-arrow"></div>
+                        </div>
+                    </div>
+                    <div class="oreo-list-item oreo-list-item-link">
+                        <div class="oreo-list-item-thumb">
+                            <i class="oreo-icon-user" style="font-size:16px;"></i>
+                        </div>
+                        <div class="oreo-list-item-line">
+                            <div class="oreo-list-item-content">标题</div>
+                            <div class="oreo-list-item-extra">这是一个链接</div>
+                            <div class="oreo-list-arrow"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="page-footer">
+        <div class="oreo-tabbar">
+            <div class="oreo-tabbar-item oreo-tabbar-active" href="#tabbar">
+                <span class="oreo-tabbar-icon">
+                    <img src="http://owz1rt8et.bkt.clouddn.com/icon/YDUI-home.svg" alt="">
+                    <sup class="oreo-tabbar-sign oreo-badge">新消息</sup>
+                </span>
+                <span class="oreo-tabbar-label">首页</span>
+            </div>
+            <div class="oreo-tabbar-item" href="#tabbar-with-chat">
+                <span class="oreo-tabbar-icon">
+                    <img src="http://owz1rt8et.bkt.clouddn.com/icon/YDUI-footer.svg" alt="">
+                    <sup class="oreo-tabbar-sign oreo-badge">9</sup>
+                </span>
+                <span class="oreo-tabbar-label">足迹</span>
+            </div>
+            <div class="oreo-tabbar-item" href="#tabbar-with-contact">
+                <span class="oreo-tabbar-icon">
+                    <img src="http://owz1rt8et.bkt.clouddn.com/icon/YDUI-menu.svg" alt="">
+                    <sup class="oreo-tabbar-sign oreo-badge">99+</sup>
+                </span>
+                <span class="oreo-tabbar-label">通讯录</span>
+            </div>
+            <div class="oreo-tabbar-item" href="#tabbar-with-map">
+                <span class="oreo-tabbar-icon">
+                    <img src="http://owz1rt8et.bkt.clouddn.com/icon/YDUI-user.svg" alt="">
+                    <sup class="oreo-tabbar-sign oreo-badge-dot"></sup>
+                </span>
+                <span class="oreo-tabbar-label">个人中心</span>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    $(function() {
+        if ($(".oreo-tabbar-item").hasClass('oreo-tabbar-active')) {
+            $($(".oreo-tabbar-item").attr('href')).show().siblings().hide()
+        }
+        $(".oreo-tabbar-item").on('click', function() {
+            $(this).addClass('oreo-tabbar-active').siblings().removeClass('oreo-tabbar-active');
+            $($(this).attr('href')).show().siblings().hide();
+        })
+    })
+</script>
+</script>
+
 <script src="./res/script/index.js"></script>
-
 </html>
