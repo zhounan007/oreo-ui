@@ -7,5 +7,10 @@
     "oreo-textarea": "./src/style/components/oreo-form/oreo-textarea.less",
     "oreo-grid": "./src/style/components/oreo-grid/oreo-grid.less",
     "oreo-list": "./src/style/components/oreo-list/oreo-list.less",
-    "oreo-navbar": "./src/style/components/oreo-navbar/oreo-navbar.less"
+    "oreo-navbar": "./src/style/components/oreo-navbar/oreo-navbar.less",
+
+    "oreo-badge": "./src/style/components/oreo-badge/oreo-badge.less",
+    "oreo-modal": "./src/style/components/oreo-modal/oreo-modal.less",
+    "oreo-tab": "./src/style/components/oreo-tab/oreo-tab.less",
+    "oreo-tabbar": "./src/style/components/oreo-tabbar/oreo-tabbar.less"
 }

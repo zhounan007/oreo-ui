@@ -9,7 +9,9 @@
     position: fixed;
     text-align: center;
     background: @fill-base;
-    border-top: 1px solid @border-color-base;
+    &:before{
+        .setTopLine(@border-color-base);
+    }
     z-index: @tabbar-zindex;
     .@{tabbarPrefixCls}-item{
         width: inherit;
@@ -22,8 +24,8 @@
             color: @brand-primary;
         }
         .@{tabbarPrefixCls}-icon{
-            width: @tabbar-iconbox;
-            height: @tabbar-iconbox;
+            width: @icon-size-md;
+            height: @icon-size-md;
             margin: 0 auto;
             padding-top: 0;
             padding-bottom: 0;

@@ -1,6 +1,17 @@
 # 更新记录
 
 
+## v0.3.3 (2017-10-17)
+-  **Feature**
+    - 新增 `Tab`,`Tabbar`,`Modal`,`Badge` 样式
+
+-  **Improve**
+    - 优化 `List` 多行icon过小问题
+    - 优化 说明文档
+
+-  **Bug Fix**
+    -  修复已知的部分Bug
+
 
 ## v0.3.2 (2017-10-16)
 -  **Feature**
@@ -16,6 +27,7 @@
 -  **Feature**
     - 新增 `Textarea`样式,包含字数统计
     - 新增 生成`px` 和 `rem` 两种类型
+
 
 -  **Bug Fix**
     - 修复已知的部分Bug

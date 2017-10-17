@@ -27,6 +27,68 @@
         </div>
     </div>
 </body>
+<script type="text/html" id="tpl_badge">
+<div class="page">
+   <div class="page-hd">
+        <div class="demo-name">
+            <a href="./" class="oreo-icon-home demo-home oreo-icon"></a>
+        Badge 徽章</div>
+        <div class="demo-subtitle"></div>
+    </div>
+    <div class="page-body" style="padding:0;">
+
+        <h2>Basic</h2>
+
+        <div class="oreo-list">
+            <div class="oreo-list-body">
+                <div class="oreo-list-item oreo-list-item-link">
+                    <div class="oreo-list-item-thumb" style="position:relative;">
+                        <img src="http://owz1rt8et.bkt.clouddn.com/icon/icon.png" alt="">
+                        <sup class="oreo-badge-dot" style="position:absolute;top:0;right:-5px;"></sup>
+                    </div>
+                    <div class="oreo-list-item-line">
+                        <div class="oreo-list-item-content">标题</div> 
+                        <div class="oreo-list-item-extra">
+                            你有新的消息
+                            <span class="oreo-badge-dot"></span>
+                        </div> 
+                        <div class="oreo-list-arrow"></div> 
+                    </div>
+                </div>
+                <div class="oreo-list-item oreo-list-item-link">
+                    <div class="oreo-list-item-line">
+                        <div class="oreo-list-item-content">标题</div> 
+                        <div class="oreo-list-item-extra">
+                            你有新的消息
+                            <span class="oreo-badge-text">New</span>
+                        </div> 
+                        <div class="oreo-list-arrow"></div> 
+                    </div>
+                </div>
+                <div class="oreo-list-item oreo-list-item-link">
+                    <div class="oreo-list-item-line">
+                        <div class="oreo-list-item-content">标题</div> 
+                        <div class="oreo-list-item-extra">
+                            <span class="oreo-badge-text">9</span>
+                        </div> 
+                        <div class="oreo-list-arrow"></div>
+                    </div>
+                </div>
+                <div class="oreo-list-item oreo-list-item-link">
+                    <div class="oreo-list-item-line">
+                        <div class="oreo-list-item-content">
+                            标题
+                            <span class="oreo-badge-text">自动缴费</span>
+                            <span class="oreo-badge-text">方便快捷</span>
+                        </div>  
+                        <div class="oreo-list-arrow"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</script>
 <script type="text/html" id="tpl_button">
 <div class="page">
    <div class="page-hd">
@@ -467,6 +529,12 @@
                                     <div class="oreo-list-arrow"></div>
                                 </div>
                             </div>
+                            <div class="oreo-list-item oreo-list-item-link" data-page="badge">
+                                <div class="oreo-list-item-line">
+                                    <div class="oreo-list-item-content">Badge</div>
+                                    <div class="oreo-list-arrow"></div>
+                                </div>
+                            </div>
                             <div class="oreo-list-item oreo-list-item-link" data-page="form">
                                 <div class="oreo-list-item-line">
                                     <div class="oreo-list-item-content">Form</div>
@@ -479,18 +547,7 @@
                                     <div class="oreo-list-arrow"></div>
                                 </div>
                             </div>
-                            <div class="oreo-list-item oreo-list-item-link" data-page="tabbar">
-                                <div class="oreo-list-item-line">
-                                    <div class="oreo-list-item-content">Tabbar</div>
-                                    <div class="oreo-list-arrow"></div>
-                                </div>
-                            </div>
-                            <div class="oreo-list-item oreo-list-item-link" data-page="tab">
-                                <div class="oreo-list-item-line">
-                                    <div class="oreo-list-item-content">Tab</div>
-                                    <div class="oreo-list-arrow"></div>
-                                </div>
-                            </div>
+                            
                         </div>
                     </div>
                     <!-- <a href="javascript:;" class="demo-list-item" data-page="button">Button</a>
@@ -537,6 +594,18 @@
                             <div class="oreo-list-item oreo-list-item-link" data-page="navbar">
                                 <div class="oreo-list-item-line">
                                     <div class="oreo-list-item-content">Navbar</div>
+                                    <div class="oreo-list-arrow"></div>
+                                </div>
+                            </div>
+                            <div class="oreo-list-item oreo-list-item-link" data-page="tabbar">
+                                <div class="oreo-list-item-line">
+                                    <div class="oreo-list-item-content">Tabbar</div>
+                                    <div class="oreo-list-arrow"></div>
+                                </div>
+                            </div>
+                            <div class="oreo-list-item oreo-list-item-link" data-page="tab">
+                                <div class="oreo-list-item-line">
+                                    <div class="oreo-list-item-content">Tab</div>
                                     <div class="oreo-list-arrow"></div>
                                 </div>
                             </div>
@@ -1035,21 +1104,21 @@
             tabbar</div>
     </div>
     <div class="page-body" style="padding:0;">
-        <h2>基本用法</h2>
+        <h2>Basic</h2>
         <div class="oreo-tab">
             <nav class="oreo-tabs-tab">
-                <div class="oreo-tab-item line">标签一</div>
+                <div class="oreo-tab-item oreo-tab-item-active">标签一</div>
                 <div class="oreo-tab-item">标签二</div>
                 <div class="oreo-tab-item">标签三</div>
                 <div class="oreo-tab-item">标签四</div>
                 <div class="oreo-tab-item">标签五</div>
             </nav>
             <div class="oreo-tab-content">
-                <div class="oreo-tab-tabpane active">页面一</div>
-                <div class="oreo-tab-tabpane">页面二</div>
-                <div class="oreo-tab-tabpane">页面三</div>
-                <div class="oreo-tab-tabpane">页面四</div>
-                <div class="oreo-tab-tabpane">页面五</div>
+                <div class="oreo-tab-panel active">页面一</div>
+                <div class="oreo-tab-panel">页面二</div>
+                <div class="oreo-tab-panel">页面三</div>
+                <div class="oreo-tab-panel">页面四</div>
+                <div class="oreo-tab-panel">页面五</div>
             </div>
         </div>
     </div>
@@ -1059,8 +1128,8 @@
     $(function() {
         $('.oreo-tabs-tab .oreo-tab-item').on('click', function() {
             var index = $(this).index();
-            $('.oreo-tab-content .oreo-tab-tabpane').eq(index).addClass('active').siblings().removeClass('active');
-            $(this).addClass('line').siblings().removeClass('line');
+            $('.oreo-tab-content .oreo-tab-panel').eq(index).addClass('oreo-tab-panel-active').siblings().removeClass('oreo-tab-panel-active');
+            $(this).addClass('oreo-tab-item-active').siblings().removeClass('oreo-tab-item-active');
         });
     });
 </script>
