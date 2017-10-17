@@ -21,7 +21,7 @@ OREO-UI/
     │
     ├── src/example/
     ├── docs/example/ 
-    └── libs/
+    └── lib/
         ├── rem/
         └── px/
 

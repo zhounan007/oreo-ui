@@ -1,8 +1,11 @@
 # 更新记录
 
+
+
 ## v0.3.2 (2017-10-16)
 -  **Feature**
     - 优化 生成`px` 和 `rem` 和 `component` 类型
+    - 新增 `Navbar` 样式
 
 -  **Bug Fix**
     - 修复已知的部分Bug

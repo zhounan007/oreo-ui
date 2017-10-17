@@ -9,6 +9,9 @@
     <title>Oreo UI Library</title>
     <link rel="stylesheet" href="./oreo_ui.css">
     <link rel="stylesheet" href="./res/css/example.css">
+    <script src="./res/script/zepto.min.js"></script>
+    <script src="./res/script/fx_methods.js"></script>
+    
 </head>
 
 <body>
@@ -25,15 +28,7 @@
     </div>
 </body>
 <script type="text/html" id="tpl_button">
-<style>
-    .demo-button{
-        margin:0 10px;
-    }
-    .demo-button .oreo-button{
-        margin:1em 0;
-    }
-</style>
-<div class="page ">
+<div class="page">
    <div class="page-hd">
         <div class="demo-name">
             <a href="./" class="oreo-icon-home demo-home oreo-icon"></a>
@@ -542,6 +537,28 @@
                     操作反馈 Feedback
                 </div>
                 <div class="demo-list-body">
+                    <div class="oreo-list ">
+                        <div class="oreo-list-body">
+                            <div class="oreo-list-item oreo-list-item-link" data-page="modal">
+                                <div class="oreo-list-item-line">
+                                    <div class="oreo-list-item-content">Modal</div>
+                                    <div class="oreo-list-arrow"></div>
+                                </div>
+                            </div>
+                            <div class="oreo-list-item oreo-list-item-link" data-page="toast">
+                                <div class="oreo-list-item-line">
+                                    <div class="oreo-list-item-content">Toast</div>
+                                    <div class="oreo-list-arrow"></div>
+                                </div>
+                            </div>
+                            <div class="oreo-list-item oreo-list-item-link" data-page="dialog">
+                                <div class="oreo-list-item-line">
+                                    <div class="oreo-list-item-content">Dialog</div>
+                                    <div class="oreo-list-arrow"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </li>
         </ul>
@@ -820,6 +837,131 @@
     </div>
 </div>
 </script>
+<script type="text/html" id="tpl_modal">
+<div class="page demo-modal">
+    <div class="page-hd">
+        <div class="demo-name">
+            <a href="./" class="oreo-icon-home demo-home oreo-icon"></a> Modal 模态框</div>
+        <div class="demo-subtitle"></div>
+    </div>
+    <div class="page-body" style="padding:0;">
+
+        <h2>Basic</h2>
+
+        <div class="demo-button">
+            <a href="javascript:;" class="oreo-button oreo-button-small oreo-button-primary" data-type="top">Modal Top</a>
+
+            <a href="javascript:;" class="oreo-button oreo-button-small oreo-button-primary" data-type="bottom">Modal bottom</a>
+
+            <a href="javascript:;" class="oreo-button oreo-button-small oreo-button-primary" data-type="left">Modal Top</a>
+
+            <a href="javascript:;" class="oreo-button oreo-button-small oreo-button-primary" data-type="right">Modal Top</a>
+        </div>
+
+        <h2>Max,Min</h2>
+        
+        <div class="demo-button">
+            <a href="javascript:;" class="oreo-button oreo-button-small oreo-button-primary" data-type="max">Modal Max</a>
+
+            <a href="javascript:;" class="oreo-button oreo-button-small oreo-button-primary" data-type="min">Modal Min</a>    
+        </div>
+    </div>
+
+    <div class="oreo-modal oreo-modal-backdrop oreo-modal-top" style="display:none;" id="demo-modal-top">
+        <div class="oreo-modal-content">
+            <p>scroll down to close</p>
+            <p>scroll down to close</p>
+            <p>scroll down to close</p>
+            <p>scroll down to close</p>
+            <p>scroll down to close</p>
+            <p>scroll down to close</p>
+            <p>scroll down to close</p>
+            <p>scroll down to close</p>
+            <p>scroll down to close</p>
+            <p>scroll down to close</p>
+        </div>
+    </div>
+    <div class="oreo-modal oreo-modal-backdrop oreo-modal-bottom" style="display:none;" id="demo-modal-bottom">
+        <div class="oreo-modal-content">
+            <p>scroll down to close</p>
+            <p>scroll down to close</p>
+            <p>scroll down to close</p>
+            <p>scroll down to close</p>
+            <p>scroll down to close</p>
+            <p>scroll down to close</p>
+            <p>scroll down to close</p>
+            <p>scroll down to close</p>
+            <p>scroll down to close</p>
+            <p>scroll down to close</p>
+        </div>
+    </div>
+    <div class="oreo-modal oreo-modal-backdrop oreo-modal-left" style="display:none;" id="demo-modal-left">
+        <div class="oreo-modal-content">
+            <p>scroll down to close</p>
+            <p>scroll down to close</p>
+            <p>scroll down to close</p>
+            <p>scroll down to close</p>
+            <p>scroll down to close</p>
+            <p>scroll down to close</p>
+            <p>scroll down to close</p>
+            <p>scroll down to close</p>
+            <p>scroll down to close</p>
+            <p>scroll down to close</p>
+        </div>
+    </div>
+    <div class="oreo-modal oreo-modal-backdrop oreo-modal-right" style="display:none;" id="demo-modal-right">
+        <div class="oreo-modal-content">
+            <p>scroll down to close</p>
+            <p>scroll down to close</p>
+            <p>scroll down to close</p>
+            <p>scroll down to close</p>
+            <p>scroll down to close</p>
+            <p>scroll down to close</p>
+            <p>scroll down to close</p>
+            <p>scroll down to close</p>
+            <p>scroll down to close</p>
+            <p>scroll down to close</p>
+        </div>
+    </div>
+    <div class="oreo-modal oreo-modal-backdrop oreo-modal-max" style="display:none;" id="demo-modal-max">
+        <div class="oreo-modal-content">
+            <p>scroll down to close</p>
+            <p>scroll down to close</p>
+            <p>scroll down to close</p>
+            <p>scroll down to close</p>
+            <p>scroll down to close</p>
+            <p>scroll down to close</p>
+            <p>scroll down to close</p>
+            <p>scroll down to close</p>
+            <p>scroll down to close</p>
+            <p>scroll down to close</p>
+            <a href="javascript:;" class="oreo-button oreo-button-small oreo-button-primary oreo-button-inline demo-close">Close</a>    
+        </div>
+    </div>
+    <div class="oreo-modal oreo-modal-backdrop oreo-modal-min" style="display:none;" id="demo-modal-min">
+        <div class="oreo-modal-content">
+            <div style="width:260px;">
+                <img src="http://owz1rt8et.bkt.clouddn.com/assets/TB_splash.jpg_.webp" style="width:100%;display:block;">
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('.demo-modal .demo-button .oreo-button').on('click', function () {
+                $('#demo-modal-' + this.dataset.type).fadeIn(200);
+            })
+            $('.demo-modal .oreo-modal-backdrop').on('click', function (event) {
+                if (event.target !== event.currentTarget) return;
+                $(this).fadeOut(200);
+            })
+            $('.demo-modal .demo-close').on('click', function (event) {
+                $('.demo-close').parents('.oreo-modal').fadeOut(200);
+            })
+        })
+    </script>
+</div>
+</script>
 <script type="text/html" id="tpl_navbar">
 <div class="page demo-navbar">
    <div class="page-hd">
@@ -834,7 +976,10 @@
 
         <div class="oreo-navbar">
             <div class="oreo-navbar-left">
-                <span>Back</span>
+                <a href="javascript:;" >
+                    <i class="oreo-icon-back"></i>
+                    <span>Back</span>
+                </a>
             </div>
             <div class="oreo-navbar-center">Default theme</div>
             <div class="oreo-navbar-right">
@@ -844,11 +989,15 @@
 
         <div class="oreo-navbar oreo-navbar-dark">
             <div class="oreo-navbar-left">
-                <span>Back</span>
+                <a href="javascript:;" >
+                    <i class="oreo-icon-back"></i>
+                </a>
             </div>
             <div class="oreo-navbar-center">Dark theme</div>
             <div class="oreo-navbar-right">
-                Forward                
+                <a href="javascript:;">
+                    <i class="oreo-icon-ellipsis"></i>
+                </a>                
             </div>
         </div>
 
@@ -858,14 +1007,14 @@
             </div>
             <div class="oreo-navbar-center">Fixed Navbar</div>
             <div class="oreo-navbar-right">
-                Forward                
+                <a href="javascript:;">
+                    <i class="oreo-icon-ellipsis"></i>
+                </a>               
             </div>
         </div>
     </div>
 </div>
 </script>
 
-<script src="./res/script/zepto.min.js"></script>
 <script src="./res/script/index.js"></script>
-
 </html>

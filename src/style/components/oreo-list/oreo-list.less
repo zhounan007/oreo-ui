@@ -50,12 +50,13 @@
         transition: background-color .2s;
         align-items: center;
         justify-content: center;
-        img,i{
-            width: 22px;
-            vertical-align: middle;
-        }
-
+        
         &-thumb {
+
+            img,i{
+                width: @icon-size-md;
+                vertical-align: middle;
+            }
             &:first-child {
                 margin-right:@h-spacing-md;
             }
@@ -106,6 +107,13 @@
             }
         }
         &.@{listPrefixCls}-item-multi {
+
+            .@{listPrefixCls}-item-thumb{
+                img,i{
+                    width: @icon-size-lg;
+                    vertical-align: middle;
+                }
+            }
             .@{listPrefixCls}-item-line {
                 padding: @list-multi-item-padding;
             }
