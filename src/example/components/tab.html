@@ -1,0 +1,36 @@
+<div class="page">
+    <div class="page-hd">
+        <div class="demo-name">
+            <a href="./" class="oreo-icon-home demo-home oreo-icon"></a>
+            tabbar</div>
+    </div>
+    <div class="page-body" style="padding:0;">
+        <h2>基本用法</h2>
+        <div class="oreo-tab">
+            <nav class="oreo-tabs-tab">
+                <div class="oreo-tab-item line">标签一</div>
+                <div class="oreo-tab-item">标签二</div>
+                <div class="oreo-tab-item">标签三</div>
+                <div class="oreo-tab-item">标签四</div>
+                <div class="oreo-tab-item">标签五</div>
+            </nav>
+            <div class="oreo-tab-content">
+                <div class="oreo-tab-tabpane active">页面一</div>
+                <div class="oreo-tab-tabpane">页面二</div>
+                <div class="oreo-tab-tabpane">页面三</div>
+                <div class="oreo-tab-tabpane">页面四</div>
+                <div class="oreo-tab-tabpane">页面五</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+    $(function() {
+        $('.oreo-tabs-tab .oreo-tab-item').on('click', function() {
+            var index = $(this).index();
+            $('.oreo-tab-content .oreo-tab-tabpane').eq(index).addClass('active').siblings().removeClass('active');
+            $(this).addClass('line').siblings().removeClass('line');
+        });
+    });
+</script>
