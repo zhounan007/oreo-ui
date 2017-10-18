@@ -59,20 +59,29 @@ $  gulp  // -s 启动服务 -w 实时监听 -p 服务端口,默认8086
 - [x] Layout(基础布局)
     - [x] Flex
     - [x] Grid
-- [x] Button(按钮)
-- [ ] Form(表单)
-    - [x] Input
-    - [ ] Radio
-    - [ ] CheckBox
-    - [x] Textarea
-    - [x] Switch
+- [ ] Form
+    - [x] Button(按钮)
+    - [x] Badge(徽章)
+    - [x] Input(输入框)
+    - [ ] Radio(单选)
+    - [ ] CheckBox(多选)
+    - [x] Textarea(文本)
+    - [x] Switch(开关)
 - [x] List(列表)
-- [ ] Dialog(对话框)
-- [ ] Modal()
-- [ ] Toast(对话框)
-- [x] Navbar(导航条)
-- [ ] Tabbar(标签栏)
-- [ ] Tab(标签页)
+- [x] Feedback
+    - [x] Modal
+    - [ ] Dialog(对话框)    
+    - [x] Toast
+    - [x] Loading
+- [x] Navigation
+    - [x] Navbar(导航条)
+    - [x] Tabbar(标签栏)
+    - [x] Tab(标签页)
+- [ ] Display
+    - [ ] Result(结果页)
+    - [ ] Share(分享)
+    - [ ] Timeline(时间轴)
+
 
 
 ## Change Log
