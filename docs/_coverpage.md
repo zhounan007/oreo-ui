@@ -11,5 +11,5 @@
 
 
 [GitHub](https://github.com/zhounan007/oreo-ui)
-[Get Started](#/)
+[Get Started](#oreo-ui)
 

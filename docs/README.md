@@ -1,4 +1,4 @@
-# Oreo-UI (奥利奥UI)
+# Oreo-UI 
 
 > 一款移动端纯Css样式库, 包含各类常用的`Css`样式, 简单、方便、谁用谁知道😱...
 
@@ -8,7 +8,7 @@
 
 - `Oreo-UI`是什么?
 
-    + `Oreo-UI` 是一款纯Css **样式库**, 包含经常用到的各类样式,对产品要求短时间上线来说, 简直就是福音;
+    + `Oreo-UI` (奥利奥UI)是一款纯Css **样式库**, 包含经常用到的各类样式,对产品要求短时间上线来说, 简直就是福音;
     + 如需使用功能请关注近期发布的基于`Vue2.x`的移动端组件库。
     + 戳 [example](https://zhounan007.github.io/oreo-ui/example/index.html) 查看
 
@@ -29,7 +29,7 @@
     下载 `Oreo-UI`,在lib目录下有生成的各类样式
 
 ```
-OREO-UI/
+Oreo-UI/
     ├── src/style/
     │       ├── base/
     │       │   ├── mixin/
