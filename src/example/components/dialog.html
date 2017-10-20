@@ -1,0 +1,69 @@
+<div class="page demo-dialog">
+    <div class="page-hd">
+        <div class="demo-name">
+            <a href="./" class="oreo-icon-home demo-home oreo-icon"></a> Dialog 对话框</div>
+        <div class="demo-subtitle"></div>
+    </div>
+    <div class="page-body" style="padding:0;">
+
+        <h2>Basic</h2>
+
+        <div class="demo-button">
+            <a href="javascript:;" class="oreo-button oreo-button-small oreo-button-primary" data-type="1">iOS Alert</a>
+
+            <a href="javascript:;" class="oreo-button oreo-button-small oreo-button-primary" data-type="2">iOS Confirm</a>
+
+            <a href="javascript:;" class="oreo-button oreo-button-small oreo-button-primary" data-type="3">Android Alert</a>
+
+            <a href="javascript:;" class="oreo-button oreo-button-small oreo-button-primary" data-type="4">Android Confirm</a>
+        </div>
+
+    </div>
+
+    <div style="display:none;" id="demo-dialog-1">
+        <div class="oreo-modal-mask"></div>
+        <div class="oreo-dialog">
+            <div class="oreo-dialog-inner">
+                <div class="oreo-dialog-title">提示</div>
+                <div class="oreo-dialog-text">确定要走起?</div>
+            </div>
+            <div class="oreo-dialog-footer">
+                <a href="javascript:;" class="oreo-dialog-button">确定</a>
+            </div>
+        </div>
+    </div>
+    <div style="display:none;" id="demo-dialog-2">
+        <div class="oreo-modal-mask"></div>
+        <div class="oreo-dialog">
+            <div class="oreo-dialog-inner">
+                <div class="oreo-dialog-title">提示</div>
+                <div class="oreo-dialog-text">确定要走起?</div>
+            </div>
+            <div class="oreo-dialog-footer oreo-dialog-buttons-h">
+                <a href="javascript:;" class="oreo-dialog-button">确定</a>
+                <a href="javascript:;" class="oreo-dialog-button">取消</a>
+            </div>
+        </div>
+    </div>
+    <div style="display:none;" id="demo-dialog-3">
+        <div class="oreo-modal-mask"></div>
+        <div class="oreo-dialog oreo-dialog-android">
+            <div class="oreo-dialog-inner">
+                <div class="oreo-dialog-title">提示</div>
+                <div class="oreo-dialog-text">确定要走起?</div>
+            </div>
+            <div class="oreo-dialog-footer">
+                <a href="javascript:;" class="oreo-dialog-button">确定</a>
+                <a href="javascript:;" class="oreo-dialog-button">取消</a>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('.demo-dialog .demo-button .oreo-button').on('click', function () {
+                var $t = $('#demo-dialog-' + this.dataset.type);
+                $t.fadeIn(200);
+            })
+        })
+    </script>
+</div>

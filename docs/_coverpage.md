@@ -1,4 +1,5 @@
-![logo](_media/icon.svg)
+<!-- ![logo](_media/oreo-ui.png) -->
+<img src="_media/oreo-ui.png" alt="" width="120">
 
 # Oreo-UI <small>0.3.3</small>
 

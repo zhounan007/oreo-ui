@@ -30,7 +30,7 @@ OREO-UI/
 - `variable` 存放各类`component` 变量
 - `components` 存放各类组件
 - `default.less` 默认主题
-- `dist`目录为自动生成,不要**修改**
+- `lib`目录为自动生成,不要**修改**
 - `docs` 文档
 
 ## 如何使用
