@@ -7,7 +7,7 @@
 
 ```
 
-OREO-UI/
+Oreo-UI/
     ├── src/style/
     │       ├── base/
     │       │   ├── mixin/
