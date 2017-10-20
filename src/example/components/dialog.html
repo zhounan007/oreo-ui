@@ -6,17 +6,31 @@
     </div>
     <div class="page-body" style="padding:0;">
 
-        <h2>Basic</h2>
+        <h2>Alert</h2>
 
         <div class="demo-button">
             <a href="javascript:;" class="oreo-button oreo-button-small oreo-button-primary" data-type="1">iOS Alert</a>
 
-            <a href="javascript:;" class="oreo-button oreo-button-small oreo-button-primary" data-type="2">iOS Confirm</a>
-
             <a href="javascript:;" class="oreo-button oreo-button-small oreo-button-primary" data-type="3">Android Alert</a>
+
+        </div>
+
+        <h2>Confirm</h2>
+
+        <div class="demo-button">
+            <a href="javascript:;" class="oreo-button oreo-button-small oreo-button-primary" data-type="2">iOS Confirm</a>
 
             <a href="javascript:;" class="oreo-button oreo-button-small oreo-button-primary" data-type="4">Android Confirm</a>
         </div>
+
+        <h2>Custom</h2>
+
+        <div class="demo-button">
+            <a href="javascript:;" class="oreo-button oreo-button-small oreo-button-primary" data-type="5">iOS More Button</a>
+
+            <a href="javascript:;" class="oreo-button oreo-button-small oreo-button-primary" data-type="6">Android Confirm</a>
+        </div>
+
 
     </div>
 
@@ -27,7 +41,7 @@
                 <div class="oreo-dialog-title">提示</div>
                 <div class="oreo-dialog-text">确定要走起?</div>
             </div>
-            <div class="oreo-dialog-footer">
+            <div class="oreo-dialog-buttons">
                 <a href="javascript:;" class="oreo-dialog-button">确定</a>
             </div>
         </div>
@@ -39,8 +53,8 @@
                 <div class="oreo-dialog-title">提示</div>
                 <div class="oreo-dialog-text">确定要走起?</div>
             </div>
-            <div class="oreo-dialog-footer oreo-dialog-buttons-h">
-                <a href="javascript:;" class="oreo-dialog-button">确定</a>
+            <div class="oreo-dialog-buttons">
+                <a href="javascript:;" class="oreo-dialog-button oreo-dialog-button-bold">确定</a>
                 <a href="javascript:;" class="oreo-dialog-button">取消</a>
             </div>
         </div>
@@ -49,12 +63,38 @@
         <div class="oreo-modal-mask"></div>
         <div class="oreo-dialog oreo-dialog-android">
             <div class="oreo-dialog-inner">
-                <div class="oreo-dialog-title">提示</div>
-                <div class="oreo-dialog-text">确定要走起?</div>
+                <div class="oreo-dialog-title">OREO-UI</div>
+                <div class="oreo-dialog-text">Hello world!</div>
             </div>
-            <div class="oreo-dialog-footer">
-                <a href="javascript:;" class="oreo-dialog-button">确定</a>
-                <a href="javascript:;" class="oreo-dialog-button">取消</a>
+            <div class="oreo-dialog-buttons">
+                <a href="javascript:;" class="oreo-dialog-button oreo-dialog-button-bold">ok</a>
+            </div>
+        </div>
+    </div>
+    <div style="display:none;" id="demo-dialog-4">
+        <div class="oreo-modal-mask"></div>
+        <div class="oreo-dialog oreo-dialog-android">
+            <div class="oreo-dialog-inner">
+                <div class="oreo-dialog-title">OREO-UI</div>
+                <div class="oreo-dialog-text">Are you feel good today?</div>
+            </div>
+            <div class="oreo-dialog-buttons">
+                <a href="javascript:;" class="oreo-dialog-button ">cancel</a>
+                <a href="javascript:;" class="oreo-dialog-button oreo-dialog-button-bold">ok</a>
+            </div>
+        </div>
+    </div>
+    <div style="display:none;" id="demo-dialog-5">
+        <div class="oreo-modal-mask"></div>
+        <div class="oreo-dialog oreo-dialog-ios">
+            <div class="oreo-dialog-inner">
+                <div class="oreo-dialog-title">提示</div>
+                <div class="oreo-dialog-text">怎么去?</div>
+            </div>
+            <div class="oreo-dialog-buttons oreo-dialog-buttons-vertical">
+                <a href="javascript:;" class="oreo-dialog-button">火车</a>
+                <a href="javascript:;" class="oreo-dialog-button oreo-dialog-button-bold">开车</a>
+                <a href="javascript:;" class="oreo-dialog-button">走路</a>
             </div>
         </div>
     </div>
@@ -63,6 +103,10 @@
             $('.demo-dialog .demo-button .oreo-button').on('click', function () {
                 var $t = $('#demo-dialog-' + this.dataset.type);
                 $t.fadeIn(200);
+            })
+            $('.demo-dialog .oreo-dialog-button').on('click',function(){
+                var $p = $(this).parents('div[id]')
+                $p.fadeOut(200);
             })
         })
     </script>
