@@ -1,18 +1,22 @@
 @import '../../base/fn.less';
 @modalPrefixCls: oreo-modal;
 
-.@{modalPrefixCls}{
-     position: fixed;
+
+.fixed(){
+    position: fixed;
     top: 0;
     left: 0;
     bottom: 0;
-    right: 0;
+    right: 0;    
+    z-index: @modal-zindex;
+}
 
+.@{modalPrefixCls}{
     display: flex;
     align-items: center;
     justify-content: center;
-    z-index: @modal-zindex;
-
+    
+    .fixed();
     &.@{modalPrefixCls}-backdrop{
         background: @fill-mask;
     }
@@ -77,4 +81,9 @@
         background: @fill-base;
         border-radius: 3px;
     }
+    
+}
+.@{modalPrefixCls}-mask{
+    .fixed();
+    background: @fill-mask;
 }

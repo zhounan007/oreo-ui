@@ -7,6 +7,7 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <title>Oreo UI Library</title>
+    <link rel="shortcut icon" href="../_media/favicon.ico"  type="image/x-icon">
     <link rel="stylesheet" href="./oreo_ui.css">
     <link rel="stylesheet" href="./res/css/example.css">
     <script src="./res/script/zepto.min.js"></script>
@@ -153,6 +154,226 @@
             <a href="javascript:;" class="oreo-button oreo-button-success oreo-button-inline oreo-button-small">Inline Small Success Button</a>
         </div>
     </div>
+</div>
+</script>
+<script type="text/html" id="tpl_checkbox">
+<div class="page">
+    <div class="page-hd">
+        <div class="demo-name">
+            <a href="./" class="oreo-icon-home demo-home oreo-icon"></a>
+            checkBox 复选框</div>
+    </div>
+    <div class="page-body" style="padding:0;">
+        <!-- input和label分居两侧 -->
+        <h2>input和label分居两侧</h2>
+        <div class="oreo-list-body">
+            <div class="oreo-list-item oreo-checkbox">
+                <div class="oreo-checkbox-thumb">
+                    <input class="oreo-checkbox-thumb-inner" type="checkbox" value="" />
+                </div>
+                <label class="oreo-checkbox-label">超长文本选项</label>
+            </div>
+            <div class="oreo-list-item oreo-checkbox">
+                <div class="oreo-checkbox-thumb">
+                    <input class="oreo-checkbox-thumb-inner" type="checkbox" value="" />
+                </div>
+                <label class="oreo-checkbox-label">复选框</label>
+            </div>
+            <div class="oreo-list-item oreo-checkbox">
+                <div class="oreo-checkbox-thumb">
+                    <input class="oreo-checkbox-thumb-inner" type="checkbox" value="" />
+                </div>
+                <label class="oreo-checkbox-label">复选框</label>
+            </div>
+            <div class="oreo-list-item oreo-checkbox">
+                <div class="oreo-checkbox-thumb">
+                    <input class="oreo-checkbox-thumb-inner" type="checkbox" value="" disabled checked/>
+                </div>
+                <label class="oreo-checkbox-label">复选框</label>
+            </div>
+        </div>
+        <!-- input和label居左对齐 -->
+        <!-- 与上述区别 label添加class类名oreo-checkbox-flex -->
+        <h2>input和label居左对齐</h2>
+        <div class="oreo-list-body">
+            <div class="oreo-list-item oreo-checkbox">
+                <div class="oreo-checkbox">
+                    <input class="oreo-checkbox-thumb-inner" type="checkbox" value="" />
+                </div>
+                <label class="oreo-checkbox-label oreo-checkbox-flex">超长文本选项超长文本选项超长文本选项超长文本选项超长文本选项超长文本选项超长文本选项</label>
+            </div>
+            <div class="oreo-list-item oreo-checkbox">
+                <div class="oreo-checkbox">
+                    <input class="oreo-checkbox-thumb-inner" type="checkbox" value="" />
+                </div>
+                <label class="oreo-checkbox-label oreo-checkbox-flex">复选框</label>
+            </div>
+            <div class="oreo-list-item oreo-checkbox">
+                <div class="oreo-checkbox">
+                    <input class="oreo-checkbox-thumb-inner" type="checkbox" value="" />
+                </div>
+                <label class="oreo-checkbox-label oreo-checkbox-flex">复选框</label>
+            </div>
+            <div class="oreo-list-item oreo-checkbox">
+                <div class="oreo-checkbox-thumb">
+                    <input class="oreo-checkbox-thumb-inner" type="checkbox" value="" disabled checked/>
+                </div>
+                <label class="oreo-checkbox-label oreo-checkbox-flex">复选框</label>
+            </div>
+        </div>
+        <!-- 选择框在右侧 ***添加inner-right类名*** -->
+        <h2>input选择框在右</h2>
+        <div class="oreo-list-body">
+            <div class="oreo-list-item oreo-checkbox inner-right">
+                <div class="oreo-checkbox-thumb">
+                    <input class="oreo-checkbox-thumb-inner" type="checkbox" value="" />
+                </div>
+                <label class="oreo-checkbox-label oreo-checkbox-flex">超长文本选项超长文本选项超长文本选项超长文本选项超长文本选项超长文本选项超长文本选项</label>
+            </div>
+            <div class="oreo-list-item oreo-checkbox inner-right">
+                <div class="oreo-checkbox-thumb">
+                    <input class="oreo-checkbox-thumb-inner" type="checkbox" value="" />
+                </div>
+                <label class="oreo-checkbox-label oreo-checkbox-flex">复选框</label>
+            </div>
+            <div class="oreo-list-item oreo-checkbox inner-right">
+                <div class="oreo-checkbox-thumb">
+                    <input class="oreo-checkbox-thumb-inner" type="checkbox" value="" />
+                </div>
+                <label class="oreo-checkbox-label oreo-checkbox-flex">复选框</label>
+            </div>
+            <div class="oreo-list-item oreo-checkbox inner-right">
+                <div class="oreo-checkbox-thumb">
+                    <input class="oreo-checkbox-thumb-inner" type="checkbox" value="" disabled checked/>
+                </div>
+                <label class="oreo-checkbox-label oreo-checkbox-flex">复选框</label>
+            </div>
+        </div>
+        <!-- <h2>checkbox</h2> -->
+        <div class="oreo-list-body oreo-checkbox-agree">
+            <div class="oreo-list-item oreo-checkbox checkbox-agree">
+                <div class="oreo-checkbox-thumb">
+                    <input class="oreo-checkbox-thumb-inner" type="checkbox" value="" />
+                </div>
+                <label class="oreo-checkbox-label oreo-checkbox-flex">同意协议</label>
+            </div>
+        </div>
+    </div>
+</div>
+</script>
+<script type="text/html" id="tpl_dialog">
+<div class="page demo-dialog">
+    <div class="page-hd">
+        <div class="demo-name">
+            <a href="./" class="oreo-icon-home demo-home oreo-icon"></a> Dialog 对话框</div>
+        <div class="demo-subtitle"></div>
+    </div>
+    <div class="page-body" style="padding:0;">
+
+        <h2>Alert</h2>
+
+        <div class="demo-button">
+            <a href="javascript:;" class="oreo-button oreo-button-small oreo-button-primary" data-type="1">iOS Alert</a>
+
+            <a href="javascript:;" class="oreo-button oreo-button-small oreo-button-primary" data-type="3">Android Alert</a>
+
+        </div>
+
+        <h2>Confirm</h2>
+
+        <div class="demo-button">
+            <a href="javascript:;" class="oreo-button oreo-button-small oreo-button-primary" data-type="2">iOS Confirm</a>
+
+            <a href="javascript:;" class="oreo-button oreo-button-small oreo-button-primary" data-type="4">Android Confirm</a>
+        </div>
+
+        <h2>Custom</h2>
+
+        <div class="demo-button">
+            <a href="javascript:;" class="oreo-button oreo-button-small oreo-button-primary" data-type="5">iOS More Button</a>
+
+            <a href="javascript:;" class="oreo-button oreo-button-small oreo-button-primary" data-type="6">Android Confirm</a>
+        </div>
+
+
+    </div>
+
+    <div style="display:none;" id="demo-dialog-1">
+        <div class="oreo-modal-mask"></div>
+        <div class="oreo-dialog">
+            <div class="oreo-dialog-inner">
+                <div class="oreo-dialog-title">提示</div>
+                <div class="oreo-dialog-text">确定要走起?</div>
+            </div>
+            <div class="oreo-dialog-buttons">
+                <a href="javascript:;" class="oreo-dialog-button">确定</a>
+            </div>
+        </div>
+    </div>
+    <div style="display:none;" id="demo-dialog-2">
+        <div class="oreo-modal-mask"></div>
+        <div class="oreo-dialog">
+            <div class="oreo-dialog-inner">
+                <div class="oreo-dialog-title">提示</div>
+                <div class="oreo-dialog-text">确定要走起?</div>
+            </div>
+            <div class="oreo-dialog-buttons">
+                <a href="javascript:;" class="oreo-dialog-button oreo-dialog-button-bold">确定</a>
+                <a href="javascript:;" class="oreo-dialog-button">取消</a>
+            </div>
+        </div>
+    </div>
+    <div style="display:none;" id="demo-dialog-3">
+        <div class="oreo-modal-mask"></div>
+        <div class="oreo-dialog oreo-dialog-android">
+            <div class="oreo-dialog-inner">
+                <div class="oreo-dialog-title">OREO-UI</div>
+                <div class="oreo-dialog-text">Hello world!</div>
+            </div>
+            <div class="oreo-dialog-buttons">
+                <a href="javascript:;" class="oreo-dialog-button oreo-dialog-button-bold">ok</a>
+            </div>
+        </div>
+    </div>
+    <div style="display:none;" id="demo-dialog-4">
+        <div class="oreo-modal-mask"></div>
+        <div class="oreo-dialog oreo-dialog-android">
+            <div class="oreo-dialog-inner">
+                <div class="oreo-dialog-title">OREO-UI</div>
+                <div class="oreo-dialog-text">Are you feel good today?</div>
+            </div>
+            <div class="oreo-dialog-buttons">
+                <a href="javascript:;" class="oreo-dialog-button ">cancel</a>
+                <a href="javascript:;" class="oreo-dialog-button oreo-dialog-button-bold">ok</a>
+            </div>
+        </div>
+    </div>
+    <div style="display:none;" id="demo-dialog-5">
+        <div class="oreo-modal-mask"></div>
+        <div class="oreo-dialog oreo-dialog-ios">
+            <div class="oreo-dialog-inner">
+                <div class="oreo-dialog-title">提示</div>
+                <div class="oreo-dialog-text">怎么去?</div>
+            </div>
+            <div class="oreo-dialog-buttons oreo-dialog-buttons-vertical">
+                <a href="javascript:;" class="oreo-dialog-button">火车</a>
+                <a href="javascript:;" class="oreo-dialog-button oreo-dialog-button-bold">开车</a>
+                <a href="javascript:;" class="oreo-dialog-button">走路</a>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('.demo-dialog .demo-button .oreo-button').on('click', function () {
+                var $t = $('#demo-dialog-' + this.dataset.type);
+                $t.fadeIn(200);
+            })
+            $('.demo-dialog .oreo-dialog-button').on('click',function(){
+                var $p = $(this).parents('div[id]')
+                $p.fadeOut(200);
+            })
+        })
+    </script>
 </div>
 </script>
 <script type="text/html" id="tpl_flex">
@@ -541,13 +762,25 @@
                                     <div class="oreo-list-arrow"></div>
                                 </div>
                             </div>
+                            <div class="oreo-list-item oreo-list-item-link" data-page="checkbox">
+                                <div class="oreo-list-item-line">
+                                    <div class="oreo-list-item-content">Checkbox</div>
+                                    <div class="oreo-list-arrow"></div>
+                                </div>
+                            </div>
+                            <div class="oreo-list-item oreo-list-item-link" data-page="radio">
+                                <div class="oreo-list-item-line">
+                                    <div class="oreo-list-item-content">Radio</div>
+                                    <div class="oreo-list-arrow"></div>
+                                </div>
+                            </div>
                             <div class="oreo-list-item oreo-list-item-link" data-page="list">
                                 <div class="oreo-list-item-line">
                                     <div class="oreo-list-item-content">List</div>
                                     <div class="oreo-list-arrow"></div>
                                 </div>
                             </div>
-                            
+
                         </div>
                     </div>
                     <!-- <a href="javascript:;" class="demo-list-item" data-page="button">Button</a>
@@ -1091,6 +1324,81 @@
                 <a href="javascript:;">
                     <i class="oreo-icon-ellipsis"></i>
                 </a>               
+            </div>
+        </div>
+    </div>
+</div>
+</script>
+<script type="text/html" id="tpl_radio">
+<div class="page">
+    <div class="page-hd">
+        <div class="demo-name">
+            <a href="./" class="oreo-icon-home demo-home oreo-icon"></a>
+            Radio 单选框</div>
+    </div>
+    <div class="page-body" style="padding:0;">
+        <!-- 选择框在左 -->
+        <h2>选择框在左</h2>
+        <div class="oreo-list-body">
+            <div class="oreo-list-item oreo-radio">
+                <div class="oreo-radio-thumb">
+                    <input class="oreo-radio-thumb-inner" type="radio" value="" name="radio" />
+                </div>
+                <label class="oreo-radio-label">超长文本选项超长文本选项超长文本选项超长文本选项超长文本选项</label>
+            </div>
+            <div class="oreo-list-item oreo-radio">
+                <div class="oreo-radio-thumb">
+                    <input class="oreo-radio-thumb-inner" type="radio" value="" name="radio" />
+                </div>
+                <label class="oreo-radio-label">单选框</label>
+            </div>
+            <div class="oreo-list-item oreo-radio">
+                <div class="oreo-radio-thumb">
+                    <input class="oreo-radio-thumb-inner" type="radio" value="" name="radio" />
+                </div>
+                <label class="oreo-radio-label">单选框</label>
+            </div>
+            <div class="oreo-list-item oreo-radio">
+                <div class="oreo-radio-thumb">
+                    <input class="oreo-radio-thumb-inner" type="radio" value="" disabled checked/>
+                </div>
+                <label class="oreo-radio-label">单选框</label>
+            </div>
+        </div>
+        <h2>选择框在右</h2>
+        <div class="oreo-list-body">
+            <div class="oreo-list-item oreo-radio inner-right">
+                <div class="oreo-radio-thumb">
+                    <input class="oreo-radio-thumb-inner" type="radio" value="" name="radio" />
+                </div>
+                <label class="oreo-radio-label">超长文本选项超长文本选项超长文本选项超长文本选项超长文本选项</label>
+            </div>
+            <div class="oreo-list-item oreo-radio inner-right">
+                <div class="oreo-radio-thumb">
+                    <input class="oreo-radio-thumb-inner" type="radio" value="" name="radio" />
+                </div>
+                <label class="oreo-radio-label">单选框</label>
+            </div>
+            <div class="oreo-list-item oreo-radio inner-right">
+                <div class="oreo-radio-thumb">
+                    <input class="oreo-radio-thumb-inner" type="radio" value="" name="radio" />
+                </div>
+                <label class="oreo-radio-label">单选框</label>
+            </div>
+            <div class="oreo-list-item oreo-radio inner-right">
+                <div class="oreo-radio-thumb">
+                    <input class="oreo-radio-thumb-inner" type="radio" value="" disabled checked/>
+                </div>
+                <label class="oreo-radio-label">单选框</label>
+            </div>
+        </div>
+        <h2>radio</h2>
+        <div class="oreo-list-body oreo-radio-agree">
+            <div class="oreo-list-item oreo-radio radio-agree">
+                <div class="oreo-radio-thumb">
+                    <input class="oreo-radio-thumb-inner" type="radio" value="" />
+                </div>
+                <label class="oreo-radio-label oreo-radio-flex">同意协议</label>
             </div>
         </div>
     </div>
