@@ -1,4 +1,4 @@
-- Getting started
-  - [Quick start](quickstart.md)
-  - [Principles](rules.md)
-- [Changelog](CHANGELOG.md)
+- [快速上手](README.md)
+- [设计原则](rules.md)
+- [主题定制](customize-theme.md)
+- [更新日志](CHANGELOG.md)
