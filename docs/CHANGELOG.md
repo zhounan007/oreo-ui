@@ -1,5 +1,13 @@
 # 更新记录
 
+## v0.4.0 (2017-10-22)
+-  **Feature**
+    - 新增 `Dialog`,`Checkbox`,`Radiobox` 样式
+-  **Bug Fix**
+    - 修复`Dialog` 中iOS样式中垂直布局的Bug    
+-  **Improve**
+    - 更新 说明文档
+
 ## v0.3.4 (2017-10-18)
 -  **Feature**
     - 新增 `Toast` 样式
