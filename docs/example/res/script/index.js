@@ -25,6 +25,9 @@ var pageManager = {
             var pageName = this.dataset.page;
             that.loadPage(pageName);
         })
+        $('.container').on('click', '.home .demo-list .demo-list-header', function (e) {
+            $(this).toggleClass('demo-category-open');
+        })
     },
     hash: function () {
         return location.hash.indexOf('#') === 0 ? location.hash.substring(1) : '';

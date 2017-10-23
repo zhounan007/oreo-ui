@@ -1,0 +1,45 @@
+@import './oreo-modal.less';
+@actionPrefixCls: oreo-actionsheet;
+
+.@{modalPrefixCls}{
+    &.@{modalPrefixCls}-bottom{
+        .@{modalPrefixCls}-content{
+
+
+            &,.@{actionPrefixCls} {
+                background-color:@fill-body;    
+
+                .@{actionPrefixCls}-title{
+                    position: relative;
+                    color: @color-text-caption;
+                    font-size: @font-size-base;
+                    background: @fill-base;
+                    padding: 15px;
+                    text-align: center;
+                    &:after{
+                        .setBottomLine(@border-color-base);
+                    }
+                }
+
+                .@{actionPrefixCls}-item{
+                    position: relative;
+                    text-align: center;
+                    font-size: @font-size-headline;
+                    background: @fill-base;
+                    .setHeight(48px);
+                    &:after{
+                        .setBottomLine(@border-color-base);
+                    }
+                }
+
+                .@{actionPrefixCls}-action{
+                    position: relative;
+                    &:before{
+                        .setTopLine(@border-color-base);
+                    }
+                    margin-top: 6px;
+                }
+            }
+        }
+    }
+}
