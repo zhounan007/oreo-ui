@@ -1,0 +1,42 @@
+<div class="page demo-actionsheet">
+    <div class="page-hd">
+        <div class="demo-name">
+            <a href="./" class="oreo-icon-home demo-home oreo-icon"></a> Actionsheet 弹出式菜单</div>
+        <div class="demo-subtitle"></div>
+    </div>
+    <div class="page-body" style="padding:0;">
+
+        <h2>Basic</h2>
+
+        <div class="demo-button">
+            <a href="javascript:;" class="oreo-button oreo-button-small oreo-button-primary" data-type="1">ActionSheet</a>
+
+        </div>
+
+       
+    </div>
+
+    <div class="oreo-modal oreo-modal-backdrop oreo-modal-bottom" style="display:none;" id="demo-actionsheet-1">
+        <div class="oreo-modal-content">
+            <div class="oreo-actionsheet-title">请选择</div>
+            <div class="oreo-actionsheet-item">拍照</div>
+            <div class="oreo-actionsheet-item">从相册中选择</div>
+            <div class="oreo-actionsheet-item">从云端选择</div>
+            <div class="oreo-actionsheet-action">
+                <div class="oreo-actionsheet-item">取消</div>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('.demo-actionsheet .demo-button .oreo-button').on('click', function () {
+                $('#demo-actionsheet-' + this.dataset.type).fadeIn(200);
+            })
+            $('.demo-actionsheet .oreo-modal-backdrop').on('click', function (event) {
+                if (event.target !== event.currentTarget) return;
+                $(this).fadeOut(200);
+            })
+        })
+    </script>
+</div>
