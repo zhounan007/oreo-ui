@@ -1,0 +1,43 @@
+@import '../../base/fn.less';
+@footerPrefixCls: oreo-footer;
+
+.@{footerPrefixCls}{
+    text-align: center;
+    padding:@oreoFooterGap;
+    p{
+        margin: 0;
+        padding: 0;
+    }
+    &-links{
+        font-size: @font-size-base;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .@{footerPrefixCls}-link{
+            position: relative;
+            padding:@oreoFooterLinkGap;
+            &.@{footerPrefixCls}-vertical::before{
+                .setLeftLine(@oreoFooterLineColor);
+                height: auto;
+                top: @oreoFooterVertical;
+                bottom: @oreoFooterVertical;
+            }
+            &.@{footerPrefixCls}-line:before{
+                .footer-line(@oreoFooterLineColor);
+                left: @oreoFooterLineGap;
+                right: auto;
+            }
+            &.@{footerPrefixCls}-line:after{
+                .footer-line(@oreoFooterLineColor);
+                left: auto;
+                right: @oreoFooterLineGap;
+            }
+            
+        }
+        
+    }
+    &-text{
+        color: #999;
+        font-size: 12px;
+    }
+}
