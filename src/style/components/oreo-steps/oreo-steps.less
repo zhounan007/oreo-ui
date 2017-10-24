@@ -1,0 +1,97 @@
+@import '../../base/fn.less';
+@stepsPrefixCls: oreo-steps;
+
+.@{stepsPrefixCls}{
+    padding: @oreoStepsGap;
+    .@{stepsPrefixCls}-item{
+        text-align: center;
+        position: relative;
+        display: inline-block;
+        &-line{
+            position: absolute;
+            border-radius: 1px;
+        }
+        &-icon{
+            width: @oreoStepsIconSize;
+            .setHeight(@oreoStepsIconSize);
+            border-radius: @radius-circle;
+            text-align: center;
+        }
+        &-content{
+            .@{stepsPrefixCls}-title{
+                font-size: @font-size-base;
+                font-weight: bold;
+            }
+            .@{stepsPrefixCls}-description{
+                font-size: @font-size-caption-sm;
+            }
+        }
+        &.@{stepsPrefixCls}-finished{
+            .@{stepsPrefixCls}-item-icon{
+                border: @border-width-sm solid @brand-primary;
+            }
+            .@{stepsPrefixCls}-item-line{
+                background: @brand-primary;
+            }
+        }
+        &.@{stepsPrefixCls}-finish{
+            .@{stepsPrefixCls}-item-icon{
+                color: @color-text-base-inverse;
+                background: @brand-primary;
+            }
+            .@{stepsPrefixCls}-item-line{
+                background: @oreoStepsLine;
+            }
+        }
+        &.@{stepsPrefixCls}-finishing{
+            .@{stepsPrefixCls}-item-icon{
+                color: @color-text-base-inverse;
+                background: @oreoStepsLine;
+            }
+        }
+    }
+    // 水平方向
+    &.@{stepsPrefixCls}-horizontal{
+        display: flex;
+        justify-content: space-between;
+        .@{stepsPrefixCls}-item{
+            flex: 1;
+            &-line{
+                width: @oreoStepsHorizontalW;
+                height: @oreoStepsHorizontalH;
+                left: @oreoStepsHorizontalLeft;
+                top: @oreoStepHorizontalTop;
+            }
+            &-icon{
+                margin: 0 auto;
+            }
+            &-content{
+                margin-top: @oreoStepHorizontalMT;
+            }
+        }
+    }
+    &.@{stepsPrefixCls}-vertical{
+        display: flex;
+        flex-direction: column;
+        .@{stepsPrefixCls}-item{
+            height: @oreoStepsItemH;
+            display: flex;
+            justify-content: flex-start;
+            text-align: left;
+            &-line{
+                width: @oreoStepsVerticalW;
+                height: @oreoStepsVerticalH;
+                left: @oreoStepsVerticalLeft;
+                top: @oreoStepVerticalTop;
+            }
+            &-content{
+                margin: @oreoStepVerticalContentGap;
+            }
+            &.@{stepsPrefixCls}-finish,
+            &.@{stepsPrefixCls}-finishing{
+                margin-top: @oreoStepsItemGap;
+            }
+        }
+    }
+    
+}

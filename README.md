@@ -1,98 +1,55 @@
-# Oreo-UI (奥利奥UI)
+<p align="center">
+  <a href="https://zhounan007.github.io/oreo-ui/">
+    <img width="160" src="http://owz1rt8et.bkt.clouddn.com/assets/oreo-ui.png">
+  </a>
+</p>
 
-前端UI库... 针对移动端涉及到的各类`Css`样式
+# Oreo-UI
+
+Oreo-UI is a modern CSS framework based on Mobile
 
 
-## 目录结构
 
-```
-
-Oreo-UI/
-    ├── src/style/
-    │       ├── base/
-    │       │   ├── mixin/
-    │       │   ├── variable/
-    │       │   ├── reset.less
-    │       │   └── fn.less
-    │       ├── components/
-    │       ├── theme/
-    │       │   └── default.less
-    │       └── oreo_ui.less  
-    │
-    ├── src/example/
-    ├── docs/example/ 
-    └── lib/
-        ├── rem/
-        └── px/
-
-```
-- `oreo_ui.less` 入口
-- `variable` 存放各类`component` 变量
-- `components` 存放各类组件
-- `default.less` 默认主题
-- `lib`目录为自动生成,不要**修改**
-- `docs` 文档
-
-## 如何使用
+## Quick Start
 
 > 包含 `px` 和 `rem` 两种类型, `rem` 是基于750设计文档 1rem = 100px;
 
-`/dist/oreo_ui.css`, `/dist/oreo_ui.min.css` 
+- `/lib/oreo_ui.css` 
+- `/lib/oreo_ui.min.css` 
+- `/lib/oreo_ui.rem.css`
+- `/lib/oreo_ui.rem.min.css` 
 
-`/dist/oreo_ui.rem.css`, `/dist/oreo_ui.rem.min.css` 
-
-
-如果想在本地运行,请安装`Node`环境。
-
+### NPM
 ```bash
-$ npm install
-
-$  gulp  // -s 启动服务 -w 实时监听 -p 服务端口,默认8086
-
+npm install oreo-ui
 ```
 
+## Advanced Usage
 
-## To Do List
+如果您想自定义导出样式库或者本地运行,请确保安装 `Node` 环境
 
-- [x] Reset
-- [x] Font(字体等)
-- [x] Layout(基础布局)
-    - [x] Flex
-    - [x] Grid
-- [ ] Form
-    - [x] Button(按钮)
-    - [x] Badge(徽章)
-    - [x] Input(输入框)
-    - [ ] Radio(单选)
-    - [ ] CheckBox(多选)
-    - [x] Textarea(文本)
-    - [x] Switch(开关)
-- [x] List(列表)
-- [x] Feedback
-    - [x] Modal
-    - [ ] Dialog(对话框)    
-    - [x] Toast
-    - [x] Loading
-- [x] Navigation
-    - [x] Navbar(导航条)
-    - [x] Tabbar(标签栏)
-    - [x] Tab(标签页)
-- [ ] Display
-    - [ ] Result(结果页)
-    - [ ] Share(分享)
-    - [ ] Timeline(时间轴)
+```bash
+$ git clone https://github.com/zhounan007/oreo-ui.git
+
+$ npm install
+// -s 启动服务 -w 实时监听 -p 服务端口,默认8086
+$ gulp  -s  
+
+```
+通过 `manifest.json` 配置自定义库
 
 
+## Browser Support
+
+Oreo-UI  使用 [autoprefixer](https://github.com/postcss/autoprefixer) 使`Flexbox` 特性兼容早期的浏览器版本, 通过 [Can I Use](https://caniuse.com/), Oreo-UI 兼容绝大多数移动端设备:
+- Android4.4+
+- iOS7.0+
 
 ## Change Log
 
 [Change Log](./docs/CHANGELOG.md)
 
 
-## Support
+## License
 
-> Oreo UI 参考或使用了以下开源项目代码
-
-- Ant Design
-- Ant Design Mobile
-- WeUI
+MIT
