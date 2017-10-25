@@ -32,6 +32,7 @@
     }
     &.@{modalPrefixCls}-bottom{
          align-items: flex-end;
+        
         .@{modalPrefixCls}-content{
             width: 100%;
             max-height: 80vh;
@@ -43,8 +44,9 @@
     &.@{modalPrefixCls}-left{
         justify-content: flex-start;
         .@{modalPrefixCls}-content{
-            max-height: 80vh;
-            height: auto;
+            // max-height: 80vh;
+            // height: auto;
+            height: 100%;
             overflow: auto;
             max-width: 90vw;
             border-radius: 0;
@@ -53,9 +55,10 @@
     &.@{modalPrefixCls}-right{
         justify-content: flex-end;
         .@{modalPrefixCls}-content{
-            max-height: 80vh;
-            height: auto;
-             overflow: auto;
+            // max-height: 80vh;
+            // height: auto;
+            height: 100%;
+            overflow: auto;
             max-width: 90vw;
             border-radius: 0;
         }

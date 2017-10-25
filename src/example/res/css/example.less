@@ -63,7 +63,7 @@ ul {
             padding: 0 0 0 0.5rem;
         }
         .demo-list {
-            margin: 0 .32rem .24rem;
+            margin: 0 .22rem .24rem;
             background-color: #fff;
             border-radius: .04rem;
             &-header {
@@ -73,8 +73,24 @@ ul {
                 line-height: 1.4rem;
                 color: #404040;
                 font-size: .32rem;
+                &.demo-category-open {
+                    >.demo-list-arrow {
+                        transform: rotate(90deg);
+                    }
+                    &+.demo-list-body {
+                        display: block;
+                    }
+                }
+                .demo-list-category {
+                    flex: 1;
+                }
+                .demo-list-arrow {
+                    visibility: visible;
+                    margin: 0 20px;
+                }
             }
             &-body {
+                display: none;
                 margin: 0 10px;
                 position: relative;
                 background-color: #fff; // border-top: 1px solid #ddd;

@@ -1,12 +1,18 @@
 @import '../../base/fn.less';
 @stepsPrefixCls: oreo-steps;
 
+.@{stepsPrefixCls}-demo{
+    overflow-x:hidden; 
+    padding: 0 30px;
+}
 .@{stepsPrefixCls}{
     padding: @oreoStepsGap;
+    overflow-x: scroll;
     .@{stepsPrefixCls}-item{
         text-align: center;
         position: relative;
         display: inline-block;
+        min-width: 20%;
         &-line{
             position: absolute;
             border-radius: 1px;
@@ -18,13 +24,21 @@
             text-align: center;
         }
         &-content{
-            .@{stepsPrefixCls}-title{
-                font-size: @font-size-base;
-                font-weight: bold;
+            width: 100%;
+            div{
+                overflow: hidden;
+                text-overflow:ellipsis;
+                white-space: nowrap;
+                width: 100%;
+                &.@{stepsPrefixCls}-title{
+                    font-size: @font-size-base;
+                    font-weight: bold;
+                }
+                &.@{stepsPrefixCls}-description{
+                    font-size: @font-size-caption-sm;
+                }
             }
-            .@{stepsPrefixCls}-description{
-                font-size: @font-size-caption-sm;
-            }
+            
         }
         &.@{stepsPrefixCls}-finished{
             .@{stepsPrefixCls}-item-icon{
@@ -70,28 +84,33 @@
             }
         }
     }
+    // 垂直方向
     &.@{stepsPrefixCls}-vertical{
         display: flex;
         flex-direction: column;
         .@{stepsPrefixCls}-item{
-            height: @oreoStepsItemH;
             display: flex;
             justify-content: flex-start;
             text-align: left;
+            margin-bottom: @oreoStepsItemGap;
+            overflow: hidden;
             &-line{
                 width: @oreoStepsVerticalW;
-                height: @oreoStepsVerticalH;
+                height: 100%;
+                margin-top: @oreoStepsLineMargin;
                 left: @oreoStepsVerticalLeft;
-                top: @oreoStepVerticalTop;
+                top: 0;
             }
             &-content{
-                margin: @oreoStepVerticalContentGap;
-            }
-            &.@{stepsPrefixCls}-finish,
-            &.@{stepsPrefixCls}-finishing{
-                margin-top: @oreoStepsItemGap;
+                padding-left: @oreoStepVerticalContentGap;
+                margin-top: -3px;
+                .@{stepsPrefixCls}-description{
+                    padding-bottom: @oreoStepsContentGap;
+                }
             }
         }
     }
-    
+    &::-webkit-scrollbar{
+        display: none;
+    }
 }
