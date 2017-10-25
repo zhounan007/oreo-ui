@@ -1,5 +1,13 @@
 # 更新记录
 
+## v0.4.1 (2017-10-22)
+-  **Feature**
+    - 新增 `Footer`,`Steps`样式
+    - 优化 `Modal`样式,新增部分展示效果
+-  **Improve**
+    - 更新 说明文档
+
+
 ## v0.4.0 (2017-10-22)
 -  **Feature**
     - 新增 `Dialog`,`Checkbox`,`Radiobox` 样式
