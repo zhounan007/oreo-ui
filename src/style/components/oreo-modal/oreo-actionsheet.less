@@ -14,7 +14,7 @@
                     color: @color-text-caption;
                     font-size: @font-size-base;
                     background: @fill-base;
-                    padding: 15px;
+                    .setHeight(@option-height);
                     text-align: center;
                     &:after{
                         .setBottomLine(@border-color-base);
@@ -26,7 +26,7 @@
                     text-align: center;
                     font-size: @font-size-headline;
                     background: @fill-base;
-                    .setHeight(48px);
+                    .setHeight(@option-height);
                     &:after{
                         .setBottomLine(@border-color-base);
                     }
@@ -37,7 +37,7 @@
                     &:before{
                         .setTopLine(@border-color-base);
                     }
-                    margin-top: 6px;
+                    margin-top: @v-spacing-sm;
                 }
             }
         }

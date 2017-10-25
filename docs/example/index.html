@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <title>Oreo UI Library</title>
+    <title>Oreo-UI Library</title>
     <link rel="shortcut icon" href="../_media/favicon.ico"  type="image/x-icon">
     <link rel="stylesheet" href="./oreo_ui.css">
     <link rel="stylesheet" href="./res/css/example.css">
@@ -42,6 +42,7 @@
         <div class="demo-button">
             <a href="javascript:;" class="oreo-button oreo-button-small oreo-button-primary" data-type="1">ActionSheet</a>
 
+            <a href="javascript:;" class="oreo-button oreo-button-small oreo-button-primary" data-type="2">Show Share ActionSheet</a>
         </div>
 
        
@@ -55,6 +56,29 @@
             <div class="oreo-actionsheet-item">从云端选择</div>
             <div class="oreo-actionsheet-action">
                 <div class="oreo-actionsheet-item">取消</div>
+            </div>
+        </div>
+    </div>
+    <div class="oreo-modal oreo-modal-backdrop oreo-modal-bottom" style="display:none;" id="demo-actionsheet-2">
+        <div class="oreo-modal-content">
+            <div class="oreo-actionsheet-title" style="background: inherit;">分享到</div>
+            <div class="demo-actionsheet-share">
+                <div class="demo-actionsheet-item">
+                    <div class="demo-actionsheet-icon"><img src="http://owz1rt8et.bkt.clouddn.com/icon/icon_sns_weixin.png" alt="微信好友" style="width: 100%;"></div>
+                    <div class="demo-actionsheet-text">微信</div>
+                </div>
+                <div class="demo-actionsheet-item">
+                    <div class="demo-actionsheet-icon"><img src="http://owz1rt8et.bkt.clouddn.com/icon/icon_sns_qq.png" alt="微信好友" style="width: 100%;"></div>
+                    <div class="demo-actionsheet-text">QQ</div>
+                </div>
+                <div class="demo-actionsheet-item">
+                    <div class="demo-actionsheet-icon"><img src="http://owz1rt8et.bkt.clouddn.com/icon/icon_sns_pengyouquan.png" alt="微信好友" style="width: 100%;"></div>
+                    <div class="demo-actionsheet-text">朋友圈</div>
+                </div>
+                <div class="demo-actionsheet-item">
+                    <div class="demo-actionsheet-icon"><img src="http://owz1rt8et.bkt.clouddn.com/icon/icon_sns_weibo.png" alt="微信好友" style="width: 100%;"></div>
+                    <div class="demo-actionsheet-text">微博</div>
+                </div>
             </div>
         </div>
     </div>
@@ -335,6 +359,8 @@
 
         <div class="demo-button">
             <a href="javascript:;" class="oreo-button oreo-button-small oreo-button-primary" data-type="5">iOS More Button</a>
+
+            <a href="javascript:;" class="oreo-button oreo-button-small oreo-button-primary" data-type="6">iOS Operation</a>
         </div>
 
 
@@ -401,6 +427,17 @@
                 <a href="javascript:;" class="oreo-dialog-button">火车</a>
                 <a href="javascript:;" class="oreo-dialog-button oreo-dialog-button-bold">开车</a>
                 <a href="javascript:;" class="oreo-dialog-button">走路</a>
+            </div>
+        </div>
+    </div>
+    <div style="display:none;" id="demo-dialog-6">
+        <div class="oreo-modal-mask"></div>
+        <div class="oreo-dialog oreo-dialog-ios">
+            <div class="oreo-dialog-buttons oreo-dialog-buttons-vertical">
+                <a href="javascript:;" class="oreo-dialog-button">收藏</a>
+                <a href="javascript:;" class="oreo-dialog-button ">取消关注</a>
+                <a href="javascript:;" class="oreo-dialog-button">屏蔽</a>
+                <a href="javascript:;" class="oreo-dialog-button">举报</a>
             </div>
         </div>
     </div>
@@ -816,7 +853,7 @@
 <div class="page home">
     <div class="page-hd">
         <div class="demo-title">OREO UI</div>
-        <div class="demo-subtitle">一款基于移动端UI库, 本库仅提供各类常用Css样式, 如需使用功能, 请下载Vue版. Coming soon...</div>
+        <div class="demo-subtitle">一套基于移动端的高质量 UI 样式库, 包含各类常用的`CSS`样式, 简单、方便、谁用谁知道😱...</div>
     </div>
     <div class="page-body">
         <ul>
@@ -865,6 +902,7 @@
                                     <div class="oreo-list-arrow"></div>
                                 </div>
                             </div>
+                            
                         </div>
                     </div>
                     <!-- <a href="javascript:;" class="demo-list-item" data-page="button">Button</a>
@@ -903,7 +941,7 @@
                 </div> -->
             </li>
             <li class="demo-list">
-                 <div class="demo-list-header oreo-list-item-line">
+                <div class="demo-list-header oreo-list-item-line">
                     <div class="demo-list-category">导航 Navigation</div>
                     <div class="oreo-list-arrow demo-list-arrow"></div>
                 </div>
@@ -933,7 +971,7 @@
                 </div>
             </li>
             <li class="demo-list">
-                 <div class="demo-list-header oreo-list-item-line">
+                <div class="demo-list-header oreo-list-item-line">
                     <div class="demo-list-category"> 操作反馈 Feedback</div>
                     <div class="oreo-list-arrow demo-list-arrow"></div>
                 </div>
@@ -969,7 +1007,7 @@
                 </div>
             </li>
             <li class="demo-list">
-                 <div class="demo-list-header oreo-list-item-line">
+                <div class="demo-list-header oreo-list-item-line">
                     <div class="demo-list-category"> 数据展示 Data Display</div>
                     <div class="oreo-list-arrow demo-list-arrow"></div>
                 </div>
@@ -982,9 +1020,9 @@
                                     <div class="oreo-list-arrow"></div>
                                 </div>
                             </div>
-                            <div class="oreo-list-item oreo-list-item-link" data-page="Share">
+                            <div class="oreo-list-item oreo-list-item-link" data-page="steps">
                                 <div class="oreo-list-item-line">
-                                    <div class="oreo-list-item-content">share</div>
+                                    <div class="oreo-list-item-content">Steps</div>
                                     <div class="oreo-list-arrow"></div>
                                 </div>
                             </div>
@@ -1540,7 +1578,7 @@
             <a href="./" class="oreo-icon-home demo-home oreo-icon"></a>
             Steps</div>
     </div>
-    <div class="page-body" style="padding:0;">
+    <div class="page-body oreo-steps-demo" style="padding:0;">
         <h2>横向步骤条</h2>
         <div class="oreo-steps oreo-steps-horizontal">
             <div class="oreo-steps-item oreo-steps-finished">
@@ -1551,9 +1589,17 @@
                     <div class="oreo-steps-description">finished step</div>
                 </div>
             </div>
-            <div class="oreo-steps-item oreo-steps-finish">
+            <div class="oreo-steps-item oreo-steps-finished">
                 <div class="oreo-steps-item-line"></div>
                 <div class="oreo-steps-item-icon">2</div>
+                <div class="oreo-steps-item-content">
+                    <div class="oreo-steps-title">finished</div>
+                    <div class="oreo-steps-description">finished step</div>
+                </div>
+            </div>
+            <div class="oreo-steps-item oreo-steps-finish">
+                <div class="oreo-steps-item-line"></div>
+                <div class="oreo-steps-item-icon">3</div>
                 <div class="oreo-steps-item-content">
                     <div class="oreo-steps-title">finish</div>
                     <div class="oreo-steps-description">finish step</div>
@@ -1561,13 +1607,14 @@
             </div>
             <div class="oreo-steps-item oreo-steps-finishing">
                 <div class=""></div>
-                <div class="oreo-steps-item-icon">3</div>
+                <div class="oreo-steps-item-icon">4</div>
                 <div class="oreo-steps-item-content">
                     <div class="oreo-steps-title">finishing</div>
                     <div class="oreo-steps-description">finishing step</div>
                 </div>
             </div>
         </div>
+        <br>
         <h2>纵向步骤条</h2>
         <div class="oreo-steps oreo-steps-vertical">
             <div class="oreo-steps-item oreo-steps-finished">
@@ -1578,17 +1625,25 @@
                     <div class="oreo-steps-description">finished step</div>
                 </div>
             </div>
-            <div class="oreo-steps-item oreo-steps-finish">
+            <div class="oreo-steps-item oreo-steps-finished">
                 <div class="oreo-steps-item-line"></div>
                 <div class="oreo-steps-item-icon">2</div>
+                <div class="oreo-steps-item-content">
+                    <div class="oreo-steps-title">finished</div>
+                    <div class="oreo-steps-description">finished step</div>
+                </div>
+            </div>
+            <div class="oreo-steps-item oreo-steps-finish">
+                <div class="oreo-steps-item-line"></div>
+                <div class="oreo-steps-item-icon">3</div>
                 <div class="oreo-steps-item-content">
                     <div class="oreo-steps-title">finish</div>
                     <div class="oreo-steps-description">finish step</div>
                 </div>
             </div>
             <div class="oreo-steps-item oreo-steps-finishing">
-                <div class=""></div>
-                <div class="oreo-steps-item-icon">3</div>
+                <div></div>
+                <div class="oreo-steps-item-icon">4</div>
                 <div class="oreo-steps-item-content">
                     <div class="oreo-steps-title">finishing</div>
                     <div class="oreo-steps-description">finishing step</div>
