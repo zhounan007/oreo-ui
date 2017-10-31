@@ -1,4 +1,4 @@
-<p align="center">
+<p align="center" style="text-align:center;">
   <a href="https://zhounan007.github.io/oreo-ui/">
     <img width="160" src="http://owz1rt8et.bkt.clouddn.com/assets/oreo-ui.png">
   </a>

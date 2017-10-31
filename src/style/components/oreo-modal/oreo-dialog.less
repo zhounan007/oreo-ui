@@ -16,7 +16,6 @@
         overflow: hidden;
         .@{dialogPrefixCls}-inner {
             padding: 15px;
-            border-radius: 13px 13px 0 0;
             position: relative;
             background: @fill-base;
             .@{dialogPrefixCls}-title {
@@ -37,9 +36,9 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            .@{dialogPrefixCls}-button {
+            // .@{dialogPrefixCls}-button {
                
-            }
+            // }
         }
     }
     .@{dialogPrefixCls}-buttons {
@@ -79,7 +78,7 @@
         color: @brand-primary;
         text-transform: uppercase;
         width: auto;
-        .setHeight(@dialog-button-height);
+        .setHeight(@option-height);
         .textOverflow();
         .box-sizing();
         &-bold {

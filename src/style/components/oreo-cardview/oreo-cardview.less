@@ -1,0 +1,75 @@
+@import '../../base/fn.less';
+@cardPrefixCls: oreo-card;
+
+.@{cardPrefixCls}{
+    position: relative;
+    font-size: @font-size-base;
+    margin: @oreoCardviewMargin;
+    border-radius: @radius-md;
+    background: @fill-base;
+    box-shadow: @oreoCardviewShadow;
+    p{
+        margin: 0;
+        padding: 0;
+    }
+    &-inner,&-footer{
+        position: relative;
+        display: flex;
+        min-height: @oreoCardviewMinH;
+        padding: @oreoCardviewPadding;
+        justify-content: space-between;
+        align-items: center;
+    }
+    &-header{
+        border-radius: @radius-md @radius-md 0 0;
+        position: relative;
+        img{
+            width: 100%;
+        }
+        .@{cardPrefixCls}-inner{
+            .card-logo{
+                width: @oreoCardviewLogo;
+                height: @oreoCardviewLogo;
+                margin-right: @oreoCardviewLogoGap;
+            }
+            .card-media-body{
+                flex: 1;
+                &-title{
+                    color: @color-text-paragraph;
+                }
+                &-detail{
+                    color: @color-text-caption;
+                }
+            }
+        }
+        &:after{
+            .setBottomLine(@border-color-base);
+        }
+    }
+    &-content{
+        width: 100%;
+        .@{cardPrefixCls}-inner{
+            padding: @oreoCardviewPadding;
+            p{
+                margin-bottom: @oreoCardviewPostGap;
+                &.card-post{
+                    color: @color-text-caption;
+                }
+            }
+        }
+        .@{cardPrefixCls}-media{
+            display: block;
+        }
+        img{
+            width: 100%;
+        }
+        
+    }
+    &-footer{
+        border-radius: 0 0 @radius-md @radius-md;
+        position: relative;
+        &:after{
+            .setTopLine(@border-color-base);
+        }
+    }
+}

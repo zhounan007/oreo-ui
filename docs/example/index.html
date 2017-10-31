@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <title>Oreo UI Library</title>
+    <title>Oreo-UI Library</title>
     <link rel="shortcut icon" href="../_media/favicon.ico"  type="image/x-icon">
     <link rel="stylesheet" href="./oreo_ui.css">
     <link rel="stylesheet" href="./res/css/example.css">
@@ -42,6 +42,7 @@
         <div class="demo-button">
             <a href="javascript:;" class="oreo-button oreo-button-small oreo-button-primary" data-type="1">ActionSheet</a>
 
+            <a href="javascript:;" class="oreo-button oreo-button-small oreo-button-primary" data-type="2">Show Share ActionSheet</a>
         </div>
 
        
@@ -55,6 +56,29 @@
             <div class="oreo-actionsheet-item">从云端选择</div>
             <div class="oreo-actionsheet-action">
                 <div class="oreo-actionsheet-item">取消</div>
+            </div>
+        </div>
+    </div>
+    <div class="oreo-modal oreo-modal-backdrop oreo-modal-bottom" style="display:none;" id="demo-actionsheet-2">
+        <div class="oreo-modal-content">
+            <div class="oreo-actionsheet-title" style="background: inherit;">分享到</div>
+            <div class="demo-actionsheet-share">
+                <div class="demo-actionsheet-item">
+                    <div class="demo-actionsheet-icon"><img src="http://owz1rt8et.bkt.clouddn.com/icon/icon_sns_weixin.png" alt="微信好友" style="width: 100%;"></div>
+                    <div class="demo-actionsheet-text">微信</div>
+                </div>
+                <div class="demo-actionsheet-item">
+                    <div class="demo-actionsheet-icon"><img src="http://owz1rt8et.bkt.clouddn.com/icon/icon_sns_qq.png" alt="微信好友" style="width: 100%;"></div>
+                    <div class="demo-actionsheet-text">QQ</div>
+                </div>
+                <div class="demo-actionsheet-item">
+                    <div class="demo-actionsheet-icon"><img src="http://owz1rt8et.bkt.clouddn.com/icon/icon_sns_pengyouquan.png" alt="微信好友" style="width: 100%;"></div>
+                    <div class="demo-actionsheet-text">朋友圈</div>
+                </div>
+                <div class="demo-actionsheet-item">
+                    <div class="demo-actionsheet-icon"><img src="http://owz1rt8et.bkt.clouddn.com/icon/icon_sns_weibo.png" alt="微信好友" style="width: 100%;"></div>
+                    <div class="demo-actionsheet-text">微博</div>
+                </div>
             </div>
         </div>
     </div>
@@ -200,6 +224,64 @@
     </div>
 </div>
 </script>
+<script type="text/html" id="tpl_cardview">
+<div class="page">
+    <div class="page-hd">
+        <div class="demo-name">
+            <a href="./" class="oreo-icon-home demo-home oreo-icon"></a>
+            Cardview</div>
+        <div class="demo-subtitle"></div>
+    </div>
+    <div class="page-body" style="padding:0;">
+        <h2>卡片视图</h2>
+        <div class="oreo-card">
+            <div class="oreo-card-header">
+                <div class="oreo-card-inner">页眉</div>
+            </div>
+            <div class="oreo-card-content">
+                <div class="oreo-card-inner">
+                    卡片视图包含页眉页脚，页眉通常用来显示面板标题，页脚用来显示额外信息或支持的操作（比如点赞、评论等）
+                </div>
+            </div>
+            <div class="oreo-card-footer">页脚</div>
+        </div>
+        <div class="oreo-card">
+            <div class="oreo-card-header">
+                <img src="res/imgs/example.png" alt="">
+            </div>
+            <div class="oreo-card-content">
+                <div class="oreo-card-inner oreo-card-media">
+                    <p class="card-post">发布于2017年10月30日</p>
+                    <p class="card-details">这里简单介绍内容详情...</p>
+                </div>
+            </div>
+            <div class="oreo-card-footer">
+                <a href="javascript:;">Comment</a>
+                <a href="javascript:;">Fabulous</a>
+            </div>
+        </div>
+        <div class="oreo-card">
+            <div class="oreo-card-header">
+                <div class="oreo-card-inner">
+                    <img class="card-logo" src="res/imgs/example.png" alt="">
+                    <div class="card-media-body">
+                        <p class="card-media-body-title">hello word</p>
+                        <p class="card-media-body-detail">Welcome to Oreo</p>
+                    </div>
+                </div>
+            </div>
+            <div class="oreo-card-content">
+                <img src="res/imgs/example.png" alt="">
+            </div>
+            <div class="oreo-card-footer">
+                <a href="javascript:;">Comment</a>
+                <a href="javascript:;">Fabulous</a>
+                <a href="javascript:;">Forward</a>
+            </div>
+        </div>
+    </div>
+</div>
+</script>
 <script type="text/html" id="tpl_checkbox">
 <div class="page">
     <div class="page-hd">
@@ -335,6 +417,8 @@
 
         <div class="demo-button">
             <a href="javascript:;" class="oreo-button oreo-button-small oreo-button-primary" data-type="5">iOS More Button</a>
+
+            <a href="javascript:;" class="oreo-button oreo-button-small oreo-button-primary" data-type="6">iOS Operation</a>
         </div>
 
 
@@ -401,6 +485,17 @@
                 <a href="javascript:;" class="oreo-dialog-button">火车</a>
                 <a href="javascript:;" class="oreo-dialog-button oreo-dialog-button-bold">开车</a>
                 <a href="javascript:;" class="oreo-dialog-button">走路</a>
+            </div>
+        </div>
+    </div>
+    <div style="display:none;" id="demo-dialog-6">
+        <div class="oreo-modal-mask"></div>
+        <div class="oreo-dialog oreo-dialog-ios">
+            <div class="oreo-dialog-buttons oreo-dialog-buttons-vertical">
+                <a href="javascript:;" class="oreo-dialog-button">收藏</a>
+                <a href="javascript:;" class="oreo-dialog-button ">取消关注</a>
+                <a href="javascript:;" class="oreo-dialog-button">屏蔽</a>
+                <a href="javascript:;" class="oreo-dialog-button">举报</a>
             </div>
         </div>
     </div>
@@ -816,7 +911,7 @@
 <div class="page home">
     <div class="page-hd">
         <div class="demo-title">OREO UI</div>
-        <div class="demo-subtitle">一款基于移动端UI库, 本库仅提供各类常用Css样式, 如需使用功能, 请下载Vue版. Coming soon...</div>
+        <div class="demo-subtitle">一套基于移动端的高质量 UI 样式库, 包含各类常用的`CSS`样式, 简单、方便、谁用谁知道😱...</div>
     </div>
     <div class="page-body">
         <ul>
@@ -865,12 +960,13 @@
                                     <div class="oreo-list-arrow"></div>
                                 </div>
                             </div>
-                            <div class="oreo-list-item oreo-list-item-link" data-page="steps">
+                            <div class="oreo-list-item oreo-list-item-link" data-page="cardview">
                                 <div class="oreo-list-item-line">
-                                    <div class="oreo-list-item-content">Steps</div>
+                                    <div class="oreo-list-item-content">Cardview</div>
                                     <div class="oreo-list-arrow"></div>
                                 </div>
                             </div>
+
                         </div>
                     </div>
                     <!-- <a href="javascript:;" class="demo-list-item" data-page="button">Button</a>
@@ -988,9 +1084,9 @@
                                     <div class="oreo-list-arrow"></div>
                                 </div>
                             </div>
-                            <div class="oreo-list-item oreo-list-item-link" data-page="Share">
+                            <div class="oreo-list-item oreo-list-item-link" data-page="steps">
                                 <div class="oreo-list-item-line">
-                                    <div class="oreo-list-item-content">share</div>
+                                    <div class="oreo-list-item-content">Steps</div>
                                     <div class="oreo-list-arrow"></div>
                                 </div>
                             </div>
@@ -1296,11 +1392,11 @@
         </div>
 
         <h2>Max,Min</h2>
-        
+
         <div class="demo-button">
             <a href="javascript:;" class="oreo-button oreo-button-small oreo-button-primary" data-type="max">Modal Max</a>
 
-            <a href="javascript:;" class="oreo-button oreo-button-small oreo-button-primary" data-type="min">Modal Min</a>    
+            <a href="javascript:;" class="oreo-button oreo-button-small oreo-button-primary" data-type="min">Modal Min</a>
         </div>
     </div>
 
@@ -1372,7 +1468,7 @@
             <p>scroll down to close</p>
             <p>scroll down to close</p>
             <p>scroll down to close</p>
-            <a href="javascript:;" class="oreo-button oreo-button-small oreo-button-primary oreo-button-inline demo-close">Close</a>    
+            <a href="javascript:;" class="oreo-button oreo-button-small oreo-button-primary oreo-button-inline demo-close">Close</a>
         </div>
     </div>
     <div class="oreo-modal oreo-modal-backdrop oreo-modal-min" style="display:none;" id="demo-modal-min">
@@ -1384,15 +1480,15 @@
     </div>
 
     <script type="text/javascript">
-        $(document).ready(function () {
-            $('.demo-modal .demo-button .oreo-button').on('click', function () {
+        $(document).ready(function() {
+            $('.demo-modal .demo-button .oreo-button').on('click', function() {
                 $('#demo-modal-' + this.dataset.type).fadeIn(200);
             })
-            $('.demo-modal .oreo-modal-backdrop').on('click', function (event) {
+            $('.demo-modal .oreo-modal-backdrop').on('click', function(event) {
                 if (event.target !== event.currentTarget) return;
                 $(this).fadeOut(200);
             })
-            $('.demo-modal .demo-close').on('click', function (event) {
+            $('.demo-modal .demo-close').on('click', function(event) {
                 $('.demo-close').parents('.oreo-modal').fadeOut(200);
             })
         })
