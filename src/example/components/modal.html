@@ -19,11 +19,11 @@
         </div>
 
         <h2>Max,Min</h2>
-        
+
         <div class="demo-button">
             <a href="javascript:;" class="oreo-button oreo-button-small oreo-button-primary" data-type="max">Modal Max</a>
 
-            <a href="javascript:;" class="oreo-button oreo-button-small oreo-button-primary" data-type="min">Modal Min</a>    
+            <a href="javascript:;" class="oreo-button oreo-button-small oreo-button-primary" data-type="min">Modal Min</a>
         </div>
     </div>
 
@@ -68,15 +68,15 @@
     </div>
 
     <script type="text/javascript">
-        $(document).ready(function () {
-            $('.demo-modal .demo-button .oreo-button').on('click', function () {
+        $(document).ready(function() {
+            $('.demo-modal .demo-button .oreo-button').on('click', function() {
                 $('#demo-modal-' + this.dataset.type).fadeIn(200);
             })
-            $('.demo-modal .oreo-modal-backdrop').on('click', function (event) {
+            $('.demo-modal .oreo-modal-backdrop').on('click', function(event) {
                 if (event.target !== event.currentTarget) return;
                 $(this).fadeOut(200);
             })
-            $('.demo-modal .demo-close').on('click', function (event) {
+            $('.demo-modal .demo-close').on('click', function(event) {
                 $('.demo-close').parents('.oreo-modal').fadeOut(200);
             })
         })
