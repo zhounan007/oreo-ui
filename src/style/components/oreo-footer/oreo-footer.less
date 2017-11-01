@@ -15,9 +15,9 @@
         align-items: center;
         .@{footerPrefixCls}-link{
             position: relative;
-            padding:@oreoFooterLinkGap;
-            &.@{footerPrefixCls}-vertical::before{
-                .setLeftLine(@oreoFooterLineColor);
+            padding:0 @h-spacing-lg;
+            &.@{footerPrefixCls}-vertical:before{
+                .setLeftLine(@border-color-base);
                 height: auto;
                 top: @oreoFooterVertical;
                 bottom: @oreoFooterVertical;
@@ -37,7 +37,7 @@
         
     }
     &-text{
-        color: #999;
-        font-size: 12px;
+        color: @color-text-placeholder;
+        font-size: @font-size-body;
     }
 }

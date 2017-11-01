@@ -1,5 +1,14 @@
 # 更新记录
 
+## v0.4.4 (2017-11-01)
+-  **Feature**
+    - 新增 `Card`,`Loading`样式
+    - 优化 `Modal` 弹窗效果
+    - 优化 `Toast` 中loading效果 
+-  **Improve**
+    - 更新 说明文档
+
+
 ## v0.4.1 (2017-10-22)
 -  **Feature**
     - 新增 `Footer`,`Steps`样式

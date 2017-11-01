@@ -224,6 +224,64 @@
     </div>
 </div>
 </script>
+<script type="text/html" id="tpl_card">
+<div class="page">
+    <div class="page-hd">
+        <div class="demo-name">
+            <a href="./" class="oreo-icon-home demo-home oreo-icon"></a>
+            Card</div>
+        <div class="demo-subtitle"></div>
+    </div>
+    <div class="page-body" style="padding:0;">
+        <h2>卡片视图</h2>
+        <div class="oreo-card">
+            <div class="oreo-card-header">
+                <div class="oreo-card-inner">页眉</div>
+            </div>
+            <div class="oreo-card-content">
+                <div class="oreo-card-inner">
+                    卡片视图包含页眉页脚，页眉通常用来显示面板标题，页脚用来显示额外信息或支持的操作（比如点赞、评论等）
+                </div>
+            </div>
+            <div class="oreo-card-footer">页脚</div>
+        </div>
+        <div class="oreo-card">
+            <div class="oreo-card-header">
+                <img src="http://owz1rt8et.bkt.clouddn.com/assets/nature02.jpg" alt="">
+            </div>
+            <div class="oreo-card-content">
+                <div class="oreo-card-inner oreo-card-media">
+                    <p class="card-post">发布于2017年10月30日</p>
+                    <p class="card-details">这里简单介绍内容详情...</p>
+                </div>
+            </div>
+            <div class="oreo-card-footer">
+                <a href="javascript:;">Comment</a>
+                <a href="javascript:;">Fabulous</a>
+            </div>
+        </div>
+        <div class="oreo-card">
+            <div class="oreo-card-header">
+                <div class="oreo-card-inner">
+                    <img class="card-logo" src="res/imgs/example.png" alt="">
+                    <div class="card-media-body">
+                        <p class="card-media-body-title">hello word</p>
+                        <p class="card-media-body-detail">Welcome to Oreo</p>
+                    </div>
+                </div>
+            </div>
+            <div class="oreo-card-content">
+                <img src="http://owz1rt8et.bkt.clouddn.com/assets/nature01.jpg" alt="">
+            </div>
+            <div class="oreo-card-footer">
+                <a href="javascript:;">Comment</a>
+                <a href="javascript:;">Fabulous</a>
+                <a href="javascript:;">Forward</a>
+            </div>
+        </div>
+    </div>
+</div>
+</script>
 <script type="text/html" id="tpl_checkbox">
 <div class="page">
     <div class="page-hd">
@@ -558,7 +616,7 @@
         <div class="oreo-footer">
             <p class="oreo-footer-links">
                 <!-- <span class="oreo-footer-line"></span> -->
-                <a class="oreo-footer-link oreo-footer-line extend-line" href="javascript:void(0);">底部链接</a>
+                <a class="oreo-footer-link oreo-footer-line extend-line" href="javascript:void(0);">我可是有底线的人...</a>
                 <!-- <span class="oreo-footer-line"></span> -->
             </p>
             <p class="oreo-footer-text">Copyright © 2017-2017 oreo.footer</p>
@@ -896,13 +954,8 @@
                                     <div class="oreo-list-arrow"></div>
                                 </div>
                             </div>
-                            <div class="oreo-list-item oreo-list-item-link" data-page="list">
-                                <div class="oreo-list-item-line">
-                                    <div class="oreo-list-item-content">List</div>
-                                    <div class="oreo-list-arrow"></div>
-                                </div>
-                            </div>
                             
+
                         </div>
                     </div>
                     <!-- <a href="javascript:;" class="demo-list-item" data-page="button">Button</a>
@@ -1002,6 +1055,12 @@
                                     <div class="oreo-list-arrow"></div>
                                 </div>
                             </div>
+                            <div class="oreo-list-item oreo-list-item-link" data-page="loading">
+                                <div class="oreo-list-item-line">
+                                    <div class="oreo-list-item-content">Loading</div>
+                                    <div class="oreo-list-arrow"></div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -1023,6 +1082,18 @@
                             <div class="oreo-list-item oreo-list-item-link" data-page="steps">
                                 <div class="oreo-list-item-line">
                                     <div class="oreo-list-item-content">Steps</div>
+                                    <div class="oreo-list-arrow"></div>
+                                </div>
+                            </div>
+                            <div class="oreo-list-item oreo-list-item-link" data-page="list">
+                                <div class="oreo-list-item-line">
+                                    <div class="oreo-list-item-content">List</div>
+                                    <div class="oreo-list-arrow"></div>
+                                </div>
+                            </div>
+                            <div class="oreo-list-item oreo-list-item-link" data-page="card">
+                                <div class="oreo-list-item-line">
+                                    <div class="oreo-list-item-content">Card</div>
                                     <div class="oreo-list-arrow"></div>
                                 </div>
                             </div>
@@ -1306,6 +1377,40 @@
     </div>
 </div>
 </script>
+<script type="text/html" id="tpl_loading">
+<div class="page demo-loading">
+   <div class="page-hd">
+        <div class="demo-name">
+            <a href="./" class="oreo-icon-home demo-home oreo-icon"></a>
+        Loading 加载</div>
+        <div class="demo-subtitle">支持大, 小, 颜色</div>
+    </div>
+    <div class="page-body" style="padding:0;">
+
+        <h2>Basic</h2>
+
+        <section>
+            <span class="oreo-loading oreo-loading-dark">
+            </span>
+        </section>
+
+        <section>
+            <span class="oreo-loading">
+            </span>
+        </section>
+
+        <section>
+            <span class="oreo-loading-sm oreo-loading-dark">
+            </span>
+        </section>
+
+        <section>
+            <span class="oreo-loading-sm">
+            </span>
+        </section>
+    </div>
+</div>
+</script>
 <script type="text/html" id="tpl_modal">
 <div class="page demo-modal">
     <div class="page-hd">
@@ -1328,103 +1433,64 @@
         </div>
 
         <h2>Max,Min</h2>
-        
+
         <div class="demo-button">
             <a href="javascript:;" class="oreo-button oreo-button-small oreo-button-primary" data-type="max">Modal Max</a>
 
-            <a href="javascript:;" class="oreo-button oreo-button-small oreo-button-primary" data-type="min">Modal Min</a>    
+            <a href="javascript:;" class="oreo-button oreo-button-small oreo-button-primary" data-type="min">Modal Min</a>
         </div>
     </div>
 
     <div class="oreo-modal oreo-modal-backdrop oreo-modal-top" style="display:none;" id="demo-modal-top">
         <div class="oreo-modal-content">
-            <p>scroll down to close</p>
-            <p>scroll down to close</p>
-            <p>scroll down to close</p>
-            <p>scroll down to close</p>
-            <p>scroll down to close</p>
-            <p>scroll down to close</p>
-            <p>scroll down to close</p>
-            <p>scroll down to close</p>
-            <p>scroll down to close</p>
-            <p>scroll down to close</p>
+            <h2>Modal</h2>
+            <p>从上弹出窗口</p>
         </div>
     </div>
     <div class="oreo-modal oreo-modal-backdrop oreo-modal-bottom" style="display:none;" id="demo-modal-bottom">
         <div class="oreo-modal-content">
-            <p>scroll down to close</p>
-            <p>scroll down to close</p>
-            <p>scroll down to close</p>
-            <p>scroll down to close</p>
-            <p>scroll down to close</p>
-            <p>scroll down to close</p>
-            <p>scroll down to close</p>
-            <p>scroll down to close</p>
-            <p>scroll down to close</p>
-            <p>scroll down to close</p>
+             <h2>Modal</h2>
+            <p>从下弹出窗口</p>
         </div>
     </div>
     <div class="oreo-modal oreo-modal-backdrop oreo-modal-left" style="display:none;" id="demo-modal-left">
         <div class="oreo-modal-content">
-            <p>scroll down to close</p>
-            <p>scroll down to close</p>
-            <p>scroll down to close</p>
-            <p>scroll down to close</p>
-            <p>scroll down to close</p>
-            <p>scroll down to close</p>
-            <p>scroll down to close</p>
-            <p>scroll down to close</p>
-            <p>scroll down to close</p>
-            <p>scroll down to close</p>
+             <h2>Modal</h2>
+            <p>从左弹出窗口</p>
         </div>
     </div>
     <div class="oreo-modal oreo-modal-backdrop oreo-modal-right" style="display:none;" id="demo-modal-right">
         <div class="oreo-modal-content">
-            <p>scroll down to close</p>
-            <p>scroll down to close</p>
-            <p>scroll down to close</p>
-            <p>scroll down to close</p>
-            <p>scroll down to close</p>
-            <p>scroll down to close</p>
-            <p>scroll down to close</p>
-            <p>scroll down to close</p>
-            <p>scroll down to close</p>
-            <p>scroll down to close</p>
+              <h2>Modal</h2>
+            <p>从右弹出窗口</p>
         </div>
     </div>
     <div class="oreo-modal oreo-modal-backdrop oreo-modal-max" style="display:none;" id="demo-modal-max">
         <div class="oreo-modal-content">
-            <p>scroll down to close</p>
-            <p>scroll down to close</p>
-            <p>scroll down to close</p>
-            <p>scroll down to close</p>
-            <p>scroll down to close</p>
-            <p>scroll down to close</p>
-            <p>scroll down to close</p>
-            <p>scroll down to close</p>
-            <p>scroll down to close</p>
-            <p>scroll down to close</p>
-            <a href="javascript:;" class="oreo-button oreo-button-small oreo-button-primary oreo-button-inline demo-close">Close</a>    
+            <h2>Maximized Modal</h2>
+            <p>全屏弹窗</p>
+            <a href="javascript:;" class="oreo-button oreo-button-small oreo-button-primary oreo-button-inline demo-close">Close me</a>    
         </div>
     </div>
     <div class="oreo-modal oreo-modal-backdrop oreo-modal-min" style="display:none;" id="demo-modal-min">
         <div class="oreo-modal-content">
             <div style="width:260px;">
-                <img src="http://owz1rt8et.bkt.clouddn.com/assets/TB_splash.jpg_.webp" style="width:100%;display:block;">
+                <h2>Minimized Modal</h2>
+                <p>小屏弹窗</p>
             </div>
         </div>
     </div>
 
     <script type="text/javascript">
-        $(document).ready(function () {
-            $('.demo-modal .demo-button .oreo-button').on('click', function () {
+        $(document).ready(function() {
+            $('.demo-modal .demo-button .oreo-button').on('click', function() {
                 $('#demo-modal-' + this.dataset.type).fadeIn(200);
             })
-            $('.demo-modal .oreo-modal-backdrop').on('click', function (event) {
+            $('.demo-modal .oreo-modal-backdrop').on('click', function(event) {
                 if (event.target !== event.currentTarget) return;
                 $(this).fadeOut(200);
             })
-            $('.demo-modal .demo-close').on('click', function (event) {
+            $('.demo-modal .demo-close').on('click', function(event) {
                 $('.demo-close').parents('.oreo-modal').fadeOut(200);
             })
         })
@@ -1896,14 +1962,14 @@
 
     <div class="oreo-toast oreo-toast-nomask" style="display:none;" id="demo-toast-1">
         <div class="oreo-toast-text">
-            <div class="oreo-toast-icon oreo-toast-loading">
+            <div class="oreo-toast-icon oreo-loading oreo-loading-sm">
             </div>
             <div class="oreo-toast-msg">正在努力加载...</div>
         </div>
     </div>
     <div class="oreo-toast oreo-toast-nomask" style="display:none;" id="demo-toast-2">
         <div class="oreo-toast-text oreo-toast-text-vertical">
-            <div class="oreo-toast-icon oreo-toast-loading">
+            <div class="oreo-toast-icon oreo-loading">
             </div>
             <div class="oreo-toast-msg">正在努力加载...</div>
         </div>

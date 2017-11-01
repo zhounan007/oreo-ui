@@ -1,0 +1,132 @@
+@import '../../base/fn.less';
+@loadingPrefixCls: oreo-loading;
+.quart(@size, @c, @b) {
+    border-radius: 50px;
+    border: @size solid @c;
+    &:after {
+        position: absolute;
+        content: '';
+        top: -@size;
+        right: -@size;
+        bottom: -@size;
+        left: -@size;
+        border-radius: 50px;
+        border: @size solid transparent;
+        border-top-color: @b;
+        animation: spin 1s linear infinite;
+    }
+}
+
+.@{loadingPrefixCls},
+.@{loadingPrefixCls}-lg {
+    display: inline-block;
+    position: relative;
+    width: 32px;
+    height: 32px;
+    vertical-align: middle;
+    .quart(2px, rgba(255, 255, 255, 0.4), #fff);
+    &.@{loadingPrefixCls}-dark {
+        .quart(2px, @color-icon-base, @brand-primary);
+    } // &-circles {
+    //     border-radius: 50px;
+    //     border: 3px solid transparent;
+    //     border-top-color: #fff;
+    //     animation: spin 1s linear infinite;
+    //     &:before,
+    //     &:after {
+    //         content: '';
+    //         position: absolute;
+    //         top: 5px;
+    //         right: 5px;
+    //         bottom: 5px;
+    //         left: 5px;
+    //         border-radius: 50px;
+    //         border: 3px solid transparent;
+    //         border-top-color: #fff;
+    //         opacity: 0.8;
+    //         animation: spinreverse 5s linear infinite;
+    //     }
+    //     &:before {
+    //         top: 12px;
+    //         left: 12px;
+    //         bottom: 12px;
+    //         right: 12px;
+    //         animation: spinreverse 10s linear infinite;
+    //     }
+    // }
+    // &-bars {
+    //     &:before,
+    //     &:after,
+    //     span {
+    //         content: '';
+    //         display: block;
+    //         position: absolute;
+    //         left: 0;
+    //         top: 0;
+    //         width: 10px;
+    //         height: 30px;
+    //         background-color: #fff;
+    //         animation: grow 1.5s linear infinite;
+    //     }
+    //     &:after{
+    //          left: 15px;
+    //         -webkit-animation: grow 1.5s linear -0.5s infinite;
+    //         animation: grow 1.5s linear -0.5s infinite;
+    //     }
+    //     span{
+    //         left: 30px;
+    //         animation: grow 1.5s linear -1s infinite;
+    //     }
+    // }
+}
+
+.@{loadingPrefixCls}-sm {
+    display: inline-block;
+    position: relative;
+    width: 22px;
+    height: 22px;
+    vertical-align: middle;
+    .quart(1px, rgba(255, 255, 255, 0.4), #fff);
+    &.@{loadingPrefixCls}-dark {
+        .quart(1px, @color-icon-base, @brand-primary);
+    }
+}
+
+@keyframes spin {
+    0% {
+        -webkit-transform: rotate(0deg);
+        tranform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(360deg);
+        tranform: rotate(360deg);
+    }
+}
+
+// @keyframes spinreverse {
+//     0% {
+//         -webkit-transform: rotate(0deg);
+//         tranform: rotate(0deg);
+//     }
+//     100% {
+//         -webkit-transform: rotate(-360deg);
+//         tranform: rotate(-360deg);
+//     }
+// }
+// @keyframes grow {
+//   0% {
+//     -webkit-transform: scaleY(0);
+//     transform: scaleY(0);
+//     opacity: 0;
+//   }
+//   50% {
+//     -webkit-transform: scaleY(1);
+//     transform: scaleY(1);
+//     opacity: 1;
+//   }
+//   100% {
+//     -webkit-transform: scaleY(0);
+//     transform: scaleY(0);
+//     opacity: 0;
+//   }
+// }

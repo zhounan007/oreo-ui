@@ -19,103 +19,64 @@
         </div>
 
         <h2>Max,Min</h2>
-        
+
         <div class="demo-button">
             <a href="javascript:;" class="oreo-button oreo-button-small oreo-button-primary" data-type="max">Modal Max</a>
 
-            <a href="javascript:;" class="oreo-button oreo-button-small oreo-button-primary" data-type="min">Modal Min</a>    
+            <a href="javascript:;" class="oreo-button oreo-button-small oreo-button-primary" data-type="min">Modal Min</a>
         </div>
     </div>
 
     <div class="oreo-modal oreo-modal-backdrop oreo-modal-top" style="display:none;" id="demo-modal-top">
         <div class="oreo-modal-content">
-            <p>scroll down to close</p>
-            <p>scroll down to close</p>
-            <p>scroll down to close</p>
-            <p>scroll down to close</p>
-            <p>scroll down to close</p>
-            <p>scroll down to close</p>
-            <p>scroll down to close</p>
-            <p>scroll down to close</p>
-            <p>scroll down to close</p>
-            <p>scroll down to close</p>
+            <h2>Modal</h2>
+            <p>从上弹出窗口</p>
         </div>
     </div>
     <div class="oreo-modal oreo-modal-backdrop oreo-modal-bottom" style="display:none;" id="demo-modal-bottom">
         <div class="oreo-modal-content">
-            <p>scroll down to close</p>
-            <p>scroll down to close</p>
-            <p>scroll down to close</p>
-            <p>scroll down to close</p>
-            <p>scroll down to close</p>
-            <p>scroll down to close</p>
-            <p>scroll down to close</p>
-            <p>scroll down to close</p>
-            <p>scroll down to close</p>
-            <p>scroll down to close</p>
+             <h2>Modal</h2>
+            <p>从下弹出窗口</p>
         </div>
     </div>
     <div class="oreo-modal oreo-modal-backdrop oreo-modal-left" style="display:none;" id="demo-modal-left">
         <div class="oreo-modal-content">
-            <p>scroll down to close</p>
-            <p>scroll down to close</p>
-            <p>scroll down to close</p>
-            <p>scroll down to close</p>
-            <p>scroll down to close</p>
-            <p>scroll down to close</p>
-            <p>scroll down to close</p>
-            <p>scroll down to close</p>
-            <p>scroll down to close</p>
-            <p>scroll down to close</p>
+             <h2>Modal</h2>
+            <p>从左弹出窗口</p>
         </div>
     </div>
     <div class="oreo-modal oreo-modal-backdrop oreo-modal-right" style="display:none;" id="demo-modal-right">
         <div class="oreo-modal-content">
-            <p>scroll down to close</p>
-            <p>scroll down to close</p>
-            <p>scroll down to close</p>
-            <p>scroll down to close</p>
-            <p>scroll down to close</p>
-            <p>scroll down to close</p>
-            <p>scroll down to close</p>
-            <p>scroll down to close</p>
-            <p>scroll down to close</p>
-            <p>scroll down to close</p>
+              <h2>Modal</h2>
+            <p>从右弹出窗口</p>
         </div>
     </div>
     <div class="oreo-modal oreo-modal-backdrop oreo-modal-max" style="display:none;" id="demo-modal-max">
         <div class="oreo-modal-content">
-            <p>scroll down to close</p>
-            <p>scroll down to close</p>
-            <p>scroll down to close</p>
-            <p>scroll down to close</p>
-            <p>scroll down to close</p>
-            <p>scroll down to close</p>
-            <p>scroll down to close</p>
-            <p>scroll down to close</p>
-            <p>scroll down to close</p>
-            <p>scroll down to close</p>
-            <a href="javascript:;" class="oreo-button oreo-button-small oreo-button-primary oreo-button-inline demo-close">Close</a>    
+            <h2>Maximized Modal</h2>
+            <p>全屏弹窗</p>
+            <a href="javascript:;" class="oreo-button oreo-button-small oreo-button-primary oreo-button-inline demo-close">Close me</a>    
         </div>
     </div>
     <div class="oreo-modal oreo-modal-backdrop oreo-modal-min" style="display:none;" id="demo-modal-min">
         <div class="oreo-modal-content">
             <div style="width:260px;">
-                <img src="http://owz1rt8et.bkt.clouddn.com/assets/TB_splash.jpg_.webp" style="width:100%;display:block;">
+                <h2>Minimized Modal</h2>
+                <p>小屏弹窗</p>
             </div>
         </div>
     </div>
 
     <script type="text/javascript">
-        $(document).ready(function () {
-            $('.demo-modal .demo-button .oreo-button').on('click', function () {
+        $(document).ready(function() {
+            $('.demo-modal .demo-button .oreo-button').on('click', function() {
                 $('#demo-modal-' + this.dataset.type).fadeIn(200);
             })
-            $('.demo-modal .oreo-modal-backdrop').on('click', function (event) {
+            $('.demo-modal .oreo-modal-backdrop').on('click', function(event) {
                 if (event.target !== event.currentTarget) return;
                 $(this).fadeOut(200);
             })
-            $('.demo-modal .demo-close').on('click', function (event) {
+            $('.demo-modal .demo-close').on('click', function(event) {
                 $('.demo-close').parents('.oreo-modal').fadeOut(200);
             })
         })
