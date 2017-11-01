@@ -5,7 +5,7 @@
     position: relative;
     font-size: @font-size-base;
     margin: @oreoCardviewMargin;
-    border-radius: @radius-md;
+    border-radius:@radius-xs;
     background: @fill-base;
     box-shadow: @oreoCardviewShadow;
     p{
@@ -21,7 +21,6 @@
         align-items: center;
     }
     &-header{
-        border-radius: @radius-md @radius-md 0 0;
         position: relative;
         img{
             width: 100%;
@@ -66,7 +65,6 @@
         
     }
     &-footer{
-        border-radius: 0 0 @radius-md @radius-md;
         position: relative;
         &:after{
             .setTopLine(@border-color-base);
