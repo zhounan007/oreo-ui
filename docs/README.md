@@ -79,6 +79,6 @@ $ gulp  -s
 
 
 
-## 感谢
+## License
 
-Design By Mobile Internet Front-end Web Team
+MIT

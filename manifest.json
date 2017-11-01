@@ -1,16 +1,25 @@
 {
     "base": "./src/style/base/base.less",
+    "oreo-badge": "./src/style/components/oreo-badge/oreo-badge.less",
     "oreo-button": "./src/style/components/oreo-button/oreo-button.less",
     "oreo-flex": "./src/style/components/oreo-flex/oreo-flex.less",
+    "oreo-footer": "./src/style/components/oreo-footer/oreo-footer.less",
+
+    "oreo-checkbox":"./src/style/components/oreo-form/oreo-checkbox.less",
+    "oreo-form":"./src/style/components/oreo-form/oreo-form.less",
     "oreo-input": "./src/style/components/oreo-form/oreo-input.less",
+    "oreo-radio": "./src/style/components/oreo-form/oreo-radio.less",
     "oreo-switch": "./src/style/components/oreo-form/oreo-switch.less",
     "oreo-textarea": "./src/style/components/oreo-form/oreo-textarea.less",
+    
     "oreo-grid": "./src/style/components/oreo-grid/oreo-grid.less",
     "oreo-list": "./src/style/components/oreo-list/oreo-list.less",
-    "oreo-navbar": "./src/style/components/oreo-navbar/oreo-navbar.less",
 
-    "oreo-badge": "./src/style/components/oreo-badge/oreo-badge.less",
     "oreo-modal": "./src/style/components/oreo-modal/oreo-modal.less",
+    "oreo-navbar": "./src/style/components/oreo-navbar/oreo-navbar.less",
+    
+    "oreo-steps": "./src/style/components/oreo-steps/oreo-steps.less",
+
     "oreo-tab": "./src/style/components/oreo-tab/oreo-tab.less",
     "oreo-tabbar": "./src/style/components/oreo-tabbar/oreo-tabbar.less"
 }

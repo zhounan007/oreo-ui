@@ -36,7 +36,7 @@ var config = {
     banner: [
         '/*!',
         ' * Oreo UI v<%= pkg.version %> (<%= pkg.homepage %>)',
-        ' * Copyright <%= new Date().getFullYear() %> Newcapec Mobile Internet, Inc.',
+        // ' * Copyright <%= new Date().getFullYear() %> Newcapec Mobile Internet, Inc.',
         ' * Licensed under the <%= pkg.license %> license',
         ' */',
         ''
@@ -142,34 +142,6 @@ gulp.task('build:example:style', function () {
         }));
 })
 
-// gulp.task('build:example:components', function () {
-//     gulp.src(config.src.example_html, option)
-//         .pipe(tap(function (file) {
-
-//             var dir = path.dirname(file.path);
-//             var contents = file.contents.toString();
-
-//             var src = './src/example/components'
-//             var cps = getFolders(src);
-//             var tpls = [];
-//             cps.forEach(function (v, index) {
-//                 var filename = path.join(src, v);
-//                 var id = path.basename(filename, '.html');
-
-//                 var content = fs.readFileSync(filename, 'utf-8');
-//                 tpls.push('<script type="text/html" id="tpl_' + id + '">\n' + content + '\n</script>')
-//             })
-
-//             contents = contents.replace(/<script\s+type="text\/html"\s*><\/script>/gi, tpls.join(''));
-
-//             file.contents = new Buffer(contents);
-//         }))
-//         .pipe(gulp.dest(config.dist))
-//         .pipe(bs.reload({
-//             stream: true
-//         }));
-// });
-
 gulp.task('build:example:html', function () {
     gulp.src(config.src.example_html, option)
         .pipe(tap(function (file) {
@@ -267,7 +239,7 @@ gulp.task('build:example', ['build:example:assets', 'build:example:style', 'buil
 gulp.task('release', ['build:style', 'build:rem', 'build:components:px', 'build:components:rem', 'build:example', 'build:docs:style'])
 
 gulp.task('watch', ['release'], function () {
-    gulp.watch('src/style/**/*', ['build:style', 'build:rem', 'build:components:px', 'build:components:rem', 'build:docs:style']);
+    gulp.watch('src/style/**/*', ['build:docs:style']);
     gulp.watch('src/example/res/css/example.less', ['build:example:style']);
     gulp.watch('src/example/**/*.?(png|jpg|gif|js)', ['build:example:assets']);
     gulp.watch('src/**/*.html', ['build:example:html']);
