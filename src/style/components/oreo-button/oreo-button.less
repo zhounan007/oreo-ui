@@ -12,7 +12,7 @@
     font-size: @font-size-headline;    
     color: @brand-primary;
     background: @fill-base;
-    border: @border-width-sm solid @brand-primary;
+    box-shadow: 0 0 0 1px #108ee9;
     border-radius: @radius-md;
     .setHeight(@button-height);
     &:active{
@@ -26,7 +26,7 @@
     &-primary{
         color: @color-text-base-inverse;
         background: @brand-primary;
-        border: @border-width-sm solid @brand-primary;
+        box-shadow: 0 0 0 1px @brand-primary;
         &.@{buttonPrefixCls}-disabled{
            opacity: .7!important;
         }
@@ -37,7 +37,7 @@
     &-success{
         color: @color-text-base-inverse;
         background: @brand-success;
-        border: @border-width-sm solid @brand-success;
+        box-shadow: 0 0 0 1px @brand-success;
         &.@{buttonPrefixCls}-disabled{
            opacity: .7!important;
         }
@@ -48,7 +48,7 @@
     &-error{
         color: @color-text-base-inverse;
         background: @brand-error;
-        border: @border-width-sm solid @brand-error;
+        box-shadow: 0 0 0 1px @brand-error;
         &.@{buttonPrefixCls}-disabled{
            opacity: .7!important;
         }

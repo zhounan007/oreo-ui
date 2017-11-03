@@ -6,7 +6,7 @@
 
 # Oreo-UI
 
-Oreo-UI is a modern CSS framework based on Mobile
+Oreo-UI  a modern CSS framework based on Mobile
 
 
 
