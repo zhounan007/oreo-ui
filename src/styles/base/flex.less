@@ -1,0 +1,21 @@
+.row,
+.column,
+.flex {
+    display: flex;
+    flex-wrap: wrap;
+    &.inline {
+        display: inline-flex;
+    }
+}
+
+.row.reverse{
+    flex-direction: row-reverse;
+}
+
+.column{
+    flex-direction: column;
+    &.reverse{
+        flex-direction: column-reverse;
+    }
+}
+
