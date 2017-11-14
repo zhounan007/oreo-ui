@@ -90,3 +90,57 @@
     .fixed();
     background: @fill-mask;
 }
+
+
+.@{modalPrefixCls},
+.@{modalPrefixCls}-content{
+     transition: all .4s cubic-bezier(.55, 0, .1, 1);
+}
+
+.@{modalPrefixCls}-top-enter,
+.@{modalPrefixCls}-top-leave-active{
+    opacity: 0;
+    .@{modalPrefixCls}-content{
+        transform: translateY(-101%);
+    }
+}
+
+.@{modalPrefixCls}-bottom-enter,
+.@{modalPrefixCls}-bottom-leave-active{
+    opacity: 0;
+    .@{modalPrefixCls}-content{
+        transform: translateY(101%);
+    }
+}
+
+.@{modalPrefixCls}-left-enter,
+.@{modalPrefixCls}-left-leave-active{
+    opacity: 0;
+    .@{modalPrefixCls}-content{
+        transform: translateX(-101%);
+    }
+}
+
+// modal 默认动画
+.@{modalPrefixCls}-enter,
+.@{modalPrefixCls}-leave-active,
+.@{modalPrefixCls}-right-enter,
+.@{modalPrefixCls}-right-leave-active{
+     opacity: 0;
+    .@{modalPrefixCls}-content{
+        transform: translateX(101%);
+    }
+}
+
+.@{modalPrefixCls}-fade-enter{
+    opacity: 0;
+    .@{modalPrefixCls}-content{
+        transform: scale(1.2)
+    }
+}
+.@{modalPrefixCls}-fade-leave-active{
+    opacity: 0;
+    .@{modalPrefixCls}-content{
+        transform: scale(0.8);
+    }
+}
