@@ -1,5 +1,9 @@
 # 更新记录
 
+## v0.4.5 (2017-11-16)
+-  **Feature**
+    - 新增 `Toast` 中`success`,`failure`样式
+
 ## v0.4.4 (2017-11-01)
 -  **Feature**
     - 新增 `Card`,`Loading`样式
