@@ -44,6 +44,9 @@
 
             .@{toastPrefixCls}-icon{
                 margin-right: @h-spacing-sm;
+
+                width: @icon-size-md;
+                height: @icon-size-md;
             }
         }
         &.@{toastPrefixCls}-text-vertical{
@@ -52,45 +55,28 @@
 
             .@{toastPrefixCls}-icon{
                 margin-bottom: @v-spacing-md;
+
+                width: @icon-size-lg;
+                height: @icon-size-lg;
             }
         }
         .@{toastPrefixCls}-icon,
         .@{toastPrefixCls}-msg{
             display: flex;
         }
-        .@{toastPrefixCls}-loading{
-            display: block;
-            width: @icon-size-md;
-            height: @icon-size-md;
-            .svg-background('loading');
+
+        .@{toastPrefixCls}-success{
+            .svg-background('success');
             background-size: contain;
             background-repeat: no-repeat;
             background-position: 50% 50%;
 
-            animation: loading-rotate 2s linear infinite;
+        }
+        .@{toastPrefixCls}-failure{
+            .svg-background('failure');
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: 50% 50%;
         }
     }
-
-@keyframes loading-rotate {
-    to {
-        transform: rotate(1turn)
-    }
-}
-
-@keyframes loading-dash {
-    0% {
-        stroke-dasharray: 1, 200;
-        stroke-dashoffset: 0
-    }
-
-    50% {
-        stroke-dasharray: 90, 150;
-        stroke-dashoffset: -40px
-    }
-
-    to {
-        stroke-dasharray: 90, 150;
-        stroke-dashoffset: -120px
-    }
-}
 }
