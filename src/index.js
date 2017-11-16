@@ -1,15 +1,36 @@
-import ZButton from '../components/button'
+import ZButton from '@c/button'
 import {
-  pageScroll
-} from './libs/utils.js'
+  ZFlex,
+  ZFlexItem
+} from '@c/flex'
+import {
+  ZGrid,
+  ZGridItem
+} from '@c/grid'
+import {
+  ZModal
+} from '@c/modal'
+import {
+  ZIcon
+} from '@c/icon'
+import ZToast from '@c/toast'
+
 const components = {
-  ZButton
+  ZButton,
+  ZFlex,
+  ZFlexItem,
+  ZGrid,
+  ZGridItem,
+  ZModal,
+  ZIcon
 }
 
 const install = function (Vue, opts = {}) {
   Object.keys(components).forEach((key) => {
     Vue.component(components[key].name, components[key])
   })
+
+  Vue.prototype.$toast = ZToast
 }
 
 // install

@@ -1,5 +1,5 @@
 <template>
-    <a href="javascript:;" :class="classNames">
+    <a href="javascript:;" :class="classNames" @click="handlerClick">
         <slot></slot>
     </a>
 </template>
@@ -28,6 +28,13 @@ export default {
                 [`${prefixCls}-${this.type}`]: this.type,
                 [`${prefixCls}-disabled`]: this.disabled
             }
+        }
+    },
+    methods: {
+        handlerClick(e) {
+            this.$el.blur()
+            if (this.disabled) return
+            this.$emit('click', e)
         }
     }
 }

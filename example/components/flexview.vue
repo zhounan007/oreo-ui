@@ -29,9 +29,7 @@ export default {
 .flexview {
     width: 100%;
     height: 100%;
-    max-width: 10rem;
     margin: 0 auto;
-
     display: flex;
     flex-direction: column;
     overflow: hidden;

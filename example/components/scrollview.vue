@@ -18,7 +18,7 @@ export default {
     overflow-y: auto;
     transition: all .2s ease-in-out;
     background: #efeff4;
-
+    margin: 0 auto;
     .demo-hd {
         padding: 0.4rem;
         .demo-title {

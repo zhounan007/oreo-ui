@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
@@ -23,10 +24,11 @@
           iphone = !ipad && ua.match(/(iPhone\sOS)\s([\d_]+)/);
 
         //  && !android
-        if (!ipad && !iphone) {
-          dpr = 1;
-        }
-
+        // if (!ipad && !iphone) {
+        //   dpr = 1;
+        // }
+        dpr = Math.floor(dpr)
+        if (dpr >= 3) dpr = 3;
         var _scale = 1 / dpr;
 
         var metaEl = doc.querySelector('meta[name="viewport"]');
@@ -60,7 +62,6 @@
   </div>
   <!-- built files will be auto injected -->
 
-  <script  type="text/javascript" src="http://192.168.156.141:8080/workstorm/ccb_pay/vconsole.min.js"></script>
 </body>
 
 </html>
