@@ -1,5 +1,17 @@
 # 更新记录
 
+## v0.4.6 (2017-11-20)
+
+-  **Feature**
+    - 优化`Button`中disabled状态下的效果
+
+-  **Bug Fix**
+    - `Dialog` 中引入无效的`Modal`样式
+    - `Toast` 中图文垂直展示没有水平居中 
+    - `Button`中disabled状态下border-color问题
+    
+
+
 ## v0.4.5 (2017-11-16)
 -  **Feature**
     - 新增 `Toast` 中`success`,`failure`样式

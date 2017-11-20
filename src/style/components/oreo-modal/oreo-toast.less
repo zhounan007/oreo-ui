@@ -43,10 +43,12 @@
             padding: @v-spacing-md @h-spacing-lg;
 
             .@{toastPrefixCls}-icon{
-                margin-right: @h-spacing-sm;
-
+                // margin:0  @h-spacing-sm 0 0;
                 width: @icon-size-md;
                 height: @icon-size-md;
+            }
+            .@{toastPrefixCls}-msg{
+                margin:0 0 0 @h-spacing-sm;
             }
         }
         &.@{toastPrefixCls}-text-vertical{
@@ -54,10 +56,12 @@
             padding: @h-spacing-lg;
 
             .@{toastPrefixCls}-icon{
-                margin-bottom: @v-spacing-md;
-
+                // margin:0 0  @v-spacing-md 0;
                 width: @icon-size-lg;
                 height: @icon-size-lg;
+            }
+            .@{toastPrefixCls}-msg{
+                margin: @v-spacing-md 0 0 0;
             }
         }
         .@{toastPrefixCls}-icon,
