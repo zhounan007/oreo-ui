@@ -33,7 +33,7 @@ export default {
     name: 'button',
     data() {
         return {
-            icons: ['activity', 'airplay', 'box', 'grid', 'camera', 'bluetooth', 'book']
+            icons: ['grid', 'heart', 'delete', 'link', 'list', 'layout', 'info']
         }
     },
     components: {
