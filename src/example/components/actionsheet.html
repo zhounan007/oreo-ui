@@ -17,8 +17,8 @@
        
     </div>
 
-    <div class="oreo-modal oreo-modal-backdrop oreo-modal-bottom" style="display:none;" id="demo-actionsheet-1">
-        <div class="oreo-modal-content">
+    <div class="oreo-modal oreo-modal-mask oreo-modal-bottom" style="display:none;" id="demo-actionsheet-1">
+        <div class="oreo-modal-content oreo-actionsheet">
             <div class="oreo-actionsheet-title">请选择</div>
             <div class="oreo-actionsheet-item">拍照</div>
             <div class="oreo-actionsheet-item">从相册中选择</div>
@@ -28,8 +28,8 @@
             </div>
         </div>
     </div>
-    <div class="oreo-modal oreo-modal-backdrop oreo-modal-bottom" style="display:none;" id="demo-actionsheet-2">
-        <div class="oreo-modal-content">
+    <div class="oreo-modal oreo-modal-mask oreo-modal-bottom" style="display:none;" id="demo-actionsheet-2">
+        <div class="oreo-modal-content oreo-actionsheet">
             <div class="oreo-actionsheet-title" style="background: inherit;">分享到</div>
             <div class="demo-actionsheet-share">
                 <div class="demo-actionsheet-item">
@@ -57,7 +57,7 @@
             $('.demo-actionsheet .demo-button .oreo-button').on('click', function () {
                 $('#demo-actionsheet-' + this.dataset.type).fadeIn(200);
             })
-            $('.demo-actionsheet .oreo-modal-backdrop').on('click', function (event) {
+            $('.demo-actionsheet .oreo-modal-mask').on('click', function (event) {
                 if (event.target !== event.currentTarget) return;
                 $(this).fadeOut(200);
             })
