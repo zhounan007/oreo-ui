@@ -1,0 +1,108 @@
+@import "../oreo-list/oreo-list.less";
+@selectboxPrefixCls: oreo-selectBox;
+
+.@{listPrefixCls}{
+    &-item {
+        &.@{selectboxPrefixCls}{
+            margin-left: @oreoSelectboxGap;
+            justify-content: space-between;
+            padding: 0;
+            .@{selectboxPrefixCls}-thumb{
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                &-inner{
+                    width: 100%;
+                    height: @list-item-height;
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    // padding-left: @oreoSelectboxInputLeft;
+                    -webkit-appearance: none;
+                    background-color: transparent;
+                    border: none;
+                    // 伪类选择框
+                    &:after{
+                        content: "";
+                        width: @oreoSelectboxInputW;
+                        .setHeight(@h: @oreoSelectboxInputW);
+                        position: absolute;
+                        top: 50%;
+                        transform: translateY(-50%);
+                        text-align: center;
+                        border: @border-width-sm solid @border-color-base;                        
+                    }
+                    // 选中样式
+                    &:checked:after {
+                        content:"\2714";
+                        color: #fff;
+                        background: @brand-primary;
+                        border: none;
+                    }
+                    // 选中不可点样式
+                    &:checked:disabled:after {
+                        content:"\2714";
+                        color: #fff;
+                        background: #cccccc;
+                        border-color: @border-color-base;
+                        
+                    }
+                }
+                &:after{
+                    .setBottomLine(@border-color-base);
+                }
+            }
+            &:active{
+                // background: rgba(0,0,0,.15);
+            } 
+            &:last-child{
+                .@{selectboxPrefixCls}-thumb{
+                    &:after{
+                        display: none;
+                    }
+                }
+            }    
+        }
+        .@{selectboxPrefixCls}-label{
+            .setHeight(@h: @oreoSelectboxLabelH);
+            margin-left: @oreoSelectboxLabelLeft;
+            .textOverflow();
+            // &:after{
+            //     .setBottomLine(@border-color-base);
+            // }
+            &.@{selectboxPrefixCls}-flex{
+                flex: 1;
+            }
+        }
+        // 选择框在右
+        &.inner-right{
+            .@{selectboxPrefixCls}-thumb{
+                .@{selectboxPrefixCls}-thumb-inner{
+                    &:after{
+                        right: @oreoInnerGap;
+                    }
+                }
+            }
+            .@{selectboxPrefixCls}-label{
+                flex: 1;
+                margin-left: 0;
+                margin-right: @oreoSelectboxLabelLeft;
+            }
+        }
+        &.@{selectboxPrefixCls}-agree{
+            background-color: 0;
+        }
+    }
+}
+    
+.@{listPrefixCls}-body{
+    &.@{selectboxPrefixCls}-agree{
+        background-color: transparent;
+        .selectBox-agree{
+            background-color: transparent;
+            .@{selectboxPrefixCls}-thumb-inner:active{
+                background: transparent;
+            }
+        }
+    }
+}
