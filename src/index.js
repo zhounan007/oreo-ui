@@ -14,6 +14,16 @@ import {
   ZIcon
 } from '@c/icon'
 import ZToast from '@c/toast'
+import {
+  ZIput,
+  ZTextarea,
+  ZSwitch
+} from '@c/form'
+import {
+  ZList,
+  ZListItem,
+  ZMediaItem
+} from '@c/list'
 
 const components = {
   ZButton,
@@ -22,7 +32,13 @@ const components = {
   ZGrid,
   ZGridItem,
   ZModal,
-  ZIcon
+  ZIcon,
+  ZIput,
+  ZTextarea,
+  ZSwitch,
+  ZList,
+  ZListItem,
+  ZMediaItem
 }
 
 const install = function (Vue, opts = {}) {
