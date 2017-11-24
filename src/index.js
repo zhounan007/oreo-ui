@@ -24,6 +24,7 @@ import {
   ZListItem,
   ZMediaItem
 } from '@c/list'
+import ZCheckBox from '@c/checkBox'
 
 const components = {
   ZButton,
@@ -38,7 +39,8 @@ const components = {
   ZSwitch,
   ZList,
   ZListItem,
-  ZMediaItem
+  ZMediaItem,
+  ZCheckBox
 }
 
 const install = function (Vue, opts = {}) {

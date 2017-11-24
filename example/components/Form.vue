@@ -42,7 +42,7 @@
                 <div class="demo-item">
                     <h2>Switch</h2>
                     <div class="demo-content">
-                        <z-switch v-for="(item,index) in switchData" :key="index" :text="item.text" :disabled="item.disabled" :checked="item.checked"></z-switch>
+                        <z-switch v-for="(item,index) in switchData" :key="index" :text="item.text" :disabled="item.disabled" :checked="item.checked" v-model="toggleState"></z-switch>
                     </div>
                 </div>
             </div>
@@ -60,38 +60,27 @@ export default {
             text: 'Vue-oreo',
             switchData: [
                 {
-                    text: '关闭状态',
-                    checked: false,
-                    disabled: false
+                    text: '关闭状态'
                 }, {
                     text: '开启状态',
-                    checked: true,
-                    disabled: false
+                    checked: true
                 }, {
-                    text: '不可点击状态',
-                    checked: false,
+                    text: '不可点击关闭状态',
                     disabled: true
                 }, {
                     text: '不可点击开启状态',
                     checked: true,
                     disabled: true
                 }
-            ]
+            ],
+            toggleState: null
         }
     },
     components: {
         flexview,
         scrollview
     },
-    watch: {
-        text(newValue) {
-            console.log(this.text)
-        }
-    },
     methods: {
-        print() {
-            console.log(this.name)
-        }
     }
 }
 </script>
