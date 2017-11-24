@@ -421,6 +421,14 @@
             <a href="javascript:;" class="oreo-button oreo-button-small oreo-button-primary" data-type="6">iOS Operation</a>
         </div>
 
+        <!-- <h2>Password</h2>
+
+        <div class="demo-button">
+            <a href="javascript:;" class="oreo-button oreo-button-small oreo-button-primary" data-type="5">iOS Password</a>
+
+            <a href="javascript:;" class="oreo-button oreo-button-small oreo-button-primary" data-type="6">Android Password</a>
+        </div> -->
+
 
     </div>
 
@@ -508,12 +516,12 @@
         </div>
     </div>
     <script type="text/javascript">
-        $(document).ready(function () {
-            $('.demo-dialog .demo-button .oreo-button').on('click', function () {
+        $(document).ready(function() {
+            $('.demo-dialog .demo-button .oreo-button').on('click', function() {
                 var $t = $('#demo-dialog-' + this.dataset.type);
                 $t.fadeIn(200);
             })
-            $('.demo-dialog .oreo-dialog-button').on('click', function () {
+            $('.demo-dialog .oreo-dialog-button').on('click', function() {
                 var $p = $(this).parents('div[id]')
                 $p.fadeOut(200);
             })
