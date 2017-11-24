@@ -17,6 +17,12 @@
                         <z-input label="邮箱" type="email" placeholder="Vue-oreo@newcapec.com" :disabled="true" :hideLabel="false"></z-input>
                     </div>
                     <div class="demo-content">
+                        <p class="demo-describe">带label标签</p>
+                        <z-input label="姓名" :rightAlign="true" placeholder="请输入姓名" v-model="name"></z-input>
+                        <z-input label="电话" :rightAlign="true" type="number" placeholder="请输入手机号码"></z-input>
+                        <z-input label="邮箱" :rightAlign="true" type="email" placeholder="Vue-oreo@newcapec.com" :disabled="true" :hideLabel="false"></z-input>
+                    </div>
+                    <div class="demo-content">
                         <p class="demo-describe">不带label标签</p>
                         <z-input placeholder="请输入密码" type="password"></z-input>
                         <z-input placeholder="请输入姓名" v-model="name"></z-input>

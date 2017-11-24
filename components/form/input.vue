@@ -3,7 +3,7 @@
         <z-list-item :class="disabledClass">
             <div :class="labelClassName" v-if="hideLabel">{{label}}</div>
             <div :class="controlClassName">
-                <input :type="type" :placeholder="placeholder" @input="input($event)" :value="value" :disabled="disabled">
+                <input :class="alignClass" :type="type" :placeholder="placeholder" @input="input($event)" :value="value" :disabled="disabled">
             </div>
         </z-list-item>
     </z-list>
@@ -34,7 +34,8 @@ export default {
         },
         value: {
             type: [String, Number]
-        }
+        },
+        rightAlign: Boolean
     },
     computed: {
         hideLabel() {
@@ -50,6 +51,11 @@ export default {
             return {
                 [`${prefixCls}`]: true,
                 [`${prefixCls}-disabled`]: this.disabled
+            }
+        },
+        alignClass() {
+            return {
+                [`${prefixCls}-right`]: this.rightAlign
             }
         }
     },
