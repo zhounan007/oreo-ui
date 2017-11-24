@@ -43,7 +43,12 @@ export default {
             if (type) {
                 this.$toast[type](msg)
             } else {
-                this.$toast({ 'message': msg, 'mode': 'horizontal' })
+                // this.$toast({ 'message': msg, 'mode': 'horizontal' })
+
+                this.$loading()
+                setTimeout(() => {
+                    this.$loading().close()
+                }, 3 * 1000)
             }
         }
     }

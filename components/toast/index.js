@@ -15,7 +15,7 @@ let Toast = (options) => {
     }
   }
 
-  let onClose = options.onClosse
+  let onClose = options.onClose
   let id = 'toast-' + idx++
 
     options.onClose = function () {

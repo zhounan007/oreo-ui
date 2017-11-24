@@ -14,6 +14,8 @@ import {
   ZIcon
 } from '@c/icon'
 import ZToast from '@c/toast'
+import ZLoading from '@c/loading'
+import ZDialog from '@c/dialog'
 
 const components = {
   ZButton,
@@ -31,6 +33,10 @@ const install = function (Vue, opts = {}) {
   })
 
   Vue.prototype.$toast = ZToast
+  Vue.prototype.$loading = ZLoading
+  Vue.prototype.$dialog = ZDialog
+  Vue.prototype.$alert = ZDialog.alert
+  Vue.prototype.$confirm = ZDialog.confirm
 }
 
 // install

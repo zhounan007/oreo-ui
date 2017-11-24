@@ -38,5 +38,5 @@ subtitle: 模态框
 | close    |   关闭回调   | `` |
 
 需要区别的是在`open`或`close`方法的时候,也可以传入`callback`函数. 执行顺序依次为:
-`openCallback`,`@open`,`closeCallback`,`@close`
+`openCallback`, `@open`, `closeCallback`, `@close`
 

@@ -1,9 +1,11 @@
 <template>
     <z-transition :name="modalTransition" :enter="enterClass" :leave="leaveClass">
         <div :class="classNames" v-show="visible" @click.self="handlerClick">
-            <div :class="innerClassNames">
-                <slot></slot>
-            </div>
+            <slot name="inner">
+                <div :class="innerClassNames">
+                    <slot></slot>
+                </div>
+            </slot>
         </div>
     </z-transition>
 </template>
@@ -15,10 +17,10 @@ let openedModalNum = 0
 let duration = 200
 
 const position = {
-    top: `${modalPrefixCls}-top ${modalPrefixCls}-backdrop`,
-    bottom: `${modalPrefixCls}-bottom ${modalPrefixCls}-backdrop`,
-    left: `${modalPrefixCls}-left ${modalPrefixCls}-backdrop`,
-    right: `${modalPrefixCls}-right ${modalPrefixCls}-backdrop`
+    top: `${modalPrefixCls}-top ${modalPrefixCls}-mask`,
+    bottom: `${modalPrefixCls}-bottom ${modalPrefixCls}-mask`,
+    left: `${modalPrefixCls}-left ${modalPrefixCls}-mask`,
+    right: `${modalPrefixCls}-right ${modalPrefixCls}-mask`
 }
 
 export default {
@@ -32,6 +34,10 @@ export default {
         }
     },
     props: {
+        closeOnClickModal: {
+            type: Boolean,
+            default: true
+        },
         position: {
             type: String,
             default: '',
@@ -63,7 +69,7 @@ export default {
             return {
                 [`${modalPrefixCls}`]: true,
                 [position[this.position]]: this.position,
-                [`${modalPrefixCls}-backdrop`]: !this.position && !this.max,
+                [`${modalPrefixCls}-mask`]: !this.position && !this.max,
                 [`${modalPrefixCls}-max`]: this.max
             }
         },
@@ -78,11 +84,16 @@ export default {
             this.$el.parentNode.removeChild(this.$el)
         }
     },
+    created() {
+    },
     methods: {
         handlerClick(e) {
-            this.close()
+            if (this.closeOnClickModal) {
+                this.close()
+            }
         },
         open(callback) {
+            // debugger
             if (this.visible) return
             document.body.appendChild(this.$el)
 

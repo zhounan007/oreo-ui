@@ -1,6 +1,12 @@
 <template>
     <a href="javascript:;" :class="classNames" @click="handlerClick">
-        <slot></slot>
+        <slot>
+            <!-- <div class="oreo-toast-icon oreo-loading oreo-loading-dark oreo-loading-sm">
+                </div>
+                <span>
+                    {{text}}
+                </span> -->
+        </slot>
     </a>
 </template>
 <script>
@@ -8,6 +14,8 @@ const prefixCls = 'oreo-button'
 
 export default {
     name: 'z-button',
+    components: {
+    },
     props: {
         disabled: Boolean,
         inline: Boolean,

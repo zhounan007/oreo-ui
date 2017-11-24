@@ -19,6 +19,8 @@
                 <z-button disabled>Small Button</z-button>
 
                 <z-button inline>Small Button</z-button>
+
+                <z-button text="提交"></z-button>
             </div>
         </scrollview>
     </flexview>

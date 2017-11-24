@@ -42,7 +42,7 @@
         metaEl.setAttribute('content', ['width=device-width, initial-scale=', _scale, ' maximum-scale=', _scale,
           ' minimum-scale=', _scale, ' user-scalable=no'
         ].join(''))
-        doc.documentElement.setAttribute('data-dpr', dpr);
+       // doc.documentElement.setAttribute('data-dpr', dpr);
         doc.documentElement.style.fontSize = _fontsize / 2 * dpr * scale + 'px';
 
         doc.body.style.fontSize = (12 * dpr) + 'px';

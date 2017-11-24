@@ -1,4 +1,4 @@
-import ZModal from './modal.vue'
+import ZModal from './ZModal.vue'
 
 export {
   ZModal
