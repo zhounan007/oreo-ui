@@ -16,6 +16,16 @@ import {
 import ZToast from '@c/toast'
 import ZLoading from '@c/loading'
 import ZDialog from '@c/dialog'
+import {
+  ZIput,
+  ZTextarea,
+  ZSwitch
+} from '@c/form'
+import {
+  ZList,
+  ZListItem,
+  ZMediaItem
+} from '@c/list'
 
 const components = {
   ZButton,
@@ -24,7 +34,13 @@ const components = {
   ZGrid,
   ZGridItem,
   ZModal,
-  ZIcon
+  ZIcon,
+  ZIput,
+  ZTextarea,
+  ZSwitch,
+  ZList,
+  ZListItem,
+  ZMediaItem
 }
 
 const install = function (Vue, opts = {}) {
