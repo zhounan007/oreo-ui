@@ -1,5 +1,15 @@
 # 更新记录
 
+## 
+
+-  **Feature**
+    - 新增`Dialog`中IOS和Android密码输入框
+    - 新增`Modal`中从上弹出textarea信息回复文本框
+    - 新增`Input`中分居两侧样式
+    - 优化`checkbox`、`radio`样式问题
+    - 优化`Dialog`弹层box-shadow的px问题
+
+
 ## v0.4.6 (2017-11-20)
 
 -  **Feature**
