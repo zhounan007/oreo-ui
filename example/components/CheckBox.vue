@@ -24,7 +24,7 @@
                     input和label居左对齐
                 </h2>
                 <div class="demo-content">
-                    <z-check-box :options="checkedData1" v-model="chosenTopics1" :labelLeft="true" :inner-right="true"></z-check-box>
+                    <z-check-box :options="checkedData1" v-model="chosenTopics2" :labelLeft="true" :inner-right="true"></z-check-box>
                 </div>
                 <div class="demo-content">
                     <z-check-box :options="checkedData3" v-model="chosenTopics3" :labelLeft="true" :agree="true"></z-check-box>
@@ -81,6 +81,7 @@ export default {
             ],
             chosenTopics: ['grape'],
             chosenTopics1: ['grape'],
+            chosenTopics2: ['grape'],
             checkedData3: [{
                 text: '同意协议',
                 value: 'ty'
