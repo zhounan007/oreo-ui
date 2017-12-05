@@ -1,6 +1,12 @@
 # 更新记录
 
-## 
+##  (2017-11-27)
+
+-  **Feature**
+    - 修复`Dialog`中password在IOS上input边框无法显示的问题
+    - 优化`Modal`上层弹出textarea的样式问题
+
+##  (2017-11-24)
 
 -  **Feature**
     - 新增`Dialog`中IOS和Android密码输入框
