@@ -2,11 +2,13 @@
 <template>
     <flexview>
         <scrollview>
-            <h2>Oreo-Vue</h2>
-            <p>A mobile UI Components based on Vue2.x &amp; Oreo-UI</p>
+            <div class="demo-hd">
+                <h2 class="demo-title">Oreo-Vue</h2>
+                <p class="demo-subtitle">A mobile UI Components based on Vue2.x &amp; Oreo-UI</p>
+            </div>
     
             <z-grid :data="module" border @click="handlerModuleItem">
-                <template scope="props" slot="item">
+                <template slot="item" slot-scope="props">
                     <z-grid-item :index="props.item.index">{{props.item.text}}</z-grid-item>
                 </template>
             </z-grid>
@@ -30,10 +32,12 @@ export default {
     },
     created() {
         pages.forEach(page => {
-            this.module.push({
-                text: page.slice(0, page.length - 4),
-                index: page.slice(0, page.length - 4)
-            })
+            if (page.split('/').length < 2) {
+                this.module.push({
+                    text: page.slice(0, page.length - 4),
+                    index: page.slice(0, page.length - 4)
+                })
+            }
         })
     },
     methods: {

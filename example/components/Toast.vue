@@ -1,14 +1,8 @@
 
 <template>
     <flexview>
-        <scrollview>
-            <div class="demo-hd">
-                <div class="demo-name">
-                    Toast 提示
-                </div>
-                <div class="demo-subtitle"></div>
-            </div>
-            <div class="demo-body">
+        <scrollview title="Toast 提示" sub-title="支持不同类型">
+            <div class="demo-body  demo-wrap">
                 <h2>
                     位置
                 </h2>

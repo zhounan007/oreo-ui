@@ -6,7 +6,7 @@
  * @Author: zhounan 
  * @Date: 2017-11-07 14:21:04 
  * @Last Modified by: zhounan
- * @Last Modified time: 2017-11-14 17:10:42
+ * @Last Modified time: 2017-12-05 16:55:55
  */
 
 var path = require('path')
@@ -51,7 +51,7 @@ module.exports = {
       {
         test: /\.js$/,
         loader: 'babel-loader',
-        include: [resolve('src'), resolve('components'), resolve('example')]
+        include: [resolve('src'), resolve('components'), resolve('example'), resolve('node_modules/webpack-dev-server/')]
       },
       {
         test: /\.(png|jpe?g|gif)(\?.*)?$/, // |svg

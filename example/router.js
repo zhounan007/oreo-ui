@@ -23,7 +23,7 @@ pages.forEach(page => {
   routes.push(component(page))
 })
 
-console.log(JSON.stringify(routes))
+console.log(JSON.stringify(pages))
 export default new Router({
   routes
 })

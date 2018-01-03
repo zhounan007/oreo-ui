@@ -15,6 +15,9 @@
 //   default
 // }
 export default require.context('./', true, /\.(vue)$/).keys().filter(page => {
-  let p = page.split('/')[1]
+  let p
+  let arry = page.split('/')
+
+  p = arry[1]
   return p !== 'flexview.vue' && p !== 'scrollview.vue' && p !== 'Home.vue'
 }).map(page => page.slice(2))

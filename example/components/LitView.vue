@@ -1,21 +1,12 @@
 
 <template>
     <flexview>
-        <scrollview title="Dialog 对话框" sub-title="Alert, Confirm">
+        <scrollview title="ListView" sub-title="List综合运用">
             <div class="demo-body demo-wrap">
                 <h2>
-                    Alert
+                    PullToRefresh
                 </h2>
-                <z-button small @click="openAlert('android')">Android Alert</z-button>
-    
-                <z-button small @click="openAlert('ios')">iOS Alert</z-button>
-    
-                <h2>
-                    Confirm
-                </h2>
-                <z-button small @click="openConfirm('android')">Android Confirm</z-button>
-    
-                <z-button small @click="openConfirm('ios')">iOS Confirm</z-button>
+                <z-button small @click="goto">pullToRefresh</z-button>
     
             </div>
         </scrollview>
@@ -47,16 +38,8 @@ export default {
                 console.log('alert callback with action: ' + action)
             })
         },
-        openConfirm(type) {
-            this.$dialog({
-                message: 'Are you ok?',
-                type: 'confirm',
-                theme: type
-            }).then(action => {
-                console.log('confirm callback with ' + action)
-            }).catch(action => {
-                console.log('confirm callback with ' + action)
-            })
+        goto() {
+            this.$router.push('/listview/PullToRefresh')
         }
     }
 

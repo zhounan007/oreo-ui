@@ -15,7 +15,7 @@
                 </h2>
     
                 <z-grid :data="icons" border :column="4">
-                    <template scope="props" slot="item">
+                    <template slot-scope="props" slot="item">
                         <z-grid-item :index="props.item">
                             <z-icon :type="props.item"></z-icon>
                             <div class="oreo-grid-item-text">{{props.item}}</div>

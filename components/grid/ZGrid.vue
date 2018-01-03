@@ -2,7 +2,7 @@
     <div :class="classNames">
         <z-flex v-for="(row,index) in group" :key="index">
             <z-flex-item v-for="(item,index) in row" :key="index" class="oreo-grid-item">
-                <slot name="item" :item="item"></slot>
+                <slot name="item" :item="item" ></slot>
             </z-flex-item>
             <template v-if="row.length!==column">
                 <z-flex-item v-for="(n,index ) in polyfill" :key="index" class="oreo-grid-item">

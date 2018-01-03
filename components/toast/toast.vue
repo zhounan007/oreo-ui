@@ -24,7 +24,7 @@ export default {
             mask: true,
             message: '',
             type: '', // success failure loading
-            duration: 2000 * 1000,
+            duration: 2000,
             onClose: null,
             closed: false,
             timer: null,

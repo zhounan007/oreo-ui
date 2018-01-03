@@ -26,6 +26,18 @@ import {
   ZListItem,
   ZMediaItem
 } from '@c/list'
+import {
+  ZScroll
+} from '@c/scroll'
+import {
+  ZTabs,
+  ZTabPane,
+  ZTabBar
+} from '@c/tabs'
+import {
+  ZSticky,
+  ZStickyContainer
+} from '@c/sticky'
 
 const components = {
   ZButton,
@@ -40,7 +52,13 @@ const components = {
   ZSwitch,
   ZList,
   ZListItem,
-  ZMediaItem
+  ZMediaItem,
+  ZScroll,
+  ZTabs,
+  ZTabPane,
+  ZTabBar,
+  ZSticky,
+  ZStickyContainer
 }
 
 const install = function (Vue, opts = {}) {

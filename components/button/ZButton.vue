@@ -2,10 +2,11 @@
     <a href="javascript:;" :class="classNames" @click="handlerClick">
         <slot>
             <!-- <div class="oreo-toast-icon oreo-loading oreo-loading-dark oreo-loading-sm">
-                </div>
-                <span>
-                    {{text}}
-                </span> -->
+                        </div>
+                        <span>
+                            {{text}}
+                        </span> -->
+            {{text}}
         </slot>
     </a>
 </template>
@@ -25,7 +26,8 @@ export default {
             // validator(v) {
             //     return ['primary', 'success', 'error'].indexOf(v) >= 0
             // }
-        }
+        },
+        text: String
     },
     computed: {
         classNames() {

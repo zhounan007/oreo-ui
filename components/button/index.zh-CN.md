@@ -22,6 +22,7 @@ subtitle: 按钮
 | inline    |   是否是行内元素   | boolean  | `false` |
 | small    |   按钮大小     | boolean  |  `false` |
 | type    |   按钮类型     | string(``,`primary`,`success`,`error`)  |  `` |
+| text    |   文字     | string  |  `` |
 
 **Slot**
 
