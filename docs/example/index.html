@@ -7,12 +7,12 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <title>Oreo-UI Library</title>
-    <link rel="shortcut icon" href="../_media/favicon.ico"  type="image/x-icon">
+    <link rel="shortcut icon" href="../_media/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="./oreo_ui.css">
     <link rel="stylesheet" href="./res/css/example.css">
     <script src="./res/script/zepto.min.js"></script>
     <script src="./res/script/fx_methods.js"></script>
-    
+
 </head>
 
 <body>
@@ -387,6 +387,96 @@
     </div>
 </div>
 </script>
+<script type="text/html" id="tpl_column">
+<div class="page">
+    <div class="page-hd">
+        <div class="demo-name">
+            <a href="./" class="oreo-icon-home demo-home"></a>
+            Column 多列布局</div>
+        <div class="demo-subtitle">该布局基于flex,支持多列及图文排列</div>
+    </div>
+    <div class="page-body" style="padding:0;">
+        <h2>栅格以每行最多24列为例</h2>
+        <div class="oreo-row">
+            <div class="oreo-col oreo-col-24">
+                <div>100%</div>
+            </div>
+        </div>
+        <div class="oreo-row">
+            <div class="oreo-col oreo-col-12">
+                <div class="oreo-col-thumb">50%</div>
+            </div>
+            <div class="oreo-col oreo-col-12">
+                <div>50%</div>
+            </div>
+        </div>
+        <div class="oreo-row">
+            <div class="oreo-col oreo-col-8">
+                <div>33.3%</div>
+            </div>
+            <div class="oreo-col oreo-col-8">
+                <div>33.3%</div>
+            </div>
+            <div class="oreo-col oreo-col-8">
+                <div>33.3%</div>
+            </div>
+        </div>
+        <div class="oreo-row">
+            <div class="oreo-col oreo-col-6">
+                <div>25%</div>
+            </div>
+            <div class="oreo-col oreo-col-6">
+                <div>25%</div>
+            </div>
+            <div class="oreo-col oreo-col-6">
+                <div>25%</div>
+            </div>
+            <div class="oreo-col oreo-col-6">
+                <div>25%</div>
+            </div>
+        </div>
+        <div class="oreo-row">
+            <div class="oreo-col oreo-col-4">
+                <div>16.6%</div>
+            </div>
+            <div class="oreo-col oreo-col-4">
+                <div>16.6%</div>
+            </div>
+            <div class="oreo-col oreo-col-4">
+                <div>16.6%</div>
+            </div>
+            <div class="oreo-col oreo-col-4">
+                <div>16.6%</div>
+            </div>
+            <div class="oreo-col oreo-col-4">
+                <div>16.6%</div>
+            </div>
+            <div class="oreo-col oreo-col-4">
+                <div>16.6%</div>
+            </div>
+        </div>
+        <div class="oreo-row">
+            <div class="oreo-col oreo-col-8">
+                <div>33.3%</div>
+            </div>
+            <div class="oreo-col oreo-col-16">
+                <div>66.6%</div>
+            </div>
+        </div>
+        <div class="oreo-row">
+            <div class="oreo-col oreo-col-4">
+                <div>16.6%</div>
+            </div>
+            <div class="oreo-col oreo-col-12">
+                <div>50%</div>
+            </div>
+            <div class="oreo-col oreo-col-8">
+                <div>33.3%oo</div>
+            </div>
+        </div>
+    </div>
+</div>
+</script>
 <script type="text/html" id="tpl_dialog">
 <div class="page demo-dialog">
     <div class="page-hd">
@@ -745,7 +835,7 @@
                 </div>
                 <div class="oreo-list-item oreo-input">
                     <div class="oreo-input-control">
-                        <input type="password" placeholder="请输入密码">
+                        <input type="password" class="password" placeholder="请输入密码">
                     </div>
                 </div>
             </div>
@@ -1029,7 +1119,7 @@
                                     <div class="oreo-list-arrow"></div>
                                 </div>
                             </div>
-                            
+
 
                         </div>
                     </div>
@@ -1075,6 +1165,12 @@
                             <div class="oreo-list-item oreo-list-item-link" data-page="grid">
                                 <div class="oreo-list-item-line">
                                     <div class="oreo-list-item-content">Grid</div>
+                                    <div class="oreo-list-arrow"></div>
+                                </div>
+                            </div>
+                            <div class="oreo-list-item oreo-list-item-link" data-page="column">
+                                <div class="oreo-list-item-line">
+                                    <div class="oreo-list-item-content">Column</div>
                                     <div class="oreo-list-arrow"></div>
                                 </div>
                             </div>
@@ -2449,4 +2545,5 @@
 
 <script src="https://res.wx.qq.com/mmbizwap/zh_CN/htmledition/js/vconsole/2.5.2/vconsole.min.js"></script>
 <script src="./res/script/index.js"></script>
+
 </html>
