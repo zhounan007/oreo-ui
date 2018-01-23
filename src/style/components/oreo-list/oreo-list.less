@@ -56,10 +56,12 @@
         background-color: @fill-base;
         overflow: hidden;
         transition: background-color .2s;
-        align-items: center;
+        align-items: stretch;
         justify-content: center;
         
         &-thumb {
+            display: flex;
+            align-items: center;
 
             img,i{
                 width: @icon-size-md;
@@ -76,7 +78,7 @@
             padding-right: @h-spacing-md;
             overflow: hidden;
             align-items: center;
-            min-height: @list-item-height;
+            // min-height: @list-item-height;
             .@{listPrefixCls}-item-content {
                 flex: 1;
                 color: @color-text-base;
@@ -160,7 +162,8 @@
                 }
             }
             .@{listPrefixCls}-item-line{
-                height: @across-button-height;
+                width: 100%;
+                // height: @across-button-height;
                 .@{listPrefixCls}-item-content{
                     height: 100%;
                     display: flex;

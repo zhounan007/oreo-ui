@@ -1,0 +1,62 @@
+@import '../../base/fn.less';
+@import "../oreo-list/oreo-list.less";
+@listviewPrefixCls: oreo-listView;
+
+.@{listviewPrefixCls}{
+    // height: 10rem;
+    background: #fff;
+    position: relative;
+    border-top: 1px solid #999;
+    &-view{
+        height: 100%;
+        overflow-y: auto;
+        margin-right: .5rem;
+        .@{listviewPrefixCls}-letter{
+            background: #f0f0f0;
+            position: relative;
+            height: .6rem;
+            font-size: .32rem;
+            line-height: .6rem;
+            color: #666;
+            z-index: 1;
+            text-align: left;
+            &:after{
+                .setBottomLine(@c: lightgray);
+            }
+        }
+        .@{listviewPrefixCls}-item{
+                position: relative;
+                height: .64rem;
+                line-height: .64rem;
+                font-size: .28rem;
+                margin-left: .2rem;
+                &:after{
+                    .setBottomLine(@c: lightgray);
+                }
+            }
+    }
+    &-navlist{
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: .5rem;
+        height: 100%;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        // flex-wrap: wrap;
+        z-index: 2;
+        background: #c8c7cc;
+        font-size: 0;
+        li{
+            width: 100%;
+            font-size: .26rem;
+            border-bottom: 1px solid #d7d7d7;
+        }
+    }
+    &::-webkit-scrollbar{
+        display: none;
+    }
+}
