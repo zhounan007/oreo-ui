@@ -26,6 +26,7 @@ import {
   ZListItem,
   ZMediaItem
 } from '@c/list'
+<<<<<<< HEAD
 import {
   ZScroll
 } from '@c/scroll'
@@ -41,6 +42,11 @@ import {
 import {
   ZSkeleton
 } from '@c/skeleton'
+=======
+import ZCheckBox from '@c/checkBox'
+import ZRadio from '@c/radio'
+import ZCard from '@c/card'
+>>>>>>> c158d4c9ec27578f00d6e3d424b9dbf42da3a29c
 
 const components = {
   ZButton,
@@ -62,7 +68,10 @@ const components = {
   ZTabBar,
   ZSticky,
   ZStickyContainer,
-  ZSkeleton
+  ZSkeleton,
+  ZCheckBox,
+  ZRadio,
+  ZCard
 }
 
 const install = function (Vue, opts = {}) {

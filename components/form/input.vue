@@ -1,6 +1,6 @@
 <template>
     <z-list>
-        <z-list-item :class="disabledClass">
+        <z-list-item :class="disabledClass" :link="false">
             <div :class="labelClassName" v-if="hideLabel">{{label}}</div>
             <div :class="controlClassName">
                 <input :class="alignClass" :type="type" :placeholder="placeholder" @input="input($event)" :value="value" :disabled="disabled">

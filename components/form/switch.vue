@@ -1,9 +1,9 @@
 <template>
     <z-list>
-        <z-list-item>
+        <z-list-item :link="false">
             <template slot="content">{{text}}</template>
             <label slot="extra" class="oreo-switch">
-                <input type="checkbox" :disabled="disabled" :checked="checked">
+                <input type="checkbox" :disabled="disabled" :checked="checked" @click="onToggle($event)">
                 <div class="oreo-switch-box"></div>
             </label>
         </z-list-item>
@@ -28,6 +28,11 @@ export default {
         checked: {
             type: Boolean,
             default: false
+        }
+    },
+    methods: {
+        onToggle(event) {
+            this.$emit('input', event.target.checked)
         }
     }
 }

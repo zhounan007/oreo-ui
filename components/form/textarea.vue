@@ -1,6 +1,6 @@
 <template>
     <z-list>
-        <z-list-item :class="classNames">
+        <z-list-item :class="classNames" :link="false">
             <div :class="controlClass">
                 <textarea name="" id="" :placeholder="placeholder" rows="3" @input="input($event)" v-model="text"></textarea>
             </div>
