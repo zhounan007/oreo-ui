@@ -95,6 +95,10 @@ function getSearch() {
   return attr
 }
 
+/**
+ * 获取url中参数
+ * @param {string} key
+ */
 export function search(key) {
   const attr = getSearch()
 

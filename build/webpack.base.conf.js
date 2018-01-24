@@ -6,7 +6,7 @@
  * @Author: zhounan 
  * @Date: 2017-11-07 14:21:04 
  * @Last Modified by: zhounan
- * @Last Modified time: 2017-12-05 16:55:55
+ * @Last Modified time: 2018-01-24 14:17:09
  */
 
 var path = require('path')
@@ -25,6 +25,7 @@ module.exports = {
       'vue$': 'vue/dist/vue.esm.js',
       '@': resolve('src'),
       '@c': resolve('components'),
+      '@e': resolve('example'),
       'OreoUI': resolve('components/theme')
     }
   },
@@ -54,19 +55,19 @@ module.exports = {
         include: [resolve('src'), resolve('components'), resolve('example'), resolve('node_modules/webpack-dev-server/')]
       },
       {
-        test: /\.(png|jpe?g|gif)(\?.*)?$/, // |svg
+        test: /\.(png|jpe?g|gif|svg)(\?.*)?$/, // |svg
         loader: 'url-loader',
         options: {
           limit: 10000
           // name: utils.assetsPath('img/[hash:7].[ext]')
         },
-        // exclude: [resolve('src/assets/icons')]
+        exclude: [resolve('components/icon/assets')]
 
       },
       {
         test: /\.svg$/,
         loader: 'svg-sprite-loader',
-        include: [resolve('components/theme/src/style/assets')]
+        include: [resolve('components/icon/assets')]
       },
       {
         test: /\.(woff2?|eot|ttf|otf)(\?.*)?$/,

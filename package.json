@@ -7,7 +7,7 @@
     "dev": "node build/dev-server.js",
     "start": "webpack-dev-server --config ./build/webpack.dev.conf.js --open --hot --host 192.168.156.141",
     "demo": "node build/build.js",
-    "build": "node build/webpack.prod.conf.js",
+    "build": "webpack --config ./build/webpack.prod.conf.js",
     "lint": "eslint --ext .js,.vue src"
   },
   "peerDependencies": {
@@ -67,6 +67,6 @@
   ],
   "dependencies": {
     "hammerjs": "^2.0.8",
-    "lodash": "^4.17.4"
+    "lodash.throttle": "^4.1.1"
   }
 }

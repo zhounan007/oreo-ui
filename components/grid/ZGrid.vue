@@ -2,7 +2,7 @@
     <div :class="classNames">
         <z-flex v-for="(row,index) in group" :key="index">
             <z-flex-item v-for="(item,index) in row" :key="index" class="oreo-grid-item">
-                <slot name="item" :item="item" ></slot>
+                <slot name="item" :item="item"></slot>
             </z-flex-item>
             <template v-if="row.length!==column">
                 <z-flex-item v-for="(n,index ) in polyfill" :key="index" class="oreo-grid-item">
@@ -14,8 +14,11 @@
 <script>
 import { ZFlex, ZFlexItem } from '@c/flex'
 import { chunk, Event } from '@/script/utils'
+
+const prefix = 'z-grid'
 export default {
-    name: 'z-grid',
+    name: `${prefix}`,
+    componentName: `${prefix}`,
     components: {
         ZFlex,
         ZFlexItem
@@ -65,10 +68,10 @@ export default {
         }
     },
     created() {
-        Event.$on('z-grid-item-click', this.handlerItem)
+        this.$on('grid-item-click', this.handlerItem)
     },
     beforeDestroy() {
-        Event.$off('z-grid-item-click', this.handlerItem)
+        this.$off('grid-item-click', this.handlerItem)
     },
     methods: {
         handlerItem(item) {

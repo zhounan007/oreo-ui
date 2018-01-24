@@ -1,26 +1,19 @@
 
 <template>
     <flexview>
-        <scrollview>
-            <div class="demo-hd">
-                <div class="demo-name">
-                    Modal 弹窗
-                </div>
-                <div class="demo-subtitle"></div>
-            </div>
-            <div class="demo-body">
+        <scrollview title="Modal 弹窗" sub-title="支持各种形态">
+            <div class="demo-body demo-wrap" >
                 <h2>
-                    位置
+                    Position
                 </h2>
                 <z-button v-for="position in ['top','right','bottom','left']" :key="position" small @click="clickByEdge(position)">Modal from {{position}}</z-button>
     
                 <h2>
-                    大小
+                    Size
                 </h2>
                 <z-button v-for="size in ['max','min']" :key="size" small @click="clickBySize(size)">{{size}}</z-button>
-    
             </div>
-    
+
             <z-modal ref="modalEdge" :position="position">
                 <h3>Modal</h3>
                 <div>
@@ -42,7 +35,7 @@
 import flexview from './flexview'
 import scrollview from './scrollview'
 export default {
-    name: 'button',
+    name: 'modal',
     data() {
         return {
             edges: [{
@@ -90,13 +83,12 @@ export default {
             console.log('Close ...')
         }
     }
-
 }
 </script>
 <style lang="less" scopd>
 .demo-body {
-    .oreo-button {
-        margin: 1em 0;
-    }
+  .oreo-button {
+    margin: 1em 0;
+  }
 }
 </style>

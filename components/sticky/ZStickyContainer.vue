@@ -4,13 +4,19 @@
     </div>
 </template>
 <script>
-import _ from 'lodash'
+import throttle from 'lodash.throttle'
+// import { Emitter } from '@/mixins/emitter'
+
 const events = ['resize', 'scroll', 'touchstart', 'touchmove', 'touchend', 'pageshow', 'load']
+const prefix = 'z-sticky-container'
 // const events = ['touchend']
+function noop() { }
 export default {
-    name: 'z-sticky-container',
+    name: `${prefix}`,
+    componentName: `${prefix}`,
     data() {
         return {
+            fn: noop,
             subscribes: [],
             pending: false
         }
@@ -18,6 +24,7 @@ export default {
     methods: {
         subscribe(handler) {
             this.subscribes = this.subscribes.concat(handler)
+            console.log(this.subscribes)
         },
         unsubscribe(handler) {
             this.subscribes = this.subscribes.filter(current => current !== handler)
@@ -42,11 +49,19 @@ export default {
             }
         }
     },
+    created() {
+        // console.log('-----container-created')
+        // this.$on('sticky-container', this.subscribe)
+        this.$on('sticky-register', this.subscribe)
+    },
     mounted() {
-        events.forEach(event => window.addEventListener(event, _.throttle(this.notifySubscribe), 350))
+        // this.$on('register', this.subscribe)
+        this.fn = throttle(this.notifySubscribe, 250)
+        events.forEach(event => window.addEventListener(event, this.fn))
     },
     beforeDestroy() {
-        events.forEach(event => window.removeEventListener(event, this.notifySubscribe))
+        this.$off('sticky-register', this.subscribe)
+        events.forEach(event => window.removeEventListener(event, this.fn))
     }
 }
 </script>

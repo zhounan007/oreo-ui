@@ -29,8 +29,8 @@
     </flexview>
 </template>
 <script>
-import flexview from '../flexview'
-import scrollview from '../scrollview'
+import flexview from '@e/views/flexview'
+import scrollview from '@e/views/scrollview'
 export default {
     name: 'button',
     data() {

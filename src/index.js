@@ -38,6 +38,9 @@ import {
   ZSticky,
   ZStickyContainer
 } from '@c/sticky'
+import {
+  ZSkeleton
+} from '@c/skeleton'
 
 const components = {
   ZButton,
@@ -58,7 +61,8 @@ const components = {
   ZTabPane,
   ZTabBar,
   ZSticky,
-  ZStickyContainer
+  ZStickyContainer,
+  ZSkeleton
 }
 
 const install = function (Vue, opts = {}) {

@@ -33,14 +33,13 @@ export default {
   height: 100%;
   flex: 1;
   position: relative;
-  contain: layout size style;
   overflow: auto;
-  // overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  -webkit-box-sizing: border-box;
    // -webkit-overflow-scrolling: touch;
-  transition: all 0.2s ease-in-out;
+  // transition: all 0.2s ease-in-out;
   background: #efeff4;
-  margin: 0 auto;
-  will-change: scroll-position;
+  margin: 0 auto; // will-change: scroll-position;
   .demo-hd {
     padding: 0.4rem;
     .demo-title {

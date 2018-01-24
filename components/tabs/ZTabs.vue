@@ -1,6 +1,7 @@
 <script>
 import ZTabBar from './ZTabBar'
 import ZTabPane from './ZTabPane'
+
 export default {
     name: 'z-tabs',
     components: {
@@ -53,6 +54,7 @@ export default {
             this.$emit('input', v)
         },
         setupBars() {
+            debugger
             let _array = this.$slots.default
 
             _array.forEach((item, index) => {
@@ -80,8 +82,7 @@ export default {
             panes,
             pageSize,
             handlerTabClick,
-            activeContentStyle,
-            sticky
+            activeContentStyle
         } = this
 
         let barsData = {

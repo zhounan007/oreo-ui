@@ -44,7 +44,8 @@ export default {
         renderSvg() {
             let svg
             try {
-                svg = require(`OreoUI/src/style/assets/${this.type}.svg`)
+                // svg = require(`OreoUI/src/style/assets/${this.type}.svg`)
+                svg = require(`./assets/${this.type}.svg`)
                 return svg
             } catch (e) {
                 return svg

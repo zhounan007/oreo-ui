@@ -1,19 +1,27 @@
 <template>
     <div class="oreo-grid-item-content" @click="handlerItem">
-        <slot></slot>
+        <slot>
+            <img :src="icon" alt="text" class="oreo-grid-item-icon">
+            <div class="oreo-grid-item-text">{{text}}</div>
+        </slot>
     </div>
 </template>
 <script>
-import { Event } from '@/script/utils'
+import Emitter from '@/mixins/emitter'
+const prefix = 'z-grid-item'
 export default {
-    name: 'z-grid-item',
+    name: `${prefix}`,
+    componentName: `${prefix}`,
+    mixins: [Emitter],
     props: {
         // 区分每一个
-        index: String
+        index: [String, Number],
+        icon: String,
+        text: String
     },
     methods: {
         handlerItem(e) {
-            Event.$emit('z-grid-item-click', this, e)
+            this.dispatch('z-grid', 'grid-item-click', this)
         }
     }
 }

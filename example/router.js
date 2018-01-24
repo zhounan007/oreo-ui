@@ -1,16 +1,16 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import App from './App.vue'
-import pages from './components/set'
+import pages from './views/set'
 
 Vue.use(Router)
 
-const home = r => require.ensure([], () => r(require('./components/Home')), 'Home')
+const home = r => require.ensure([], () => r(require('./views/Home')), 'Home')
 
 function component(path) {
   return {
     path: '/' + path.slice(0, path.length - 4),
-    component: () => import(`./components/${path}`)
+    component: () => import(`./views/${path}`)
   }
 }
 

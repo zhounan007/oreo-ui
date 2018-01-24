@@ -6,9 +6,12 @@
     </div>
 </template>
 <script>
+import Emitter from '@/mixins/emitter'
 const prefix = 'z-sticky'
 export default {
     name: `${prefix}`,
+    componentName: `${prefix}`,
+    mixins: [Emitter],
     data() {
         return {
             isSticky: false,
@@ -77,33 +80,17 @@ export default {
 
             this.calculatedHeight = calculatedHeight
             this.stickyTop = bottomDifference > 0 ? 0 : bottomDifference
-            // this.addStyle()
-        },
-        addStyle() {
-            let el = this.$el.lastElementChild
-            if (this.isSticky) {
-                this.$el.firstElementChild.style.paddingBottom = `${this.calculatedHeight}px`
-                el.style['position'] = 'fixed'
-                el.style['top'] = '0px'
-                el.style['left'] = '0px'
-                el.style['width'] = '100%'
-                el.style['zIndex'] = 100
-                el.style.transform = 'translateZ(0)'
-            } else {
-                this.$el.firstElementChild.style.paddingBottom = '0px'
-                el.style['position'] = ''
-                el.style['top'] = ''
-                el.style['left'] = ''
-                el.style['width'] = ''
-                el.style['zIndex'] = 0
-                el.style.transform = ''
-            }
         }
+    },
+    created() {
     },
     mounted() {
         console.log('-----mounted')
-        if (!this.$parent.subscribe) throw new TypeError(`Expected ${prefix} to bo mounted within ${prefix}-container`)
-        this.$parent.subscribe(this.handlerContainerEvent)
+        // this.$emit('sticky-container', this.handlerContainerEvent)
+        this.dispatch('z-sticky-container', 'sticky-register', this.handlerContainerEvent)
+        // Event.$emit('sticky-container', this.handlerContainerEvent)
+        //  if (!this.$parent.subscribe) throw new TypeError(`Expected ${prefix} to bo mounted within ${prefix}-container`)
+        //  this.$parent.subscribe(this.handlerContainerEvent)
     },
     beforeUpdate() {
         console.log('-----beforeUpdate')
