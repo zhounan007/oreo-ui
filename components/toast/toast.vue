@@ -55,7 +55,7 @@ export default {
         closed(newVal) {
             if (newVal) {
                 this.visible = false
-                this.destoryElement()
+                this.destroyElement()
             }
         }
     },
@@ -63,7 +63,7 @@ export default {
         this.startTimer()
     },
     methods: {
-        destoryElement() {
+        destroyElement() {
             this.$destroy()
             this.$el.parentNode.removeChild(this.$el)
         },

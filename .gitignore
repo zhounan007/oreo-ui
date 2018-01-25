@@ -3,6 +3,7 @@ node_modules/
 dist/
 components/theme/dist
 components/theme/docs
+components/theme/node_modules/
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*

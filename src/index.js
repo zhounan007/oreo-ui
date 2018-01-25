@@ -14,6 +14,36 @@ import {
   ZIcon
 } from '@c/icon'
 import ZToast from '@c/toast'
+import ZLoading from '@c/loading'
+import ZDialog from '@c/dialog'
+import {
+  ZIput,
+  ZTextarea,
+  ZSwitch
+} from '@c/form'
+import {
+  ZList,
+  ZListItem,
+  ZMediaItem
+} from '@c/list'
+import {
+  ZScroll
+} from '@c/scroll'
+import {
+  ZTabs,
+  ZTabPane,
+  ZTabBar
+} from '@c/tabs'
+import {
+  ZSticky,
+  ZStickyContainer
+} from '@c/sticky'
+import {
+  ZSkeleton
+} from '@c/skeleton'
+import ZCheckBox from '@c/checkBox'
+import ZRadio from '@c/radio'
+import ZCard from '@c/card'
 
 const components = {
   ZButton,
@@ -22,7 +52,23 @@ const components = {
   ZGrid,
   ZGridItem,
   ZModal,
-  ZIcon
+  ZIcon,
+  ZIput,
+  ZTextarea,
+  ZSwitch,
+  ZList,
+  ZListItem,
+  ZMediaItem,
+  ZScroll,
+  ZTabs,
+  ZTabPane,
+  ZTabBar,
+  ZSticky,
+  ZStickyContainer,
+  ZSkeleton,
+  ZCheckBox,
+  ZRadio,
+  ZCard
 }
 
 const install = function (Vue, opts = {}) {
@@ -31,6 +77,10 @@ const install = function (Vue, opts = {}) {
   })
 
   Vue.prototype.$toast = ZToast
+  Vue.prototype.$loading = ZLoading
+  Vue.prototype.$dialog = ZDialog
+  Vue.prototype.$alert = ZDialog.alert
+  Vue.prototype.$confirm = ZDialog.confirm
 }
 
 // install

@@ -7,6 +7,7 @@
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
   <title>Vue-Oreo</title>
+  <script type="text/javascript" src="https://res.wx.qq.com/mmbizwap/zh_CN/htmledition/js/vconsole/2.5.2/vconsole.min.js"></script>
   <script type="text/javascript">
     (function (fontsize, scale) {
 
@@ -42,7 +43,7 @@
         metaEl.setAttribute('content', ['width=device-width, initial-scale=', _scale, ' maximum-scale=', _scale,
           ' minimum-scale=', _scale, ' user-scalable=no'
         ].join(''))
-        doc.documentElement.setAttribute('data-dpr', dpr);
+       // doc.documentElement.setAttribute('data-dpr', dpr);
         doc.documentElement.style.fontSize = _fontsize / 2 * dpr * scale + 'px';
 
         doc.body.style.fontSize = (12 * dpr) + 'px';
@@ -62,6 +63,11 @@
   </div>
   <!-- built files will be auto injected -->
 
+  
+  <script type="text/javascript">
+    console.log(document.body.innerHTML)
+  </script>
 </body>
 
 </html>
+

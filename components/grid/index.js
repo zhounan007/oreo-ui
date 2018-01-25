@@ -1,5 +1,5 @@
-import ZGrid from './grid'
-import ZGridItem from './grid-item'
+import ZGrid from './ZGrid'
+import ZGridItem from './ZGridItem'
 
 export {
   ZGrid,
