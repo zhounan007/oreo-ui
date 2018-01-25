@@ -12,8 +12,8 @@
     </div>
 </template>
 <script>
-import { ZFlex, ZFlexItem } from '@c/flex'
-import { chunk, Event } from '@/script/utils'
+import { ZFlex, ZFlexItem } from '../flex'
+import { chunk, Event } from '../../src/script/utils'
 
 const prefix = 'z-grid'
 export default {

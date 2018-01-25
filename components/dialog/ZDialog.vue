@@ -15,8 +15,8 @@
     </z-modal>
 </template>
 <script>
-import { ZModal } from '@c/modal'
-import device from '@/script/device'
+import { ZModal } from '../modal'
+import device from '../../src/script/device'
 export default {
     name: 'z-dialog',
     components: {

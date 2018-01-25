@@ -5,7 +5,7 @@
 </template>
 <script>
 import throttle from 'lodash.throttle'
-// import { Emitter } from '@/mixins/emitter'
+// import { Emitter } from '../../src/mixins/emitter'
 
 const events = ['resize', 'scroll', 'touchstart', 'touchmove', 'touchend', 'pageshow', 'load']
 const prefix = 'z-sticky-container'

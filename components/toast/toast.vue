@@ -11,7 +11,7 @@
 </template>
 <script>
 
-import { ZIcon } from '@c/icon'
+import { ZIcon } from '../icon'
 const prefixCls = 'oreo-toast'
 export default {
     name: 'z-toast',

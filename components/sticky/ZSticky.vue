@@ -6,7 +6,7 @@
     </div>
 </template>
 <script>
-import Emitter from '@/mixins/emitter'
+import Emitter from '../../src/mixins/emitter'
 const prefix = 'z-sticky'
 export default {
     name: `${prefix}`,

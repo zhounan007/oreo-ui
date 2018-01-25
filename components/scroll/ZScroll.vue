@@ -40,7 +40,7 @@
 </template>
 <script>
 import BScroll from 'better-scroll'
-import { getRect } from '@/script/dom'
+import { getRect } from '../../src/script/dom'
 
 const DIRECTION_H = 'horizontal'
 const DIRECTION_V = 'vertical'

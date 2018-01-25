@@ -12,7 +12,7 @@
     </z-transition>
 </template>
 <script>
-import { ZTransition } from '@c/transition'
+import { ZTransition } from '../transition'
 const prefixCls = 'oreo-toast'
 export default {
     name: 'z-loading',
