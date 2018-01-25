@@ -6,7 +6,7 @@
  * @Author: zhounan 
  * @Date: 2017-11-07 14:21:04 
  * @Last Modified by: zhounan
- * @Last Modified time: 2018-01-25 10:08:46
+ * @Last Modified time: 2018-01-25 10:41:29
  */
 
 var path = require('path')
@@ -26,7 +26,7 @@ module.exports = {
       '@': resolve('src'),
       '@c': resolve('components'),
       '@e': resolve('example'),
-      'OreoUI': resolve('components/theme')
+      'OreoUI': resolve('theme')
     }
   },
   module: {
