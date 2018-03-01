@@ -6,12 +6,14 @@
                 <h2>
                     位置
                 </h2>
-                <z-button small @click="clickByType()">文本提示</z-button>
+                <z-button small @click="handlerByType()">Loading</z-button>
     
                 <h2>
                     类型
                 </h2>
-                <z-button v-for="t in ['loading','success','failure']" :key="t" small @click="clickByType(t)">{{t}}</z-button>
+                <z-button small @click="handlerByType('text')">Text</z-button>
+
+                <z-button v-for="t in ['loading','success','failure']" :key="t" small @click="handlerByType(t)">{{t}}</z-button>
     
             </div>
     
@@ -32,14 +34,21 @@ export default {
         scrollview
     },
     methods: {
-        clickByType(type) {
+        handlerByType(type) {
             let msg = '正在努力加载中...'
             if (type) {
+                if (type === 'text') {
+                    this.$toast(msg)
+                    return
+                }
                 this.$toast[type](msg)
             } else {
                 // this.$toast({ 'message': msg, 'mode': 'horizontal' })
 
-                this.$loading()
+                this.$loading({
+                    message: msg,
+                    mode: 'horizontal'
+                })
                 setTimeout(() => {
                     this.$loading().close()
                 }, 3 * 1000)
@@ -50,8 +59,8 @@ export default {
 </script>
 <style lang="less" scopd>
 .demo-body {
-    .oreo-button {
-        margin: 1em 0;
-    }
+  .oreo-button {
+    margin: 1em 0;
+  }
 }
 </style>

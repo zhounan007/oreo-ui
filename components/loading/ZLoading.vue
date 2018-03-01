@@ -4,8 +4,8 @@
             <div class="oreo-toast-text" :class="modeClassName">
                 <div class="oreo-toast-icon oreo-loading oreo-loading-light">
                 </div>
-                <div class="oreo-toast-msg" v-if="text">
-                    {{text}}
+                <div class="oreo-toast-msg" v-if="message">
+                    {{message}}
                 </div>
             </div>
         </div>
@@ -24,7 +24,7 @@ export default {
             visible: false,
             mask: true,
             mode: 'vertical',
-            text: ''
+            message: ''
         }
     },
     computed: {
@@ -44,7 +44,7 @@ export default {
             this.$emit('after-leave')
         },
         setText(v) {
-            this.text = v
+            this.message = v
         }
     }
 }

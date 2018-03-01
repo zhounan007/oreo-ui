@@ -4,7 +4,7 @@ import loadingVue from './ZLoading.vue'
 const LoadingConstructor = Vue.extend(loadingVue)
 
 const defaults = {
-  text: '',
+  message: '',
   fullscreen: true,
   mask: true,
   mode: 'vertical' // vertical horizontal
@@ -29,7 +29,13 @@ LoadingConstructor.prototype.close = function () {
  * fullscreen 下,loading为单例模式
  * @param {object} option
  */
-let Loading = (option = {}) => {
+let Loading = (option) => {
+  option = option || {}
+  if (typeof option === 'string') {
+    option = {
+      message: option
+    }
+  }
   option = {
     ...defaults,
     ...option

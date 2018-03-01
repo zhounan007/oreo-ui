@@ -40,6 +40,7 @@ export default {
             }
         },
         modeClassName() {
+            if (!this.type) return ''
             return this.mode === 'vertical' ? `${prefixCls}-text-vertical` : `${prefixCls}-text-horizontal`
         },
         typeClassNames() {
