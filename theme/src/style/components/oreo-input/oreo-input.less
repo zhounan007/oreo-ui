@@ -1,0 +1,155 @@
+@import "../../base/fn.less";
+@oreoInputCls: oreo-input;
+@oreoInputIconCls: oreo-input-icon;
+.@{oreoInputCls}-header{
+    margin-top: .3rem;
+}
+.@{oreoInputCls}{
+    width: 100%;
+    .setHeight(@h: 0.8rem);
+    border-radius: @radius-sm;
+    background: @fill-base;
+    // 默认输入框
+    .@{oreoInputCls}-default{
+        width: 100%;
+        .setHeight(@h: 100%);
+        font-size: @font-size-caption;
+        color: @color-text-base;
+        outline: @oreoInputOutline;
+        border: none;
+        border-radius: inherit;
+        padding: @oreoInputPadGap;
+        // placeholder
+        &.@{oreoInputCls}-default::-webkit-input-placeholder{
+            color: @color-text-placeholder;
+            font-size: @font-size-caption;
+        }
+    }
+    // disable
+    .@{oreoInputCls}-disable{
+        color: @color-text-disabled;
+        background: @fill-disabled;
+    } 
+    // 多列显示状态
+    &.@{oreoInputCls}-cols{
+        display: flex;
+        align-items: center;
+        background: none;
+        .cols-frame{
+            flex: 1;
+            text-align: center;
+            border: @border-width-sm solid @border-color-base;
+        }
+        .cols-line{
+            display: inline-block;
+            margin: @oreoInputColLineGap;
+            width: @oreoInputColLineW;
+            height: @oreoInputColLineH;
+            background: @oreoInputColLineBg;
+            vertical-align: middle;
+        }
+    } 
+    // 带图标
+    &.@{oreoInputCls}-iconBox{
+        display: flex;
+        position: relative;
+        .oreo-icon-title{
+            padding: @oreoInputPadGap;
+            flex: 1 0 auto;
+            // 标题过长
+            &.@{oreoInputCls}-text-max{
+                max-width: 2rem;
+                padding: 0 .1rem;
+            }
+        }
+        // 事件图标输入框
+        .@{oreoInputIconCls}{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 0 .2rem;
+            .setIcon(@c: #bbb,@s:.36rem); 
+            // 密码输入框
+            &.@{oreoInputCls}-password-icon:after{
+                content: "\f06e";
+            }
+            &.password-visible:after{
+                color:#4cb0ff;
+            }
+            // 带删除按钮
+            &.@{oreoInputCls}-delete-icon:after{
+                content: "\f00d";
+            }
+            // 用户图标
+            &.@{oreoInputIconCls}-person:after{
+                content: "\f2c0";
+            }
+        }
+        // 选择图标输入框 up down
+        .@{oreoInputCls}-select-box{
+            width: .8rem;
+            display: flex;
+            flex-direction: column;
+            i{
+                .setIcon(@c: #bbb,@s:.46rem);
+                .setHeight(@h: 50%);   
+                &.@{oreoInputCls}-select-up:after{
+                    line-height: .6rem;
+                    content: "\f0de";                 
+                }
+                &.@{oreoInputCls}-select-down:after{                    
+                    content: "\f0dd";
+                }}
+            
+        }
+    }
+}
+// 常见列表式
+.@{oreoInputCls}-item{
+    width: 100%;
+    background: @fill-base;
+    border-radius: @radius-sm;
+    .@{oreoInputCls}-list{
+        line-height: .8rem;
+        display: flex;
+        position: relative;
+        .input-list-title{
+            min-width: 1.3rem;
+            font-size: @font-size-caption;
+            color: @color-text-base;
+            text-align: right;
+        }
+        .input-list-frame{
+                width: 100%;
+                height: inherit;
+                font-size: @font-size-caption;
+                padding-left: @oreoInputGapW;
+                border: 0;
+                outline: @oreoInputOutline;
+                &::-webkit-input-placeholder{
+                    color: @color-text-placeholder;
+                    font-size: @font-size-subhead;
+                }
+            &::after{
+                .setBottomLine(@c: #C7C7C7);
+            }
+        }
+        .input-list-vcode{
+            min-width: @oreoInputVcodeW;
+            text-align: center;
+            border: 0;
+            color: @color-text-base-inverse;
+            background: @brand-primary;
+            &.active{
+                color: @color-text-disabled;
+                background: @fill-disabled;
+            }
+        }
+    }
+    .@{oreoInputCls}-bottomLine:after{
+        .setBottomLine(@c: #ddd);
+    }
+}
+.border{
+    border: @border-width-sm solid @border-color-base;
+}

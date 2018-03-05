@@ -1,0 +1,301 @@
+@import '../../base/fn.less';
+@modalPrefixCls: oreo-modal;
+@dialogPrefixCls:oreo-dialog;
+@actionPrefixCls:oreo-actionsheet;
+
+
+.fixed(){
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;    
+    z-index: @modal-zindex;
+}
+
+.@{modalPrefixCls}{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    .fixed();
+    &.@{modalPrefixCls}-mask{
+        background: @fill-mask;
+    }
+    &.@{modalPrefixCls}-top{
+        align-items: flex-start;
+        .@{modalPrefixCls}-content{
+            width: 100%;
+            max-height: 80vh;
+            height: auto;
+            overflow: auto;
+            border-radius: 0;
+        }
+    }
+    &.@{modalPrefixCls}-bottom{
+         align-items: flex-end;
+        
+        .@{modalPrefixCls}-content{
+            width: 100%;
+            max-height: 80vh;
+            height: auto;
+            overflow: auto;
+            border-radius: 0;
+        }
+    }
+    &.@{modalPrefixCls}-left{
+        justify-content: flex-start;
+        .@{modalPrefixCls}-content{
+            // max-height: 80vh;
+            // height: auto;
+            height: 100%;
+            overflow: auto;
+            max-width: 90vw;
+            border-radius: 0;
+        }
+    }
+    &.@{modalPrefixCls}-right{
+        justify-content: flex-end;
+        .@{modalPrefixCls}-content{
+            // max-height: 80vh;
+            // height: auto;
+            height: 100%;
+            overflow: auto;
+            max-width: 90vw;
+            border-radius: 0;
+        }
+    }
+    &.@{modalPrefixCls}-max{
+        .@{modalPrefixCls}-content{
+            max-height: 100%;
+            max-width: 100%;
+            height: 100%;
+            width: 100%;
+            border-radius: 0;
+        }  
+    }
+    &.@{modalPrefixCls}-min{
+        .@{modalPrefixCls}-content{
+            max-height: 80vh;
+            height: auto;
+            max-width: 90vw;
+        }
+    }
+    .@{modalPrefixCls}-content{
+        position: relative;
+        background: @fill-base;
+    }
+
+    .@{dialogPrefixCls} {
+        background-color: @fill-base;
+        width: 270px;
+        color: @color-text-base;
+        z-index: @dialog-zindex;
+        &,
+        &.@{dialogPrefixCls}-ios {
+            border-radius: 13px;
+            overflow: hidden;
+            .@{dialogPrefixCls}-inner {
+                padding: @h-spacing-lg;
+                position: relative;
+                background: @fill-base;
+                .@{dialogPrefixCls}-title {
+                    font-weight: 600;
+                    font-size: @font-size-display-sm;
+                    text-align: center;
+                }
+                .@{dialogPrefixCls}-text {
+                    color: @color-text-caption;
+                    text-align: center;
+                    margin-top: @v-spacing-sm;
+                }
+                &:after {
+                    .setBottomLine(@border-color-base);
+                }
+            }
+            .@{dialogPrefixCls}-buttons {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                // .@{dialogPrefixCls}-button {
+                
+                // }
+            }
+        }
+        .@{dialogPrefixCls}-buttons {
+            position: relative;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            overflow: hidden;
+            box-sizing: border-box;
+            .@{dialogPrefixCls}-button {
+                flex: 1;
+                &:not(:first-child) {
+                    &:before {
+                        .setLeftLine(@border-color-base);
+                    }
+                }
+            }
+        }
+        .@{dialogPrefixCls}-buttons-vertical {
+            flex-direction: column;
+            .@{dialogPrefixCls}-button {
+                width: 100%;
+                &:not(:first-child) {
+                    &:before {
+                        .setTopLine(@border-color-base);
+                    }
+                }
+            }
+        }
+        .@{dialogPrefixCls}-button {
+            position: relative;
+            display: block;
+            text-align: center;
+            text-decoration: none;
+            outline: none;
+            font-size: @font-size-headline;
+            color: @brand-primary;
+            text-transform: uppercase;
+            width: auto;
+            .setHeight(@option-height);
+            .textOverflow();
+            .box-sizing();
+            &-bold {
+                font-weight: 700;
+            }
+        }
+        &.@{dialogPrefixCls}-android {
+            width: 280px;
+            border-radius: @radius-sm;
+            overflow: hidden;
+            box-shadow: 0 19px 38px rgba(0, 0, 0, .3), 0 15px 12px rgba(0, 0, 0, .22);
+            .@{dialogPrefixCls}-inner {
+                padding: 24px 24px 20px;
+                position: relative;
+                .@{dialogPrefixCls}-title {
+                    font-weight: 600;
+                    font-size: @font-size-display-sm;
+                    text-align: left;
+                }
+                .@{dialogPrefixCls}-text {
+                    color: @color-text-caption;
+                    margin-top: @v-spacing-sm;
+                    text-align: left;
+                }
+                .removeRightOrBottomLine();
+            }
+            .@{dialogPrefixCls}-buttons {
+                display: flex;
+                justify-content: flex-end;
+                align-items: center;
+                height: 48px;
+                padding: 6px 8px;
+                .@{dialogPrefixCls}-button {
+                    flex: inherit;
+                    padding: 0 8px;
+                    width: auto;
+                    min-width: 64px;
+                    .setHeight(36px);
+                    &:not(:first-child) {
+                        .removeLeftOrTopLine();
+                    }
+                }
+            }
+        }
+    }
+    .@{actionPrefixCls} {
+                background-color:@fill-body;    
+
+                .@{actionPrefixCls}-title{
+                    position: relative;
+                    color: @color-text-caption;
+                    font-size: @font-size-base;
+                    background: @fill-base;
+                    .setHeight(@option-height);
+                    text-align: center;
+                    &:after{
+                        .setBottomLine(@border-color-base);
+                    }
+                }
+
+                .@{actionPrefixCls}-item{
+                    position: relative;
+                    text-align: center;
+                    font-size: @font-size-headline;
+                    background: @fill-base;
+                    .setHeight(@option-height);
+                    &:after{
+                        .setBottomLine(@border-color-base);
+                    }
+                }
+
+                .@{actionPrefixCls}-action{
+                    position: relative;
+                    &:before{
+                        .setTopLine(@border-color-base);
+                    }
+                    margin-top: @v-spacing-sm;
+                }
+            }
+    
+}
+.@{modalPrefixCls}-mask{
+    .fixed();
+    background: @fill-mask;
+}
+
+
+.@{modalPrefixCls},
+.@{modalPrefixCls}-content{
+     transition: all .4s cubic-bezier(.55, 0, .1, 1);
+}
+
+.@{modalPrefixCls}-top-enter,
+.@{modalPrefixCls}-top-leave-active{
+    opacity: 0;
+    .@{modalPrefixCls}-content{
+        transform: translateY(-101%);
+    }
+}
+
+.@{modalPrefixCls}-bottom-enter,
+.@{modalPrefixCls}-bottom-leave-active{
+    opacity: 0;
+    .@{modalPrefixCls}-content{
+        transform: translateY(101%);
+    }
+}
+
+.@{modalPrefixCls}-left-enter,
+.@{modalPrefixCls}-left-leave-active{
+    opacity: 0;
+    .@{modalPrefixCls}-content{
+        transform: translateX(-101%);
+    }
+}
+
+// modal 默认动画
+.@{modalPrefixCls}-enter,
+.@{modalPrefixCls}-leave-active,
+.@{modalPrefixCls}-right-enter,
+.@{modalPrefixCls}-right-leave-active{
+     opacity: 0;
+    .@{modalPrefixCls}-content{
+        transform: translateX(101%);
+    }
+}
+
+.@{modalPrefixCls}-fade-enter{
+    opacity: 0;
+    .@{modalPrefixCls}-content{
+        transform: scale(1.2)
+    }
+}
+.@{modalPrefixCls}-fade-leave-active{
+    opacity: 0;
+    .@{modalPrefixCls}-content{
+        transform: scale(0.8);
+    }
+}
