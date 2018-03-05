@@ -1,0 +1,211 @@
+@import "../../base/fn.less";
+@tabPrefixCls: oreo-tabs;
+
+@easing-in-out: cubic-bezier(0.35, 0, 0.25, 1);
+// .@{tabPrefixCls}{
+//     // 标签栏
+//     .oreo-tabs-tab{
+//         width: 100%;
+//         .setHeight(@tab-height);
+//         display: flex;
+//         justify-content: space-around;
+//         background: @fill-base;
+//         position: relative;
+//         &:after{
+//             .setBottomLine(@border-color-base)
+//         }
+//         .@{tabPrefixCls}-item{
+//             width: inherit;
+//             text-align: center;
+//             position: relative;
+//             &.@{tabPrefixCls}-item-active{
+//                 color: @brand-primary;
+//                 &:after{
+//                     .setBottomLine(@brand-primary);
+//                     height: @tab-item-height;
+//                 }
+//             }
+//             &.line::after{
+//                 .setBottomLine(@brand-primary);
+//                 height: @tab-item-height;
+//             }
+//         }
+//     }
+//     // 内容区域
+//     .@{tabPrefixCls}-content{
+//         width: 100%;
+//         height: @tab-pane-height;
+//         margin: 0 auto;
+//         position: relative;
+//         .@{tabPrefixCls}-panel{
+//             position: absolute;
+//             top: 0;
+//             left: 0;
+//             z-index: @tab-pane-zindex;
+//             width: inherit;
+//             height: inherit;
+//             background: @fill-base;
+//             display: flex;
+//             align-items: center;
+//             justify-content: center;
+//             &.@{tabPrefixCls}-panel-active{
+//                 z-index: @tab-paneActive-zindex;
+//             }
+//             &.active{
+//                 z-index: @tab-paneActive-zindex;
+//             }
+//         }
+//     }
+// }
+.@{tabPrefixCls} {
+    display: flex;
+    flex: 1;
+    position: relative;
+    overflow: hidden;
+    height: 100%;
+    width: 100%;
+    .box-sizing();
+
+    &-top,
+    &-bottom{
+        flex-direction: column;
+
+        .@{tabPrefixCls}-default-bar-content{
+            display: flex;
+            flex-direction: row;
+            width: 100%;
+        }
+        .@{tabPrefixCls}-default-bar-tab{
+            padding: @h-spacing-md 0;
+            &:after{
+                .setBottomLine(@border-color-base);
+            }
+        }
+        .@{tabPrefixCls}-default-bar-line{
+            bottom: 0;
+        }
+        .@{tabPrefixCls}-panel-wrap{
+            height: 0;
+            overflow: visible;    
+            &-active{
+                height: auto;
+            }
+        }
+    }
+    &-bottom {
+         .@{tabPrefixCls}-default-bar-tab{
+            &:after{
+                .setTopLine(@border-color-base);
+            }
+        }
+    }
+
+    &-left,
+    &-right{
+        flex-direction: row;
+
+        .@{tabPrefixCls}-default-bar-content{
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+        .@{tabPrefixCls}-default-bar-tab{
+            padding:0 @h-spacing-md;
+            &:after{
+                .setRightLine(@border-color-base);
+            }
+        }
+
+        .@{tabPrefixCls}-content-wrap{
+            flex-direction: column;
+        }
+        .@{tabPrefixCls}-panel-wrap{
+            height: 100%;
+            overflow: hidden;
+            &-active{
+                overflow:auto;
+            }
+        }
+    }
+    &-right{
+        .@{tabPrefixCls}-default-bar-tab{
+            &:after{
+                .setLeftLine(@border-color-base);
+            }
+        }
+    }
+
+    &-bar-wrap{
+        // 兼容ios8
+        height: 100%;
+    }
+
+    &-default-bar{
+        position: relative;
+        display: flex;
+        width: 100%;
+        height: 100%;
+        overflow: visible;
+        z-index: 10000;
+
+        background: @fill-base;
+    }
+
+    &-default-bar-content{
+
+    }
+
+    &-default-bar-tab{
+        display: flex;
+        flex-shrink: 0;
+        justify-content: center;
+        align-items: center;
+        line-height: 44px;
+        height: 44px;
+        font-size: @fonit-size-caption;
+        &-active{
+            color: @brand-primary;
+        }
+    }
+    &-default-bar-line{
+        position: absolute;
+        border: 1px @brand-primary solid;
+    }
+
+
+
+
+    &-content-wrap{
+        display: flex;
+        flex: 1;
+        width: 100%;
+        height: 100%;
+    }
+
+    &-panel-wrap{
+        flex-shrink: 0;
+        width: 100%;
+        
+    }
+
+
+
+    // 动画
+    &-default-bar-animated{
+
+         .@{tabPrefixCls}-default-bar-content{
+            transition: transform 0.3s @easing-in-out;
+            will-change: transform;
+         }
+        .@{tabPrefixCls}-default-bar-line{
+            transition: transform 0.3s @easing-in-out, left 0.3s @easing-in-out, top 0.3s @easing-in-out;
+            will-change: transform, left, top;
+        }
+
+    }
+    &-content-wrap-animated{
+        transition: transform 0.3s @easing-in-out, left 0.3s @easing-in-out, top 0.3s @easing-in-out;
+        will-change: transform, left, top;
+    }
+}
+

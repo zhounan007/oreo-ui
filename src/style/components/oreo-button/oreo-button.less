@@ -1,0 +1,84 @@
+@import '../../base/fn.less';
+@buttonPrefixCls: oreo-button;
+.@{buttonPrefixCls} {
+    display: block;
+    position: relative;
+    outline: 0;
+    padding: 0;
+    text-align: center;
+    font-size: @font-size-headline;
+    color: @brand-primary;
+    background: @fill-base;
+    box-shadow: 0 0 0 1px @brand-primary;
+    border-radius: @radius-md;
+    transition: all .2s ease-in-out;
+    .setHeight(@button-height);
+    &:active {
+        background-color: @brand-primary;
+        color: @color-text-base-inverse;
+    }
+    &-disabled {
+        .disabled()
+    }
+    &-primary {
+        color: @color-text-base-inverse;
+        background: @brand-primary;
+        box-shadow: 0 0 0 1px @brand-primary; // &.@{buttonPrefixCls}-disabled{
+        //    opacity: .7!important;
+        // }
+        &:active {
+            background-color: @brand-primary-tap;
+        }
+        &.@{buttonPrefixCls}-disabled {
+            .disabled()
+        }
+    }
+    &-success {
+        color: @color-text-base-inverse;
+        background: @brand-success;
+        box-shadow: 0 0 0 1px @brand-success; // &.@{buttonPrefixCls}-disabled{
+        //    opacity: .7!important;
+        // }
+        &:active {
+            background-color: @brand-success-tap;
+        }
+        &.@{buttonPrefixCls}-disabled {
+            .disabled()
+        }
+    }
+    &-error {
+        color: @color-text-base-inverse;
+        background: @brand-error;
+        box-shadow: 0 0 0 1px @brand-error; // &.@{buttonPrefixCls}-disabled{
+        //    opacity: .7!important;
+        // }
+        &:active {
+            background-color: @brand-error-tap;
+        }
+        &.@{buttonPrefixCls}-disabled {
+            .disabled()
+        }
+    }
+    &-inline {
+        display: inline-block;
+        padding: 0 @h-spacing-lg;
+    }
+    &-round {
+        border-radius: @radius-max;
+    }
+    &-small {
+        .setHeight(@button-height-sm);
+    }
+}
+
+.disabled() {
+    cursor: not-allowed;
+    color: @color-text-disabled;
+    background: @fill-disabled;
+    border: 0;
+    box-shadow: 0 0 0 0;
+    &:active {
+        background-color: @fill-disabled;
+        color: @color-text-disabled;
+    }
+}

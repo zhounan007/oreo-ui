@@ -1,0 +1,16 @@
+@import "oreo-checkbox.less";
+@radioPrefixCls: oreo-radio;
+
+.@{listPrefixCls}{
+    &-item {
+        &.@{checkboxPrefixCls},
+        &.@{radioPrefixCls}{
+            input[type=radio]:after {
+                border-radius: 50%;
+            }
+            input[type=radio]:checked:disabled:after {
+                border: @border-width-sm solid @border-color-base;
+            }
+        }
+    }
+}

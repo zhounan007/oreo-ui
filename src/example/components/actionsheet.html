@@ -1,0 +1,66 @@
+<div class="page demo-actionsheet">
+    <div class="page-hd">
+        <div class="demo-name">
+            <a href="./" class="oreo-icon-home demo-home oreo-icon"></a> Actionsheet 弹出式菜单</div>
+        <div class="demo-subtitle"></div>
+    </div>
+    <div class="page-body" style="padding:0;">
+
+        <h2>Basic</h2>
+
+        <div class="demo-button">
+            <a href="javascript:;" class="oreo-button oreo-button-small oreo-button-primary" data-type="1">ActionSheet</a>
+
+            <a href="javascript:;" class="oreo-button oreo-button-small oreo-button-primary" data-type="2">Show Share ActionSheet</a>
+        </div>
+
+       
+    </div>
+
+    <div class="oreo-modal oreo-modal-mask oreo-modal-bottom" style="display:none;" id="demo-actionsheet-1">
+        <div class="oreo-modal-content oreo-actionsheet">
+            <div class="oreo-actionsheet-title">请选择</div>
+            <div class="oreo-actionsheet-item">拍照</div>
+            <div class="oreo-actionsheet-item">从相册中选择</div>
+            <div class="oreo-actionsheet-item">从云端选择</div>
+            <div class="oreo-actionsheet-action">
+                <div class="oreo-actionsheet-item">取消</div>
+            </div>
+        </div>
+    </div>
+    <div class="oreo-modal oreo-modal-mask oreo-modal-bottom" style="display:none;" id="demo-actionsheet-2">
+        <div class="oreo-modal-content oreo-actionsheet">
+            <div class="oreo-actionsheet-title" style="background: inherit;">分享到</div>
+            <div class="demo-actionsheet-share">
+                <div class="demo-actionsheet-item">
+                    <div class="demo-actionsheet-icon"><img src="http://owz1rt8et.bkt.clouddn.com/icon/icon_sns_weixin.png" alt="微信好友" style="width: 100%;"></div>
+                    <div class="demo-actionsheet-text">微信</div>
+                </div>
+                <div class="demo-actionsheet-item">
+                    <div class="demo-actionsheet-icon"><img src="http://owz1rt8et.bkt.clouddn.com/icon/icon_sns_qq.png" alt="微信好友" style="width: 100%;"></div>
+                    <div class="demo-actionsheet-text">QQ</div>
+                </div>
+                <div class="demo-actionsheet-item">
+                    <div class="demo-actionsheet-icon"><img src="http://owz1rt8et.bkt.clouddn.com/icon/icon_sns_pengyouquan.png" alt="微信好友" style="width: 100%;"></div>
+                    <div class="demo-actionsheet-text">朋友圈</div>
+                </div>
+                <div class="demo-actionsheet-item">
+                    <div class="demo-actionsheet-icon"><img src="http://owz1rt8et.bkt.clouddn.com/icon/icon_sns_weibo.png" alt="微信好友" style="width: 100%;"></div>
+                    <div class="demo-actionsheet-text">微博</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('.demo-actionsheet .demo-button .oreo-button').on('click', function () {
+                $('#demo-actionsheet-' + this.dataset.type).fadeIn(200);
+            })
+            $('.demo-actionsheet .oreo-modal-mask').on('click', function (event) {
+                if (event.target !== event.currentTarget) return;
+                $(this).fadeOut(200);
+            })
+        })
+    </script>
+</div>
