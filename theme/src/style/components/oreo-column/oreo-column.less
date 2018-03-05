@@ -1,0 +1,46 @@
+@import '../../base/fn.less';
+@colPrefixCls: oreo-col;
+@rowPrefixCls: oreo-row;
+
+// 生成 CSS 栅格类的递归循环
+.oreo-columns(@n, @i: 1) when (@i =< @n) {
+  .oreo-col-@{i} {
+    width: (@i * 100% / @n);
+  }
+  .oreo-columns(@n, (@i + 1));
+}
+
+.@{rowPrefixCls}{
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    .@{colPrefixCls}{
+        color: @color-text-base-inverse;
+        // padding: @oreoColPadding;
+        text-align: center;
+        font-size: @font-size-display-sm;
+        margin: @oreoColMargin;
+        // background: @brand-primary-tap;
+        position: relative;
+        div{
+            padding: @oreoColPadding;
+            background: @brand-primary-tap;       
+        }
+        &-thumb{
+            margin: 0 5px;
+            // &:first-child{
+            //     margin-left: 0;
+            // }
+        }
+        &:after{
+            .setRightLine(@c:@fill-base)
+        }
+        &:last-child{
+            &:after{
+                display: none;
+            }
+        }
+    }
+    .oreo-columns(24);
+}

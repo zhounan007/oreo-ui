@@ -7,12 +7,12 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <title>Oreo-UI Library</title>
-    <link rel="shortcut icon" href="../_media/favicon.ico"  type="image/x-icon">
+    <link rel="shortcut icon" href="../_media/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="./oreo_ui.css">
     <link rel="stylesheet" href="./res/css/example.css">
     <script src="./res/script/zepto.min.js"></script>
     <script src="./res/script/fx_methods.js"></script>
-    
+
 </head>
 
 <body>
@@ -293,95 +293,185 @@
         <!-- input和label分居两侧 -->
         <h2>input和label分居两侧</h2>
         <div class="oreo-list-body">
-            <div class="oreo-list-item oreo-checkbox">
-                <div class="oreo-checkbox-thumb">
-                    <input class="oreo-checkbox-thumb-inner" type="checkbox" value="" />
+            <div class="oreo-list-item oreo-selectBox">
+                <div class="oreo-selectBox-thumb">
+                    <input class="oreo-selectBox-thumb-inner" type="checkbox" value="" />
                 </div>
-                <label class="oreo-checkbox-label">超长文本选项</label>
+                <label class="oreo-selectBox-label">超长文本选项</label>
             </div>
-            <div class="oreo-list-item oreo-checkbox">
-                <div class="oreo-checkbox-thumb">
-                    <input class="oreo-checkbox-thumb-inner" type="checkbox" value="" />
+            <div class="oreo-list-item oreo-selectBox">
+                <div class="oreo-selectBox-thumb">
+                    <input class="oreo-selectBox-thumb-inner" type="checkbox" value="" />
                 </div>
-                <label class="oreo-checkbox-label">复选框</label>
+                <label class="oreo-selectBox-label">复选框</label>
             </div>
-            <div class="oreo-list-item oreo-checkbox">
-                <div class="oreo-checkbox-thumb">
-                    <input class="oreo-checkbox-thumb-inner" type="checkbox" value="" />
+            <div class="oreo-list-item oreo-selectBox">
+                <div class="oreo-selectBox-thumb">
+                    <input class="oreo-selectBox-thumb-inner" type="checkbox" value="" />
                 </div>
-                <label class="oreo-checkbox-label">复选框</label>
+                <label class="oreo-selectBox-label">复选框</label>
             </div>
-            <div class="oreo-list-item oreo-checkbox">
-                <div class="oreo-checkbox-thumb">
-                    <input class="oreo-checkbox-thumb-inner" type="checkbox" value="" disabled checked/>
+            <div class="oreo-list-item oreo-selectBox">
+                <div class="oreo-selectBox-thumb">
+                    <input class="oreo-selectBox-thumb-inner" type="checkbox" value="" disabled checked/>
                 </div>
-                <label class="oreo-checkbox-label">复选框</label>
+                <label class="oreo-selectBox-label">复选框</label>
             </div>
         </div>
         <!-- input和label居左对齐 -->
-        <!-- 与上述区别 label添加class类名oreo-checkbox-flex -->
+        <!-- 与上述区别 label添加class类名oreo-selectBox-flex -->
         <h2>input和label居左对齐</h2>
         <div class="oreo-list-body">
-            <div class="oreo-list-item oreo-checkbox">
-                <div class="oreo-checkbox">
-                    <input class="oreo-checkbox-thumb-inner" type="checkbox" value="" />
+            <div class="oreo-list-item oreo-selectBox">
+                <div class="oreo-selectBox-thumb">
+                    <input class="oreo-selectBox-thumb-inner" type="checkbox" value="" />
                 </div>
-                <label class="oreo-checkbox-label oreo-checkbox-flex">超长文本选项超长文本选项超长文本选项超长文本选项超长文本选项超长文本选项超长文本选项</label>
+                <label class="oreo-selectBox-label oreo-selectBox-flex">超长文本选项超长文本选项超长文本选项超长文本选项超长文本选项超长文本选项超长文本选项</label>
             </div>
-            <div class="oreo-list-item oreo-checkbox">
-                <div class="oreo-checkbox">
-                    <input class="oreo-checkbox-thumb-inner" type="checkbox" value="" />
+            <div class="oreo-list-item oreo-selectBox">
+                <div class="oreo-selectBox-thumb">
+                    <input class="oreo-selectBox-thumb-inner" type="checkbox" value="" />
                 </div>
-                <label class="oreo-checkbox-label oreo-checkbox-flex">复选框</label>
+                <label class="oreo-selectBox-label oreo-selectBox-flex">复选框</label>
             </div>
-            <div class="oreo-list-item oreo-checkbox">
-                <div class="oreo-checkbox">
-                    <input class="oreo-checkbox-thumb-inner" type="checkbox" value="" />
+            <div class="oreo-list-item oreo-selectBox">
+                <div class="oreo-selectBox-thumb">
+                    <input class="oreo-selectBox-thumb-inner" type="checkbox" value="" />
                 </div>
-                <label class="oreo-checkbox-label oreo-checkbox-flex">复选框</label>
+                <label class="oreo-selectBox-label oreo-selectBox-flex">复选框</label>
             </div>
-            <div class="oreo-list-item oreo-checkbox">
-                <div class="oreo-checkbox-thumb">
-                    <input class="oreo-checkbox-thumb-inner" type="checkbox" value="" disabled checked/>
+            <div class="oreo-list-item oreo-selectBox">
+                <div class="oreo-selectBox-thumb">
+                    <input class="oreo-selectBox-thumb-inner" type="checkbox" value="" disabled checked/>
                 </div>
-                <label class="oreo-checkbox-label oreo-checkbox-flex">复选框</label>
+                <label class="oreo-selectBox-label oreo-selectBox-flex">复选框</label>
             </div>
         </div>
         <!-- 选择框在右侧 ***添加inner-right类名*** -->
         <h2>input选择框在右</h2>
         <div class="oreo-list-body">
-            <div class="oreo-list-item oreo-checkbox inner-right">
-                <div class="oreo-checkbox-thumb">
-                    <input class="oreo-checkbox-thumb-inner" type="checkbox" value="" />
+            <div class="oreo-list-item oreo-selectBox inner-right">
+                <div class="oreo-selectBox-thumb">
+                    <input class="oreo-selectBox-thumb-inner" type="checkbox" value="" />
                 </div>
-                <label class="oreo-checkbox-label oreo-checkbox-flex">超长文本选项超长文本选项超长文本选项超长文本选项超长文本选项超长文本选项超长文本选项</label>
+                <label class="oreo-selectBox-label oreo-selectBox-flex">超长文本选项超长文本选项超长文本选项超长文本选项超长文本选项超长文本选项超长文本选项</label>
             </div>
-            <div class="oreo-list-item oreo-checkbox inner-right">
-                <div class="oreo-checkbox-thumb">
-                    <input class="oreo-checkbox-thumb-inner" type="checkbox" value="" />
+            <div class="oreo-list-item oreo-selectBox inner-right">
+                <div class="oreo-selectBox-thumb">
+                    <input class="oreo-selectBox-thumb-inner" type="checkbox" value="" />
                 </div>
-                <label class="oreo-checkbox-label oreo-checkbox-flex">复选框</label>
+                <label class="oreo-selectBox-label oreo-selectBox-flex">复选框</label>
             </div>
-            <div class="oreo-list-item oreo-checkbox inner-right">
-                <div class="oreo-checkbox-thumb">
-                    <input class="oreo-checkbox-thumb-inner" type="checkbox" value="" />
+            <div class="oreo-list-item oreo-selectBox inner-right">
+                <div class="oreo-selectBox-thumb">
+                    <input class="oreo-selectBox-thumb-inner" type="checkbox" value="" />
                 </div>
-                <label class="oreo-checkbox-label oreo-checkbox-flex">复选框</label>
+                <label class="oreo-selectBox-label oreo-selectBox-flex">复选框</label>
             </div>
-            <div class="oreo-list-item oreo-checkbox inner-right">
-                <div class="oreo-checkbox-thumb">
-                    <input class="oreo-checkbox-thumb-inner" type="checkbox" value="" disabled checked/>
+            <div class="oreo-list-item oreo-selectBox inner-right">
+                <div class="oreo-selectBox-thumb">
+                    <input class="oreo-selectBox-thumb-inner" type="checkbox" value="" disabled checked/>
                 </div>
-                <label class="oreo-checkbox-label oreo-checkbox-flex">复选框</label>
+                <label class="oreo-selectBox-label oreo-selectBox-flex">复选框</label>
             </div>
         </div>
         <!-- <h2>checkbox</h2> -->
-        <div class="oreo-list-body oreo-checkbox-agree">
-            <div class="oreo-list-item oreo-checkbox checkbox-agree">
-                <div class="oreo-checkbox-thumb">
-                    <input class="oreo-checkbox-thumb-inner" type="checkbox" value="" />
+        <div class="oreo-list-body oreo-selectBox-agree">
+            <div class="oreo-list-item oreo-selectBox selectBox-agree">
+                <div class="oreo-selectBox-thumb">
+                    <input class="oreo-selectBox-thumb-inner" type="checkbox" value="" />
                 </div>
-                <label class="oreo-checkbox-label oreo-checkbox-flex">同意协议</label>
+                <label class="oreo-selectBox-label oreo-selectBox-flex">同意协议</label>
+            </div>
+        </div>
+    </div>
+</div>
+</script>
+<script type="text/html" id="tpl_column">
+<div class="page">
+    <div class="page-hd">
+        <div class="demo-name">
+            <a href="./" class="oreo-icon-home demo-home"></a>
+            Column 多列布局</div>
+        <div class="demo-subtitle">该布局基于flex,支持多列及图文排列</div>
+    </div>
+    <div class="page-body" style="padding:0;">
+        <h2>栅格以每行最多24列为例</h2>
+        <div class="oreo-row">
+            <div class="oreo-col oreo-col-24">
+                <div>100%</div>
+            </div>
+        </div>
+        <div class="oreo-row">
+            <div class="oreo-col oreo-col-12">
+                <div class="oreo-col-thumb">50%</div>
+            </div>
+            <div class="oreo-col oreo-col-12">
+                <div class="oreo-col-thumb">50%</div>
+            </div>
+        </div>
+        <div class="oreo-row">
+            <div class="oreo-col oreo-col-8">
+                <div>33.3%</div>
+            </div>
+            <div class="oreo-col oreo-col-8">
+                <div>33.3%</div>
+            </div>
+            <div class="oreo-col oreo-col-8">
+                <div>33.3%</div>
+            </div>
+        </div>
+        <div class="oreo-row">
+            <div class="oreo-col oreo-col-6">
+                <div>25%</div>
+            </div>
+            <div class="oreo-col oreo-col-6">
+                <div>25%</div>
+            </div>
+            <div class="oreo-col oreo-col-6">
+                <div>25%</div>
+            </div>
+            <div class="oreo-col oreo-col-6">
+                <div>25%</div>
+            </div>
+        </div>
+        <div class="oreo-row">
+            <div class="oreo-col oreo-col-4">
+                <div>16.6%</div>
+            </div>
+            <div class="oreo-col oreo-col-4">
+                <div>16.6%</div>
+            </div>
+            <div class="oreo-col oreo-col-4">
+                <div>16.6%</div>
+            </div>
+            <div class="oreo-col oreo-col-4">
+                <div>16.6%</div>
+            </div>
+            <div class="oreo-col oreo-col-4">
+                <div>16.6%</div>
+            </div>
+            <div class="oreo-col oreo-col-4">
+                <div>16.6%</div>
+            </div>
+        </div>
+        <div class="oreo-row">
+            <div class="oreo-col oreo-col-8">
+                <div>33.3%</div>
+            </div>
+            <div class="oreo-col oreo-col-16">
+                <div>66.6%</div>
+            </div>
+        </div>
+        <div class="oreo-row">
+            <div class="oreo-col oreo-col-4">
+                <div>16.6%</div>
+            </div>
+            <div class="oreo-col oreo-col-12">
+                <div>50%</div>
+            </div>
+            <div class="oreo-col oreo-col-8">
+                <div>33.3%</div>
             </div>
         </div>
     </div>
@@ -419,6 +509,14 @@
             <a href="javascript:;" class="oreo-button oreo-button-small oreo-button-primary" data-type="5">iOS More Button</a>
 
             <a href="javascript:;" class="oreo-button oreo-button-small oreo-button-primary" data-type="6">iOS Operation</a>
+        </div>
+
+        <h2>Password</h2>
+
+        <div class="demo-button">
+            <a href="javascript:;" class="oreo-button oreo-button-small oreo-button-primary" data-type="7">iOS Password</a>
+
+            <a href="javascript:;" class="oreo-button oreo-button-small oreo-button-primary" data-type="8">Android Password</a>
         </div>
 
 
@@ -507,13 +605,48 @@
             </div>
         </div>
     </div>
+
+    <div style="display:none;" id="demo-dialog-7">
+        <div class="oreo-modal oreo-modal-mask">
+            <div class="oreo-modal-content oreo-dialog">
+                <div class="oreo-dialog-inner">
+                    <div class="oreo-dialog-title">提示</div>
+                    <div class="oreo-dialog-text">What is your password?</div>
+                    <div class="oreo-dialog-password">
+                        <input type="password" placeholder="请输入你的密码">
+                    </div>
+                </div>
+                <div class="oreo-dialog-buttons">
+                    <a href="javascript:;" class="oreo-dialog-button oreo-dialog-button-bold">确定</a>
+                    <a href="javascript:;" class="oreo-dialog-button">取消</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div style="display:none;" id="demo-dialog-8">
+        <div class="oreo-modal oreo-modal-mask">
+            <div class="oreo-modal-content oreo-dialog oreo-dialog-android">
+                <div class="oreo-dialog-inner">
+                    <div class="oreo-dialog-title">Oreo-UI</div>
+                    <div class="oreo-dialog-text">Hello world!</div>
+                    <div class="oreo-dialog-password">
+                        <input type="password" placeholder="请输入你的密码">
+                    </div>
+                </div>
+                <div class="oreo-dialog-buttons">
+                    <a href="javascript:;" class="oreo-dialog-button oreo-dialog-button-bold">确定</a>
+                    <a href="javascript:;" class="oreo-dialog-button">取消</a>
+                </div>
+            </div>
+        </div>
+    </div>
     <script type="text/javascript">
-        $(document).ready(function () {
-            $('.demo-dialog .demo-button .oreo-button').on('click', function () {
+        $(document).ready(function() {
+            $('.demo-dialog .demo-button .oreo-button').on('click', function() {
                 var $t = $('#demo-dialog-' + this.dataset.type);
                 $t.fadeIn(200);
             })
-            $('.demo-dialog .oreo-dialog-button').on('click', function () {
+            $('.demo-dialog .oreo-dialog-button').on('click', function() {
                 var $p = $(this).parents('div[id]')
                 $p.fadeOut(200);
             })
@@ -634,10 +767,10 @@
 </script>
 <script type="text/html" id="tpl_form">
 <div class="page">
-   <div class="page-hd">
+    <div class="page-hd">
         <div class="demo-name">
             <a href="./" class="oreo-icon-home demo-home oreo-icon"></a>
-        Form 表格</div>
+            Form 表格</div>
         <div class="demo-subtitle">Input,Radio,Checkbox,Switch,Textarea</div>
     </div>
     <div class="page-body" style="padding:0;">
@@ -669,6 +802,30 @@
         </div>
 
         <div class="oreo-list oreo-list-line">
+            <div class="oreo-list-header">分居两侧的Input</div>
+            <div class="oreo-list-body">
+                <div class="oreo-list-item oreo-input">
+                    <div class="oreo-input-label">姓名</div>
+                    <div class="oreo-input-control">
+                        <input class="oreo-input-right" type="text" placeholder="请输入真实姓名">
+                    </div>
+                </div>
+                <div class="oreo-list-item oreo-input">
+                    <div class="oreo-input-label">姓名</div>
+                    <div class="oreo-input-control">
+                        <input class="oreo-input-right" type="text" value="Mr.庄周">
+                    </div>
+                </div>
+                <div class="oreo-list-item oreo-input oreo-input-disabled">
+                    <div class="oreo-input-label">姓名</div>
+                    <div class="oreo-input-control">
+                        <input class="oreo-input-right" type="text" value="不可编辑" disabled>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="oreo-list oreo-list-line">
             <div class="oreo-list-header">不带Label标签</div>
             <div class="oreo-list-body">
                 <div class="oreo-list-item oreo-input">
@@ -678,7 +835,7 @@
                 </div>
                 <div class="oreo-list-item oreo-input">
                     <div class="oreo-input-control">
-                        <input type="password" placeholder="请输入密码">
+                        <input type="password" class="password" placeholder="请输入密码">
                     </div>
                 </div>
             </div>
@@ -715,46 +872,46 @@
             <div class="oreo-list-body">
                 <div class="oreo-list-item">
                     <div class="oreo-list-item-line">
-                        <div class="oreo-list-item-content">关闭状态</div> 
+                        <div class="oreo-list-item-content">关闭状态</div>
                         <div class="oreo-list-item-extra">
                             <label class="oreo-switch">
                                 <input type="checkbox">
                                 <div class="oreo-switch-box"></div>
                             </label>
-                        </div> 
+                        </div>
                     </div>
                 </div>
                 <div class="oreo-list-item">
                     <div class="oreo-list-item-line">
-                        <div class="oreo-list-item-content">开启状态</div> 
+                        <div class="oreo-list-item-content">开启状态</div>
                         <div class="oreo-list-item-extra">
                             <label class="oreo-switch">
                                 <input type="checkbox" checked>
                                 <div class="oreo-switch-box"></div>
                             </label>
-                        </div> 
+                        </div>
                     </div>
                 </div>
                 <div class="oreo-list-item">
                     <div class="oreo-list-item-line">
-                        <div class="oreo-list-item-content">不可点击状态</div> 
+                        <div class="oreo-list-item-content">不可点击状态</div>
                         <div class="oreo-list-item-extra">
                             <label class="oreo-switch">
                                 <input type="checkbox" disabled>
                                 <div class="oreo-switch-box"></div>
                             </label>
-                        </div> 
+                        </div>
                     </div>
                 </div>
-                 <div class="oreo-list-item">
+                <div class="oreo-list-item">
                     <div class="oreo-list-item-line">
-                        <div class="oreo-list-item-content">不可点击开启状态</div> 
+                        <div class="oreo-list-item-content">不可点击开启状态</div>
                         <div class="oreo-list-item-extra">
                             <label class="oreo-switch">
                                 <input type="checkbox" disabled checked>
                                 <div class="oreo-switch-box"></div>
                             </label>
-                        </div> 
+                        </div>
                     </div>
                 </div>
             </div>
@@ -962,7 +1119,13 @@
                                     <div class="oreo-list-arrow"></div>
                                 </div>
                             </div>
-                            
+                            <div class="oreo-list-item oreo-list-item-link" data-page="listview">
+                                <div class="oreo-list-item-line">
+                                    <div class="oreo-list-item-content">ListView</div>
+                                    <div class="oreo-list-arrow"></div>
+                                </div>
+                            </div>
+
 
                         </div>
                     </div>
@@ -990,6 +1153,7 @@
                         </div>
                     </div>
                 </div>
+                
             </li>
             <li class="demo-list">
                 <div class="demo-list-header oreo-list-item-line">
@@ -1008,6 +1172,12 @@
                             <div class="oreo-list-item oreo-list-item-link" data-page="grid">
                                 <div class="oreo-list-item-line">
                                     <div class="oreo-list-item-content">Grid</div>
+                                    <div class="oreo-list-arrow"></div>
+                                </div>
+                            </div>
+                            <div class="oreo-list-item oreo-list-item-link" data-page="column">
+                                <div class="oreo-list-item-line">
+                                    <div class="oreo-list-item-content">Column</div>
                                     <div class="oreo-list-arrow"></div>
                                 </div>
                             </div>
@@ -1588,6 +1758,163 @@
     </div>
 </div>
 </script>
+<script type="text/html" id="tpl_listview">
+<div class="page">
+    <div class="page-hd">
+        <div class="demo-name">
+            <a href="./" class="oreo-icon-home demo-home oreo-icon"></a>
+            ListView 列表</div>
+        <div class="demo-subtitle">适用于通讯录、地区查询等...</div>
+    </div>
+    <div class="page-body" style="padding:0;">
+        <div class="oreo-listView">
+            <ul class="oreo-listView-view">
+                <li class="oreo-listView-letter">AAAAAAA</li>
+                <li class="oreo-listView-item">a1</li>
+                <li class="oreo-listView-item">a2</li>
+                <li class="oreo-listView-item">a3</li>
+                <li class="oreo-listView-item">a4</li>
+                <li class="oreo-listView-item">a5</li>
+                <li class="oreo-listView-item">A</li>
+                <li class="oreo-listView-item">B</li>
+                <li class="oreo-listView-item">C</li>
+                <li class="oreo-listView-item">D</li>
+                <li class="oreo-listView-item">E</li>
+                <li class="oreo-listView-item">F</li>
+                <li class="oreo-listView-item">G</li>
+                <li class="oreo-listView-item">H</li>
+                <li class="oreo-listView-item">I</li>
+                <li class="oreo-listView-item">J</li>
+                <li class="oreo-listView-item">K</li>
+                <li class="oreo-listView-item">L</li>
+                <li class="oreo-listView-item">M</li>
+                <li class="oreo-listView-item">N</li>
+                <li class="oreo-listView-item">O</li>
+                <li class="oreo-listView-item">P</li>
+                <li class="oreo-listView-item">Q</li>
+                <li class="oreo-listView-item">R</li>
+                <li class="oreo-listView-item">S</li>
+                <li class="oreo-listView-item">T</li>
+                <li class="oreo-listView-item">U</li>
+                <li class="oreo-listView-item">V</li>
+                <li class="oreo-listView-item">W</li>
+                <li class="oreo-listView-item">X</li>
+                <li class="oreo-listView-item">Y</li>
+                <li class="oreo-listView-item">Z</li>
+                <li class="oreo-listView-item">A</li>
+                <li class="oreo-listView-item">B</li>
+                <li class="oreo-listView-item">C</li>
+                <li class="oreo-listView-item">D</li>
+                <li class="oreo-listView-item">E</li>
+                <li class="oreo-listView-item">F</li>
+                <li class="oreo-listView-item">G</li>
+                <li class="oreo-listView-item">H</li>
+                <li class="oreo-listView-item">I</li>
+                <li class="oreo-listView-item">J</li>
+                <li class="oreo-listView-item">K</li>
+                <li class="oreo-listView-item">L</li>
+                <li class="oreo-listView-item">M</li>
+                <li class="oreo-listView-item">N</li>
+                <li class="oreo-listView-item">O</li>
+                <li class="oreo-listView-item">P</li>
+                <li class="oreo-listView-item">Q</li>
+                <li class="oreo-listView-item">R</li>
+                <li class="oreo-listView-item">S</li>
+                <li class="oreo-listView-item">T</li>
+                <li class="oreo-listView-item">U</li>
+                <li class="oreo-listView-item">V</li>
+                <li class="oreo-listView-item">W</li>
+                <li class="oreo-listView-item">X</li>
+                <li class="oreo-listView-item">Y</li>
+                <li class="oreo-listView-item">Z</li>
+                <li class="oreo-listView-letter">BBBBBBB</li>
+                <li class="oreo-listView-item">b1</li>
+                <li class="oreo-listView-item">b2</li>
+                <li class="oreo-listView-item">b3</li>
+                <li class="oreo-listView-item">b4</li>
+                <li class="oreo-listView-item">b5</li>
+                <li class="oreo-listView-letter">CCCCCC</li>
+                <li class="oreo-listView-item">c1</li>
+                <li class="oreo-listView-item">c2</li>
+                <li class="oreo-listView-item">c3</li>
+                <li class="oreo-listView-item">c4</li>
+                <li class="oreo-listView-item">c5</li>
+                <li class="oreo-listView-letter">DDDDDD</li>
+                <li class="oreo-listView-item">d1</li>
+                <li class="oreo-listView-item">d2</li>
+                <li class="oreo-listView-item">d3</li>
+                <li class="oreo-listView-item">d4</li>
+                <li class="oreo-listView-item">d5</li>
+                <div class="oreo-listView-letter">aaaaaaaa~zzzzzzz</div>
+                <li class="oreo-listView-item">A</li>
+                <li class="oreo-listView-item">B</li>
+                <li class="oreo-listView-item">C</li>
+                <li class="oreo-listView-item">D</li>
+                <li class="oreo-listView-item">E</li>
+                <li class="oreo-listView-item">F</li>
+                <li class="oreo-listView-item">G</li>
+                <li class="oreo-listView-item">H</li>
+                <li class="oreo-listView-item">I</li>
+                <li class="oreo-listView-item">J</li>
+                <li class="oreo-listView-item">K</li>
+                <li class="oreo-listView-item">L</li>
+                <li class="oreo-listView-item">M</li>
+                <li class="oreo-listView-item">N</li>
+                <li class="oreo-listView-item">O</li>
+                <li class="oreo-listView-item">P</li>
+                <li class="oreo-listView-item">Q</li>
+                <li class="oreo-listView-item">R</li>
+                <li class="oreo-listView-item">S</li>
+                <li class="oreo-listView-item">T</li>
+                <li class="oreo-listView-item">U</li>
+                <li class="oreo-listView-item">V</li>
+                <li class="oreo-listView-item">W</li>
+                <li class="oreo-listView-item">X</li>
+                <li class="oreo-listView-item">Y</li>
+                <li class="oreo-listView-item">Z</li>
+            </ul>
+            <ul class="oreo-listView-navlist">
+                <li>A</li>
+                <li>B</li>
+                <li>C</li>
+                <li>D</li>
+                <li>E</li>
+                <li>F</li>
+                <li>G</li>
+                <li>H</li>
+                <li>I</li>
+                <li>J</li>
+                <li>K</li>
+                <li>L</li>
+                <li>M</li>
+                <li>N</li>
+                <li>O</li>
+                <li>P</li>
+                <li>Q</li>
+                <li>R</li>
+                <li>S</li>
+                <li>T</li>
+                <li>U</li>
+                <li>V</li>
+                <li>W</li>
+                <li>X</li>
+                <li>Y</li>
+                <li>Z</li>
+            </ul>
+        </div>
+    </div>
+</div>
+<script>
+    var a = $(document.body).height() - $('.page-hd').height() + 'px';
+    console.log(a);
+    var b = $('.page-body').height(a);
+    $('.oreo-listView').height(a);
+    $('.oreo-listView-navlist').height(a);
+    var b = ($('.page-body').height()/26);
+    $('.oreo-listView-navlist li').height(b);
+    $('.oreo-listView-navlist li').css('lineHeight',b + 'px');
+</script>
+</script>
 <script type="text/html" id="tpl_loading">
 <div class="page demo-loading">
    <div class="page-hd">
@@ -1650,6 +1977,11 @@
 
             <a href="javascript:;" class="oreo-button oreo-button-small oreo-button-primary" data-type="min">Modal Min</a>
         </div>
+
+        <h2>Textarea</h2>
+        <div class="demo-button">
+            <a href="javascript:;" class="oreo-button oreo-button-small oreo-button-primary" data-type="textarea">Modal Textarea</a>
+        </div>
     </div>
 
     <div class="oreo-modal oreo-modal-mask oreo-modal-top" style="display:none;" id="demo-modal-top">
@@ -1660,19 +1992,19 @@
     </div>
     <div class="oreo-modal oreo-modal-mask oreo-modal-bottom" style="display:none;" id="demo-modal-bottom">
         <div class="oreo-modal-content">
-             <h2>Modal</h2>
+            <h2>Modal</h2>
             <p>从下弹出窗口</p>
         </div>
     </div>
     <div class="oreo-modal oreo-modal-mask oreo-modal-left" style="display:none;" id="demo-modal-left">
         <div class="oreo-modal-content">
-             <h2>Modal</h2>
+            <h2>Modal</h2>
             <p>从左弹出窗口</p>
         </div>
     </div>
     <div class="oreo-modal oreo-modal-mask oreo-modal-right" style="display:none;" id="demo-modal-right">
         <div class="oreo-modal-content">
-              <h2>Modal</h2>
+            <h2>Modal</h2>
             <p>从右弹出窗口</p>
         </div>
     </div>
@@ -1680,7 +2012,7 @@
         <div class="oreo-modal-content">
             <h2>Maximized Modal</h2>
             <p>全屏弹窗</p>
-            <a href="javascript:;" class="oreo-button oreo-button-small oreo-button-primary oreo-button-inline demo-close">Close me</a>    
+            <a href="javascript:;" class="oreo-button oreo-button-small oreo-button-primary oreo-button-inline demo-close">Close me</a>
         </div>
     </div>
     <div class="oreo-modal oreo-modal-mask oreo-modal-min" style="display:none;" id="demo-modal-min">
@@ -1688,6 +2020,17 @@
             <div style="width:260px;">
                 <h2>Minimized Modal</h2>
                 <p>小屏弹窗</p>
+            </div>
+        </div>
+    </div>
+    <div class="oreo-modal oreo-modal-mask oreo-modal-top" style="display:none;" id="demo-modal-textarea">
+        <div class="oreo-modal-content oreo-modal-textbox">
+            <div class="oreo-modal-textarea">
+                <textarea placeholder="回复楼主："></textarea>
+            </div>
+            <div class="oreo-modal-button">
+                <a href="javascript:;" class="oreo-button oreo-button-inline oreo-button-small demo-close">取消</a>
+                <a href="javascript:;" class="oreo-button oreo-button-primary oreo-button-inline oreo-button-small demo-close">回复</a>
             </div>
         </div>
     </div>
@@ -1772,65 +2115,65 @@
         <!-- 选择框在左 -->
         <h2>选择框在左</h2>
         <div class="oreo-list-body">
-            <div class="oreo-list-item oreo-radio">
-                <div class="oreo-radio-thumb">
-                    <input class="oreo-radio-thumb-inner" type="radio" value="" name="radio" />
+            <div class="oreo-list-item oreo-selectBox">
+                <div class="oreo-selectBox-thumb">
+                    <input class="oreo-selectBox-thumb-inner" type="radio" value="" name="radio" />
                 </div>
-                <label class="oreo-radio-label">超长文本选项超长文本选项超长文本选项超长文本选项超长文本选项</label>
+                <label class="oreo-selectBox-label">超长文本选项超长文本选项超长文本选项超长文本选项超长文本选项</label>
             </div>
-            <div class="oreo-list-item oreo-radio">
-                <div class="oreo-radio-thumb">
-                    <input class="oreo-radio-thumb-inner" type="radio" value="" name="radio" />
+            <div class="oreo-list-item oreo-selectBox">
+                <div class="oreo-selectBox-thumb">
+                    <input class="oreo-selectBox-thumb-inner" type="radio" value="" name="radio" />
                 </div>
-                <label class="oreo-radio-label">单选框</label>
+                <label class="oreo-selectBox-label">单选框</label>
             </div>
-            <div class="oreo-list-item oreo-radio">
-                <div class="oreo-radio-thumb">
-                    <input class="oreo-radio-thumb-inner" type="radio" value="" name="radio" />
+            <div class="oreo-list-item oreo-selectBox">
+                <div class="oreo-selectBox-thumb">
+                    <input class="oreo-selectBox-thumb-inner" type="radio" value="" name="radio" />
                 </div>
-                <label class="oreo-radio-label">单选框</label>
+                <label class="oreo-selectBox-label">单选框</label>
             </div>
-            <div class="oreo-list-item oreo-radio">
-                <div class="oreo-radio-thumb">
-                    <input class="oreo-radio-thumb-inner" type="radio" value="" disabled checked/>
+            <div class="oreo-list-item oreo-selectBox">
+                <div class="oreo-selectBox-thumb">
+                    <input class="oreo-selectBox-thumb-inner" type="radio" value="" disabled checked/>
                 </div>
-                <label class="oreo-radio-label">单选框</label>
+                <label class="oreo-selectBox-label">单选框</label>
             </div>
         </div>
         <h2>选择框在右</h2>
         <div class="oreo-list-body">
-            <div class="oreo-list-item oreo-radio inner-right">
-                <div class="oreo-radio-thumb">
-                    <input class="oreo-radio-thumb-inner" type="radio" value="" name="radio" />
+            <div class="oreo-list-item oreo-selectBox inner-right">
+                <div class="oreo-selectBox-thumb">
+                    <input class="oreo-selectBox-thumb-inner" type="radio" value="" name="radio" />
                 </div>
-                <label class="oreo-radio-label">超长文本选项超长文本选项超长文本选项超长文本选项超长文本选项</label>
+                <label class="oreo-selectBox-label">超长文本选项超长文本选项超长文本选项超长文本选项超长文本选项</label>
             </div>
-            <div class="oreo-list-item oreo-radio inner-right">
-                <div class="oreo-radio-thumb">
-                    <input class="oreo-radio-thumb-inner" type="radio" value="" name="radio" />
+            <div class="oreo-list-item oreo-selectBox inner-right">
+                <div class="oreo-selectBox-thumb">
+                    <input class="oreo-selectBox-thumb-inner" type="radio" value="" name="radio" />
                 </div>
-                <label class="oreo-radio-label">单选框</label>
+                <label class="oreo-selectBox-label">单选框</label>
             </div>
-            <div class="oreo-list-item oreo-radio inner-right">
-                <div class="oreo-radio-thumb">
-                    <input class="oreo-radio-thumb-inner" type="radio" value="" name="radio" />
+            <div class="oreo-list-item oreo-selectBox inner-right">
+                <div class="oreo-selectBox-thumb">
+                    <input class="oreo-selectBox-thumb-inner" type="radio" value="" name="radio" />
                 </div>
-                <label class="oreo-radio-label">单选框</label>
+                <label class="oreo-selectBox-label">单选框</label>
             </div>
-            <div class="oreo-list-item oreo-radio inner-right">
-                <div class="oreo-radio-thumb">
-                    <input class="oreo-radio-thumb-inner" type="radio" value="" disabled checked/>
+            <div class="oreo-list-item oreo-selectBox inner-right">
+                <div class="oreo-selectBox-thumb">
+                    <input class="oreo-selectBox-thumb-inner" type="radio" value="" disabled checked/>
                 </div>
-                <label class="oreo-radio-label">单选框</label>
+                <label class="oreo-selectBox-label">单选框</label>
             </div>
         </div>
         <h2>radio</h2>
-        <div class="oreo-list-body oreo-radio-agree">
-            <div class="oreo-list-item oreo-radio radio-agree">
-                <div class="oreo-radio-thumb">
-                    <input class="oreo-radio-thumb-inner" type="radio" value="" />
+        <div class="oreo-list-body oreo-selectBox-agree">
+            <div class="oreo-list-item oreo-selectBox selectBox-agree">
+                <div class="oreo-selectBox-thumb">
+                    <input class="oreo-selectBox-thumb-inner" type="radio" value="" />
                 </div>
-                <label class="oreo-radio-label oreo-radio-flex">同意协议</label>
+                <label class="oreo-selectBox-label oreo-selectBox-flex">同意协议</label>
             </div>
         </div>
     </div>
@@ -1849,7 +2192,7 @@
 </div>
 </script>
 <script type="text/html" id="tpl_steps">
-<div class="page">
+<!--<div class="page">
     <div class="page-hd">
         <div class="demo-name">
             <a href="./" class="oreo-icon-home demo-home oreo-icon"></a>
@@ -1859,35 +2202,19 @@
         <h2>横向步骤条</h2>
         <div class="oreo-steps oreo-steps-horizontal">
             <div class="oreo-steps-item oreo-steps-finished">
-                <div class="oreo-steps-item-line"></div>
-                <div class="oreo-steps-item-icon">1</div>
+                <div class="timeLine"></div>
+                <div class="steps">3</div>
                 <div class="oreo-steps-item-content">
-                    <div class="oreo-steps-title">finished</div>
-                    <div class="oreo-steps-description">finished step</div>
-                </div>
-            </div>
-            <div class="oreo-steps-item oreo-steps-finished">
-                <div class="oreo-steps-item-line"></div>
-                <div class="oreo-steps-item-icon">2</div>
-                <div class="oreo-steps-item-content">
-                    <div class="oreo-steps-title">finished</div>
-                    <div class="oreo-steps-description">finished step</div>
-                </div>
-            </div>
-            <div class="oreo-steps-item oreo-steps-finish">
-                <div class="oreo-steps-item-line"></div>
-                <div class="oreo-steps-item-icon">3</div>
-                <div class="oreo-steps-item-content">
-                    <div class="oreo-steps-title">finish</div>
-                    <div class="oreo-steps-description">finish step</div>
+                    <div class="head">finish</div>
+                    <div class="content">finish step</div>
                 </div>
             </div>
             <div class="oreo-steps-item oreo-steps-finishing">
                 <div class=""></div>
-                <div class="oreo-steps-item-icon">4</div>
+                <div class="steps">4</div>
                 <div class="oreo-steps-item-content">
-                    <div class="oreo-steps-title">finishing</div>
-                    <div class="oreo-steps-description">finishing step</div>
+                    <div class="head">finishing</div>
+                    <div class="content">finishing step</div>
                 </div>
             </div>
         </div>
@@ -1895,35 +2222,132 @@
         <h2>纵向步骤条</h2>
         <div class="oreo-steps oreo-steps-vertical">
             <div class="oreo-steps-item oreo-steps-finished">
-                <div class="oreo-steps-item-line"></div>
-                <div class="oreo-steps-item-icon">1</div>
+                <div class="timeLine"></div>
+                <div class="steps">1</div>
                 <div class="oreo-steps-item-content">
-                    <div class="oreo-steps-title">finished</div>
-                    <div class="oreo-steps-description">finished step</div>
+                    <div class="head">finished</div>
+                    <div class="content">finished step</div>
                 </div>
             </div>
             <div class="oreo-steps-item oreo-steps-finished">
-                <div class="oreo-steps-item-line"></div>
-                <div class="oreo-steps-item-icon">2</div>
+                <div class="timeLine"></div>
+                <div class="steps">2</div>
                 <div class="oreo-steps-item-content">
-                    <div class="oreo-steps-title">finished</div>
-                    <div class="oreo-steps-description">finished step</div>
+                    <div class="head">finished</div>
+                    <div class="content">finished step</div>
                 </div>
             </div>
             <div class="oreo-steps-item oreo-steps-finish">
-                <div class="oreo-steps-item-line"></div>
-                <div class="oreo-steps-item-icon">3</div>
+                <div class="timeLine"></div>
+                <div class="steps">3</div>
                 <div class="oreo-steps-item-content">
-                    <div class="oreo-steps-title">finish</div>
-                    <div class="oreo-steps-description">finish step</div>
+                    <div class="head">finish</div>
+                    <div class="content">finish step</div>
                 </div>
             </div>
             <div class="oreo-steps-item oreo-steps-finishing">
                 <div></div>
-                <div class="oreo-steps-item-icon">4</div>
+                <div class="steps">4</div>
                 <div class="oreo-steps-item-content">
-                    <div class="oreo-steps-title">finishing</div>
-                    <div class="oreo-steps-description">finishing step</div>
+                    <div class="head">finishing</div>
+                    <div class="content">finishing step</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>-->
+
+<div class="page">
+    <div class="page-hd">
+        <div class="demo-name">
+            <a href="./" class="oreo-icon-home demo-home oreo-icon"></a>
+            Steps</div>
+    </div>
+    <div class="page-body" style="padding:0;">
+        <h2>横向步骤条</h2>
+        <div class="oreo-steps oreo-steps-horizontal">
+            <div class="oreo-steps-item oreo-steps-finished">
+                <div class="oreo-steps-item-process">
+                    <div class="steps">1</div>
+                    <div class="timeLine"></div>
+                </div>
+                <div class="oreo-steps-item-content">
+                    <div class="head">finished</div>
+                    <div class="content">finished step</div>
+                </div>
+            </div>
+            <div class="oreo-steps-item oreo-steps-finished">
+                <div class="oreo-steps-item-process">
+                    <div class="steps">2</div>
+                    <div class="timeLine"></div>
+                </div>
+                <div class="oreo-steps-item-content">
+                    <div class="head">finished</div>
+                    <div class="content">finished step</div>
+                </div>
+            </div>
+            <div class="oreo-steps-item oreo-steps-finish">
+                <div class="oreo-steps-item-process">
+                    <div class="steps">3</div>
+                    <div class="timeLine"></div>
+                </div>
+                <div class="oreo-steps-item-content">
+                    <div class="head">finish</div>
+                    <div class="content">finish step</div>
+                </div>
+            </div>
+            <div class="oreo-steps-item oreo-steps-finishing">
+                <div class="oreo-steps-item-process">
+                    <div class="steps">4</div>
+                    <div class=""></div>
+                </div>
+                <div class="oreo-steps-item-content">
+                    <div class="head">finishing</div>
+                    <div class="content">finishing step</div>
+                </div>
+            </div>
+        </div>
+        <br>
+        <h2>纵向步骤条</h2>
+        <div class="oreo-steps oreo-steps-vertical">
+            <div class="oreo-steps-item oreo-steps-finished">
+                <div class="oreo-steps-item-process">
+                    <div class="steps">1</div>
+                    <div class="timeLine"></div>
+                </div>
+                <div class="oreo-steps-item-content">
+                    <div class="head">finished</div>
+                    <div class="content">finished step</div>
+                </div>
+            </div>
+            <div class="oreo-steps-item oreo-steps-finished">
+                <div class="oreo-steps-item-process">
+                    <div class="steps">2</div>
+                    <div class="timeLine"></div>
+                </div>
+                <div class="oreo-steps-item-content">
+                    <div class="head">finished</div>
+                    <div class="content">finished step</div>
+                </div>
+            </div>
+            <div class="oreo-steps-item oreo-steps-finish">
+                <div class="oreo-steps-item-process">
+                    <div class="steps">3</div>
+                    <div class="timeLine"></div>
+                </div>
+                <div class="oreo-steps-item-content">
+                    <div class="head">finish</div>
+                    <div class="content">finish step</div>
+                </div>
+            </div>
+            <div class="oreo-steps-item oreo-steps-finishing">
+                <div class="oreo-steps-item-process">
+                    <div class="steps">4</div>
+                    <div class="timeLine"></div>
+                </div>
+                <div class="oreo-steps-item-content">
+                    <div class="head">finishing</div>
+                    <div class="content">finishing step</div>
                 </div>
             </div>
         </div>
@@ -1938,33 +2362,192 @@
             tabbar</div>
     </div>
     <div class="page-body" style="padding:0;">
-        <h2>Basic</h2>
-        <div class="oreo-tab">
-            <nav class="oreo-tabs-tab">
-                <div class="oreo-tab-item oreo-tab-item-active">标签一</div>
-                <div class="oreo-tab-item">标签二</div>
-                <div class="oreo-tab-item">标签三</div>
-                <div class="oreo-tab-item">标签四</div>
-                <div class="oreo-tab-item">标签五</div>
-            </nav>
-            <div class="oreo-tab-content">
-                <div class="oreo-tab-panel active">页面一</div>
-                <div class="oreo-tab-panel">页面二</div>
-                <div class="oreo-tab-panel">页面三</div>
-                <div class="oreo-tab-panel">页面四</div>
-                <div class="oreo-tab-panel">页面五</div>
+        <h2>Top</h2>
+        <div class="oreo-tabs oreo-tabs-top">
+            <div class="oreo-tabs-bar-wrap">
+                <div class="oreo-tabs-default-bar oreo-tabs-default-bar-animated">
+                    <div class="oreo-tabs-default-bar-content">
+                        <div class="oreo-tabs-default-bar-tab oreo-tabs-default-bar-tab-active" style="width:33.3%">选项一</div>
+                        <div class="oreo-tabs-default-bar-tab " style="width:33.3%">选项二</div>
+                        <div class="oreo-tabs-default-bar-tab" style="width:33.3%">选项三</div>
+                        <div class="oreo-tabs-default-bar-line" style="width:33.3%;left:0%;"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="oreo-tabs-content-wrap oreo-tabs-content-wrap-animated">
+                <div class="oreo-tabs-panel-wrap oreo-tabs-panel-wrap-active">
+                 <div style="display: flex; align-items: center; justify-content: center; height: 150px; background-color: rgb(255, 255, 255);">Content of first tab</div>
+                </div>
+                <div class="oreo-tabs-panel-wrap ">
+                    <div style="display: flex; align-items: center; justify-content: center; height: 150px; background-color: rgb(255, 255, 255);">Content of second tab</div>
+                </div>
+                <div class="oreo-tabs-panel-wrap">
+                    <div style="display: flex; align-items: center; justify-content: center; height: 150px; background-color: rgb(255, 255, 255);">Content of third tab</div>
+                </div>
             </div>
         </div>
+
+        <h2>Bottom</h2>
+        <div class="oreo-tabs oreo-tabs-bottom">
+            
+            <div class="oreo-tabs-content-wrap oreo-tabs-content-wrap-animated">
+                <div class="oreo-tabs-panel-wrap oreo-tabs-panel-wrap-active">
+                 <div style="display: flex; align-items: center; justify-content: center; height: 150px; background-color: rgb(255, 255, 255);">Content of first tab</div>
+                </div>
+                <div class="oreo-tabs-panel-wrap ">
+                    <div style="display: flex; align-items: center; justify-content: center; height: 150px; background-color: rgb(255, 255, 255);">Content of second tab</div>
+                </div>
+                <div class="oreo-tabs-panel-wrap">
+                    <div style="display: flex; align-items: center; justify-content: center; height: 150px; background-color: rgb(255, 255, 255);">Content of third tab</div>
+                </div>
+            </div>
+            <div class="oreo-tabs-bar-wrap">
+                <div class="oreo-tabs-default-bar oreo-tabs-default-bar-animated">
+                    <div class="oreo-tabs-default-bar-content">
+                        <div class="oreo-tabs-default-bar-tab oreo-tabs-default-bar-tab-active" style="width:33.3%">选项一</div>
+                        <div class="oreo-tabs-default-bar-tab " style="width:33.3%">选项二</div>
+                        <div class="oreo-tabs-default-bar-tab" style="width:33.3%">选项三</div>
+                        <div class="oreo-tabs-default-bar-line" style="width:33.3%;left:0%;"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <h2>left</h2>
+        <div style="height:150px;">
+            <div class="oreo-tabs oreo-tabs-left">
+                <div class="oreo-tabs-bar-wrap">
+                    <div class="oreo-tabs-default-bar oreo-tabs-default-bar-animated">
+                        <div class="oreo-tabs-default-bar-content">
+                            <div class="oreo-tabs-default-bar-tab oreo-tabs-default-bar-tab-active" style="height:33.3%">选项一</div>
+                            <div class="oreo-tabs-default-bar-tab " style="height:33.3%">选项二</div>
+                            <div class="oreo-tabs-default-bar-tab" style="height:33.3%">选项三</div>
+                            <div class="oreo-tabs-default-bar-line" style="height:33.3%;right:0%;"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="oreo-tabs-content-wrap oreo-tabs-content-wrap-animated">
+                    <div class="oreo-tabs-panel-wrap oreo-tabs-panel-wrap-active">
+                    <div style="display: flex; align-items: center; justify-content: center; height: 150px; background-color: rgb(255, 255, 255);">Content of first tab</div>
+                    </div>
+                    <div class="oreo-tabs-panel-wrap ">
+                        <div style="display: flex; align-items: center; justify-content: center; height: 150px; background-color: rgb(255, 255, 255);">Content of second tab</div>
+                    </div>
+                    <div class="oreo-tabs-panel-wrap">
+                        <div style="display: flex; align-items: center; justify-content: center; height: 150px; background-color: rgb(255, 255, 255);">Content of third tab</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <h2>right</h2>
+
+        <div style="height:150px;">
+            <div class="oreo-tabs oreo-tabs-right">
+                <div class="oreo-tabs-content-wrap oreo-tabs-content-wrap-animated">
+                    <div class="oreo-tabs-panel-wrap oreo-tabs-panel-wrap-active">
+                    <div style="display: flex; align-items: center; justify-content: center; height: 150px; background-color: rgb(255, 255, 255);">Content of first tab</div>
+                    </div>
+                    <div class="oreo-tabs-panel-wrap ">
+                        <div style="display: flex; align-items: center; justify-content: center; height: 150px; background-color: rgb(255, 255, 255);">Content of second tab</div>
+                    </div>
+                    <div class="oreo-tabs-panel-wrap">
+                        <div style="display: flex; align-items: center; justify-content: center; height: 150px; background-color: rgb(255, 255, 255);">Content of third tab</div>
+                    </div>
+                </div>
+                <div class="oreo-tabs-bar-wrap">
+                    <div class="oreo-tabs-default-bar oreo-tabs-default-bar-animated">
+                        <div class="oreo-tabs-default-bar-content">
+                            <div class="oreo-tabs-default-bar-tab oreo-tabs-default-bar-tab-active" style="height:33.3%">选项一</div>
+                            <div class="oreo-tabs-default-bar-tab " style="height:33.3%">选项二</div>
+                            <div class="oreo-tabs-default-bar-tab" style="height:33.3%">选项三</div>
+                            <div class="oreo-tabs-default-bar-line" style="height:33.3%;top:0%;"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+         <h2>Top</h2>
+        <div class="oreo-tabs oreo-tabs-top">
+            <div class="oreo-tabs-bar-wrap">
+                <div class="oreo-tabs-default-bar oreo-tabs-default-bar-animated">
+                    <div class="oreo-tabs-default-bar-content">
+                        <div class="oreo-tabs-default-bar-tab oreo-tabs-default-bar-tab-active" style="width:33.3%">选项一</div>
+                        <div class="oreo-tabs-default-bar-tab " style="width:33.3%">选项二</div>
+                        <div class="oreo-tabs-default-bar-tab" style="width:33.3%">选项三</div>
+                        <div class="oreo-tabs-default-bar-tab " style="width:33.3%">选项四</div>
+                        <div class="oreo-tabs-default-bar-tab" style="width:33.3%">选项五</div>
+                        <div class="oreo-tabs-default-bar-tab " style="width:33.3%">选项六</div>
+                        <div class="oreo-tabs-default-bar-tab" style="width:33.3%">选项七</div>
+                        <div class="oreo-tabs-default-bar-line" style="width:33.3%;left:0%;"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="oreo-tabs-content-wrap oreo-tabs-content-wrap-animated">
+                <div class="oreo-tabs-panel-wrap oreo-tabs-panel-wrap-active">
+                 <div style="display: flex; align-items: center; justify-content: center; height: 150px; background-color: rgb(255, 255, 255);">Content of first tab</div>
+                </div>
+                <div class="oreo-tabs-panel-wrap ">
+                    <div style="display: flex; align-items: center; justify-content: center; height: 150px; background-color: rgb(255, 255, 255);">Content of second tab</div>
+                </div>
+                <div class="oreo-tabs-panel-wrap">
+                    <div style="display: flex; align-items: center; justify-content: center; height: 150px; background-color: rgb(255, 255, 255);">Content of third tab</div>
+                </div>
+                <div class="oreo-tabs-panel-wrap ">
+                    <div style="display: flex; align-items: center; justify-content: center; height: 150px; background-color: rgb(255, 255, 255);">Content of 4 tab</div>
+                </div>
+                <div class="oreo-tabs-panel-wrap">
+                    <div style="display: flex; align-items: center; justify-content: center; height: 150px; background-color: rgb(255, 255, 255);">Content of 5 tab</div>
+                </div>
+                <div class="oreo-tabs-panel-wrap ">
+                    <div style="display: flex; align-items: center; justify-content: center; height: 150px; background-color: rgb(255, 255, 255);">Content of 6 tab</div>
+                </div>
+                <div class="oreo-tabs-panel-wrap">
+                    <div style="display: flex; align-items: center; justify-content: center; height: 150px; background-color: rgb(255, 255, 255);">Content of 7 tab</div>
+                </div>
+            </div>
+        </div>
+
     </div>
 </div>
 
 <script type="text/javascript">
+
+    var target = ['right','top','bottom','left'];
+
     $(function() {
-        $('.oreo-tabs-tab .oreo-tab-item').on('click', function() {
-            var index = $(this).index();
-            $('.oreo-tab-content .oreo-tab-panel').eq(index).addClass('oreo-tab-panel-active').siblings().removeClass('oreo-tab-panel-active');
-            $(this).addClass('oreo-tab-item-active').siblings().removeClass('oreo-tab-item-active');
-        });
+
+        $.each(target, function(index, item){
+
+            $('.oreo-tabs-'+item+' .oreo-tabs-default-bar-tab').on('click',function(){
+                var activeBar = 'oreo-tabs-default-bar-tab-active',
+                    activePanel = 'oreo-tabs-panel-wrap-active';
+
+                var index = $(this).index(),
+                    barOffset = index *33.3 +'%',
+                    panelOffset = - (index *100) +'%',
+                    lineCss={},
+                    transform='';
+
+                if(item ==='top' || item ==='bottom'){
+                    lineCss['left']=barOffset;
+                    transform='translate3d('+panelOffset+', 0px, 1px)';
+                }else{
+                    lineCss['top']=barOffset;
+                    transform='translate3d(0px,'+panelOffset+',1px)';
+                }
+                
+
+                $(this).addClass(activeBar).siblings().removeClass(activeBar);
+                $(this).siblings('.oreo-tabs-default-bar-line').css(lineCss);
+
+                $(this).parents('.oreo-tabs').find('.oreo-tabs-panel-wrap').eq(index).addClass(activePanel).siblings().removeClass(activePanel)
+                $(this).parents('.oreo-tabs').find('.oreo-tabs-content-wrap')[0].style.transform =transform;
+                $(this).parents('.oreo-tabs').find('.oreo-tabs-content-wrap')[0].style.webkitTransform  =transform;
+
+            })
+        })
     });
 </script>
 </script>
@@ -2205,5 +2788,7 @@
 </div>
 </script>
 
+<!--<script src="https://res.wx.qq.com/mmbizwap/zh_CN/htmledition/js/vconsole/2.5.2/vconsole.min.js"></script>-->
 <script src="./res/script/index.js"></script>
+
 </html>

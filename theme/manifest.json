@@ -6,6 +6,7 @@
     "oreo-flex": "./src/style/components/oreo-flex/oreo-flex.less",
     "oreo-footer": "./src/style/components/oreo-footer/oreo-footer.less",
 
+    "oreo-selectbox":"./src/style/components/oreo-form/oreo-selectbox.less",
     "oreo-checkbox":"./src/style/components/oreo-form/oreo-checkbox.less",
     "oreo-form":"./src/style/components/oreo-form/oreo-form.less",
     "oreo-input": "./src/style/components/oreo-form/oreo-input.less",

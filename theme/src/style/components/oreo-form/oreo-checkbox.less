@@ -1,104 +1,13 @@
-@import "../oreo-list/oreo-list.less";
-@checkboxPrefixCls: oreo-checkbox;
-@radioPrefixCls: oreo-radio;
-
+@import "oreo-selectbox.less";
 .@{listPrefixCls}{
     &-item {
-        &.@{checkboxPrefixCls},
-        &.@{radioPrefixCls}{
-            position: relative;
-            padding: 0 @oreoCheckboxGap;
-            display: flex;
-            justify-content: space-between;
-            .@{checkboxPrefixCls}-thumb,
-            .@{radioPrefixCls}-thumb{
+        &.@{selectboxPrefixCls}{
+            .@{selectboxPrefixCls}-thumb{
                 &-inner{
-                    width: 100%;
-                    height: @list-item-height;
-                    position: absolute;
-                    top: 0;
-                    left: 0;
-                    padding-left: @oreoCheckboxInputLeft;
-                    -webkit-appearance: none;
-                    background-color: transparent;
-                    border: none;
-                    &:active{
-                        background: rgba(0,0,0,.15);
+                    &:after{
+                        border-radius: @radius-sm;
                     }
-                    // 伪类选择框
-                    &::after{
-                        content: "";
-                        width: @oreoCheckboxInputW;
-                        .setHeight(@h: @oreoCheckboxInputW);
-                        position: absolute;
-                        top: 50%;
-                        transform: translateY(-50%);
-                        text-align: center;
-                        border: @border-width-sm solid @border-color-base;
-                    }
-                    // 选中样式
-                    &:checked:after {
-                        content:"\2714";
-                        color: @brand-primary;
-                        border-color: @brand-primary;
-                    }
-                    // 选中不可点样式
-                    &:checked:disabled:after {
-                        content:"\2714";
-                        color: @border-color-base;
-                        border-color: @border-color-base;
-                    }
-                }
-            }
-            .@{checkboxPrefixCls}-label,
-            .@{radioPrefixCls}-label{
-                .setHeight(@h: @oreoCheckboxLabelH);
-                margin-left: @oreoCheckboxLabelLeft;
-                .textOverflow();
-                &:after{
-                    .setBottomLine(@border-color-base);
-                }
-                &.@{checkboxPrefixCls}-flex,
-                &.@{radioPrefixCls}-flex{
-                    flex: 1;
-                }
-            }
-            // 选择框在右
-            &.inner-right{
-                .@{checkboxPrefixCls}-thumb,
-                .@{radioPrefixCls}-thumb{
-                    .@{checkboxPrefixCls}-thumb-inner,
-                    .@{radioPrefixCls}-thumb-inner{
-                        &:after{
-                            right: @oreoInnerGap;
-                        }
-                    }
-                }
-                .@{checkboxPrefixCls}-label,
-                .@{radioPrefixCls}-label{
-                    flex: 1;
-                    margin-left: 0;
-                    margin-right: @oreoCheckboxLabelLeft;
-                }
-            }
-            &.@{checkboxPrefixCls}-agree,
-            &.@{radioPrefixCls}-agree{
-                background-color: 0;
-            }
-            
-        }
-    }
-    
-    &-body{
-        &.@{checkboxPrefixCls}-agree,
-        &.@{radioPrefixCls}-agree{
-            background-color: transparent;
-            .checkbox-agree,
-            .radio-agree{
-                background-color: transparent;
-                .@{checkboxPrefixCls}-thumb-inner:active,
-                .@{radioPrefixCls}-thumb-inner:active{
-                    background: transparent;
+
                 }
             }
         }

@@ -1,5 +1,39 @@
 # 更新记录
 
+## 
+- **Feature**
+    - 优化`steps`布局及样式问题
+
+## 
+- **Feature**
+    - 优化`list`在项目使用时样式问题
+    - 优化`column`样式问题
+    - 优化`list`带图标列表样式代码
+    - 新增`listview`仿通讯录列表
+
+## v0.4.9 (2017-12-10)
+
+-  **Feature**
+    - 重写`Tabs`样式,支持`top`,`right`,`bottom`,`left`位置, 新增动画效果
+    - 优化`Tabs` demo
+
+
+## v0.4.8 (2017-11-27)
+
+-  **Feature**
+    - 修复`Dialog`中password在IOS上input边框无法显示的问题
+    - 优化`Modal`上层弹出textarea的样式问题
+
+## v0.4.7 (2017-11-24)
+
+-  **Feature**
+    - 新增`Dialog`中IOS和Android密码输入框
+    - 新增`Modal`中从上弹出textarea信息回复文本框
+    - 新增`Input`中分居两侧样式
+    - 优化`checkbox`、`radio`样式问题
+    - 优化`Dialog`弹层box-shadow的px问题
+
+
 ## v0.4.6 (2017-11-20)
 
 -  **Feature**

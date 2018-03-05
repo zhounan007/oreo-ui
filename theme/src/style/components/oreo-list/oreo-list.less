@@ -51,15 +51,17 @@
     &-item {
         position: relative;
         display: flex;
-        padding-left: @h-spacing-md;
+        padding: 0 @h-spacing-md;
         min-height: @list-item-height;
         background-color: @fill-base;
         overflow: hidden;
         transition: background-color .2s;
-        align-items: center;
+        align-items: stretch;
         justify-content: center;
         
         &-thumb {
+            display: flex;
+            align-items: center;
 
             img,i{
                 width: @icon-size-md;
@@ -73,10 +75,10 @@
             position: relative;
             display: flex;
             flex: 1;
-            padding-right: @h-spacing-md;
+            // padding-right: @h-spacing-md;
             overflow: hidden;
             align-items: center;
-            min-height: @list-item-height;
+            // min-height: @list-item-height;
             .@{listPrefixCls}-item-content {
                 flex: 1;
                 color: @color-text-base;
@@ -160,13 +162,15 @@
                 }
             }
             .@{listPrefixCls}-item-line{
-                height: @across-button-height;
+                width: 100%;
+                // height: @across-button-height;
                 .@{listPrefixCls}-item-content{
                     height: 100%;
                     display: flex;
                     flex-direction: column;
                     justify-content: space-between;
                     font-size: @font-size-base;
+                    overflow: hidden;
                     .@{listPrefixCls}-item-title{
                         font-weight: bold;
                         color: @color-text-paragraph;
@@ -187,6 +191,15 @@
                         justify-content: space-between;
                         font-size: @font-size-caption-sm;
                         color: @color-text-caption;
+                        margin-left: -@h-spacing-md;
+                        margin-right: -@h-spacing-md;
+                        div{
+                            min-width: 20%;
+                            overflow: hidden;
+                            white-space: nowrap;
+                            text-overflow: ellipsis;
+                            padding: @h-spacing-md;
+                        }
                     }
                 }  
             }
