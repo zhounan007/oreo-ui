@@ -36,3 +36,6 @@ build
 package_webpack.json
 src/**/*.css
 package-lock.json
+lib
+docs/example/oreo_ui.css
+docs/example/oreo_ui.min.css

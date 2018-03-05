@@ -4,7 +4,7 @@
   "description": "Oreo-UI library",
   "scripts": {
     "start": "gulp -s",
-    "dev":"gulp -s -w",
+    "dev": "gulp -s -w",
     "build": "gulp release"
   },
   "homepage": "https://github.com/zhounan007/oreo-ui",
