@@ -4,6 +4,7 @@
 .@{listPrefixCls}-item {
     &.@{inputPrefixCls} {
         height: @list-item-height;
+        line-height: @list-item-height;
         padding: 0 @h-spacing-md;
         &:after{
             .setBottomLine(@border-color-base);
@@ -15,7 +16,7 @@
         margin-right: @h-spacing-sm;
         text-align: left;
 
-        padding: 4px 0;
+        // padding: 4px 0;
         width: @input-label-width * 5;
         .textOverflow();
     }
@@ -42,6 +43,9 @@
             &:disabled {
                 color: @color-text-disabled;
                 background-color: #fff;
+            }
+            &.@{inputPrefixCls}-right{
+                text-align: right;
             }
         }
     }
