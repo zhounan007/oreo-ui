@@ -4,9 +4,9 @@ var path = require('path')
 module.exports = {
   build: {
     env: require('./prod.env'),
-    index: path.resolve(__dirname, '../dist/index.html'),
-    assetsRoot: path.resolve(__dirname, '../dist'),
-    assetsSubDirectory: 'static',
+    index: path.resolve(__dirname, '../lib'),
+    assetsRoot: path.resolve(__dirname, '../lib'),
+    assetsSubDirectory: '',
     assetsPublicPath: '/',
     productionSourceMap: true,
     // Gzip off by default as many popular static hosts such as
@@ -25,7 +25,7 @@ module.exports = {
     env: require('./dev.env'),
     port: 8081,
     autoOpenBrowser: true,
-    assetsSubDirectory: 'static',
+    assetsSubDirectory: '',
     assetsPublicPath: '/',
     proxyTable: {},
     // CSS Sourcemaps off by default because relative paths are "buggy"
@@ -34,5 +34,12 @@ module.exports = {
     // In our experience, they generally work as expected,
     // just be aware of this issue when enabling this option.
     cssSourceMap: false
+  },
+  demoBuild: {
+    entry: {
+      app: './example/main.js'
+    },
+    assetsRoot: path.resolve(__dirname, '../docs/example'),
+    assetsSubDirectory: ''
   }
 }

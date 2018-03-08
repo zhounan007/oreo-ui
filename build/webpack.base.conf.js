@@ -6,13 +6,15 @@
  * @Author: zhounan 
  * @Date: 2017-11-07 14:21:04 
  * @Last Modified by: zhounan
- * @Last Modified time: 2018-01-25 10:41:29
+ * @Last Modified time: 2018-03-06 15:27:09
  */
 
 var path = require('path')
-// var utils = require('./utils')
+var version = require('../package.json').version
+var vueLoaderConfig = require('./vue-loader.conf')
+var utils = require('./utils')
 // var config = require('../config')
-// var vueLoaderConfig = require('./vue-loader.conf')
+
 
 function resolve(dir) {
   return path.join(__dirname, '..', dir)
@@ -42,12 +44,13 @@ module.exports = {
       {
         test: /\.vue$/,
         loader: 'vue-loader',
-        options: {
-          loaders: {
-            css: ['vue-style-loader', 'css-loader'],
-            less: ['vue-style-loader', 'css-loader', 'less-loader']
-          }
-        }
+        options: vueLoaderConfig
+        // options: {
+        //   loaders: {
+        //     css: ['vue-style-loader', 'css-loader'],
+        //     less: ['vue-style-loader', 'css-loader', 'less-loader']
+        //   }
+        // }
       },
       {
         test: /\.js$/,
@@ -58,11 +61,10 @@ module.exports = {
         test: /\.(png|jpe?g|gif|svg)(\?.*)?$/, // |svg
         loader: 'url-loader',
         options: {
-          limit: 10000
-          // name: utils.assetsPath('img/[hash:7].[ext]')
+          limit: 10000,
+          name: utils.assetsPath('img/[hash:7].[ext]')
         },
         exclude: [resolve('components/icon/assets')]
-
       },
       {
         test: /\.svg$/,
@@ -73,8 +75,8 @@ module.exports = {
         test: /\.(woff2?|eot|ttf|otf)(\?.*)?$/,
         loader: 'url-loader',
         options: {
-          limit: 10000
-          // name: utils.assetsPath('fonts/[name].[hash:7].[ext]')
+          limit: 10000,
+          name: utils.assetsPath('fonts/[name].[hash:7].[ext]')
         }
       }
     ]

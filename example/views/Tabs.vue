@@ -7,7 +7,7 @@
                     Top
                 </h2>
     
-                <z-tabs>
+                <!-- <z-tabs>
                     <z-tab-pane label="选项一">
                         <div style="display: flex; align-items: center; justify-content: center; height: 150px; background-color: rgb(255, 255, 255);">Content of 1 tab</div>
                     </z-tab-pane>
@@ -29,9 +29,21 @@
                         <z-tab-pane label="选项三">
                             <div style="display: flex; align-items: center; justify-content: center; height: 150px; background-color: rgb(255, 255, 255);">Content of 3 tab</div>
                         </z-tab-pane>
+                </z-tabs> -->
+    
+                <z-tabs position="top">
+                    <z-tab-pane label="选项一">
+                        <div style="display: flex; align-items: center; justify-content: center; height: 150px; background-color: rgb(255, 255, 255);">Content of 1 tab</div>
+                    </z-tab-pane>
+                    <z-tab-pane label="选项二">
+                        <div style="display: flex; align-items: center; justify-content: center; height: 150px; background-color: rgb(255, 255, 255);">Content of 2 tab</div>
+                    </z-tab-pane>
+                    <z-tab-pane label="选项三">
+                        <div style="display: flex; align-items: center; justify-content: center; height: 150px; background-color: rgb(255, 255, 255);">Content of 3 tab</div>
+                    </z-tab-pane>
                 </z-tabs>
     
-               <!-- <h2>
+                <h2>
                     Left
                 </h2>
     
@@ -47,13 +59,13 @@
                             <div :style="boxStyle" style="display: flex; align-items: center; justify-content: center; background-color: rgb(255, 255, 255);">Content of 3 tab</div>
                         </z-tab-pane>
                     </z-tabs>
-                </div> -->
+                </div> 
 
-                <div style="height:3000px;"></div>
+                <!-- <div style="height:3000px;"></div>
     
                 <h2>
                     Sticky
-                </h2>
+                </h2> -->
     
                 <!-- <z-sticky-container>
                     <z-tabs>
@@ -72,9 +84,9 @@
                     </z-tabs>
                 </z-sticky-container> -->
 
-                <div style="height:3000px;"></div>
+                <!-- <div style="height:3000px;"></div> -->
     
-                <!-- <h2>
+                <h2>
                     Bottom
                 </h2>
     
@@ -109,8 +121,11 @@
                             <div :style="boxStyle" style="display: flex; align-items: center; justify-content: center;  background-color: rgb(255, 255, 255);">Content of 3 tab</div>
                         </z-tab-pane>
                     </z-tabs>
-                </div> -->
+                </div> 
 
+<h2>
+                </h2>
+    
 
             </div>
         </scrollview>

@@ -1,12 +1,6 @@
 <template>
     <flexview>
-        <scrollview>
-            <div class="demo-hd">
-                <div class="demo-name">
-                    Form 表格
-                </div>
-                <div class="demo-subtitle"></div>
-            </div>
+        <scrollview title="Form 表格" sub-title="基本实例">
             <div class="demo-body">
                 <div class="demo-item">
                     <h2>input 输入框</h2>

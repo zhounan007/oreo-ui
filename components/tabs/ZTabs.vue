@@ -113,7 +113,7 @@ export default {
         }
         return (<div
             class={{
-                'oreo-tab': true,
+                'oreo-tabs': true,
                 [`oreo-tabs-${position}`]: true
             }}>
             {holder}

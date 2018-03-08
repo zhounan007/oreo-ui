@@ -1,13 +1,7 @@
 
 <template>
     <flexview>
-        <scrollview>
-            <div class="demo-hd">
-                <div class="demo-name">
-                    List 列表
-                </div>
-                <div class="demo-subtitle"></div>
-            </div>
+        <scrollview title="List 列表" >
             <div class="demo-body">
                 <h2>Basic</h2>
                 <div class="demo-content">

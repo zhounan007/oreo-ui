@@ -1,7 +1,10 @@
-const path = require('path')
-const webpack = require('webpack')
-const merge = require('webpack-merge')
-const baseWebpackConfig = require('./webpack.base.conf')
+var path = require('path')
+var utils = require('./utils')
+var config = require('../config')
+var webpack = require('webpack')
+var merge = require('webpack-merge')
+var baseWebpackConfig = require('./webpack.base.conf')
+var ExtractTextPlugin = require('extract-text-webpack-plugin')
 
 
 function resolve(dir) {
@@ -10,19 +13,24 @@ function resolve(dir) {
 }
 
 module.exports = merge(baseWebpackConfig, {
-  entry: resolve('src/index.js'),
+  entry: {
+    oreo: resolve('./src/index.js')
+  },
   output: {
-    filename: 'vue-oreo.js',
-    path: resolve('lib'),
-    library: 'vue-oreo',
+    filename: utils.assetsPath('index.js'),
+    path: config.build.assetsRoot,
+    library: 'oreo',
     libraryTarget: 'umd'
   },
-  externals: {
-    vue: {
-      root: 'Vue',
-      commonjs: 'vue',
-      commonjs2: 'vue',
-      amd: 'vue'
-    }
-  }
+  plugins: [
+    new ExtractTextPlugin(utils.assetsPath('style.css'))
+  ]
+  // externals: {
+  //   vue: {
+  //     root: 'Vue',
+  //     commonjs: 'vue',
+  //     commonjs2: 'vue',
+  //     amd: 'vue'
+  //   }
+  // }
 })
