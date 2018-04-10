@@ -1,93 +1,94 @@
 import ZButton from '@c/button'
 import {
-  ZFlex,
-  ZFlexItem
+    ZFlex,
+    ZFlexItem
 } from '@c/flex'
 import {
-  ZGrid,
-  ZGridItem
+    ZGrid,
+    ZGridItem
 } from '@c/grid'
 import {
-  ZModal
+    ZModal
 } from '@c/modal'
 import {
-  ZIcon
+    ZIcon
 } from '@c/icon'
 import ZToast from '@c/toast'
 import ZLoading from '@c/loading'
 import ZDialog from '@c/dialog'
 import {
-  ZIput,
-  ZTextarea,
-  ZSwitch
+    ZInput,
+    ZTextarea,
+    ZSwitch
 } from '@c/form'
 import {
-  ZList,
-  ZListItem,
-  ZMediaItem
+    ZList,
+    ZListItem,
+    ZMediaItem
 } from '@c/list'
 import {
-  ZScroll
+    ZScroll
 } from '@c/scroll'
 import {
-  ZTabs,
-  ZTabPane,
-  ZTabBar
+    ZTabs,
+    ZTabPane,
+    ZTabBar
 } from '@c/tabs'
 import {
-  ZSticky,
-  ZStickyContainer
+    ZSticky,
+    ZStickyContainer
 } from '@c/sticky'
 import {
-  ZSkeleton
+    ZSkeleton
 } from '@c/skeleton'
 import ZCheckBox from '@c/checkBox'
 import ZRadio from '@c/radio'
 import ZCard from '@c/card'
-
+import ZActionsheet from '@c/actionsheet'
 const components = {
-  ZButton,
-  ZFlex,
-  ZFlexItem,
-  ZGrid,
-  ZGridItem,
-  ZModal,
-  ZIcon,
-  ZIput,
-  ZTextarea,
-  ZSwitch,
-  ZList,
-  ZListItem,
-  ZMediaItem,
-  ZScroll,
-  ZTabs,
-  ZTabPane,
-  ZTabBar,
-  ZSticky,
-  ZStickyContainer,
-  ZSkeleton,
-  ZCheckBox,
-  ZRadio,
-  ZCard
+    ZButton,
+    ZFlex,
+    ZFlexItem,
+    ZGrid,
+    ZGridItem,
+    ZModal,
+    ZIcon,
+    ZInput,
+    ZTextarea,
+    ZSwitch,
+    ZList,
+    ZListItem,
+    ZMediaItem,
+    ZScroll,
+    ZTabs,
+    ZTabPane,
+    ZTabBar,
+    ZSticky,
+    ZStickyContainer,
+    ZSkeleton,
+    ZCheckBox,
+    ZRadio,
+    ZCard,
+    ZActionsheet
 }
 
-const install = function (Vue, opts = {}) {
-  Object.keys(components).forEach((key) => {
-    Vue.component(components[key].name, components[key])
-  })
+const install = function(Vue, opts = {}) {
+    Object.keys(components).forEach((key) => {
+        Vue.component(components[key].name, components[key])
+    })
 
-  Vue.prototype.$toast = ZToast
-  Vue.prototype.$loading = ZLoading
-  Vue.prototype.$dialog = ZDialog
-  Vue.prototype.$alert = ZDialog.alert
-  Vue.prototype.$confirm = ZDialog.confirm
+    Vue.prototype.$toast = ZToast
+    Vue.prototype.$loading = ZLoading
+    Vue.prototype.$dialog = ZDialog
+    Vue.prototype.$alert = ZDialog.alert
+    Vue.prototype.$confirm = ZDialog.confirm
 }
 
 // install
 if (typeof window !== 'undefined' && window.Vue) {
-  install(window.Vue)
+    install(window.Vue)
 }
 
 export default Object.assign(components, {
-  install
+    install
 })
