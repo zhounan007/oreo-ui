@@ -5,7 +5,7 @@
     "author": "znsw007 <znsw007@163.com>",
     "scripts": {
         "dev": "node build/dev-server.js",
-        "start": "webpack-dev-server --config ./build/webpack.dev.conf.js --open --hot --host 192.168.157.189",
+        "start": "webpack-dev-server --config ./build/webpack.dev.conf.js --open --hot --host 192.168.157.180",
         "demo": "node build/build.js",
         "build": "webpack --config ./build/webpack.prod.conf.js",
         "lint": "eslint --ext .js,.vue src"
