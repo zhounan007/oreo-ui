@@ -44,6 +44,8 @@ import {
 import ZCheckBox from '@c/checkBox'
 import ZRadio from '@c/radio'
 import ZCard from '@c/card'
+import ZCell from '@c/cell'
+import ZCellGroup from '@c/cell-group'
 
 const components = {
   ZButton,
@@ -68,7 +70,9 @@ const components = {
   ZSkeleton,
   ZCheckBox,
   ZRadio,
-  ZCard
+  ZCard,
+  ZCell,
+  ZCellGroup
 }
 
 const install = function (Vue, opts = {}) {
