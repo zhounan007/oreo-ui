@@ -1,7 +1,7 @@
 <template>
     <div :class="classNames">
-        <z-flex v-for="(row,index) in group" :key="index">
-            <z-flex-item v-for="(item,index) in row" :key="index" class="oreo-grid-item">
+        <z-flex v-for="(row,index) in group" :key="`flex${index}`">
+            <z-flex-item v-for="(item,index) in row" :key="`flex-item${index}`" class="oreo-grid-item">
                 <slot name="item" :item="item"></slot>
             </z-flex-item>
             <template v-if="row.length!==column">
@@ -62,8 +62,8 @@ export default {
                 this.polyfill.push('')
                 r--
             }
-            console.log(this.polyfill.length)
-            console.log(JSON.stringify(c))
+            // console.log(this.polyfill.length)
+            // console.log(JSON.stringify(c))
             return c
         }
     },
