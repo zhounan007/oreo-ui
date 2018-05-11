@@ -2,6 +2,12 @@
 A mobile UI Components based on Vue2.x &amp; [Oreo-UI](https://github.com/zhounan007/oreo-ui)
 
 
+
+## 规范
+
+- `components`中名字均以小写出现,多个单词以`-`隔开,如`cell-group`
+- 
+
 # 目前支持组件样式
 
 
