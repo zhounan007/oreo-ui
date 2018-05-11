@@ -1,12 +1,10 @@
 <template>
-    <z-list>
-        <z-list-item :class="disabledClass" :link="false">
-            <div :class="labelClassName" v-if="hideLabel">{{label}}</div>
-            <div :class="controlClassName">
-                <input :class="alignClass" :type="type" :placeholder="placeholder" @input="input($event)" :value="value" :disabled="disabled">
-            </div>
-        </z-list-item>
-    </z-list>
+    <div class="oreo-form-group">
+        <div :class="labelClassName" v-if="hideLabel">{{label}}</div>
+        <div :class="controlClassName">
+            <input :class="alignClass" :type="type" :placeholder="placeholder" @input="input($event)" :value="value" :disabled="disabled">
+        </div>
+    </div>
 </template>
 <script>
 import { ZList, ZListItem } from '../list/index'
@@ -18,6 +16,9 @@ export default {
         ZListItem
     },
     props: {
+        header: {
+            type: String
+        },
         label: {
             type: String
         },
@@ -66,3 +67,12 @@ export default {
     }
 }
 </script>
+<style lang="less" scoped>
+.oreo-form-group {
+  width: 100%;
+  display: flex;
+  height: 0.9rem;
+  line-height: 0.9rem;
+}
+</style>
+

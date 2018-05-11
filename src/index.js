@@ -19,7 +19,8 @@ import ZDialog from '@c/dialog'
 import {
     ZInput,
     ZTextarea,
-    ZSwitch
+    ZSwitch,
+    ZFormGroup
 } from '@c/form'
 import {
     ZList,
@@ -58,6 +59,7 @@ const components = {
     ZInput,
     ZTextarea,
     ZSwitch,
+    ZFormGroup,
     ZList,
     ZListItem,
     ZMediaItem,
@@ -76,7 +78,7 @@ const components = {
     ZCellGroup
 }
 
-const install = function(Vue, opts = {}) {
+const install = function (Vue, opts = {}) {
     Object.keys(components).forEach((key) => {
         Vue.component(components[key].name, components[key])
     })

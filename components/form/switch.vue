@@ -1,11 +1,14 @@
 <template>
-    <z-list>
+    <z-list :header="header">
         <z-list-item :link="false">
-            <template slot="content">{{text}}</template>
-            <label slot="extra" class="oreo-switch">
-                <input type="checkbox" :disabled="disabled" :checked="checked" @click="onToggle($event)">
-                <div class="oreo-switch-box"></div>
-            </label>
+            <!-- <div class="oroe-form-group"> -->
+                <template slot="content">{{text}}</template>
+                
+                <label slot="extra" class="oreo-switch">
+                    <input type="checkbox" :disabled="disabled" :checked="checked" @click="onToggle($event)">
+                    <div class="oreo-switch-box"></div>
+                </label>
+            <!-- </div> -->
         </z-list-item>
     </z-list>
 </template>
@@ -18,6 +21,7 @@ export default {
         ZListItem
     },
     props: {
+        header: String,
         text: {
             type: String
         },

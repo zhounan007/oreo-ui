@@ -1,14 +1,16 @@
 <template>
-    <z-list>
-        <z-list-item :class="classNames" :link="false">
-            <div :class="controlClass">
-                <textarea name="" id="" :placeholder="placeholder" rows="3" @input="input($event)" v-model="text"></textarea>
-            </div>
-            <span :class="countClass" v-show="chrVisible">
-                <span>{{initialValue}}</span>/{{chrNum}}
-            </span>
-        </z-list-item>
-    </z-list>
+    <!-- <z-list :header="header">
+        <z-list-item :class="classNames" :link="false"> -->
+    <div class="oreo-form-group">
+        <div :class="controlClass">
+            <textarea name="" id="" :placeholder="placeholder" rows="3" @input="input($event)" v-model="text"></textarea>
+        </div>
+        <span :class="countClass" v-show="chrVisible">
+            <span>{{initialValue}}</span>/{{chrNum}}
+        </span>
+    </div>
+    <!-- </z-list-item>
+    </z-list> -->
 </template>
 <script>
 import { ZList, ZListItem } from '../list/index'
@@ -20,6 +22,7 @@ export default {
         ZListItem
     },
     props: {
+        header: String,
         placeholder: {
             type: String
         },
@@ -74,3 +77,8 @@ export default {
     }
 }
 </script>
+<style lang="less" scoped>
+.oreo-form-group{
+    width: 100%;
+}
+</style>
