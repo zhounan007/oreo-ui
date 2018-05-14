@@ -68,11 +68,11 @@ export default {
 }
 </script>
 <style lang="less" scoped>
-.oreo-form-group {
-  width: 100%;
-  display: flex;
-  height: 0.9rem;
-  line-height: 0.9rem;
-}
+// .oreo-form-group {
+//   width: 100%;
+//   display: flex;
+//   height: 0.9rem;
+//   line-height: 0.9rem;
+// }
 </style>
 

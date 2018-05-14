@@ -1,6 +1,6 @@
 <template>
     <z-list :header="header">
-        <z-list-item :link="false">
+        <z-list-item :class="disabledClass" :link="false">
             <slot></slot>
         </z-list-item>
     </z-list>

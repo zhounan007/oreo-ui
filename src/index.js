@@ -48,6 +48,11 @@ import ZCard from '@c/card'
 import ZCell from '@c/cell'
 import ZCellGroup from '@c/cell-group'
 import ZActionsheet from '@c/actionsheet'
+import {
+    ZNewsCard,
+    ZTextCard,
+    ZMultiImgCard
+} from '@c/news-card'
 const components = {
     ZButton,
     ZFlex,
@@ -75,7 +80,10 @@ const components = {
     ZCard,
     ZActionsheet,
     ZCell,
-    ZCellGroup
+    ZCellGroup,
+    ZNewsCard,
+    ZTextCard,
+    ZMultiImgCard
 }
 
 const install = function (Vue, opts = {}) {
