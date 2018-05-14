@@ -1,0 +1,46 @@
+@tagPrefixCls: oreo-tag;
+
+.setSize(@width:50px,@height:30px){
+    width: @width;
+    height: @height;
+    line-height: @height;
+    text-align: center;
+    display: inline-block;
+}
+.setColor(@color: red) {
+    color: @color;
+    border: 1px solid @color;
+}
+.setBorder(@LT:0,@LB:0,@RT:0,@RB:0){
+    border-top-left-radius: @LT;
+    border-top-right-radius: @RT;
+    border-bottom-left-radius: @LB;
+    border-bottom-right-radius: @RB;
+
+}
+.oreo-tag-defult(@color: blue) {
+  .oreo-tag-defult-@{color} {
+    .setSize(1rem, .6rem);
+    .setColor(@color);
+    .setBorder(6px,6px,6px,6px)
+  }
+}
+
+.@{tagPrefixCls}{
+    // &-defult{
+    //     &-red{
+    //         .setSize(1rem, .5rem);
+    //         .setColor(red);
+    //         .setBorder(6px,6px,6px,6px);
+    //         text-align: center;
+    //     }
+    //     &-blue{
+    //         .setSize(1rem, .5rem);
+    //         .setColor(blue);
+    //         .setBorder(6px,6px,6px,6px);
+    //         text-align: center;
+    //     }
+    // }
+    .oreo-tag-defult(red);
+    .oreo-tag-defult(blue);
+}
