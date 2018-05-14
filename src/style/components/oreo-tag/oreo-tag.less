@@ -1,11 +1,9 @@
 @tagPrefixCls: oreo-tag;
 
 .setSize(@width:50px,@height:30px){
-    width: @width;
+    min-width: @width;
     height: @height;
     line-height: @height;
-    text-align: center;
-    display: inline-block;
 }
 .setColor(@color: red) {
     color: @color;
@@ -16,31 +14,147 @@
     border-top-right-radius: @RT;
     border-bottom-left-radius: @LB;
     border-bottom-right-radius: @RB;
-
 }
-.oreo-tag-defult(@color: blue) {
-  .oreo-tag-defult-@{color} {
-    .setSize(1rem, .6rem);
-    .setColor(@color);
-    .setBorder(6px,6px,6px,6px)
-  }
-}
+// .oreo-tag-small(@color: #000) {
+//   .oreo-tag-small-@{color} {
+//     .setSize(.3rem, .24rem);
+//     .setColor(@color);
+//     .setBorder(.04rem,.04rem,.04rem,.04rem);
+//     font-size: .36rem;
+//     padding: 0 .06rem;
+//     zoom: .5;
+//   }
+// // }
+// .oreo-tag-middle(@color: #000) {
+//   .oreo-tag-middle-@{color} {
+//     .setSize(.5rem, .36rem);
+//     .setColor(@color);
+//     .setBorder(.06rem,.06rem,.06rem,.06rem);
+//     font-size: .24rem;
+//     padding: 0 .08rem;
+//   }
+// }
+// .oreo-tag-big(@color: blue) {
+//   .oreo-tag-big-@{color} {
+//     .setSize(.6rem, .4rem);
+//     .setColor(@color);
+//     .setBorder(.06rem,.06rem,.06rem,.06rem);
+//     font-size: .32rem;
+//     padding: 0 .06rem;
+//   }
+// }
 
 .@{tagPrefixCls}{
-    // &-defult{
-    //     &-red{
-    //         .setSize(1rem, .5rem);
-    //         .setColor(red);
-    //         .setBorder(6px,6px,6px,6px);
-    //         text-align: center;
-    //     }
-    //     &-blue{
-    //         .setSize(1rem, .5rem);
-    //         .setColor(blue);
-    //         .setBorder(6px,6px,6px,6px);
-    //         text-align: center;
-    //     }
+    &>div{
+        margin-top: .4rem;
+    }
+    
+    &-small{
+        &>div{
+            .setSize(.3rem, .24rem);
+            .setBorder(.04rem,.04rem,.04rem,.04rem);
+            font-size: .36rem;
+            padding: 0 .06rem;
+            zoom: .5;
+        }
+        
+        // .oreo-tag-small(red);
+        // .oreo-tag-small(blue);
+        // .oreo-tag-small(green);
+        // .oreo-tag-small(purple);
+    }
+    &-middle{
+        &>div{
+            .setSize(.5rem, .36rem);
+            .setBorder(.06rem,.06rem,.06rem,.06rem);
+            font-size: .24rem;
+            padding: 0 .06rem;
+        }
+    }
+    &-big{
+        &>div{
+            .setSize(.6rem, .4rem);
+            .setBorder(.06rem,.06rem,.06rem,.06rem);
+            font-size: .32rem;
+            padding: 0 .06rem;
+        }
+    }
+    &-red{
+        .setColor(#FF7777);
+    }
+    &-blue{
+        .setColor(#6A91FF);
+    }
+    &-green{
+        .setColor(#5DE25D);
+    }
+    &-purple{
+        .setColor(#EA77FF);
+    }
+    &-gray{
+        .setColor(#999999);
+    }
+    &-orange{
+        .setColor(#F4B236);
+    }
+
+    // &-middle{
+    //     .oreo-tag-middle(red);
+    //     .oreo-tag-middle(blue);
+    //     .oreo-tag-middle(green);
+    //     .oreo-tag-middle(purple);
     // }
-    .oreo-tag-defult(red);
-    .oreo-tag-defult(blue);
+
+    // &-big{
+    //     .oreo-tag-big(red);
+    //     .oreo-tag-big(blue);
+    //     .oreo-tag-big(green);
+    //     .oreo-tag-big(purple);
+    // }
+    &-small,&-middle,&-big{
+        div{
+            text-align: center;
+            display: inline-block;
+        }
+    }
+    &-semicircle{
+        display: inline-block;
+        .setBorder(0, 0, .25rem, .25rem);
+        .setSize(.8rem, .4rem);
+        .setColor(red);
+        padding-right: .25rem;
+    }
+    &-triangle{
+        a{
+            display: inline-block;
+            position: relative;
+            padding: 0px .1rem;
+            background: #ccc;
+            color: green;
+            line-height: 1.6;
+            margin-left: .4rem;
+            border-radius: 0;
+            &:before{
+                position: absolute;
+                content: " ";
+                border: transparent .22rem solid;
+                border-right-color: #ccc;
+                top: 0;
+                left: -.45rem;
+                height: 0;
+                width: 0;
+            }
+            &:after{
+                position: absolute;
+                content: " ";
+                background: white;
+                width: .16rem;
+                height: .16rem;
+                top: 0.5em;
+                left: -.1rem;
+                border-radius: 50%;
+            }
+        }
+        
+    }
 }
