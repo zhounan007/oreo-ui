@@ -1,0 +1,139 @@
+@tagPrefixCls: oreo-tag;
+
+.setSize(@width:0,@height:0){
+    max-width: @width;
+    height: @height;
+    line-height: @height;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.setColor(@color: red) {
+    color: @color;
+    border: 1px solid @color;
+}
+.setBorder(@LT:0,@LB:0,@RT:0,@RB:0){
+    border-top-left-radius: @LT;
+    border-top-right-radius: @RT;
+    border-bottom-left-radius: @LB;
+    border-bottom-right-radius: @RB;
+}
+
+.@{tagPrefixCls}{
+    &-small{
+        &>div{
+            .setSize(1.7rem, .24rem);
+            .setBorder(.04rem,.04rem,.04rem,.04rem);
+            font-size: .4rem;
+            padding: 0 .06rem;
+            zoom: .5;
+        }
+    }
+    &-middle{
+        &>div{
+            .setSize(2rem, .36rem);
+            .setBorder(.06rem,.06rem,.06rem,.06rem);
+            font-size: .24rem;
+            padding: 0 .06rem;
+        }
+    }
+    &-big{
+        &>div{
+            .setSize(2.7rem, .4rem);
+            .setBorder(.06rem,.06rem,.06rem,.06rem);
+            font-size: .32rem;
+            padding: 0 .06rem;
+        }
+    }
+    &-default{
+        .setColor(#999999);
+    }
+    &-red{
+        .setColor(#F64F4F);
+    }
+    &-blue{
+        .setColor(#2075F4);
+    }
+    &-green{
+        .setColor(#52BA0D);
+    }
+    &-purple{
+        .setColor(#A350F1);
+    }
+    &-orange{
+        .setColor(#FFB82F);
+    }
+    &-small,&-middle,&-big{
+        div{
+            text-align: center;
+            display: inline-block;
+        }
+    }
+    // 半圆标签
+    &-semicircle{
+        .setBorder(0, 0, .25rem, .25rem);
+        .setSize(1.4rem, .4rem);
+        .setColor(red);
+        display: inline-block;
+        div{    
+            max-width: 90%;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+    }
+    // 三角标签
+    &-triangle{
+        .direction{
+            display: inline-block;
+            position: relative;
+            padding: 0px .1rem;
+            background: #ccc;
+            color: green;
+            line-height: 1.6;
+            margin-left: .4rem;
+            border-radius: 0;
+            max-width: 2rem;
+            div{
+                .setSize(100%, .44rem);
+            }
+            &:before{
+                position: absolute;
+                content: " ";
+                border: .22rem solid transparent;
+                top: 0;
+                height: 0;
+                width: 0;
+            }
+            &:after{
+                position: absolute;
+                content: " ";
+                background: white;
+                width: .16rem;
+                height: .16rem;
+                top: .12rem;
+                border-radius: 50%;
+                    box-shadow: 0 0 1px 1px #999 inset;
+            }
+        }
+        .left{
+            &:before{
+                left: -.44rem;
+                border-right-color: #ccc;
+            }
+            &:after{
+                left: -.1rem;
+            }
+        }
+        .right{
+            &:before{
+                right: -.44rem;
+                border-left-color: #ccc;
+            }
+            &:after{
+                right: -.1rem;
+            }
+        }
+        
+    }
+}

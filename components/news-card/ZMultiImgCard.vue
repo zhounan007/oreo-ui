@@ -1,25 +1,40 @@
 <template>
-    <div class="oreo-list-item oreo-list-item-search">
-        <div class="oreo-list-item-line oreo-list-item-column">
-            <div class="oreo-list-item-content" style="width: 100%">
-                <div class="oreo-list-item-title">{{title}}</div>
+    <div :class="className">
+        <div :class="classNameLine">
+            <div :class="classNameContent">
+                <div :class="classNameTitle" :style="titleStyle">{{title}}</div>
+                <div :class="classNameBrief">{{brief}}</div>
             </div>
-
-            <div class="oreo-list-item-thumb" style="margin: 10px 0;">
-                <img v-for="(val, index) in img" :key="index" :src="val" alt="">
+            <div :class="classNameThumb" :style="imgSize">
+                <img v-for="(item, index) in img " :key="index" :src="item" alt="">
             </div>
-            <div class="oreo-list-item-info">
+            <div :class="classNameInfo">
                 <slot name="info">
-                    <div>简单</div>
-                    <div>实用</div>
+                    <div :class="classNameTag">
+                        <z-tag-group size="small" v-if="info !== void(0)">
+                            <z-tag :type="type">{{info}}</z-tag>
+                        </z-tag-group>
+                        <span>{{source}}</span>
+                        <span>{{num}}</span>
+                        <span>{{date}}</span>
+                    </div>
+                </slot>
+                <slot name="delete">
+                    <div>X</div>
                 </slot>
             </div>
         </div>
     </div>
 </template>
 <script>
+import { ZTag, ZTagGroup } from '../tag'
+const prefixCls = 'oreo-list-item'
 export default {
     name: 'z-multiImg-card',
+    components: {
+        ZTag,
+        ZTagGroup
+    },
     props: {
         title: {
             type: String,
@@ -27,20 +42,73 @@ export default {
         },
         img: {
             type: Array,
-            defualt: ['http://owz1rt8et.bkt.clouddn.com/assets/nature02.jpg', 'http://owz1rt8et.bkt.clouddn.com/assets/nature02.jpg', 'http://owz1rt8et.bkt.clouddn.com/assets/nature02.jpg']
+            default: ['http://owz1rt8et.bkt.clouddn.com/assets/nature02.jpg', 'http://owz1rt8et.bkt.clouddn.com/assets/nature02.jpg', 'http://owz1rt8et.bkt.clouddn.com/assets/nature02.jpg']
+        },
+        brief: String,
+        type: String,
+        source: String,
+        num: String,
+        date: String,
+        info: String,
+        imgSize: {
+            type: Object,
+            default: function () {
+                return { 'height': '1.6rem' }
+            }
+        },
+        titleStyle: {
+            type: Object,
+            default: function () {
+                return {
+                    'font-size': '.36rem',
+                    'margin-bottom': '.1rem'
+                }
+            }
+        }
+    },
+    computed: {
+        className() {
+            return {
+                [`${prefixCls}`]: true,
+                [`${prefixCls}-search`]: true
+            }
+        },
+        classNameLine() {
+            return {
+                [`${prefixCls}-line`]: true,
+                [`${prefixCls}-message`]: true
+            }
+        },
+        classNameContent() {
+            return `${prefixCls}-content`
+        },
+        classNameTitle() {
+            return `${prefixCls}-title`
+        },
+        classNameBrief() {
+            return `${prefixCls}-brief`
+        },
+        classNameThumb() {
+            return `${prefixCls}-thumb`
+        },
+        classNameInfo() {
+            return `${prefixCls}-info`
+        },
+        classNameTag() {
+            return `${prefixCls}-info-tag`
         }
     }
 }
 </script>
 <style lang="less" scoped>
-.oreo-list-item.oreo-list-item-search .oreo-list-item-thumb img {
-  width: 2.35rem;
-  height: 1.7rem;
-}
-.oreo-list-item.oreo-list-item-search
-  .oreo-list-item-line
-  .oreo-list-item-content
-  .oreo-list-item-title {
-  font-size: 0.34rem;
+.oreo-list-item-info-tag {
+  width: 92%;
+  display: flex;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  span {
+    margin-left: 0.1rem;
+  }
 }
 </style>

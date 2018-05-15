@@ -1,39 +1,111 @@
 <template>
-  <div class="oreo-list-item oreo-list-item-search">
-    <div class="oreo-list-item-line">
-      <div class="oreo-list-item-content">
-        <div class="oreo-list-item-title">{{title}}</div>
-        <div class="oreo-list-item-info">
+  <div :class="className">
+    <div :class="classNameLine">
+      <div :class="classNameContent">
+        <div :class="classNameTitle" :style="titleStyle">{{title}}</div>
+        <div :class="classNameBrief">{{brief}}</div>
+        <div :class="classNameInfo">
           <slot name="info">
-            <div>简单</div>
-            <div>实用</div>
+            <div :class="classNameTag">
+              <z-tag-group size="small" v-if="info !== void(0)">
+                <z-tag :type="type">{{info}}</z-tag>
+              </z-tag-group>
+              <span>{{source}}</span>
+              <span>{{num}}</span>
+              <span>{{date}}</span>
+            </div>
+          </slot>
+          <slot name="delete">
+            <div>X</div>
           </slot>
         </div>
       </div>
     </div>
-    <div class="oreo-list-item-thumb" style="margin: 10px 0;">
+    <div :class="classNameThumb" :style="imgSize">
       <img :src="img" alt="">
     </div>
   </div>
 </template>
 <script>
+import { ZTagGroup, ZTag } from '../tag'
+const prefixCls = 'oreo-list-item'
 export default {
   name: 'z-news-card',
+  components: {
+    ZTagGroup,
+    ZTag
+  },
   props: {
     title: String,
-    img: String
+    img: String,
+    brief: String,
+    source: String,
+    num: [String, Number],
+    date: String,
+    type: String,
+    info: String,
+    titleStyle: {
+      type: Object,
+      default: function () {
+        return {
+          'font-size': '.36rem',
+          'margin-bottom': '.1rem'
+        }
+      }
+    },
+    imgSize: {
+      type: Object,
+      default: function () {
+        return {
+          'width': '2.4rem',
+          'height': '1.6rem'
+        }
+      }
+    }
+  },
+  computed: {
+    className() {
+      return {
+        [`${prefixCls}`]: true,
+        [`${prefixCls}-search`]: true
+      }
+    },
+    classNameLine() {
+      return {
+        [`${prefixCls}-line`]: true,
+        [`${prefixCls}-message`]: true
+      }
+    },
+    classNameContent() {
+      return `${prefixCls}-content`
+    },
+    classNameTitle() {
+      return `${prefixCls}-title`
+    },
+    classNameBrief() {
+      return `${prefixCls}-brief`
+    },
+    classNameInfo() {
+      return `${prefixCls}-info`
+    },
+    classNameThumb() {
+      return `${prefixCls}-thumb`
+    },
+    classNameTag() {
+      return `${prefixCls}-info-tag`
+    }
   }
 }
 </script>
 <style lang="less" scoped>
-.oreo-list-item.oreo-list-item-search .oreo-list-item-thumb img {
-  width: 2.35rem;
-  height: 1.7rem;
-}
-.oreo-list-item.oreo-list-item-search
-  .oreo-list-item-line
-  .oreo-list-item-content
-  .oreo-list-item-title {
-  font-size: 0.34rem;
+.oreo-list-item-info-tag {
+  width: 92%;
+  display: flex;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  span {
+    margin-left: 0.1rem;
+  }
 }
 </style>

@@ -154,17 +154,20 @@
         &.@{listPrefixCls}-item-search{
             padding: @v-spacing-md;
             .@{listPrefixCls}-item-thumb{
-                // width: @across-button-height;
-                // height: @across-button-height;
-                img{
-                    width: @across-button-height;
+                width: @across-button-height;
                 height: @across-button-height;
+                img{
+                    // width: @across-button-height;
+                    // height: @across-button-height;
+                    width: 100%;
+                    height: 100%;
                 }
             }
             .@{listPrefixCls}-item-line{
                 width: 100%;
                 // height: @across-button-height;
                 .@{listPrefixCls}-item-content{
+                    width: 100%;
                     height: 100%;
                     display: flex;
                     flex-direction: column;
@@ -191,29 +194,65 @@
                         justify-content: space-between;
                         font-size: @font-size-caption-sm;
                         color: @color-text-caption;
-                        margin-left: -@h-spacing-md;
-                        margin-right: -@h-spacing-md;
+                        // margin-left: -@h-spacing-md;
+                        // margin-right: -@h-spacing-md;
                         div{
-                            min-width: 20%;
-                            overflow: hidden;
-                            white-space: nowrap;
-                            text-overflow: ellipsis;
-                            padding: @h-spacing-md;
+                            // // min-width: 20%;
+                            // overflow: hidden;
+                            // white-space: nowrap;
+                            // text-overflow: ellipsis;
+                            // padding: @h-spacing-md;
                         }
                     }
                 } 
-                &.@{listPrefixCls}-item-column{
+                &.@{listPrefixCls}-item-message{
                     display: flex;
                     flex-direction: column;
                     .@{listPrefixCls}-item-thumb{
                         width: 100%;
                         display: flex;
                         justify-content: space-between;
+                        img{
+                            width: 33%;
+                        }
                     }
                     .@{listPrefixCls}-item-info{
                         width: 100%;
                         display: flex;
                         justify-content: space-between;
+                        align-items: center;
+                        color: #666;
+                        padding-right: .1rem;
+                        .list-item-focus{
+                            display: flex;
+                            flex: 1;
+                            justify-content: flex-start;
+                            max-width: 90%;
+                            overflow: hidden;
+                            text-overflow: ellipsis;
+                            white-space: nowrap;
+                            div{
+                                margin-right: .2rem;
+                                // overflow: hidden;
+                                // text-overflow: ellipsis;
+                                // white-space: nowrap;
+                                // padding: .04rem .1rem;
+                                border-radius: .1rem;
+                                .setColor(@color: red) {
+                                    color: @color;
+                                    border: 1px solid @color;
+                                }
+                                &.red{
+                                    .setColor(red);
+                                }
+                                &.yellow{
+                                    .setColor(yellow);
+                                }
+                                &.blue{
+                                    .setColor(blue);
+                                }
+                            }
+                        }
                     }
                 } 
             }
