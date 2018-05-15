@@ -7,9 +7,7 @@
                 <div :class="classNameInfo">
                     <slot name="info">
                         <div :class="classNameTag">
-                            <z-tag-group size="small" v-if="info !== void(0)">
-                                <z-tag :type="type">{{info}}</z-tag>
-                            </z-tag-group>
+                            <z-tag :type="type" :text="info" size="small"></z-tag>
                             <span>{{source}}</span>
                             <span>{{num}}</span>
                             <span>{{date}}</span>
@@ -24,13 +22,13 @@
     </div>
 </template>
 <script>
-import { ZTag, ZTagGroup } from '../tag'
+// import { ZTag, ZTagGroup } from '../tag'
+import { ZTag } from '../badge'
 const prefixCls = 'oreo-list-item'
 export default {
     name: 'z-text-card',
     components: {
-        ZTag,
-        ZTagGroup
+        ZTag
     },
     props: {
         title: {
@@ -91,6 +89,7 @@ export default {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+  align-items: center;
   span {
     margin-left: 0.1rem;
   }

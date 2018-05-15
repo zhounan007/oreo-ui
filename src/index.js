@@ -54,9 +54,9 @@ import {
     ZMultiImgCard
 } from '@c/news-card'
 import {
-    ZTag,
-    ZTagGroup
-} from '@c/tag'
+    ZBadge,
+    ZTag
+} from '@c/badge'
 const components = {
     ZButton,
     ZFlex,
@@ -89,7 +89,7 @@ const components = {
     ZTextCard,
     ZMultiImgCard,
     ZTag,
-    ZTagGroup
+    ZBadge
 }
 
 const install = function (Vue, opts = {}) {
