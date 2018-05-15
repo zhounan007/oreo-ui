@@ -1,28 +1,38 @@
-# Vue版新闻资讯
-
-
-Vue项目构建模版
-
-### 包含主要功能：
-- 输出多页面功能
-- 包含Vue-oreo库及oreo-ui库
-- 新增less支持
-- 支持多语言切换(方言)
+# vue-oreo
+A mobile UI Components based on Vue2.x &amp; [Oreo-UI](https://github.com/zhounan007/oreo-ui)
 
 
 
-### 备注
+## 规范
 
-- 通过 git subtree 方式引用 vue-oreo 库,git subtree 具体使用方法参考(https://note.youdao.com/share/?id=13f7af0e41ddebf605cb693970d140c2&type=note#/),如果修改，请联系维护人员(为了统一管理,不建议直接在该库上进行修改)
+- `components`中名字均以小写出现,多个单词以`-`隔开,如`cell-group`
+- 
 
-- 由于该项目通过会话形式进行身份验证及其他安全校验, 本项目中通过Proxy代理进行。具体参看`config/index.js`,失效修改`Cookie`即可。
+# 目前支持组件样式
 
-- 快捷路径方式：
 
-```
-    @ ==> src
-    package ==> package
-    @oreoUI ==> package/theme/lib
-```
-- 完美校园客户端`JSSDK`路径`http://static.17wanxiao.com/wmxy_jssdk/v1.2.5/wanxiao-js-api.js`
-
+- [x] Layout(基础布局)
+    - [x] Flex
+    - [x] Grid
+- [x] Form
+    - [x] Button(按钮)
+    - [x] Radio(单选)
+    - [x] CheckBox(多选)
+    - [x] Textarea(文本)
+    - [x] Switch(开关)
+- [x] List(列表)
+- [ ] Feedback
+    - [x] Modal
+    - [x] Dialog(对话框)    
+    - [x] Toast
+    - [x] Loading
+    - [ ] actionsheet
+- [ ] Navigation
+    - [x] Navbar(导航条)
+    - [ ] Tabbar(标签栏)
+    - [x] Tabs(标签页)
+- [ ] Display
+    - [ ] Result(结果页)
+    - [ ] Share(分享)
+    - [ ] Steps(步骤条)
+    - [ ] Card(卡片)

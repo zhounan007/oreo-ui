@@ -1,0 +1,66 @@
+@import '../../base/fn.less';
+@switchPrefixCls: oreo-switch;
+.@{switchPrefixCls} {
+    display: inline-block;
+    position: relative;
+    vertical-align: middle;
+    cursor: pointer;
+    input[type=checkbox] {
+        position: absolute;
+        top: 0;
+        left: 0;
+        opacity: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 2;
+        border: 0 none;
+        -webkit-appearance: none;
+        &:checked {
+            &+.@{switchPrefixCls}-box {
+                background: @oreoSwitchFillColor;
+                &:before {
+                    transform: scale(0);
+                }
+                &:after {
+                    transform: translateX(20px);
+                }
+            }
+        }
+        &:disabled {
+            &+.@{switchPrefixCls}-box {
+                opacity: @opacity-disabled;
+            }
+        }
+    }
+    & &-box {
+        width: @oreoSwitchWidth;
+        height: @oreoSwitchHeight;
+        border-radius: @oreoSwitchBorderRadius;
+        background: #e5e5e5;
+        &:before {
+            content: '';
+            position: absolute;
+            left: 1px;
+            top: 1px;
+            width: 48px;
+            height: 28px;
+            border-radius: 28px;
+            background: @fill-base;
+            transition: all .2s;
+            transform: scale(1);
+        }
+        &:after {
+            content: '';
+            height: 28px;
+            width: 28px;
+            border-radius: 28px;
+            background: @fill-base;
+            position: absolute;
+            left: 1px;
+            top: 1px;
+            transform: translateX(0);
+            transition: all .2s;
+            box-shadow: 2px 2px 4px @color-shadow;
+        }
+    }
+}

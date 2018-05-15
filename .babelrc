@@ -1,23 +1,21 @@
 {
   "presets": [
-    [
-      "env",
-      {
-        "modules": false,
-        "targets": {
-          "browsers": [
-            "Android >= 4",
-            "Explorer >= 10",
-            "iOS >= 7"
-          ]
-        }
-      }
-    ],
-    "stage-2"
+    ["env", {
+      "targets": {
+        "browsers": ["Android >= 4", "Explorer >= 10", "iOS >= 7"]
+      },
+      "debug": true,
+      "include": [],
+      "useBuiltIns": false
+    }]
   ],
-  "plugins": [
-    "transform-vue-jsx",
-    "transform-runtime",
-    "transform-object-rest-spread"
-  ]
+  // , "transform-object-assign", "transform-vue-jsx"
+  "plugins": ["transform-runtime", "transform-object-rest-spread", "syntax-dynamic-import", "transform-es2015-block-scoping","transform-vue-jsx"],
+  "comments": false,
+  "env": {
+    "test": {
+      "presets": ["env"],
+      "plugins": ["istanbul"]
+    }
+  }
 }

@@ -1,0 +1,7 @@
+{
+  "button": "./components/button/index.js",
+  "toast": "./components/toast/index.js",
+  "modal": "./components/modal/index.js",
+  "dialog": "./components/dialog/index.js",
+  "grid": "./components/grid/index.js"
+}

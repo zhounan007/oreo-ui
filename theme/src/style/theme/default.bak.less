@@ -1,0 +1,195 @@
+// OREO 默认主题
+
+// 色彩
+// ---
+// 文字色
+@color-text-base: #000;                  // 基本
+@color-text-base-inverse: #fff;          // 基本 - 反色
+@color-text-secondary: #a4a9b0;          // 辅助色
+@color-text-placeholder: #bbb;           // 文本框提示
+@color-text-disabled: #bbb;              // 失效
+@color-text-caption: #888;               // 辅助描述
+@color-text-paragraph: #333;             // 段落
+@color-link: @brand-primary;             // 链接
+
+// 阴影色
+@color-shadow: rgba(0, 0, 0, 0.21);  // 阴影色
+
+// 背景色
+@fill-base: #fff;                           // 组件默认背景
+@fill-body: #f5f5f9;                        // 页面背景
+@fill-tap: #ddd;                            // 组件默认背景 - 按下
+@fill-disabled: #ddd;                       // 通用失效背景
+@fill-mask: rgba(0, 0, 0, 0.4);              // 遮罩背景
+@fill-overlay-inverse: rgba(58, 58, 58, 0.9);// 浮层背景 - 反色，用于 toast
+@color-icon-base: #ccc; 							      // 许多小图标的背景，比如一些小圆点，加减号
+@toast-fill: @fill-overlay-inverse;
+
+// 透明度
+@opacity-disabled: 0.3;   // switch checkbox radio 等组件禁用的透明度
+
+// 全局/品牌色
+@brand-primary: #108ee9;
+@brand-primary-tap: #1284d6;
+@brand-success: #6abf47;
+@brand-warning: #fefcec;
+@brand-warning-tap: #ee9b4b;
+@brand-error: #f4333c;
+@brand-hot: #f96268;        // 用于推荐/促销/折扣
+@brand-important: #ff5b05;  // 用于小红点
+
+// 边框色
+@border-color-base: #ddd;
+
+// 字体尺寸
+// ---
+
+@font-size-icontext: .2rem;
+@font-size-caption-sm: .24rem;
+@font-size-base: .28rem;
+@font-size-subhead: .3rem;
+@font-size-caption: .32rem;
+@font-size-heading: .34rem;
+@font-size-display-sm: .36rem;
+@font-size-display-md: .42rem;
+@font-size-display-lg: .48rem;
+@font-size-display-xl: .6rem;
+
+// 字体家族
+// ---
+@font-family-base: -apple-system,"SF UI Text",Roboto,Noto,"Helvetica Neue",Helvetica,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","微软雅黑",Arial,sans-serif;
+@font-family-code: Consolas,Menlo,Courier,monospace;
+
+// 圆角
+// ---
+@radius-xs: .04rem;
+@radius-sm: .06rem;
+@radius-md: .1rem;
+@radius-lg: .14rem;
+@radius-circle: 50%;
+
+// 边框尺寸
+// ---
+@border-width-sm: 1PX;
+@border-width-md: .02rem;
+@border-width-lg: .04rem;
+
+// 间距
+// ---
+// 水平间距
+@h-spacing-sm: .1rem;
+@h-spacing-md: 0.16rem;
+@h-spacing-lg: .3rem;
+
+// 垂直间距
+@v-spacing-xs: .06rem;
+@v-spacing-sm: .12rem;
+@v-spacing-md: 0.18rem;
+@v-spacing-lg: .3rem;
+@v-spacing-xl: .42rem;
+
+// 高度
+// ---
+@option-height: .84rem;           // action-sheet、popover 等组件的选项高度
+@line-height-base: 1;           // 单行行高
+@line-height-paragraph: 1.5;    // 多行行高
+
+// 图标尺寸
+// ---
+@icon-size-xxs: .3rem;
+@icon-size-xs: .36rem;
+@icon-size-sm: .42rem;
+@icon-size-md: .44rem;       // 导航条上的图标、grid的图标大小
+@icon-size-lg: .72rem;
+
+// 动画缓动
+// ---
+@ease-in-out-quint: cubic-bezier(.86, 0, .07, 1);
+
+// 组件变量
+// ---
+
+// button
+@button-height: 84px;
+@button-font-size: 36px;
+
+@button-height-sm: 60px;
+@button-font-size-sm: 26px;
+
+@across-button-height: 100px;   // 通栏按钮高度
+
+@primary-button-fill: @brand-primary;
+@primary-button-fill-tap: @brand-primary-tap;
+
+@ghost-button-color: @brand-primary;    // 同时应用于背景、文字颜色、边框色
+@ghost-button-fill-tap: @brand-primary-tap;
+
+@link-button-fill-tap: #ddd;
+@link-button-font-size: 32px;
+
+// modal
+@modal-font-size-heading: 36px;
+
+// list
+@list-title-height: 60px;
+@list-item-height-sm: 70px;
+@list-item-height: 90px;
+
+// input
+@input-label-width: 34px;       // InputItem、TextareaItem 文字长度基础值
+@input-font-size: 34px;
+@input-color-icon: #ccc; // input clear icon 的背景色
+@input-color-icon-tap: @brand-primary;
+
+// tabs
+@tabs-color: @brand-primary;
+@tabs-height: 87px;
+@tabs-font-size-heading: 30px;
+@tabs-ink-bar-height: @border-width-lg;
+
+// segmented-control
+@segmented-control-color: @brand-primary;  // 同时应用于背景、文字颜色、边框色
+@segmented-control-height: 54px;
+@segmented-control-fill-tap: fade(@brand-primary, 0.1);
+
+// tab-bar
+@tab-bar-fill: #ebeeef;
+@tab-bar-height: 100px;
+
+// search-bar
+@search-bar-fill: #efeff4;
+@search-bar-height: 88px;
+@search-bar-input-height: 56px;
+@searchbar-font-size: 30px;
+@search-color-icon: #bbb; // input search icon 的背景色
+
+// notice-bar
+@notice-bar-fill: #fefcec;
+@notice-bar-height: 72px;
+@notice-bar-color: #f76a24;
+
+// switch
+@switch-fill: #4dd865;
+@switch-fill-android: @brand-primary;
+
+// tag
+@tag-height: 50px;
+@tag-height-sm: 30px;
+@tag-color: @brand-primary;
+
+// keyboard
+@keyboard-confirm-color: @brand-primary;
+@keyboard-confirm-tap-color: @brand-primary-tap;
+
+// table
+@table-title-height: 60px;
+
+
+// z-index
+@progress-zindex: 2000;
+@popover-zindex: 1999;
+@toast-zindex: 1999;
+@action-sheet-zindex: 1000; // actonsheet 会放到 popup / modal 中
+@picker-zindex: 1000;
+@popup-zindex: 999;
+@modal-zindex: 999; // modal.alert 应该最大，其他应该较小

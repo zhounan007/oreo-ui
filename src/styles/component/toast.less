@@ -1,0 +1,54 @@
+ @import '../../styles/themes/default';
+ @import '../../styles/base/mixins';
+ @import '../../styles/base/variable';
+ .zui-toast {
+     position: fixed;
+     width: 100%;
+     z-index: @toast-zindex;
+     font-size: @font-size-base;
+     text-align: center;
+     &&-mask {
+         height: 100%;
+         display: flex;
+         justify-content: center;
+         align-items: center;
+         left: 0;
+         top: 0;
+     }
+     &&-nomask {
+         position: absolute;
+         max-width: 50%;
+         width: auto;
+         left: 50%;
+         top: 50%;
+         transform: translateX(-50%) translateY(-50%);
+     }
+     .zui-toast-text {
+         min-width: 1.2rem;
+         border-radius: @radius-sm;
+         color: @color-text-base-inverse;
+         background-color: @toast-fill;
+         line-height: @line-height-paragraph;
+         display: flex;
+         justify-content: center;
+         align-items: center;
+         &.horizontal {
+             flex-direction: row;
+             padding: @v-spacing-md @h-spacing-lg;
+             .icon {
+                 margin-right: 0.5em;
+             }
+         }
+         &.vertical {
+             flex-direction: column;
+             padding: @v-spacing-md @h-spacing-lg;
+             .icon {
+                 margin-bottom: @v-spacing-md;
+             }
+         }
+         .icon,
+         .info {
+             display: flex;
+         }
+     }
+ }

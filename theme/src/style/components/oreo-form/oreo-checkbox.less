@@ -1,0 +1,15 @@
+@import "oreo-selectbox.less";
+.@{listPrefixCls}{
+    &-item {
+        &.@{selectboxPrefixCls}{
+            .@{selectboxPrefixCls}-thumb{
+                &-inner{
+                    &:after{
+                        border-radius: @radius-sm;
+                    }
+
+                }
+            }
+        }
+    }
+}

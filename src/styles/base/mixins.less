@@ -1,0 +1,127 @@
+.setTapColor(@c: rgba(0, 0, 0, 0)) {
+    -webkit-tap-highlight-color: @c;
+}
+
+.box-sizing() {
+    box-sizing: border-box;
+}
+
+.setHeight(@h: 55px) {
+    height: @h;
+    line-height: @h;
+}
+
+.textOverflow {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.setTopLine(@c: #C7C7C7) {
+    content: " ";
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    height: 1px;
+    border-top: 1px solid @c;
+    color: @c;
+    transform-origin: 0 0;
+    transform: scaleY(0.5);
+}
+
+.setBottomLine(@c: #C7C7C7) {
+    content: " ";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    height: 1px;
+    border-bottom: 1px solid @c;
+    color: @c;
+    transform-origin: 0 100%;
+    transform: scaleY(0.5);
+}
+
+.setLeftLine(@c: #C7C7C7) {
+    content: " ";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 1px;
+    bottom: 0;
+    border-left: 1px solid @c;
+    color: @c;
+    transform-origin: 0 0;
+    transform: scaleX(0.5);
+}
+
+.setRightLine(@c: #C7C7C7) {
+    content: " ";
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 1px;
+    bottom: 0;
+    border-right: 1px solid @c;
+    color: @c;
+    transform-origin: 100% 0;
+    transform: scaleX(0.5);
+}
+
+._setArrow(@arrowsize, @borderColor, @borderWidth) {
+    display: inline-block;
+    height: @arrowsize;
+    width: @arrowsize;
+    border-width: @borderWidth @borderWidth 0 0;
+    border-color: @borderColor;
+    border-style: solid;
+}
+
+.setArrow(@direction, @arrowsize, @borderColor, @borderWidth) when (@direction =top) {
+    ._setArrow(@arrowsize, @borderColor, @borderWidth);
+    transform: matrix(0.71, -0.71, 0.71, 0.71, 0, 0); // rotate(-45deg)
+}
+
+.setArrow(@direction, @arrowsize, @borderColor, @borderWidth) when (@direction =right) {
+    ._setArrow(@arrowsize, @borderColor, @borderWidth);
+    transform: matrix(0.71, 0.71, -0.71, 0.71, 0, 0); // rotate(45deg);
+    position: relative;
+    top: -2px;
+}
+
+.setArrow(@direction, @arrowsize, @borderColor, @borderWidth) when (@direction =down) {
+    ._setArrow(@arrowsize, @borderColor, @borderWidth);
+    transform: matrix(-0.71, 0.71, -0.71, -0.71, 0, 0); // rotate(135deg);
+    position: relative;
+    top: -3px;
+}
+
+.setArrow(@direction, @arrowsize, @borderColor, @borderWidth) when (@direction =left) {
+    ._setArrow(@arrowsize, @borderColor, @borderWidth);
+    transform: matrix(-0.71, -0.71, 0.71, -0.71, 0, 0); // rotate(-135deg);
+    position: relative;
+    top: -2px;
+}
+
+.removeLeftOrTopLine {
+    &:before {
+        display: none;
+    }
+}
+
+.removeRightOrBottomLine {
+    &:after {
+        display: none;
+    }
+}
+
+.encoded-svg-background(@svg) when(@svg='backspace') {
+    @svg-bg-img: '<svg class="icon" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" width="200" height="200"><defs><style/></defs><path d="M997.88 187.12c-17.8-17.8-40.5-27.12-66.13-27.12H336c-48.6 0-87.43 18.8-115.4 56.88L0 511.88l220.8 293.05.36.46.37.46c13.8 17.7 28.85 31.4 45.98 40.83 20.27 11.15 43.3 17.3 68.5 17.3h596c52.38 0 92-44.5 92-98V254c0-25.64-8.3-49.07-26.12-66.88zm-171 477.5a16 16 0 0 1 4.75 11.4 15.97 15.97 0 0 1-4.75 11.43l-43.64 43.8a15.95 15.95 0 0 1-11.38 4.75c-4.15 0-8.28-1.57-11.4-4.74L608.02 578.34 455.56 731.26a15.9 15.9 0 0 1-11.4 4.74 15.95 15.95 0 0 1-11.38-4.74l-43.65-43.8a15.98 15.98 0 0 1-4.74-11.43c0-4.3 1.7-8.4 4.74-11.42L542.2 512 388.72 359.4c-6.3-6.3-6.3-16.54 0-22.85l43.6-43.84a16.1 16.1 0 0 1 11.4-4.7c4.3 0 8.38 1.7 11.4 4.7L608 443.8 760.9 292.7a16 16 0 0 1 11.38-4.7c4.3 0 8.36 1.7 11.4 4.7l43.6 43.85c6.3 6.3 6.3 16.55 0 22.86L673.82 512 826.9 664.6z"/></svg>';
+    .encoded-svg-background-i(@svg-bg-img);
+}
+
+.encoded-svg-background-i(@svg) {
+    @url: `encodeURIComponent(@{svg}) `;
+    background-image: url("data:image/svg+xml;charset=utf-8,@{url}");
+}
