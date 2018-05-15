@@ -1,0 +1,68 @@
+ @import '../../styles/themes/default';
+ @import '../../styles/base/mixins';
+ @import '../../styles/base/variable';
+ .zui-navbar {
+     height: @navbar-height;
+     position: relative;
+     display: flex;
+     background-color: @fill-base;
+     padding: 0 @h-spacing-sm;
+     &:after {
+         .setBottomLine(@fill-base);
+     }
+     &.navbar-fixed {
+         position: fixed;
+         top: 0;
+         left: 0;
+         width: 100%;
+         z-index: @navbar-zindex;
+     }
+ }
+
+ .zui-navbar-item {
+     display: flex;
+     flex: 0 0 (100%-@navbar-center-width)/2;
+     font-size: @font-size-base;
+     color: @brand-primary;
+     white-space: nowrap;
+     overflow: hidden;
+     align-items: center;
+     &:first-child {
+         order: 1;
+     }
+     &:last-child {
+         order: 3;
+         justify-content: flex-end;
+         >a {
+             justify-content: flex-end;
+         }
+     }
+     >a {
+         display: flex;
+         flex: 1;
+         align-items: center;
+         height: @navbar-height;
+         min-width: (100%-@navbar-center-width)/2;
+         color: @brand-primary;
+     }
+ }
+
+ .zui-navbar-center-box {
+     order: 2;
+     width: @navbar-center-width;
+     height: @navbar-height;
+      font-size: @font-size-heading;
+     .center {
+         width: 100%;
+         display: flex;
+         justify-content: center;
+         align-items: center;
+         height: inherit;
+         .title {
+             .textOverflow();
+         }
+         >img {
+             height: 60%;
+         }
+     }
+ }

@@ -1,0 +1,23 @@
+{
+  "presets": [
+    [
+      "env",
+      {
+        "modules": false,
+        "targets": {
+          "browsers": [
+            "Android >= 4",
+            "Explorer >= 10",
+            "iOS >= 7"
+          ]
+        }
+      }
+    ],
+    "stage-2"
+  ],
+  "plugins": [
+    "transform-vue-jsx",
+    "transform-runtime",
+    "transform-object-rest-spread"
+  ]
+}

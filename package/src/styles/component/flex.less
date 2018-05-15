@@ -1,0 +1,87 @@
+ @import '../../styles/themes/default';
+ @import '../../styles/base/mixins';
+ @import '../../styles/base/variable';
+ .zui-flexbox {
+     text-align: left;
+     overflow-y: hidden;
+     display: flex;
+     align-items: center;
+     &&-dir-row {
+         flex-direction: row;
+     }
+     &&-dir-row-reverse {
+         flex-direction: row-reverse;
+     }
+     &&-dir-column {
+         flex-direction: column;
+     }
+     &&-dir-column-reverse {
+         flex-direction: column-reverse;
+     }
+     &&-nowrap {
+         flex-wrap: nowrap;
+     }
+     &&-wrap {
+         flex-wrap: wrap;
+     }
+     &&-wrap-reverse {
+         flex-wrap: wrap-reverse;
+     } // main 轴
+     &&-justify-start {
+         justify-content: flex-start;
+     }
+     &&-justify-center {
+         justify-content: center;
+     }
+     &&-justify-end {
+         justify-content: flex-end;
+     }
+     &&-justify-between {
+         justify-content: space-between;
+     }
+     &&-justify-around {
+         justify-content: space-around;
+     } // cross 轴
+     &&-align-top {
+         align-items: flex-start;
+     }
+     &&-align-bottom {
+         align-items: flex-end;
+     }
+     &&-align-middle {
+         align-items: center;
+     }
+     &&-align-stretch {
+         align-items: stretch;
+     }
+     &&-align-baseline {
+         align-items: baseline;
+     } // 多轴
+     &&-align-content-start {
+         align-content: flex-start;
+     }
+     &&-align-content-end {
+         align-items: flex-end;
+     }
+     &&-align-content-center {
+         align-items: center;
+     }
+     &&-align-content-between {
+         align-items: stretch;
+     }
+     &&-align-content-around {
+         align-items: around;
+     }
+     &&-align-content-stretch {
+         align-items: baseline;
+     }
+     & &-item {
+         .box-sizing();
+         flex: 1;
+         min-width: 20px;
+         margin-left: @h-spacing-md;
+         &:first-child {
+             margin-left: 0;
+         }
+     }
+ }
