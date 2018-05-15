@@ -18,40 +18,8 @@
     border-bottom-left-radius: @LB;
     border-bottom-right-radius: @RB;
 }
-// .oreo-tag-small(@color: #000) {
-//   .oreo-tag-small-@{color} {
-//     .setSize(.3rem, .24rem);
-//     .setColor(@color);
-//     .setBorder(.04rem,.04rem,.04rem,.04rem);
-//     font-size: .36rem;
-//     padding: 0 .06rem;
-//     zoom: .5;
-//   }
-// // }
-// .oreo-tag-middle(@color: #000) {
-//   .oreo-tag-middle-@{color} {
-//     .setSize(.5rem, .36rem);
-//     .setColor(@color);
-//     .setBorder(.06rem,.06rem,.06rem,.06rem);
-//     font-size: .24rem;
-//     padding: 0 .08rem;
-//   }
-// }
-// .oreo-tag-big(@color: blue) {
-//   .oreo-tag-big-@{color} {
-//     .setSize(.6rem, .4rem);
-//     .setColor(@color);
-//     .setBorder(.06rem,.06rem,.06rem,.06rem);
-//     font-size: .32rem;
-//     padding: 0 .06rem;
-//   }
-// }
 
 .@{tagPrefixCls}{
-    &>div{
-        margin-top: .4rem;
-    }
-    
     &-small{
         &>div{
             .setSize(1.7rem, .24rem);
@@ -60,11 +28,6 @@
             padding: 0 .06rem;
             zoom: .5;
         }
-        
-        // .oreo-tag-small(red);
-        // .oreo-tag-small(blue);
-        // .oreo-tag-small(green);
-        // .oreo-tag-small(purple);
     }
     &-middle{
         &>div{
@@ -82,7 +45,7 @@
             padding: 0 .06rem;
         }
     }
-    &-defult{
+    &-default{
         .setColor(#999999);
     }
     &-red{
@@ -100,20 +63,6 @@
     &-orange{
         .setColor(#FFB82F);
     }
-
-    // &-middle{
-    //     .oreo-tag-middle(red);
-    //     .oreo-tag-middle(blue);
-    //     .oreo-tag-middle(green);
-    //     .oreo-tag-middle(purple);
-    // }
-
-    // &-big{
-    //     .oreo-tag-big(red);
-    //     .oreo-tag-big(blue);
-    //     .oreo-tag-big(green);
-    //     .oreo-tag-big(purple);
-    // }
     &-small,&-middle,&-big{
         div{
             text-align: center;
@@ -122,15 +71,20 @@
     }
     // 半圆标签
     &-semicircle{
-        display: inline-block;
         .setBorder(0, 0, .25rem, .25rem);
-        .setSize(1.6rem, .4rem);
+        .setSize(1.4rem, .4rem);
         .setColor(red);
-        padding-right: .25rem;
+        display: inline-block;
+        div{    
+            max-width: 90%;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
     }
     // 三角标签
     &-triangle{
-        a{
+        .direction{
             display: inline-block;
             position: relative;
             padding: 0px .1rem;
@@ -139,6 +93,10 @@
             line-height: 1.6;
             margin-left: .4rem;
             border-radius: 0;
+            max-width: 2rem;
+            div{
+                .setSize(100%, .44rem);
+            }
             &:before{
                 position: absolute;
                 content: " ";
