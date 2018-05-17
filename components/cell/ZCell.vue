@@ -1,5 +1,5 @@
 <template>
-  <div :class="classNames">
+  <div :class="classNames" @click="handleClick">
       <div class="oreo-list-item-thumb">
               <slot name="icon">
               </slot>
@@ -15,9 +15,12 @@
   </div>
 </template>
 <script>
+import RouterLink from '../mixins/router-link'
+
 const prefixCls = 'oreo-list-item'
 export default {
     name: 'z-cell',
+    mixins: [RouterLink],
     props: {
         title: String,
         value: [String, Number],
@@ -26,7 +29,7 @@ export default {
             default: false
         },
         label: String,
-        url: String
+        index: [String, Number]
     },
     computed: {
         classNames() {
@@ -35,6 +38,12 @@ export default {
                 [`${prefixCls}-link`]: this.link,
                 [`${prefixCls}-multi`]: this.label
             }
+        }
+    },
+    methods: {
+        handleClick(e) {
+            this.$emit('click', this.index, e)
+            this.routerLink()
         }
     }
 }

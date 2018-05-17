@@ -2,7 +2,9 @@
 <template>
     <flexview>
         <scrollview>
-            <z-scroll ref="scroll" :pullUpLoad="loadmore" :pullDownRefresh="refresh" :startY="startY" @pullingDown="onPullingDown" @pullingUp="onPullingUp" :data="data">
+
+            <div style="width:100%;height:600px;position:relative;">
+                <z-scroll ref="scroll" :pullUpLoad="loadmore" :pullDownRefresh="refresh" :startY="startY" @pullingDown="onPullingDown" @pullingUp="onPullingUp" :data="data">
                 <!-- <div class="oreo-list" v-if="data.length">
                         <div class="oreo-list-body">
                             <div class="oreo-list-item" v-for="(item,index) in data" :key="index">
@@ -25,6 +27,8 @@
                 </div>
     
             </z-scroll>
+            </div>
+            
         </scrollview>
     </flexview>
 </template>

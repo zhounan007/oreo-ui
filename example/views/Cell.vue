@@ -10,10 +10,12 @@
                         :value="item.value"
                         :label="item.label"
                         :link="item.link"
+                        :index="idx"
+                        @click="handleCell"
                     ></z-cell>
                 </z-cell-group>
 
-                <z-cell-group header="图标" footer="角标">
+                <z-cell-group header="图标" footer="角标" :line="false">
                     <z-cell  
                         title="很长很长很长的标题" 
                         value=""
@@ -24,9 +26,19 @@
                         
                     </z-cell>
                     <z-cell  
-                        title="很长很长很长的标题" 
+                        title="返回首页" 
                         value=""
                         link
+                        to="/"
+                    >
+                        <img src="http://owz1rt8et.bkt.clouddn.com/icon/icon.png" alt="" slot="icon" style="width:0.55rem;">
+                        
+                    </z-cell>
+                     <z-cell  
+                        title="Vue-Oreo 组件库" 
+                        value="带跳转地址"
+                        link
+                        url="https://github.com/zhounan007/vue-oreo"
                     >
                         <img src="http://owz1rt8et.bkt.clouddn.com/icon/icon.png" alt="" slot="icon" style="width:0.55rem;">
                         
@@ -73,6 +85,11 @@ export default {
     components: {
         flexview,
         scrollview
+    },
+    methods: {
+        handleCell(index, e) {
+            console.log(index, e)
+        }
     }
 }
 </script>

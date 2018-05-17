@@ -57,6 +57,8 @@ import {
     ZBadge,
     ZTag
 } from '@c/badge'
+import ZPullToRefresh from '@c/pull-to-refresh'
+
 const components = {
     ZButton,
     ZFlex,
@@ -89,7 +91,8 @@ const components = {
     ZTextCard,
     ZMultiImgCard,
     ZTag,
-    ZBadge
+    ZBadge,
+    ZPullToRefresh
 }
 
 const install = function (Vue, opts = {}) {
