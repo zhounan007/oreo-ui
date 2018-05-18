@@ -63,6 +63,7 @@ export default {
     },
     value: {
       type: Boolean,
+      default: false,
       required: true
     }
   },
@@ -76,7 +77,6 @@ export default {
   },
   watch: {
     value(val) {
-      debugger
       this.duration = this.animationDuration
       this.getStatus(val ? this.headHeight : 0, val)
     }
@@ -141,7 +141,6 @@ export default {
           : Math.round(headHeight * 1.5 + (height - headHeight * 2) / 4);
     },
     getStatus(height, isLoading) {
-      debugger
       this.height = height
 
       const status = isLoading ? 'loading' : height === 0
@@ -150,6 +149,10 @@ export default {
 
       if (status !== this.status) {
         this.status = status
+      }
+      if (status === 'normal') {
+        this.$el.scrollTo(0, 0)
+        console.log('scrollTo:0,0')
       }
       console.log(this.status)
     }
@@ -171,7 +174,6 @@ export default {
 }
 .@{prefix}-track {
   position: relative;
-  background-color: aquamarine;
 }
 .@{prefix}-head {
   width: 100%;

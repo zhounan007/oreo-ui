@@ -23,7 +23,7 @@ export default {
     name: 'button',
     data() {
         return {
-            isLoading: true,
+            isLoading: false,
             length: 30
         }
     },
@@ -31,13 +31,15 @@ export default {
         flexview,
         scrollview
     },
+    mounted() {
+    },
     methods: {
         onRefresh() {
             setTimeout(() => {
                 this.isLoading = false
-                this.length = Math.floor(Math.random() * 10)
+                this.length = Math.floor(Math.random() * 10) * 10
                 this.$toast('刷新成功')
-            }, 5000)
+            }, 500)
         }
     }
 }
