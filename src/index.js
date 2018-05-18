@@ -58,7 +58,7 @@ import {
     ZTag
 } from '@c/badge'
 import ZPullToRefresh from '@c/pull-to-refresh'
-
+import ZInfiniteScroll from '@c/infinite-scroll'
 const components = {
     ZButton,
     ZFlex,
@@ -92,7 +92,8 @@ const components = {
     ZMultiImgCard,
     ZTag,
     ZBadge,
-    ZPullToRefresh
+    ZPullToRefresh,
+    ZInfiniteScroll
 }
 
 const install = function (Vue, opts = {}) {

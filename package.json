@@ -27,8 +27,11 @@
     "babel-register": "^6.26.0",
     "better-scroll": "^1.4.2",
     "chalk": "^2.3.0",
+    "commitizen": "^2.9.6",
+    "conventional-changelog": "^1.1.24",
     "copy-webpack-plugin": "^4.2.0",
     "css-loader": "^0.28.7",
+    "cz-conventional-changelog": "^2.1.0",
     "eslint": "^4.10.0",
     "eslint-config-standard": "^10.2.1",
     "eslint-friendly-formatter": "^3.0.0",
@@ -71,5 +74,10 @@
   "dependencies": {
     "hammerjs": "^2.0.8",
     "lodash.throttle": "^4.1.1"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
   }
 }
