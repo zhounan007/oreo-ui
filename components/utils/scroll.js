@@ -69,7 +69,7 @@ export default {
     getElementTop(element) {
         return (element === window ? 0 : element.getBoundingClientRect().top) + this.getScrollTop(window);
     },
-
+    // 可视区域
     getVisibleHeight(element) {
         return element === window ? element.innerHeight : element.getBoundingClientRect().height;
     },
