@@ -17,7 +17,7 @@ subtitle: 新闻列表
 
 属性 | 说明 | 类型 | 默认值
 ----|-----|------|------
-| title   |   标题   |   String  | - |
+| title   |   标题   |   `String`  | - |
 | brief   |   描述   |   String  | - |
 | type    | tag颜色  |   String  | - |
 | info    |   标记   |   String  | - |
