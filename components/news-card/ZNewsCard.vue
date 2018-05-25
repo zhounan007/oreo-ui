@@ -54,8 +54,8 @@ export default {
       type: Object,
       default: function () {
         return {
-          'width': '2.4rem'
-          // 'height': '2rem'
+          'width': '2.26rem',
+          'height': '1.48rem'
         }
       }
     },
