@@ -7,14 +7,14 @@
     </div>
 </template>
 <script>
-import { ZList, ZListItem } from '../list/index'
+// import { ZList, ZListItem } from '../list/index'
 const prefixCls = 'oreo-input'
 export default {
     name: 'z-input',
-    components: {
-        ZList,
-        ZListItem
-    },
+    // components: {
+    //     ZList,
+    //     ZListItem
+    // },
     props: {
         header: {
             type: String
