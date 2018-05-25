@@ -3,7 +3,7 @@
     <div :class="classNameLine">
       <div :class="classNameContent">
         <div :class="classNameTitle" :style="titleStyle">{{title}}</div>
-        <div :class="classNameBrief">{{brief}}</div>
+        <div :class="classNameBrief" :style="briefStyle">{{brief}}</div>
         <div :class="classNameInfo">
           <slot name="info">
             <div :class="classNameTag">
@@ -54,8 +54,16 @@ export default {
       type: Object,
       default: function () {
         return {
-          'width': '2.4rem',
+          'width': '2.4rem'
           // 'height': '2rem'
+        }
+      }
+    },
+    briefStyle: {
+      type: Object,
+      default: function () {
+        return {
+          'color': '#000000'
         }
       }
     }

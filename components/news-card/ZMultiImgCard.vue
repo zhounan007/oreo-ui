@@ -3,7 +3,7 @@
         <div :class="classNameLine">
             <div :class="classNameContent">
                 <div :class="classNameTitle" :style="titleStyle">{{title}}</div>
-                <div :class="classNameBrief">{{brief}}</div>
+                <div :class="classNameBrief" :style="briefStyle">{{brief}}</div>
             </div>
             <div :class="classNameThumb" :style="imgSize">
                 <img v-for="(item, index) in img " :key="index" :src="item" alt="">
@@ -58,8 +58,16 @@ export default {
             type: Object,
             default: function () {
                 return {
-                    'font-size': '.36rem',
+                    'font-size': '.36rem'
                     // 'margin-bottom': '.1rem'
+                }
+            }
+        },
+        briefStyle: {
+            type: Object,
+            default: function () {
+                return {
+                    'color': '#000000'
                 }
             }
         }
@@ -101,11 +109,11 @@ export default {
 <style lang="less" scoped>
 .oreo-list-item-info-tag {
   width: 92%;
-//   display: flex;
+  //   display: flex;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
-//   align-items: center;
+  //   align-items: center;
   span {
     margin-left: 0.1rem;
   }
