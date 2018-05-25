@@ -109,11 +109,11 @@ export default {
 <style lang="less" scoped>
 .oreo-list-item-info-tag {
   width: 92%;
-  // display: flex;
+  display: flex;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
-  // align-items: center;
+  align-items: center;
   span {
     margin-left: 0.1rem;
   }
