@@ -11,7 +11,7 @@
             <div :class="classNameInfo">
                 <slot name="info">
                     <div :class="classNameTag">
-                        <z-tag :type="type" :size="tagSize" :text="info"></z-tag>
+                        <z-tag :type="type" size="tagSize" :text="info"></z-tag>
                         <span>{{source}}</span>
                         <span>{{num}}</span>
                         <span>{{date}}</span>
@@ -73,10 +73,6 @@ export default {
                     'color': '#000000'
                 }
             }
-        },
-        tagSize: {
-            type: String,
-            defualt: 'small'
         }
     },
     computed: {
