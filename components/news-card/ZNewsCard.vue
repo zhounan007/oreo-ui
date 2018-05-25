@@ -46,7 +46,7 @@ export default {
       default: function () {
         return {
           'font-size': '.36rem',
-          'margin-bottom': '.1rem'
+          // 'margin-bottom': '.1rem'
         }
       }
     },
@@ -54,8 +54,8 @@ export default {
       type: Object,
       default: function () {
         return {
-          'width': '2.2rem',
-          'height': '1.4rem'
+          'width': '2.4rem',
+          // 'height': '2rem'
         }
       }
     }
@@ -105,5 +105,8 @@ export default {
   span {
     margin-left: 0.1rem;
   }
+}
+.oroe-list-item-check {
+  color: #777777;
 }
 </style>

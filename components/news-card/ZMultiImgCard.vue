@@ -59,7 +59,7 @@ export default {
             default: function () {
                 return {
                     'font-size': '.36rem',
-                    'margin-bottom': '.1rem'
+                    // 'margin-bottom': '.1rem'
                 }
             }
         }
