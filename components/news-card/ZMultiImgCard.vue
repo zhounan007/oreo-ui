@@ -51,7 +51,10 @@ export default {
         imgSize: {
             type: Object,
             default: function () {
-                return { 'height': '1.6rem' }
+                return {
+                    'width': '2.26rem',
+                    'height': '1.48rem'
+                }
             }
         },
         titleStyle: {
