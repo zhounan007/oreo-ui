@@ -17,11 +17,12 @@ import ZToast from '@c/toast'
 import ZLoading from '@c/loading'
 import ZDialog from '@c/dialog'
 import {
-    ZInput,
+    // ZInput,
     ZTextarea,
     ZSwitch,
     ZFormGroup
 } from '@c/form'
+import ZInput from '@c/input'
 import {
     ZList,
     ZListItem,

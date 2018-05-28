@@ -45,7 +45,7 @@ export default {
       type: Object,
       default: function () {
         return {
-          'font-size': '.36rem',
+          'font-size': '.36rem'
           // 'margin-bottom': '.1rem'
         }
       }

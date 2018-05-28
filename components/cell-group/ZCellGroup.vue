@@ -15,7 +15,7 @@ export default {
         header: String,
         line: {
             type: Boolean,
-            default: true
+            default: false
         },
         footer: String
     },
