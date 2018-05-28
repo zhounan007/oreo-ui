@@ -20,7 +20,8 @@
 
 .setColor(@color:#fff){
     color: @color;
-    border: 1px solid @color;
+    // border: 1px solid @color;
+    box-shadow: 0 0 0 1px @color;
 }
 .setSize(@width:0,@height:0){
     max-width: @width;
@@ -37,6 +38,7 @@
         font-size: .4rem;
         display: inline-block;
         padding: 0 .06rem;
+        line-height: 1.4;
         zoom: .5;
     }
     &-middle{
@@ -44,6 +46,7 @@
         font-size: .24rem;
         padding: 0 .06rem;
         border-radius: .06rem;
+        line-height: 1.5;
         display: inline-block;
     }
     &-big{
