@@ -3,10 +3,8 @@ const RE_NARGS = /(%|)\{([0-9a-zA-Z_]+)\}/g;
 const hasOwnProperty = Object.prototype.hasOwnProperty
 
 /**
- * 
- * @param {String} string 
- * @param {Array} args 
- * 
+ * @param {String} string
+ * @param {Array} args
  */
 export default function format(string, ...args) {
     if (args.length === 1 && typeof args[0] === 'object') {
