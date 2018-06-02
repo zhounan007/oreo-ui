@@ -1,6 +1,6 @@
 <template>
     <z-transition :name="modalTransition" :enter="enterClass" :leave="leaveClass">
-        <div :class="classNames" v-show="visible" @click.self="handlerClick">
+        <div :class="classNames" v-show="visible" @click.self="handleClick">
             <slot name="inner">
                 <div :class="innerClassNames">
                     <slot></slot>
@@ -10,6 +10,7 @@
     </z-transition>
 </template>
 <script>
+import createBasic from '../utils/create-basic'
 import { ZTransition } from '../transition'
 
 const modalPrefixCls = 'oreo-modal'
@@ -22,9 +23,8 @@ const position = {
     left: `${modalPrefixCls}-left ${modalPrefixCls}-mask`,
     right: `${modalPrefixCls}-right ${modalPrefixCls}-mask`
 }
-
-export default {
-    name: 'z-modal',
+export default createBasic({
+    name: 'modal',
     components: {
         ZTransition
     },
@@ -34,6 +34,7 @@ export default {
         }
     },
     props: {
+        value: Boolean,
         closeOnClickModal: {
             type: Boolean,
             default: true
@@ -54,6 +55,15 @@ export default {
         max: {
             type: Boolean,
             default: false
+        }
+    },
+    watch: {
+        value(val) {
+            if (val) {
+                this.open()
+            } else {
+                this.close()
+            }
         }
     },
     computed: {
@@ -87,7 +97,7 @@ export default {
     created() {
     },
     methods: {
-        handlerClick(e) {
+        handleClick(e) {
             if (this.closeOnClickModal) {
                 this.close()
             }
@@ -113,6 +123,7 @@ export default {
                     if (typeof this.__onClose === 'function') {
                         this.__onClose()
                     }
+                    this.$emit('input', false)
                     this.$emit('close')
                 }, duration)
             }
@@ -129,6 +140,7 @@ export default {
             })
         },
         close(callback) {
+            debugger
             if (!this.visible) return
 
             this.__onClose = callback
@@ -139,5 +151,5 @@ export default {
             }
         }
     }
-}
+})
 </script>

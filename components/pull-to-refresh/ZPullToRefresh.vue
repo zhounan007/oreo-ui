@@ -24,14 +24,15 @@
           </div>
           <slot></slot>
       </div>
-      
   </div>
 </template>
 <script>
+import createBasic from '../utils/create-basic'
 import scrollUtils from '../utils/scroll'
 import Touch from '../mixins/touch'
-export default {
-  name: 'z-pull-to-refresh',
+import { t } from '../locale';
+export default createBasic({
+  name: 'pull-to-refresh',
   mixins: [Touch],
   data() {
     return {
@@ -43,15 +44,21 @@ export default {
   props: {
     pullingText: {
       type: String,
-      default: '下拉刷新'
+      default: () => {
+        return t('oreo.pullToRefresh.pullingText')
+      }
     },
     loosingText: {
       type: String,
-      default: '释放更新'
+      default: () => {
+        return t('oreo.pullToRefresh.loosingText')
+      }
     },
     loadingText: {
       type: String,
-      default: '正在努力加载...'
+      default: () => {
+        return t('oreo.pullToRefresh.loadingText')
+      }
     },
     animationDuration: {
       type: Number,
@@ -151,13 +158,12 @@ export default {
         this.status = status
       }
       if (status === 'normal') {
-        this.$el.scrollTo(0, 0)
-        console.log('scrollTo:0,0')
+        this.$el.scrollTop = 0
       }
       console.log(this.status)
     }
   }
-}
+})
 </script>
 <style lang="less">
 @prefix: oreo-pull-refresh;

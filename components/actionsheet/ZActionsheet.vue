@@ -1,38 +1,72 @@
 <template>
-    <div @touchmove.prevent>
-          <div v-if="showActionsheet" class="oreo-modal oreo-modal-mask oreo-modal-bottom" style="opacity: 1;" id="demo-actionsheet-1" @click.self="cancle">
-        <div class="oreo-modal-content oreo-actionsheet">
-            <div class="oreo-actionsheet-title">请选择</div>
-            <div class="oreo-actionsheet-item" v-for="(item, index) in sheetData" :key="index" @click="sheetSelected(item)">
-              {{item.sheet}}
-            </div>
-            <div class="oreo-actionsheet-action">
-                <div class="oreo-actionsheet-item" @click="cancle">取消</div>
-            </div>
-        </div>
-    </div>
-    </div>
-
+  <z-modal :position="position" ref="sheetModal" @open="handleOpen" @close="handleClose">
+      <div class="oreo-modal-content oreo-actionsheet" slot="inner">
+          <div class="oreo-actionsheet-title" v-if="title"></div>
+          <div class="oreo-actionsheet-item" :class="item.className" v-for="(item, index) in actions" :key="index" @click="handleSelected(item)">
+                {{item.name}}
+          </div>
+          <div class="oreo-actionsheet-action">
+              <div class="oreo-actionsheet-item" @click="handleClose">{{cancelText || t('oreo.actionsheet.cancel')}}</div>
+          </div>
+      </div>
+  </z-modal>
 </template>
 <script>
-export default {
-  name: 'z-actionsheet',
+import ZModal from '../modal'
+import createBasic from '../utils/create-basic'
+const empty = () => { }
+export default createBasic({
+  name: 'actionsheet',
+  components: {
+    ZModal
+  },
   props: {
-    sheetData: {
-      type: Array
+    value: Boolean,
+    position: {
+      type: String,
+      default: 'bottom'
     },
-    showActionsheet: {
-      type: Boolean,
-      default: false
+    title: String,
+    cancelText: String,
+    actions: Array
+    // sheetData: {
+    //   type: Array
+    // },
+    // showActionsheet: {
+    //   type: Boolean,
+    //   default: false
+    // }
+  },
+  watch: {
+    value(val) {
+      if (val) {
+        this.open()
+      } else {
+        this.cancel()
+      }
     }
   },
-   methods: {
-    sheetSelected(item) {
-      this.$emit('selectedMeaage', item)
+  methods: {
+    handleSelected(item) {
+      this.$emit('select', item)
     },
-    cancle() {
-      this.$emit('closeActionsheet')
+    open(callback) {
+      this.$nextTick(() => {
+        this.$refs['sheetModal'].open(callback || empty)
+      })
+    },
+    cancel(callback) {
+      this.$nextTick(() => {
+        this.$refs['sheetModal'].close(callback || empty)
+      })
+    },
+    handleOpen() {
+      this.$emit('open')
+    },
+    handleClose() {
+      this.$emit('input', false)
+      this.$emit('close')
     }
   }
-}
+})
 </script>

@@ -1,10 +1,14 @@
 <template>
   <div :class="classNames">
-      <div class="oreo-list-header" v-if="header !==void 0">{{header}}</div>
+      <slot name="header">
+          <div class="oreo-list-header" v-if="header !==void 0">{{header}}</div>
+      </slot>
       <div class="oreo-list-body">
           <slot></slot>
       </div>
-      <div class="oreo-list-footer" v-if="footer !==void 0">{{footer}}</div>
+      <slot name="footer">
+          <div class="oreo-list-footer" v-if="footer !==void 0">{{footer}}</div>
+      </slot>
   </div>
 </template>
 <script>
@@ -15,7 +19,7 @@ export default {
         header: String,
         line: {
             type: Boolean,
-            default: true
+            default: false
         },
         footer: String
     },
