@@ -1,5 +1,3 @@
 import ZModal from './ZModal.vue'
 
-export {
-  ZModal
-}
+export default ZModal
