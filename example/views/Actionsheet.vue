@@ -1,15 +1,22 @@
 <template>
   <flexview>
     <scrollview title="Actionsheet 选择框" sub-title="数据选择">
-      <div class="message-content">
+
+        <div class="demo-body demo-wrap" >
+          <z-button small @click="handleSheet">弹出Actionsheet</z-button>
+        </div>
+       
+
+      <!-- <div class="message-content">
         <span>年级:</span>
         <span class="span_input" @click="selectGrade">{{userData.grade}}</span>
       </div>
       <div class="message-content">
         <span>性别:</span>
         <span class="span_input" @click="selectSex">{{userData.sex}}</span>
-      </div>
-      <z-actionsheet :showActionsheet="actionsheetShow" :sheetData="actionsheetData" @selectedMeaage="selectedMeaage" @closeActionsheet="closeActionsheet"></z-actionsheet>
+      </div> -->
+      <!-- <z-actionsheet :showActionsheet="actionsheetShow" :sheetData="actionsheetData" @selectedMeaage="selectedMeaage" @closeActionsheet="closeActionsheet"></z-actionsheet> -->
+      <z-actionsheet v-model="show" :actions="sexData" @select="handleSelectItem"></z-actionsheet>
     </scrollview>
   </flexview>
 </template>
@@ -20,6 +27,12 @@ export default {
   name: 'actionsheet',
   data() {
     return {
+      show: false,
+      sexData: [{
+        name: '男'
+      }, {
+        name: '女'
+      }],
       actionsheetData: null,
       gradeActionsheetData: [
         {
@@ -61,6 +74,13 @@ export default {
     scrollview
   },
   methods: {
+    handleSheet() {
+      this.show = true
+    },
+    handleSelectItem(item) {
+      console.log(item)
+      this.show = false
+    },
     selectGrade() {
       this.actionsheetData = this.gradeActionsheetData
       this.actionsheetShow = !this.actionsheetShow

@@ -12,6 +12,8 @@
                     Size
                 </h2>
                 <z-button v-for="size in ['max','min']" :key="size" small @click="clickBySize(size)">{{size}}</z-button>
+
+                <z-button small @click="clickByMethod">Modal By v-model</z-button>
             </div>
 
             <z-modal ref="modalEdge" :position="position">
@@ -28,6 +30,14 @@
                 </div>
                 <z-button type="primary" @click="$refs.modalSize.close()" inline small>Close</z-button>
             </z-modal>
+
+             <z-modal v-model="show" position="top" ref="modalX">
+                <h3>Modal</h3>
+                <div style="padding:1rem;">
+                    {{max?'Max':'Min'}} Modal
+                </div>
+                <z-button type="primary" @click="closeModal" inline small>Close</z-button>
+            </z-modal>
         </scrollview>
     </flexview>
 </template>
@@ -38,6 +48,7 @@ export default {
     name: 'modal',
     data() {
         return {
+            show: false,
             edges: [{
                 position: 'top',
                 text: 'Modal from Top'
@@ -60,6 +71,13 @@ export default {
         scrollview
     },
     methods: {
+        closeModal() {
+            // this.show = false
+            this.$refs.modalX.close()
+        },
+        clickByMethod() {
+            this.show = true
+        },
         clickByEdge(position) {
             console.log(position)
             this.position = position

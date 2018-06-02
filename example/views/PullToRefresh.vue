@@ -5,13 +5,15 @@
             <div class="demo-body" >
                 
 
-                <div style=" position: relative;height: 500px">
-                    <z-pull-to-refresh v-model="isLoading" @refresh="onRefresh">
+                <div id="list"  style=" position: relative;height: 500px">
+                    <z-pull-to-refresh ref="list" v-model="isLoading" @refresh="onRefresh">
                         <section class="van-doc-demo-block">
                             <div v-for="n in length" :key="n">{{n}}+列表内容</div>
                         </section>
                     </z-pull-to-refresh>
                 </div>
+
+                <z-button small @click="handleClick"> 回顶部</z-button>
             </div>
         </scrollview>
     </flexview>
@@ -34,6 +36,9 @@ export default {
     mounted() {
     },
     methods: {
+        handleClick() {
+            this.$refs.list.$el.scrollTop = 0
+        },
         onRefresh() {
             setTimeout(() => {
                 this.isLoading = false

@@ -7,9 +7,10 @@ import App from './App'
 import router from './router'
 import oreoVue from '@/index'
 
+// import locale from '@c/locale/lang/en-US'
 Vue.config.productionTip = false
+// Vue.use(oreoVue, { locale })
 Vue.use(oreoVue)
-
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
