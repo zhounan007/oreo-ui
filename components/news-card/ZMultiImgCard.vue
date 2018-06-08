@@ -116,9 +116,9 @@ export default {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
-  .desc {
+  span {
     font-size: 0.22rem;
-    margin-left: 0.1rem;
+    margin-right: 0.1rem;
   }
 }
 .oreo-list-item.oreo-list-item-search
@@ -131,12 +131,12 @@ export default {
   //   margin: 0.12rem 0;
 }
 .tag {
-//   width: 0.56rem;
-//   height: 0.28rem;
-//   line-height: 0.28rem;
-//   border-radius: 6px;
+  //   width: 0.56rem;
+  //   height: 0.28rem;
+  //   line-height: 0.28rem;
+  //   border-radius: 6px;
   font-size: 0.22rem;
-//   padding: 5px 8px 5px 0;
+  //   padding: 5px 8px 5px 0;
 }
 .tag-color-blue {
   color: #2075f4;

@@ -110,9 +110,9 @@ export default {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
-  .desc {
+  span {
     font-size: 0.22rem;
-    margin-left: 0.1rem;
+    margin-right: 0.1rem;
   }
 }
 .oroe-list-item-check {
@@ -122,16 +122,25 @@ export default {
   .oreo-list-item-line
   .oreo-list-item-content {
   font-size: 0;
+  // position: relative;
+  // display: inline-block;
 }
+// .oreo-list-item.oreo-list-item-search
+//   .oreo-list-item-line.oreo-list-item-message
+//   .oreo-list-item-info {
+//   position: absolute;
+//   bottom: -0.12rem;
+//   left: 0;
+// }
 .oreo-list-item.oreo-list-item-search
   .oreo-list-item-line
   .oreo-list-item-content
   .oreo-list-item-brief {
-  // height: 0.3rem;
+  // min-height: 0.1rem;
   // line-height: 0.3rem;
   color: #222222;
   font-size: 0.24rem;
-  // margin: 0.12rem 0;
+  // margin-top: 0.1rem;
 }
 .tag {
   // width: 0.56rem;

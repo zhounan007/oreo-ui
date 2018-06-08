@@ -1,29 +1,23 @@
 <template>
   <div class="oreo-pull-refresh">
-      <div class="oreo-pull-refresh-track" 
-        :style="pullStyle"
-        @touchstart="onTouchStart"
-        @touchmove="onTouchMove"
-        @touchend="onTouchEnd"
-        @touchcancel="onTouchEnd"
-      >
-          <div class="oreo-pull-refresh-head">
-              <slot name="normal" v-if="status==='normal'"></slot>
-              <slot name="pulling" v-if="status==='pulling'">
-                  <span class="oreo-pull-refresh-text">{{pullingText}}</span>
-              </slot>
-              <slot name="loosing" v-if="status==='loosing'">
-                <span class="oreo-pull-refresh-text">{{loosingText}}</span>
-              </slot>
-              <slot name="loading" v-if="status==='loading'">
-                <div class="oreo-pull-refresh-loading">
-                  <span class=" oreo-loading-sm oreo-loading-dark"> </span>
-                  <span>{{loadingText}}</span>
-                </div>
-              </slot>
+    <div class="oreo-pull-refresh-track" :style="pullStyle" @touchstart="onTouchStart" @touchmove="onTouchMove" @touchend="onTouchEnd" @touchcancel="onTouchEnd">
+      <div class="oreo-pull-refresh-head">
+        <slot name="normal" v-if="status==='normal'"></slot>
+        <slot name="pulling" v-if="status==='pulling'">
+          <span class="oreo-pull-refresh-text">{{pullingText}}</span>
+        </slot>
+        <slot name="loosing" v-if="status==='loosing'">
+          <span class="oreo-pull-refresh-text">{{loosingText}}</span>
+        </slot>
+        <slot name="loading" v-if="status==='loading'">
+          <div class="oreo-pull-refresh-loading">
+            <span class=" oreo-loading-sm oreo-loading-dark"> </span>
+            <span>{{loadingText}}</span>
           </div>
-          <slot></slot>
+        </slot>
       </div>
+      <slot></slot>
+    </div>
   </div>
 </template>
 <script>
@@ -135,7 +129,7 @@ export default createBasic({
           this.$emit('input', true);
           this.$emit('refresh');
         } else {
-          this.getStatus(0);
+          this.getStatus(10);
         }
       }
     },

@@ -103,8 +103,8 @@ export default {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
-  .desc {
-    margin-left: 0.1rem;
+  span {
+    margin-right: 0.1rem;
     font-size: 0.22rem;
   }
 }
@@ -117,12 +117,12 @@ export default {
   color: #222222;
 }
 .tag {
-//   width: 0.56rem;
-//   height: 0.28rem;
-//   line-height: 0.28rem;
-//   border-radius: 6px;
+  //   width: 0.56rem;
+  //   height: 0.28rem;
+  //   line-height: 0.28rem;
+  //   border-radius: 6px;
   font-size: 0.22rem;
-//   padding: 5px 8px 5px 0;
+  //   padding: 5px 8px 5px 0;
 }
 .tag-color-blue {
   color: #2075f4;
