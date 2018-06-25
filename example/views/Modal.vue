@@ -16,7 +16,7 @@
                 <z-button small @click="clickByMethod">Modal By v-model</z-button>
             </div>
 
-            <z-modal ref="modalEdge" :position="position">
+            <z-modal ref="modalEdge" :position="position" :mask="false">
                 <h3>Modal</h3>
                 <div>
                     Display from {{position}}

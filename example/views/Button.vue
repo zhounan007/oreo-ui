@@ -8,7 +8,7 @@
                 </h2>
                 <z-button v-for="(item,index) in array" :key="index" :type="item.type">{{item.text}}</z-button>
 
-                <z-button disabled>Small Button</z-button>
+                <z-button disabled>Disabled Button</z-button>
 
                 <z-button text="提交"></z-button>
 
@@ -16,7 +16,7 @@
 
                 <z-button small>Small Button</z-button>
 
-                <z-button small type="primary">Small Primary Button</z-button>
+                <z-button small type="primary" >Small Primary Button</z-button>
 
                 <h2>Inline</h2>
 

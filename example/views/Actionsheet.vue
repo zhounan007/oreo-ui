@@ -6,17 +6,7 @@
           <z-button small @click="handleSheet">弹出Actionsheet</z-button>
         </div>
        
-
-      <!-- <div class="message-content">
-        <span>年级:</span>
-        <span class="span_input" @click="selectGrade">{{userData.grade}}</span>
-      </div>
-      <div class="message-content">
-        <span>性别:</span>
-        <span class="span_input" @click="selectSex">{{userData.sex}}</span>
-      </div> -->
-      <!-- <z-actionsheet :showActionsheet="actionsheetShow" :sheetData="actionsheetData" @selectedMeaage="selectedMeaage" @closeActionsheet="closeActionsheet"></z-actionsheet> -->
-      <z-actionsheet v-model="show" :actions="sexData" @select="handleSelectItem"></z-actionsheet>
+      <z-actionsheet position="top" v-model="show" :actions="sexData" @select="handleSelectItem"></z-actionsheet>
     </scrollview>
   </flexview>
 </template>
@@ -72,6 +62,9 @@ export default {
   components: {
     flexview,
     scrollview
+  },
+  mounted() {
+    this.demoDevice()
   },
   methods: {
     handleSheet() {

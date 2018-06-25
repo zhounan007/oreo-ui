@@ -12,6 +12,7 @@ Vue.config.productionTip = false
 // Vue.use(oreoVue, { locale })
 Vue.use(oreoVue)
 /* eslint-disable no-new */
+
 new Vue({
   el: '#app',
   router,
