@@ -1,0 +1,84 @@
+<div class="page demo-actionsheet">
+    <div class="page-hd">
+        <div class="demo-name">
+            <a href="./" class="oreo-icon-home demo-home oreo-icon"></a> Actionsheet 弹出式菜单</div>
+        <div class="demo-subtitle"></div>
+    </div>
+    <div class="page-body" style="padding:0;">
+
+        <h2>Basic</h2>
+
+        <div class="demo-button">
+            <a href="javascript:;" class="oreo-button oreo-button-small oreo-button-primary" data-type="1">Keyboard</a>
+
+            <a href="javascript:;" class="oreo-button oreo-button-small oreo-button-primary" data-type="2">Show Share ActionSheet</a>
+        </div>
+
+       
+    </div>
+
+    <div class="number-keyboard" style="    position: absolute;bottom: 0;left: 0;width: 100%;display:none;" id="demo-actionsheet-1">
+        <div class="number-keyboard__title">请输入数字</div>
+        <div class="number-keyboard__body">
+            <div class="number-keyboard__row">
+                <div class="number-keyboard__key">1</div>
+                <div class="number-keyboard__key">2</div>
+                <div class="number-keyboard__key">3</div>
+            </div>
+            <div class="number-keyboard__row">
+                <div class="number-keyboard__key">4</div>
+                <div class="number-keyboard__key">5</div>
+                <div class="number-keyboard__key">6</div>
+            </div>
+            <div class="number-keyboard__row">
+                <div class="number-keyboard__key ">7</div>
+                <div class="number-keyboard__key">8</div>
+                <div class="number-keyboard__key">9</div>
+            </div>
+            <div class="number-keyboard__row">
+                <div class="number-keyboard__key ">.</div>
+                <div class="number-keyboard__key">0</div>
+                <div class="number-keyboard__key number-keyboard__key_del"></div>
+            </div>
+        </div>
+    </div>
+    <div class="number-keyboard number-keyboard_friday" style="    position: absolute;bottom: 0;left: 0;width: 100%;display:none;" id="demo-actionsheet-2">
+        <div class="number-keyboard__body">
+            <div class="number-keyboard__row">
+                <div class="number-keyboard__key">1</div>
+                <div class="number-keyboard__key">2</div>
+                <div class="number-keyboard__key">3</div>
+            </div>
+            <div class="number-keyboard__row">
+                <div class="number-keyboard__key">4</div>
+                <div class="number-keyboard__key">5</div>
+                <div class="number-keyboard__key">6</div>
+            </div>
+            <div class="number-keyboard__row">
+                <div class="number-keyboard__key ">7</div>
+                <div class="number-keyboard__key">8</div>
+                <div class="number-keyboard__key">9</div>
+            </div>
+            <div class="number-keyboard__row">
+                <div class="number-keyboard__key number-keyboard__key_middle">0</div>
+                <div class="number-keyboard__key ">.</div>
+            </div>
+        </div>
+        <div class="number-keyboard__sidebar">
+            <div class="number-keyboard__key number-keyboard__key_del"></div>
+            <div class="number-keyboard__key number-keyboard__key_confirm number-keyboard__key_active">确定</div>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('.demo-actionsheet .demo-button .oreo-button').on('click', function () {
+                $('#demo-actionsheet-' + this.dataset.type).fadeIn(200);
+            })
+            $('.demo-actionsheet .oreo-modal-mask').on('click', function (event) {
+                if (event.target !== event.currentTarget) return;
+                $(this).fadeOut(200);
+            })
+        })
+    </script>
+</div>
