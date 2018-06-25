@@ -7,6 +7,9 @@ export default {
             pullingText: 'Pull To Refresh',
             loosingText: 'Loose To Update',
             loadingText: 'Loading More...'
+        },
+        numberKeyboard: {
+            doneButtonText: 'Done'
         }
     }
 }
