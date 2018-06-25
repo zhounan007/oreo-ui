@@ -22,6 +22,7 @@
     "oreo-dialog": "./src/style/components/oreo-modal/oreo-dialog.less",
     "oreo-loading": "./src/style/components/oreo-modal/oreo-loading.less",
     "oreo-toast": "./src/style/components/oreo-modal/oreo-toast.less",
+    "oreo-number-keyboard": "./src/style/components/oreo-number-keyboard.less",
 
     "oreo-navbar": "./src/style/components/oreo-navbar/oreo-navbar.less",
     "oreo-steps": "./src/style/components/oreo-steps/oreo-steps.less",
