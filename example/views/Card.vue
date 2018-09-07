@@ -6,7 +6,7 @@
                 <h2>
                     Type
                 </h2>
-                <z-button small @click="goto">pullToRefresh</z-button>
+                <oreo-button small @click="goto">pullToRefresh</oreo-button>
             </div>
         </scrollview>
     </flexview>

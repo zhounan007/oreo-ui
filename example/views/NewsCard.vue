@@ -3,25 +3,25 @@
         <scrollview title="NewsCard">
             <div class="demo-body">
                 <div class="demo-cont">
-                    <z-cell-group>
+                    <oreo-cell-group>
                         <div v-for="(val, i) in opt" :key="i">
                             <template v-if="val.img === void(0)">
-                                <z-text-card :title="val.title" info="郑州" source="央视新闻网" num="阅读 48" date="1分钟前" brief="测试测试测试测试" type="blue">
-                                </z-text-card>
+                                <oreo-text-card :title="val.title" info="郑州" source="央视新闻网" num="阅读 48" date="1分钟前" brief="测试测试测试测试" type="blue">
+                                </oreo-text-card>
                             </template>
                             <template v-else-if="typeof(val.img) === 'string'">
-                                <z-news-card :title="val.title" :img="val.img" info="郑州" source="央视新闻网" num="阅读 48" date="1分钟前" brief="测试测试测试测试" type="red" @click.native="detail()">
+                                <oreo-news-card :title="val.title" :img="val.img" info="郑州" source="央视新闻网" num="阅读 48" date="1分钟前" brief="测试测试测试测试" type="red" @click.native="detail()">
                                     <div slot="delete" @click.stop="test()">
                                         X
                                     </div>
-                                </z-news-card>
+                                </oreo-news-card>
                             </template>
                             <template v-else>
-                                <z-multiImg-card :title="val.title" :img="val.img" info="郑州" source="央视新闻网" num="阅读 48" date="1分钟前" type="orange" brief="测试测试测试测试">
-                                </z-multiImg-card>
+                                <oreo-multiImg-card :title="val.title" :img="val.img" info="郑州" source="央视新闻网" num="阅读 48" date="1分钟前" type="orange" brief="测试测试测试测试">
+                                </oreo-multiImg-card>
                             </template>
                         </div>
-                    </z-cell-group>
+                    </oreo-cell-group>
                 </div>
             </div>
         </scrollview>

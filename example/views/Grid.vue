@@ -7,39 +7,34 @@
                     Basic
                 </h2>
                 
-                <z-grid border :data="basic" @click="handlerItem">
-                    <z-grid-item slot="item" slot-scope="props" :index="props.item.index">
-                        {{props.item.text}}
-                    </z-grid-item>
-                </z-grid>
+                <oreo-grid line :data="basic" @click="handlerItem">
+                    <template slot-scope="{item}">{{item.text}}
+                    </template>
+                </oreo-grid>
 
                 <h2>
                     Icon,Text
                 </h2>
-                <z-grid border :data="basic" @click="handlerItem" :column="4">
-                    <z-grid-item slot="item" slot-scope="props" :index="props.item.index" :text="props.item.text" :icon="props.item.icon">
-                    </z-grid-item>
-                </z-grid>
+                <oreo-grid line :data="basic" @click="handlerItem" :column="4">
+                </oreo-grid>
 
 
 
                 <h2>
                     Square
                 </h2>
-                <z-grid border square :data="basic" @click="handlerItem">
-                    <z-grid-item slot="item" slot-scope="props" :index="props.item.index" :text="props.item.text" :icon="props.item.icon">
-                    </z-grid-item>
-                </z-grid>
+                <oreo-grid line square :data="basic" @click="handlerItem">
+                </oreo-grid>
 
                 <h2>
                     Custom
                 </h2>
-                <z-grid border square :data="basic" @click="handlerItem" :column="4">
-                    <z-grid-item slot="item" slot-scope="props" :index="props.item.index">
-                        <img :src="props.item.icon" style="width:1.2rem">
-                        <div style="color:#409EFF;">{{props.item.text}}</div>
-                    </z-grid-item>
-                </z-grid>
+                <oreo-grid line square :data="basic" @click="handlerItem" :column="4">
+                    <template slot-scope="{item}">
+                         <img :src="item.icon" style="width:80px">
+                        <div style="color:#409EFF;">{{item.text}}</div>
+                    </template>
+                </oreo-grid>
             </div>
         </scrollview>
     </flexview>

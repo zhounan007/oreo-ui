@@ -6,15 +6,18 @@
                 <h2>
                     位置
                 </h2>
-                <z-button small @click="handlerByType()">Loading</z-button>
+                <oreo-button small @click="handlerByType()">Loading</oreo-button>
     
                 <h2>
                     类型
                 </h2>
-                <z-button small @click="handlerByType('text')">Text</z-button>
+                <oreo-button small @click="show =!show">Text</oreo-button>
+                <oreo-button small @click="handlerByType('text')">Text</oreo-button>
 
-                <z-button v-for="t in ['loading','success','failure']" :key="t" small @click="handlerByType(t)">{{t}}</z-button>
+                <oreo-button v-for="t in ['loading','success','fail']" :key="t" small @click="handlerByType(t)">{{t}}</oreo-button>
     
+
+                <oreo-toast v-model="show" message="正在努力加载中" type="home"></oreo-toast>
             </div>
     
         </scrollview>
@@ -27,6 +30,7 @@ export default {
     name: 'toast',
     data() {
         return {
+            show: false
         }
     },
     components: {
@@ -44,14 +48,8 @@ export default {
                 this.$toast[type](msg)
             } else {
                 // this.$toast({ 'message': msg, 'mode': 'horizontal' })
-
-                this.$loading({
-                    message: msg,
-                    mode: 'horizontal'
-                })
-                setTimeout(() => {
-                    this.$loading().close()
-                }, 3 * 1000)
+                // this.$toast.loading(msg)
+                this.$toast.loading({ 'message': msg, 'mode': 'horizontal' })
             }
         }
     }

@@ -2,19 +2,19 @@
 <template>
     <flexview>
         <scrollview title="Infinite Scroll 无限滚动" sub-title="">
-            <z-infinite-scroll v-model="loading" @load="loadMore" :disabled="disabled" >
-                 <z-cell-group>
-                        <z-cell v-for="item in list" :key="item" :title="item+''"></z-cell>
-                </z-cell-group>
-            </z-infinite-scroll>
+            <oreo-infinite-scroll v-model="loading" @load="loadMore" :disabled="disabled" >
+                 <oreo-cell-group>
+                        <oreo-cell v-for="item in list" :key="item" :title="item+''"></oreo-cell>
+                </oreo-cell-group>
+            </oreo-infinite-scroll>
 
                  <!-- <div style=" position: relative;height: 700px">
-                    <z-pull-to-refresh v-model="isLoading" @refresh="onRefresh">
+                    <oreo-pull-to-refresh v-model="isLoading" @refresh="onRefresh">
                       
-                        <z-infinite-scroll v-model="loading" @load="loadMore" :disabled="disabled">
-                            <z-cell v-for="item in list" :key="item" :title="item+''"></z-cell>
-                        </z-infinite-scroll>
-                    </z-pull-to-refresh>
+                        <oreo-infinite-scroll v-model="loading" @load="loadMore" :disabled="disabled">
+                            <oreo-cell v-for="item in list" :key="item" :title="item+''"></oreo-cell>
+                        </oreo-infinite-scroll>
+                    </oreo-pull-to-refresh>
                 </div> -->
         </scrollview>
     </flexview>

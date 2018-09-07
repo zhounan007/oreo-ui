@@ -7,16 +7,16 @@
                     Top
                 </h2>
     
-                <z-sticky-container v-for="(item,index) in data " :key="index" :style="item.style">
+                <oreo-sticky-container v-for="(item,index) in data " :key="index" :style="item.style">
     
-                    <z-sticky>
+                    <oreo-sticky>
                         <div slot-scope="props" :style="[props.stickyStyle,item.style1]">
                             序列:{{index}}
                             <br> 样式：{{props.stickyStyle}}
                             <br>
                         </div>
-                    </z-sticky>
-                </z-sticky-container>
+                    </oreo-sticky>
+                </oreo-sticky-container>
     
             </div>
         </scrollview>

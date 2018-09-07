@@ -6,14 +6,14 @@
                 
 
                 <div id="list"  style=" position: relative;height: 500px">
-                    <z-pull-to-refresh ref="list" v-model="isLoading" @refresh="onRefresh">
+                    <oreo-pull-to-refresh ref="list" v-model="isLoading" @refresh="onRefresh">
                         <section class="van-doc-demo-block">
                             <div v-for="n in length" :key="n">{{n}}+列表内容</div>
                         </section>
-                    </z-pull-to-refresh>
+                    </oreo-pull-to-refresh>
                 </div>
 
-                <z-button small @click="handleClick"> 回顶部</z-button>
+                <oreo-button small @click="handleClick"> 回顶部</oreo-button>
             </div>
         </scrollview>
     </flexview>

@@ -6,17 +6,29 @@
                 <h2>
                     Alert
                 </h2>
-                <z-button small @click="openAlert('android')">Android Alert</z-button>
+                <oreo-button small @click="openAlert('android')">Android Alert</oreo-button>
     
-                <z-button small @click="openAlert('ios')">iOS Alert</z-button>
+                <oreo-button small @click="openAlert('ios')">iOS Alert</oreo-button>
     
                 <h2>
                     Confirm
                 </h2>
-                <z-button small @click="openConfirm('android')">Android Confirm</z-button>
+                <oreo-button small @click="openConfirm('android')">Android Confirm</oreo-button>
     
-                <z-button small @click="openConfirm('ios')">iOS Confirm</z-button>
+                <oreo-button small @click="openConfirm('ios')">iOS Confirm</oreo-button>
+
+                <h2>
+                    Custom
+                </h2>
+                <oreo-button small @click="show= !show">Operation</oreo-button>
+
+                <oreo-button small @click="show1= !show1">Operation</oreo-button>
     
+                <oreo-dialog v-model="show" :buttons="opers" @select="handleOpers">
+                </oreo-dialog>
+
+                <oreo-dialog v-model="show1" :buttons="opers1" @select="handleOpers" title="请选择你的交通方式" closeOverlayByClick>
+                </oreo-dialog>
             </div>
         </scrollview>
     </flexview>
@@ -25,9 +37,23 @@
 import flexview from './flexview'
 import scrollview from './scrollview'
 export default {
-    name: 'button',
+    name: 'dialog',
     data() {
         return {
+            show: false,
+            show1: false,
+            opers: [
+                { text: '收藏' },
+                { text: '屏蔽' },
+                { text: '举报' },
+                { text: '取消关注' }
+            ],
+            opers1: [
+                { text: '骑车' },
+                { text: '火车' },
+                { text: '地铁' },
+                { text: '飞机' }
+            ]
         }
     },
     components: {
@@ -36,19 +62,16 @@ export default {
     },
     methods: {
         openAlert(type) {
-            this.$dialog({
+            this.$dialog.alert({
+                title: 'Vue-Oreo',
                 message: 'Hello World',
-                type: 'alert',
-                theme: type,
-                okButtonText: 'ok',
-                cancelButtonText: 'cancel'
-
+                theme: type
             }).then(action => {
                 console.log('alert callback with action: ' + action)
             })
         },
         openConfirm(type) {
-            this.$dialog({
+            this.$dialog.confirm({
                 message: 'Are you ok?',
                 type: 'confirm',
                 theme: type
@@ -57,6 +80,9 @@ export default {
             }).catch(action => {
                 console.log('confirm callback with ' + action)
             })
+        },
+        handleOpers(item) {
+            console.log(item)
         }
     }
 
@@ -64,8 +90,8 @@ export default {
 </script>
 <style lang="less" scopd>
 .demo-body {
-    .oreo-button {
-        margin: 1em 0;
-    }
+  .oreo-button {
+    margin: 1em 0;
+  }
 }
 </style>

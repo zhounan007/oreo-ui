@@ -7,11 +7,10 @@
                 <p class="demo-subtitle">A mobile UI Components based on Vue2.x &amp; Oreo-UI</p>
             </div>
     
-            <z-grid :data="module" border @click="handlerModuleItem">
-                <template slot="item" slot-scope="props">
-                    <z-grid-item :index="props.item.index">{{props.item.text}}</z-grid-item>
-                </template>
-            </z-grid>
+            <oreo-grid :data="module" line @click="handlerModuleItem">
+                 <template slot-scope="{item}">{{item.text}}
+                    </template>
+            </oreo-grid>
         </scrollview>
     </flexview>
 </template>
@@ -41,8 +40,8 @@ export default {
         })
     },
     methods: {
-        handlerModuleItem(index, item) {
-            this.$router.push({ path: index })
+        handlerModuleItem(item) {
+            this.$router.push({ path: item.index })
         }
     }
 }

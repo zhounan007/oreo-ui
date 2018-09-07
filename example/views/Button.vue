@@ -6,25 +6,25 @@
                 <h2>
                     Type
                 </h2>
-                <z-button v-for="(item,index) in array" :key="index" :type="item.type">{{item.text}}</z-button>
+                <oreo-button v-for="(item,index) in array" :key="index" :type="item.type">{{item.text}}</oreo-button>
 
-                <z-button disabled>Disabled Button</z-button>
+                <oreo-button disabled>Disabled Button</oreo-button>
 
-                <z-button text="提交"></z-button>
+                <oreo-button text="提交"></oreo-button>
 
                 <h2>Small</h2>
 
-                <z-button small>Small Button</z-button>
+                <oreo-button small>Small Button</oreo-button>
 
-                <z-button small type="primary" >Small Primary Button</z-button>
+                <oreo-button small type="primary" >Small Primary Button</oreo-button>
 
                 <h2>Inline</h2>
 
-                <z-button inline>Small Button</z-button>
+                <oreo-button inline>Small Button</oreo-button>
 
-                <z-button inline type="success">Small Button</z-button>
+                <oreo-button inline type="success">Small Button</oreo-button>
 
-                <z-button inline small type="error">Small Button</z-button>
+                <oreo-button inline small type="error">Small Button</oreo-button>
             </div>
         </scrollview>
     </flexview>

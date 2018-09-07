@@ -2,13 +2,13 @@
 <template>
     <flexview>
         <scrollview title="Pull Refresh 下拉刷新" sub-title="">
-            <z-pull-to-refresh v-model="isLoading" @refresh="onRefresh" style="margin-top: 160px;">
+            <oreo-pull-to-refresh v-model="isLoading" @refresh="onRefresh" style="margin-top: 160px;">
                 <section class="van-doc-demo-block">
-                    <z-cell-group>
-                        <z-cell v-for="n in length" :key="n" :title=" n+'列表内容' "></z-cell>
-                    </z-cell-group>
+                    <oreo-cell-group>
+                        <oreo-cell v-for="n in length" :key="n" :title=" n+'列表内容' "></oreo-cell>
+                    </oreo-cell-group>
                 </section>
-            </z-pull-to-refresh>
+            </oreo-pull-to-refresh>
         </scrollview>
     </flexview>
 </template>

@@ -3,10 +3,10 @@
     <scrollview title="Actionsheet 选择框" sub-title="数据选择">
 
         <div class="demo-body demo-wrap" >
-          <z-button small @click="handleSheet">弹出Actionsheet</z-button>
+          <oreo-button small @click="handleSheet">弹出Actionsheet</oreo-button>
         </div>
        
-      <z-actionsheet position="top" v-model="show" :actions="sexData" @select="handleSelectItem"></z-actionsheet>
+      <oreo-actionsheet  v-model="show" :actions="sexData" @select="handleSelectItem"></oreo-actionsheet>
     </scrollview>
   </flexview>
 </template>
@@ -22,41 +22,7 @@ export default {
         name: '男'
       }, {
         name: '女'
-      }],
-      actionsheetData: null,
-      gradeActionsheetData: [
-        {
-          sheet: '大一',
-          type: 'grade'
-        },
-        {
-          sheet: '大二',
-          type: 'grade'
-        },
-        {
-          sheet: '大三',
-          type: 'grade'
-        },
-        {
-          sheet: '大四',
-          type: 'grade'
-        }
-      ],
-      sexActionsheetData: [
-        {
-          sheet: '男',
-          type: 'sex'
-        },
-        {
-          sheet: '女',
-          type: 'sex'
-        }
-      ],
-      actionsheetShow: false,
-      userData: {
-        sex: '男',
-        grade: '大一'
-      }
+      }]
     }
   },
   components: {
@@ -64,7 +30,6 @@ export default {
     scrollview
   },
   mounted() {
-    this.demoDevice()
   },
   methods: {
     handleSheet() {
@@ -73,21 +38,6 @@ export default {
     handleSelectItem(item) {
       console.log(item)
       this.show = false
-    },
-    selectGrade() {
-      this.actionsheetData = this.gradeActionsheetData
-      this.actionsheetShow = !this.actionsheetShow
-    },
-    selectSex() {
-      this.actionsheetData = this.sexActionsheetData
-      this.actionsheetShow = !this.actionsheetShow
-    },
-    selectedMeaage(item) {
-      this.userData[item.type] = item.sheet
-      this.actionsheetShow = false
-    },
-    closeActionsheet() {
-      this.actionsheetShow = false
     }
   }
 }

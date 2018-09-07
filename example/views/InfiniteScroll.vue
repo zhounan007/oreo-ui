@@ -6,20 +6,20 @@
                 
 
                 <!-- <div style=" position: relative;height: 700px;    overflow: auto">
-                    <z-infinite-scroll v-model="loading" @load="loadMore" :disabled="disabled">
-                        <z-cell v-for="item in list" :key="item" :title="item+''"></z-cell>
-                    </z-infinite-scroll>
+                    <oreo-infinite-scroll v-model="loading" @load="loadMore" :disabled="disabled">
+                        <oreo-cell v-for="item in list" :key="item" :title="item+''"></oreo-cell>
+                    </oreo-infinite-scroll>
                 </div> -->
 
                  <div style=" position: relative;height: 700px">
-                    <z-pull-to-refresh v-model="isLoading" @refresh="onRefresh">
+                    <oreo-pull-to-refresh v-model="isLoading" @refresh="onRefresh">
                         <!-- <section class="van-doc-demo-block">
                             <div v-for="n in length" :key="n">{{n}}+列表内容</div>
                         </section> -->
-                        <z-infinite-scroll v-model="loading" @load="loadMore" :disabled="disabled">
-                            <z-cell v-for="item in list" :key="item" :title="item+''"></z-cell>
-                        </z-infinite-scroll>
-                    </z-pull-to-refresh>
+                        <oreo-infinite-scroll v-model="loading" @load="loadMore" :disabled="disabled">
+                            <oreo-cell v-for="item in list" :key="item" :title="item+''"></oreo-cell>
+                        </oreo-infinite-scroll>
+                    </oreo-pull-to-refresh>
                 </div>
             </div>
         </scrollview>

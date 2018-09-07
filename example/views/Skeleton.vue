@@ -7,10 +7,10 @@
                     type
                 </h2>
                 <router-link  to="/skeleton/LargePageLazyLoad" >
-                    <z-button small >LargePageLazyLoad</z-button>
+                    <oreo-button small >LargePageLazyLoad</oreo-button>
                 </router-link>
                 <router-link  to="/skeleton/LazyLoad" >
-                    <z-button small >LazyLoad</z-button>
+                    <oreo-button small >LazyLoad</oreo-button>
                 </router-link>
             </div>
         </scrollview>

@@ -7,12 +7,12 @@
                     Basic
                 </h2>
 
-                <z-grid :data="icons" border :column="4">
-                    <z-grid-item :index="props.item" slot-scope="props" slot="item">
-                        <z-icon :type="props.item"></z-icon>
-                        <div class="oreo-grid-item-text">{{props.item}}</div>
-                    </z-grid-item>
-                </z-grid>
+                <oreo-grid :data="icons" line :column="4">
+                    <template slot-scope="{item}">
+                        <oreo-icon :name="item"></oreo-icon>
+                        <div class="oreo-grid_text">{{item}}</div>
+                    </template>
+                </oreo-grid>
                 
             </div>
         </scrollview>
@@ -25,7 +25,7 @@ export default {
     name: 'flex',
     data() {
         return {
-            icons: ['grid', 'heart', 'delete', 'link', 'list', 'layout', 'info']
+            icons: ['arrow-down', 'arrow-up', 'close', 'down', 'fail', 'home', 'left', 'right', 'success', 'up', 'user']
         }
     },
     components: {

@@ -6,38 +6,46 @@
                 <h2>
                     Position
                 </h2>
-                <z-button v-for="position in ['top','right','bottom','left']" :key="position" small @click="clickByEdge(position)">Modal from {{position}}</z-button>
+                <oreo-button v-for="position in ['top','right','bottom','left']" :key="position" small @click="clickByEdge(position)">Modal from {{position}}</oreo-button>
     
                 <h2>
                     Size
                 </h2>
-                <z-button v-for="size in ['max','min']" :key="size" small @click="clickBySize(size)">{{size}}</z-button>
+                <oreo-button v-for="size in ['max','min']" :key="size" small @click="clickBySize(size)">{{size}}</oreo-button>
 
-                <z-button small @click="clickByMethod">Modal By v-model</z-button>
+                <oreo-button small @click="clickByMethod">Modal By v-model</oreo-button>
+
+                <oreo-button small @click="clickByModalX">ModalX</oreo-button>
             </div>
 
-            <z-modal ref="modalEdge" :position="position" :mask="false">
+            <oreo-modal ref="modalEdge" :position="position" :mask="false">
                 <h3>Modal</h3>
                 <div>
                     Display from {{position}}
                 </div>
-                <z-button type="primary" @click="$refs.modalEdge.close()" inline small>Close</z-button>
-            </z-modal>
-            <z-modal ref="modalSize" :max="max"  @open="testOpen()" @close="testClose()">
+                <oreo-button type="primary" @click="$refs.modalEdge.close()" inline small>Close</oreo-button>
+            </oreo-modal>
+            <oreo-modal ref="modalSize" :max="max"  @open="testOpen()" @close="testClose()">
                 <h3>Modal</h3>
                 <div style="padding:1rem;">
                     {{max?'Max':'Min'}} Modal
                 </div>
-                <z-button type="primary" @click="$refs.modalSize.close()" inline small>Close</z-button>
-            </z-modal>
+                <oreo-button type="primary" @click="$refs.modalSize.close()" inline small>Close</oreo-button>
+            </oreo-modal>
 
-             <z-modal v-model="show" position="top" ref="modalX">
+             <oreo-modal v-model="show" position="top" ref="modalX">
                 <h3>Modal</h3>
                 <div style="padding:1rem;">
                     {{max?'Max':'Min'}} Modal
                 </div>
-                <z-button type="primary" @click="closeModal" inline small>Close</z-button>
-            </z-modal>
+                <oreo-button type="primary" @click="closeModal" inline small>Close</oreo-button>
+            </oreo-modal>
+           
+           <oreo-modalX v-model="modalx" @click-overlay="clickOverlay">
+               <div style="background-color:#fff;padding:0.5rem;text-align:center;">
+                   我是插入内容
+               </div>
+           </oreo-modalX>
         </scrollview>
     </flexview>
 </template>
@@ -63,7 +71,8 @@ export default {
                 text: 'Modal from Left'
             }],
             position: '',
-            max: false
+            max: false,
+            modalx: false
         }
     },
     components: {
@@ -77,6 +86,9 @@ export default {
         },
         clickByMethod() {
             this.show = true
+        },
+        clickByModalX() {
+            this.modalx = true
         },
         clickByEdge(position) {
             console.log(position)
@@ -99,6 +111,9 @@ export default {
         },
         testClose() {
             console.log('Close ...')
+        },
+        clickOverlay() {
+            console.log('click overlay...')
         }
     }
 }

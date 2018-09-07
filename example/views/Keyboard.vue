@@ -3,14 +3,29 @@
     <scrollview title="Keyboard " sub-title="数字键盘">
 
         <div class="demo-body demo-wrap" >
-          <z-button small @click="handleDefaultKeyboard">默认样式</z-button>
+          <oreo-button small @click="handleDefaultKeyboard">默认样式</oreo-button>
 
-          <z-button small @click="handleFridayKeyboard">Friday样式</z-button>
+          <oreo-button small @click="handleFridayKeyboard">Friday样式</oreo-button>
         </div>
        
-     <z-number-keyboard v-model="t1.show" :extraKey="t1.extraKey" :title="t1.title"></z-number-keyboard>
+     <oreo-number-keyboard :show="t1.show" 
+                        :extraKey="t1.extraKey" 
+                        :title="t1.title" 
+                        @input="handleInput"
+                        @done="handleDone"
+                        @delete="handleDel"
+                        >
+    </oreo-number-keyboard>
 
-     <z-number-keyboard v-model="t2.show" :theme="t2.theme" :extraKey="t2.extraKey" :title="t2.title"></z-number-keyboard>
+     <oreo-number-keyboard :show="t2.show"
+                        :theme="t2.theme" 
+                        :extraKey="t2.extraKey"
+                        :title="t2.title"
+                        @input="handleInput"
+                        @done="handleDone"
+                        @delete="handleDel"
+                        >
+    </oreo-number-keyboard>
 
     </scrollview>
   </flexview>
@@ -22,17 +37,19 @@ export default {
     name: 'actionsheet',
     data() {
         return {
+            current: '',
             t1: {
-                title: '请输入密码',
                 show: false,
-                extraKey: ''
+                extraKey: '.',
+                data: []
             },
             t2: {
-                title: '请输入密码',
                 show: false,
                 theme: 'friday',
-                extraKey: ''
-            }
+                extraKey: '.',
+                data: []
+            },
+            tmp: []
         }
     },
     components: {
@@ -43,10 +60,24 @@ export default {
     },
     methods: {
         handleDefaultKeyboard() {
-            this.t1.show = true
+            this.current = 't1'
+            this[this.current].show = true
         },
         handleFridayKeyboard() {
-            this.t2.show = true
+            this.current = 't2'
+            this[this.current].show = true
+        },
+        handleInput(v) {
+            console.log(v)
+            this[this.current].data.push(v)
+        },
+        handleDone() {
+            this[this.current].show = false
+            console.log(this[this.current].data)
+        },
+        handleDel() {
+            const t = this[this.current].data.pop()
+            console.log(t)
         }
     }
 }

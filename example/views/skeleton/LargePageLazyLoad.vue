@@ -7,15 +7,15 @@
                     LargePageLazyLoad
                 </h2>
 
-                <z-skeleton v-for=" i in 10" :key="i">
+                <oreo-skeleton v-for=" i in 10" :key="i">
                     <st-card></st-card>
                     <st-card-skeleton slot="skeleton"></st-card-skeleton>    
-                </z-skeleton>
+                </oreo-skeleton>
 
-                <z-skeleton>
+                <oreo-skeleton>
                     <st-image slot="skeleton"></st-image>
                     <st-image-skeleton ></st-image-skeleton>    
-                </z-skeleton>
+                </oreo-skeleton>
             </div>
         </scrollview>
     </flexview>

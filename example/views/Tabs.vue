@@ -7,58 +7,58 @@
                     Top
                 </h2>
     
-                <!-- <z-tabs>
-                    <z-tab-pane label="选项一">
+                <!-- <oreo-tabs>
+                    <oreo-tab-pane label="选项一">
                         <div style="display: flex; align-items: center; justify-content: center; height: 150px; background-color: rgb(255, 255, 255);">Content of 1 tab</div>
-                    </z-tab-pane>
-                    <z-tab-pane label="选项二">
+                    </oreo-tab-pane>
+                    <oreo-tab-pane label="选项二">
                         <div style="display: flex; align-items: center; justify-content: center; height: 150px; background-color: rgb(255, 255, 255);">Content of 2 tab</div>
-                    </z-tab-pane>
-                    <z-tab-pane label="选项三">
+                    </oreo-tab-pane>
+                    <oreo-tab-pane label="选项三">
                         <div style="display: flex; align-items: center; justify-content: center; height: 150px; background-color: rgb(255, 255, 255);">Content of 3 tab</div>
-                    </z-tab-pane>
-                </z-tabs>
+                    </oreo-tab-pane>
+                </oreo-tabs>
 
-                <z-tabs>
-                        <z-tab-pane label="选项一">
+                <oreo-tabs>
+                        <oreo-tab-pane label="选项一">
                             <div style="display: flex; align-items: center; justify-content: center; height: 150px; background-color: rgb(255, 255, 255);">Content of 1 tab</div>
-                        </z-tab-pane>
-                        <z-tab-pane label="选项二">
+                        </oreo-tab-pane>
+                        <oreo-tab-pane label="选项二">
                             <div style="display: flex; align-items: center; justify-content: center; height: 150px; background-color: rgb(255, 255, 255);">Content of 2 tab</div>
-                        </z-tab-pane>
-                        <z-tab-pane label="选项三">
+                        </oreo-tab-pane>
+                        <oreo-tab-pane label="选项三">
                             <div style="display: flex; align-items: center; justify-content: center; height: 150px; background-color: rgb(255, 255, 255);">Content of 3 tab</div>
-                        </z-tab-pane>
-                </z-tabs> -->
+                        </oreo-tab-pane>
+                </oreo-tabs> -->
     
-                <z-tabs position="top">
-                    <z-tab-pane label="选项一">
+                <oreo-tabs position="top">
+                    <oreo-tab-pane label="选项一">
                         <div style="display: flex; align-items: center; justify-content: center; height: 150px; background-color: rgb(255, 255, 255);">Content of 1 tab</div>
-                    </z-tab-pane>
-                    <z-tab-pane label="选项二">
+                    </oreo-tab-pane>
+                    <oreo-tab-pane label="选项二">
                         <div style="display: flex; align-items: center; justify-content: center; height: 150px; background-color: rgb(255, 255, 255);">Content of 2 tab</div>
-                    </z-tab-pane>
-                    <z-tab-pane label="选项三">
+                    </oreo-tab-pane>
+                    <oreo-tab-pane label="选项三">
                         <div style="display: flex; align-items: center; justify-content: center; height: 150px; background-color: rgb(255, 255, 255);">Content of 3 tab</div>
-                    </z-tab-pane>
-                </z-tabs>
+                    </oreo-tab-pane>
+                </oreo-tabs>
     
                 <h2>
                     Left
                 </h2>
     
                 <div :style="boxStyle">
-                    <z-tabs position="left">
-                        <z-tab-pane label="选项一">
+                    <oreo-tabs position="left">
+                        <oreo-tab-pane label="选项一">
                             <div :style="boxStyle" style="display: flex; align-items: center; justify-content: center; background-color: rgb(255, 255, 255);">Content of 1 tab</div>
-                        </z-tab-pane>
-                        <z-tab-pane label="选项二">
+                        </oreo-tab-pane>
+                        <oreo-tab-pane label="选项二">
                             <div :style="boxStyle" style="display: flex; align-items: center; justify-content: center; background-color: rgb(255, 255, 255);">Content of 2 tab</div>
-                        </z-tab-pane>
-                        <z-tab-pane label="选项三">
+                        </oreo-tab-pane>
+                        <oreo-tab-pane label="选项三">
                             <div :style="boxStyle" style="display: flex; align-items: center; justify-content: center; background-color: rgb(255, 255, 255);">Content of 3 tab</div>
-                        </z-tab-pane>
-                    </z-tabs>
+                        </oreo-tab-pane>
+                    </oreo-tabs>
                 </div> 
 
                 <!-- <div style="height:3000px;"></div>
@@ -67,22 +67,22 @@
                     Sticky
                 </h2> -->
     
-                <!-- <z-sticky-container>
-                    <z-tabs>
-                        <z-sticky>
-                            <z-tab-bar slot-scope="props" :style="[props.stickyStyle]"></z-tab-bar>
-                        </z-sticky>
-                        <z-tab-pane label="选项一">
+                <!-- <oreo-sticky-container>
+                    <oreo-tabs>
+                        <oreo-sticky>
+                            <oreo-tab-bar slot-scope="props" :style="[props.stickyStyle]"></oreo-tab-bar>
+                        </oreo-sticky>
+                        <oreo-tab-pane label="选项一">
                             <div style="display: flex; align-items: center; justify-content: center; height: 150px; background-color: rgb(255, 255, 255);">Content of 1 tab</div>
-                        </z-tab-pane>
-                        <z-tab-pane label="选项二">
+                        </oreo-tab-pane>
+                        <oreo-tab-pane label="选项二">
                             <div style="display: flex; align-items: center; justify-content: center; height: 150px; background-color: rgb(255, 255, 255);">Content of 2 tab</div>
-                        </z-tab-pane>
-                        <z-tab-pane label="选项三">
+                        </oreo-tab-pane>
+                        <oreo-tab-pane label="选项三">
                             <div style="display: flex; align-items: center; justify-content: center; height: 150px; background-color: rgb(255, 255, 255);">Content of 3 tab</div>
-                        </z-tab-pane>
-                    </z-tabs>
-                </z-sticky-container> -->
+                        </oreo-tab-pane>
+                    </oreo-tabs>
+                </oreo-sticky-container> -->
 
                 <!-- <div style="height:3000px;"></div> -->
     
@@ -90,17 +90,17 @@
                     Bottom
                 </h2>
     
-                <z-tabs position="bottom">
-                    <z-tab-pane label="选项一">
+                <oreo-tabs position="bottom">
+                    <oreo-tab-pane label="选项一">
                         <div style="display: flex; align-items: center; justify-content: center; height: 150px; background-color: rgb(255, 255, 255);">Content of 1 tab</div>
-                    </z-tab-pane>
-                    <z-tab-pane label="选项二">
+                    </oreo-tab-pane>
+                    <oreo-tab-pane label="选项二">
                         <div style="display: flex; align-items: center; justify-content: center; height: 150px; background-color: rgb(255, 255, 255);">Content of 2 tab</div>
-                    </z-tab-pane>
-                    <z-tab-pane label="选项三">
+                    </oreo-tab-pane>
+                    <oreo-tab-pane label="选项三">
                         <div style="display: flex; align-items: center; justify-content: center; height: 150px; background-color: rgb(255, 255, 255);">Content of 3 tab</div>
-                    </z-tab-pane>
-                </z-tabs>
+                    </oreo-tab-pane>
+                </oreo-tabs>
     
 
                 
@@ -110,17 +110,17 @@
     
 
                 <div :style="boxStyle">
-                    <z-tabs position="right">
-                        <z-tab-pane label="选项一">
+                    <oreo-tabs position="right">
+                        <oreo-tab-pane label="选项一">
                             <div :style="boxStyle" style="display: flex; align-items: center; justify-content: center;  background-color: rgb(255, 255, 255);">Content of 1 tab</div>
-                        </z-tab-pane>
-                        <z-tab-pane label="选项二">
+                        </oreo-tab-pane>
+                        <oreo-tab-pane label="选项二">
                             <div :style="boxStyle" style="display: flex; align-items: center; justify-content: center;  background-color: rgb(255, 255, 255);">Content of 2 tab</div>
-                        </z-tab-pane>
-                        <z-tab-pane label="选项三">
+                        </oreo-tab-pane>
+                        <oreo-tab-pane label="选项三">
                             <div :style="boxStyle" style="display: flex; align-items: center; justify-content: center;  background-color: rgb(255, 255, 255);">Content of 3 tab</div>
-                        </z-tab-pane>
-                    </z-tabs>
+                        </oreo-tab-pane>
+                    </oreo-tabs>
                 </div> 
 
 <h2>

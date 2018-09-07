@@ -4,7 +4,8 @@
     <div class="demo-hd" v-if="visible">
       <div class="demo-title">
         <router-link to="/">
-          <z-icon type="home"></z-icon>
+          Home
+          <!-- <oreo-icon type="home"></oreo-icon> -->
         </router-link>
         <span>{{title}}</span>
       </div>

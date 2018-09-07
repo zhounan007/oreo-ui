@@ -4,19 +4,19 @@
         <scrollview title="Cell 单元格" sub-title="">
             <div class="demo-body " >
               
-                <z-cell-group v-for="(d,index) in data" :key="index" :header="d.header">
-                    <z-cell v-for="(item,idx) in d.items" :key="idx" 
+                <oreo-cell-group v-for="(d,index) in data" :key="index" :header="d.header">
+                    <oreo-cell v-for="(item,idx) in d.items" :key="idx" 
                         :title="item.title" 
                         :value="item.value"
                         :label="item.label"
                         :link="item.link"
                         :index="idx"
                         @click="handleCell"
-                    ></z-cell>
-                </z-cell-group>
+                    ></oreo-cell>
+                </oreo-cell-group>
 
-                <z-cell-group header="图标" footer="角标" :line="false">
-                    <z-cell  
+                <oreo-cell-group header="图标" footer="角标" :line="false">
+                    <oreo-cell  
                         title="很长很长很长的标题" 
                         value=""
                         label="描述信息"
@@ -24,8 +24,8 @@
                     >
                         <img src="http://owz1rt8et.bkt.clouddn.com/icon/icon.png" alt="" slot="icon" style="width:0.55rem;">
                         
-                    </z-cell>
-                    <z-cell  
+                    </oreo-cell>
+                    <oreo-cell  
                         title="返回首页" 
                         value=""
                         link
@@ -33,8 +33,8 @@
                     >
                         <img src="http://owz1rt8et.bkt.clouddn.com/icon/icon.png" alt="" slot="icon" style="width:0.55rem;">
                         
-                    </z-cell>
-                     <z-cell  
+                    </oreo-cell>
+                     <oreo-cell  
                         title="Vue-Oreo 组件库" 
                         value="带跳转地址"
                         link
@@ -42,8 +42,8 @@
                     >
                         <img src="http://owz1rt8et.bkt.clouddn.com/icon/icon.png" alt="" slot="icon" style="width:0.55rem;">
                         
-                    </z-cell>
-                </z-cell-group>
+                    </oreo-cell>
+                </oreo-cell-group>
             </div>
         </scrollview>
     </flexview>

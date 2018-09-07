@@ -7,41 +7,41 @@
                     Basic
                 </h2>
                 
-                <z-flex>
-                    <z-flex-item>
+                <oreo-flex>
+                    <oreo-flex-item>
                         <div class="demo-flex-item">Item</div>
-                    </z-flex-item>
-                    <z-flex-item>
+                    </oreo-flex-item>
+                    <oreo-flex-item>
                         <div class="demo-flex-item">Item</div>
-                    </z-flex-item>
-                </z-flex>
+                    </oreo-flex-item>
+                </oreo-flex>
 
-                <z-flex>
-                    <z-flex-item>
+                <oreo-flex>
+                    <oreo-flex-item>
                         <div class="demo-flex-item">Item</div>
-                    </z-flex-item>
-                    <z-flex-item>
+                    </oreo-flex-item>
+                    <oreo-flex-item>
                         <div class="demo-flex-item">Item</div>
-                    </z-flex-item>
-                    <z-flex-item>
+                    </oreo-flex-item>
+                    <oreo-flex-item>
                         <div class="demo-flex-item">Item</div>
-                    </z-flex-item>
-                </z-flex>
+                    </oreo-flex-item>
+                </oreo-flex>
 
-                <z-flex>
-                    <z-flex-item>
+                <oreo-flex>
+                    <oreo-flex-item>
                         <div class="demo-flex-item">Item</div>
-                    </z-flex-item>
-                    <z-flex-item>
+                    </oreo-flex-item>
+                    <oreo-flex-item>
                         <div class="demo-flex-item">Item</div>
-                    </z-flex-item>
-                      <z-flex-item>
+                    </oreo-flex-item>
+                      <oreo-flex-item>
                         <div class="demo-flex-item">Item</div>
-                    </z-flex-item>
-                    <z-flex-item>
+                    </oreo-flex-item>
+                    <oreo-flex-item>
                         <div class="demo-flex-item">Item</div>
-                    </z-flex-item>
-                </z-flex>
+                    </oreo-flex-item>
+                </oreo-flex>
             </div>
         </scrollview>
     </flexview>
