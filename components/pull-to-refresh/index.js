@@ -1,3 +1,3 @@
-import ZPullToRefresh from './ZPullToRefresh'
+import PullToRefresh from './PullToRefresh'
 
-export default ZPullToRefresh
+export default PullToRefresh

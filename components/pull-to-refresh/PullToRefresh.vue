@@ -30,7 +30,7 @@
 import createBasic from '../utils/create-basic'
 import scrollUtils from '../utils/scroll'
 import Touch from '../mixins/touch'
-import { t } from '../locale';
+import { t } from '../locale'
 export default createBasic({
   name: 'pull-to-refresh',
   mixins: [Touch],

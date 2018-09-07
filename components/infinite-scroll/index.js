@@ -1,3 +1,2 @@
-import ZInfiniteScroll from './ZInfiniteScroll'
-
-export default ZInfiniteScroll
+import InfiniteScroll from './InfiniteScroll'
+export default InfiniteScroll
