@@ -11,17 +11,17 @@
 </template>
 <script>
 import createBasic from '../utils/create-basic'
-import { ZTransition } from '../transition'
+import ZTransition from '../transition'
 
 const modalPrefixCls = 'oreo-modal'
 let openedModalNum = 0
 let duration = 200
 
 const position = {
-    top: `${modalPrefixCls}-top ${modalPrefixCls}-mask`,
-    bottom: `${modalPrefixCls}-bottom ${modalPrefixCls}-mask`,
-    left: `${modalPrefixCls}-left ${modalPrefixCls}-mask`,
-    right: `${modalPrefixCls}-right ${modalPrefixCls}-mask`
+    top: `${modalPrefixCls}-top `,
+    bottom: `${modalPrefixCls}-bottom`,
+    left: `${modalPrefixCls}-left `,
+    right: `${modalPrefixCls}-right `
 }
 export default createBasic({
     name: 'modal',
@@ -35,6 +35,10 @@ export default createBasic({
     },
     props: {
         value: Boolean,
+        mask: {
+            type: Boolean,
+            default: true
+        },
         closeOnClickModal: {
             type: Boolean,
             default: true
@@ -79,8 +83,9 @@ export default createBasic({
             return {
                 [`${modalPrefixCls}`]: true,
                 [position[this.position]]: this.position,
-                [`${modalPrefixCls}-mask`]: !this.position && !this.max,
-                [`${modalPrefixCls}-max`]: this.max
+                [`${modalPrefixCls}-max`]: this.max,
+                [`${modalPrefixCls}-mask`]: !this.max,
+                [`${modalPrefixCls}-mask`]: this.mask
             }
         },
         innerClassNames() {
@@ -103,7 +108,7 @@ export default createBasic({
             }
         },
         open(callback) {
-            // debugger
+            debugger
             if (this.visible) return
             document.body.appendChild(this.$el)
 
