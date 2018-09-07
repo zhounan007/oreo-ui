@@ -13,9 +13,10 @@ export default {
     }
   },
   watch: {
-    '$router'(to, from) {
+    '$route'(to, from) {
       const toDept = to.path.split('/').length
       const fromDept = from.path.split('/').length
+      console.log('to:' + toDept + ' , from:' + fromDept)
       this.transitionName = toDept < fromDept ? 'slide-right' : 'slide-left'
     }
   }
@@ -23,5 +24,5 @@ export default {
 </script>
 
 <style lang="less">
-@import './styles/demo.less';
+@import "./styles/demo.less";
 </style>

@@ -12,19 +12,19 @@
                     选择框在左
                 </h2>
                 <div class="demo-content">
-                    <z-radio :options="radioData" name="radio1" v-model="radio1"></z-radio>
+                    <oreo-radio :options="radioData" name="radio1" v-model="radio1"></oreo-radio>
                 </div>
                 <h2>
                     选择框在右
                 </h2>
                 <div class="demo-content">
-                    <z-radio :options="radioData" name="radio2" v-model="radio2" :innerRight="true"></z-radio>
+                    <oreo-radio :options="radioData" name="radio2" v-model="radio2" :innerRight="true"></oreo-radio>
                 </div>
                 <h2>
                     radio
                 </h2>
                 <div class="demo-content">
-                    <z-radio :options="radioData3" name="radio3" v-model="radio3" :agree="true"></z-radio>
+                    <oreo-radio :options="radioData3" name="radio3" v-model="radio3" :agree="true"></oreo-radio>
                 </div>
             </div>
         </scrollview>

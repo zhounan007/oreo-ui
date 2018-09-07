@@ -11,8 +11,8 @@
                 <h2>
                     卡片视图
                 </h2>
-                <z-card header="页眉" footer="页脚" content="卡片视图包含页眉页脚，页眉通常用来显示面板标题，页脚用来显示额外信息或支持的操作（比如点赞、评论等）"></z-card>
-                <z-card :media="true">
+                <oreo-card header="页眉" footer="页脚" content="卡片视图包含页眉页脚，页眉通常用来显示面板标题，页脚用来显示额外信息或支持的操作（比如点赞、评论等）"></oreo-card>
+                <oreo-card :media="true">
                     <template slot="card-header">
                         <img src="http://owz1rt8et.bkt.clouddn.com/assets/nature02.jpg" alt="">
                     </template>
@@ -24,8 +24,8 @@
                         <a href="javascript:;">Comment</a>
                         <a href="javascript:;">Fabulous</a>
                     </template>
-                </z-card>
-                <z-card :media="true">
+                </oreo-card>
+                <oreo-card :media="true">
                     <template slot="card-header-inner">
                         <img class="card-logo" src="res/imgs/example.png" alt="">
                         <div class="card-media-body">
@@ -45,7 +45,7 @@
                         <a href="javascript:;">Fabulous</a>
                         <a href="javascript:;">Forward</a>
                     </template>
-                </z-card>
+                </oreo-card>
             </div>
         </scrollview>
     </flexview>

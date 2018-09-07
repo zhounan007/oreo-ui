@@ -5,8 +5,9 @@ import 'OreoUI/lib/oreo_ui.rem.min.css'
 import Vue from 'vue'
 import App from './App'
 import router from './router'
-import oreoVue from '@/index'
-
+// import oreoVue from '@/index'
+import oreoVue from '../components/index'
+console.log(oreoVue)
 // import locale from '@c/locale/lang/en-US'
 Vue.config.productionTip = false
 // Vue.use(oreoVue, { locale })

@@ -3,11 +3,9 @@
 
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
   <title>Vue-Oreo</title>
-  <!-- <script type="text/javascript" src="https://res.wx.qq.com/mmbizwap/zh_CN/htmledition/js/vconsole/2.5.2/vconsole.min.js"></script> -->
   <script type="text/javascript">
     (function (fontsize, scale) {
 
@@ -20,6 +18,8 @@
           dpr = win.devicePixelRatio || 1;
 
 
+        console.log('client width:' + doc.documentElement.getBoundingClientRect().width)
+        console.log('dpr:' + dpr)
         var android = ua.match(/(Android)\s+([\d.]+)/),
           ipad = ua.match(/(iPad).*OS\s([\d_]+)/),
           iphone = !ipad && ua.match(/(iPhone\sOS)\s([\d_]+)/);
@@ -43,7 +43,8 @@
         metaEl.setAttribute('content', ['width=device-width, initial-scale=', _scale, ' maximum-scale=', _scale,
           ' minimum-scale=', _scale, ' user-scalable=no'
         ].join(''))
-       // doc.documentElement.setAttribute('data-dpr', dpr);
+        // doc.documentElement.setAttribute('data-dpr', dpr);
+        console.log('root fontsize:' + _fontsize / 2 * dpr * scale + 'px')
         doc.documentElement.style.fontSize = _fontsize / 2 * dpr * scale + 'px';
 
         doc.body.style.fontSize = (12 * dpr) + 'px';
@@ -53,6 +54,8 @@
       window.addEventListener(resizeEvt, refreshRem, false);
 
       doc.addEventListener('DOMContentLoaded', refreshRem, false);
+      // refreshRem()
+
     })();
 
   </script>
@@ -63,11 +66,9 @@
   </div>
   <!-- built files will be auto injected -->
 
-  
-  <script type="text/javascript">
-    console.log(document.body.innerHTML)
-  </script>
+
+  <script type="text/javascript" src="https://res.wx.qq.com/mmbizwap/zh_CN/htmledition/js/vconsole/2.5.2/vconsole.min.js"></script>
+
 </body>
 
 </html>
-

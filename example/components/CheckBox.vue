@@ -12,22 +12,22 @@
                     input和label分居两侧
                 </h2>
                 <div class="demo-content">
-                    <z-check-box :options="checkedData" v-model="chosenTopics"></z-check-box>
+                    <oreo-check-box :options="checkedData" v-model="chosenTopics"></oreo-check-box>
                 </div>
                 <h2>
                     input和label居左对齐
                 </h2>
                 <div class="demo-content">
-                    <z-check-box :options="checkedData1" v-model="chosenTopics1" :labelLeft="true"></z-check-box>
+                    <oreo-check-box :options="checkedData1" v-model="chosenTopics1" :labelLeft="true"></oreo-check-box>
                 </div>
                 <h2>
                     input和label居左对齐
                 </h2>
                 <div class="demo-content">
-                    <z-check-box :options="checkedData1" v-model="chosenTopics2" :labelLeft="true" :inner-right="true"></z-check-box>
+                    <oreo-check-box :options="checkedData1" v-model="chosenTopics2" :labelLeft="true" :inner-right="true"></oreo-check-box>
                 </div>
                 <div class="demo-content">
-                    <z-check-box :options="checkedData3" v-model="chosenTopics3" :labelLeft="true" :agree="true"></z-check-box>
+                    <oreo-check-box :options="checkedData3" v-model="chosenTopics3" :labelLeft="true" :agree="true"></oreo-check-box>
                 </div>
             </div>
         </scrollview>
