@@ -5,10 +5,10 @@
   "author": "znsw007 <znsw007@163.com>",
   "scripts": {
     "dev": "node build/dev-server.js",
-    "start": "webpack-dev-server --inline --progress  --host 0.0.0.0 --config ./build/webpack.dev.conf.js",
+    "start": "webpack-dev-server --inline --progress --disable-host-check --host 0.0.0.0 --config ./build/webpack.dev.conf.js",
     "demo-build": "node build/example/build.js",
     "build": "node build/build.js",
-    "lint": "eslint --ext .js,.vue src"
+    "lint": "eslint --ext .js,.vue src",
   },
   "peerDependencies": {
     "vue": "^2.4.4"
@@ -45,6 +45,7 @@
     "file-loader": "^1.1.5",
     "friendly-errors-webpack-plugin": "^1.6.1",
     "html-webpack-plugin": "^2.30.1",
+    "karma": "^2.0.2",
     "less": "^2.7.3",
     "less-loader": "^4.0.5",
     "optimize-css-assets-webpack-plugin": "^3.2.0",
