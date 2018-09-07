@@ -10,6 +10,10 @@ export default {
         },
         numberKeyboard: {
             doneButtonText: 'Done'
+        },
+        dialog: {
+            okButtonText: 'Ok',
+            cancelButtonText: 'Cancel'
         }
     }
 }

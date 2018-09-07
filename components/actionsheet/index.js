@@ -1,2 +1,2 @@
-import ZActionsheet from './ZActionsheet'
-export default ZActionsheet
+import Actionsheet from './Actionsheet'
+export default Actionsheet

@@ -1,2 +1,2 @@
-import ZButton from './ZButton'
-export default ZButton
+import Button from './Button'
+export default Button

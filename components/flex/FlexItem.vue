@@ -1,15 +1,13 @@
 <template>
-    <div :class="b([direction,justify])">
+    <div class="oreo-flex__item">
         <slot></slot>
     </div>
 </template>
 <script>
 import createBasic from '../utils/create-basic'
 export default createBasic({
-    name: 'flex',
+    name: 'flex-item',
     props: {
-        direction: String,
-        justify: String
     }
 })
 </script>

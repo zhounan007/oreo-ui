@@ -1,89 +1,55 @@
 <template>
-    <div :class="classNames">
-        <div class="oreo-toast-text" :class="modeClassName">
-            <div class="oreo-toast-icon" v-if="type" :class="typeClassNames">
-            </div>
-            <div class="oreo-toast-msg">
+    <transition name="oreo-fade">
+    <div :class="b()" v-show="value">
+        <div :class="b('text',[type?mode:''])" >
+            <oreo-preloader v-if="type === 'loading'" theme="light" :type="loadingType"></oreo-preloader>
+            <oreo-icon v-else :class="b('icon')" :name="type" v-show="type"></oreo-icon>
+            <div :class="b('msg')">
                 {{message}}
             </div>
         </div>
     </div>
+    </transition>
 </template>
 <script>
-
-import { ZIcon } from '../icon'
+import createBasic from '../utils/create-basic'
+import OreoPreloader from '../preloader'
+import OreoIcon from '../icon'
+import Mask from '../mixins/mask'
 const prefixCls = 'oreo-toast'
-export default {
-    name: 'z-toast',
+export default createBasic({
+    name: 'toast',
+    mixins: [Mask],
     components: {
-        ZIcon
+        OreoPreloader,
+        OreoIcon
     },
-    data() {
-        return {
-            visible: false,
-            mask: true,
-            message: '',
-            type: '', // success failure loading
-            duration: 2000,
-            onClose: null,
-            closed: false,
-            timer: null,
-            mode: 'vertical'
+    props: {
+        duration: {
+            type: Number,
+            default: 2 * 1000
+        },
+        message: {
+            type: String
+        },
+        type: { // success failure loading
+            type: String,
+            default: ''
+        },
+        mode: {
+            type: String,
+            default: 'vertical'
+        },
+        loadingType: {
+            type: String,
+            default: 'circle'
         }
     },
     computed: {
-        classNames() {
-            return {
-                'oreo-toast': true,
-                'oreo-toast-mask': this.mask,
-                'oreo-toast-nomask': !this.mask
-            }
-        },
-        modeClassName() {
-            if (!this.type) return ''
-            return this.mode === 'vertical' ? `${prefixCls}-text-vertical` : `${prefixCls}-text-horizontal`
-        },
-        typeClassNames() {
-            return {
-                [`${prefixCls}-${this.type}`]: this.type && this.type !== 'loading',
-                'oreo-loading': this.type === 'loading',
-                'oreo-loading-light': this.type === 'loading'
-
-            }
-        }
     },
-    watch: {
-        closed(newVal) {
-            if (newVal) {
-                this.visible = false
-                this.destroyElement()
-            }
-        }
-    },
-    mounted() {
-        this.startTimer()
-    },
+    watch: {},
     methods: {
-        destroyElement() {
-            this.$destroy()
-            this.$el.parentNode.removeChild(this.$el)
-        },
-        close() {
-            this.closed = true
-            if (typeof this.onClose === 'function') {
-                this.onClose(this)
-            }
-        },
-        startTimer() {
-            if (this.duration > 0) {
-                this.timer = setTimeout(() => {
-                    if (!this.closed) {
-                        this.close()
-                    }
-                }, this.duration)
-            }
-        }
     }
 
-}
+})
 </script>

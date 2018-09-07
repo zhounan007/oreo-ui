@@ -77,3 +77,12 @@ function s4() {
 export function uid() {
     return s4() + s4() + '-' + s4() + '-' + s4() + s4()
 }
+
+/**
+ * 判断是否是一个对象
+ * @param {*} x 
+ */
+export function isObj(x) {
+    const type = typeof x
+    return x !== null && (type === 'object' || type === 'function')
+}

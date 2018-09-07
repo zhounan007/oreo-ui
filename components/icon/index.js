@@ -1,5 +1,2 @@
-import ZIcon from './ZIcon.vue'
-
-export {
-  ZIcon
-}
+import Icon from './Icon.vue'
+export default Icon

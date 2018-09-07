@@ -1,3 +1,2 @@
-import ZCellGroup from './ZCellGroup'
-
-export default ZCellGroup
+import CellGroup from './CellGroup'
+export default CellGroup

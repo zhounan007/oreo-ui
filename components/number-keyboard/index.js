@@ -1,2 +1,2 @@
-import ZNumberKeyboard from './ZNumberKeyboard'
-export default ZNumberKeyboard
+import NumberKeyboard from './NumberKeyboard'
+export default NumberKeyboard

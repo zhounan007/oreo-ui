@@ -1,128 +1,110 @@
 import Vue from 'vue'
-import dialogVue from './ZDialog.vue'
-
-const DialogConstructor = Vue.extend(dialogVue)
-const defaults = {
-  title: '',
-  message: '',
-  type: '', // alert, confirm
-  theme: '', // ios,android
-  okButtonText: '确定',
-  cancelButtonText: '取消'
-}
+import ZDialog from './Dialog.vue'
+// 实例
 let instance
-let msgQueue = []
-let currentMsg
-
-const defaultCallback = action => {
-  if (currentMsg) {
-    let callback = currentMsg.callback
-    if (typeof callback === 'function') {
-      callback(action)
-    }
-
-    if (currentMsg.resolve) {
-      if (action === 'ok') {
-        currentMsg.resolve(action)
-      } else {
-        currentMsg.reject(action)
-      }
-    }
-    currentMsg = null
-  }
-}
+//  多个dialog 配置 数组
+let dialogQueue = []
+// 当前配置
+let currentDialog
 
 const initInstance = () => {
-  instance = new DialogConstructor({
+  instance = new (Vue.extend(ZDialog))({
     el: document.createElement('div')
   })
-
-  instance.callback = defaultCallback
+  instance.$on('input', val => {
+    instance.value = val
+  })
+  document.body.appendChild(instance.$el);
 }
 
 const showNextDialog = () => {
-  if (!instance) initInstance()
-  instance.action = ''
-  if (!instance.visible) {
-    if (msgQueue.length > 0) {
-      // FirstIn FirstOut
-      if (currentMsg) return
-      currentMsg = msgQueue.shift()
+  if (!instance) {
+    initInstance()
+  }
+  // 是否是激活状态
+  if (!instance.value) {
+    if (dialogQueue.length > 0) {
+      if (currentDialog) return
 
-      let options = currentMsg.options
-      for (let prop in options) {
-        if (options.hasOwnProperty(prop)) {
-          instance[prop] = options[prop]
-        }
-      }
-      if (options.callback === undefined) {
-        instance.callback = defaultCallback
-      }
+      currentDialog = dialogQueue.shift()
 
+      Object.assign(instance, currentDialog)
+      if (currentDialog.callback === undefined) {
+        instance.callback = Dialog.defaultCallback
+      }
       let oldCallback = instance.callback
       instance.callback = (action, instance) => {
         oldCallback(action, instance)
         showNextDialog()
       }
-
-      document.body.appendChild(instance.$el)
       Vue.nextTick(() => {
-        instance.visible = true
+        instance.value = true
       })
       return instance
     }
   }
 }
 
-const Dialog = (options, callback) => {
-  if (typeof options === 'string') {
-    options = {
-      message: options
-    }
-    if (arguments[1]) {
-      options.title = arguments[1]
-    }
-    if (arguments[2]) {
-      options.type = arguments[2]
-    }
-  } else if (options.callback && !callback) {
-    callback = options.callback
-  }
-  if (typeof Promise !== 'undefined') {
-    return new Promise((resolve, reject) => {
-      msgQueue.push({
-        options: Object.assign({}, defaults, options),
-        callback,
-        resolve,
-        reject
-      })
-      showNextDialog()
-    })
-  } else {
-    msgQueue.push({
-      options: Object.assign({}, defaults, options),
-      callback
+const Dialog = (options = {}) => {
+  return new Promise((resolve, reject) => {
+    let opts = Object.assign({}, Dialog.currentOptions, options)
+    dialogQueue.push({
+      resolve,
+      reject,
+      ...opts
     })
     showNextDialog()
-  }
-  // debugger
-  // instance = new DialogConstructor({
-  //   data: options
-  // }).$mount()
+  })
 }
 
+Dialog.defaultOptions = {
+  title: '',
+  message: '',
+  theme: 'ios',
+  okButtonText: '确定',
+  cancelButtonText: '取消',
+
+  showOkButton: true,
+  showCancelButton: false,
+  closeOverlayByClick: false,
+  lockScroll: true
+}
+Dialog.defaultCallback = action => {
+  if (currentDialog) {
+    if (currentDialog.resolve) {
+      currentDialog[action === 'ok' ? 'resolve' : 'reject'](action)
+    }
+    currentDialog = null
+  }
+}
+Dialog.close = () => {
+  if (instance) {
+    instance.value = false
+  }
+}
+
+Dialog.setDefaultOptions = options => {
+  Object.assign(Dialog.currentOptions, options)
+}
+
+Dialog.resetDefaultOptions = () => {
+  Dialog.currentOptions = { ...Dialog.defaultOptions }
+}
+
+Dialog.install = () => {
+  Vue.use(ZDialog)
+}
+
+Vue.prototype.$dialog = Dialog
+Dialog.resetDefaultOptions();
+
 ['alert', 'confirm'].forEach(type => {
-  Dialog[type] = (msg, title, options) => {
-    if (typeof title === 'object') {
-      options = title
-      title = ''
-    }
-    const defaults = {
-      title: title,
-      message: msg,
-      type: type
-    }
-    return Dialog(Object.assign(defaults, options))
+  Dialog[type] = (options = {}) => {
+    return Dialog({
+      ...Dialog.currentOptions,
+      showCancelButton: type === 'confirm',
+      ...options
+    })
   }
 })
 

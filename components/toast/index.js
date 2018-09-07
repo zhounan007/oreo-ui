@@ -1,43 +1,81 @@
 import Vue from 'vue'
-import toast from './toast.vue'
+import ZToast from './Toast.vue'
+import { isObj } from '../utils'
 
-let ToastConstructor = Vue.extend(toast)
+let queue = []
+let singleton = true
 
-let instance
-let instances = []
-let idx = 1
-
-let Toast = (options) => {
-  options = options || {}
-  if (typeof options === 'string') {
-    options = {
-      message: options
-    }
+function initInstance() {
+  if (!queue.length || !singleton) {
+    const toast = new (Vue.extend(ZToast))({
+      el: document.createElement('div')
+    })
+    document.body.appendChild(toast.$el)
+    queue.push(toast)
   }
-
-  let onClose = options.onClose
-  let id = 'toast-' + idx++
-
-    options.onClose = function () {
-      Toast.close(id, onClose)
-    }
-
-  instance = new ToastConstructor({
-    data: options
-  })
-  instance.id = id
-  instance.vm = instance.$mount()
-
-  document.body.appendChild(instance.vm.$el)
-  instance.vm.visible = true
-
-  instance.dom = instance.vm.$el
-  instances.push(instance)
-
-  return instance.vm
+  return queue[queue.length - 1]
 }
 
-['success', 'failure', 'loading'].forEach(type => {
+function Toast(options = {}) {
+  const toast = initInstance()
+
+  options = isObj(options) ? options : { message: options }
+  options = {
+    ...Toast.currentOptions,
+    ...options,
+    clear() {
+      toast.value = false
+    }
+  }
+  Object.assign(toast, options)
+  clearTimeout(toast.timer)
+
+  if (options.duration > 0) {
+    toast.timer = setTimeout(() => {
+      toast.clear()
+    }, options.duration)
+  }
+  return toast
+}
+Toast.defaultOptions = {
+  type: '',
+  message: '',
+  value: true,
+  duration: 3 * 1000,
+  mode: 'vertical',
+  loadingType: 'circle',
+
+  overlay: false,
+  overlayStyle: {
+    background: 'transparent'
+  },
+  closeOverlayByClick: false
+}
+Toast.setDefaultOptions = options => {
+  Object.assign(Toast.currentOptions, options)
+}
+Toast.resetDefaultOptions = () => {
+  Toast.currentOptions = { ...Toast.defaultOptions }
+}
+Toast.clear = (all) => {
+  if (queue.length) {
+    if (all) {
+      queue.forEach(toast => {
+        toast.clear()
+      })
+    } else if (singleton) {
+      queue[0].clear()
+    } else {
+      queue.shift().clear()
+    }
+  }
+}
+
+Toast.allowMultiple = (allow = true) => {
+  singleton = !allow
+}
+
+['success', 'fail', 'loading'].forEach(type => {
   Toast[type] = options => {
     if (typeof options === 'string') {
       options = {
@@ -49,22 +87,9 @@ let Toast = (options) => {
   }
 })
 
-Toast.close = (id, onClose) => {
-  for (let i = 0, len = instances.length; i < len; i++) {
-    if (id === instances[i].id) {
-      if (typeof onClose === 'function') {
-        onClose(instances[i])
-      }
-      instances.splice(i, 1)
-      break
-    }
-  }
+Toast.install = () => {
+  Vue.use(ZToast)
 }
-
-Toast.closeAll = () => {
-  for (let i = instances.length - 1; i >= 0; i--) {
-    instances[i].close()
-  }
-}
-
+Toast.resetDefaultOptions()
+Vue.prototype.$toast = Toast
 export default Toast

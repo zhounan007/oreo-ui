@@ -1,6 +1,4 @@
 import defaultLang from './lang/zh-CN'
-import Vue from 'vue'
-
 import format from './format'
 
 let lang = defaultLang

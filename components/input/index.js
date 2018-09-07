@@ -1,2 +1,2 @@
-import ZInput from './ZInput'
-export default ZInput
+import Input from './Input'
+export default Input

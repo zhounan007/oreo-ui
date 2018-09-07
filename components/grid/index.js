@@ -1,7 +1,2 @@
-import ZGrid from './ZGrid'
-import ZGridItem from './ZGridItem'
-
-export {
-  ZGrid,
-  ZGridItem
-}
+import Grid from './Grid'
+export default Grid

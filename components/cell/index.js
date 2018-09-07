@@ -1,2 +1,2 @@
-import ZCell from './ZCell'
-export default ZCell
+import Cell from './Cell'
+export default Cell

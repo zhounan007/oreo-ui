@@ -9,7 +9,7 @@
 </template>
 <script>
 import createBasic from '../utils/create-basic'
-const prefix = 'number-keyboard'
+const prefix = 'oreo-number-keyboard'
 export default createBasic({
     name: 'number-key',
     data() {
@@ -28,12 +28,13 @@ export default createBasic({
         classNames() {
             const types = this.type.slice(0)
             const ret = {
-                [`${prefix}__key`]: true,
-                [`${prefix}__key_active`]: this.active
+                [`${prefix}__key`]: true
             }
+
             types.forEach(key => {
                 ret[`${prefix}__key_${key}`] = true
             })
+            ret[`${prefix}__key_active`] = this.active
             return ret
         }
     },
@@ -43,7 +44,14 @@ export default createBasic({
         },
         onFocus() {
             this.active = true
-            this.$emit('press', this.text)
+
+            let text = ''
+            if (this.text !== '') {
+                text = this.text
+            } else {
+                text = this.type.join(',')
+            }
+            this.$emit('press', text)
         }
     }
 })
