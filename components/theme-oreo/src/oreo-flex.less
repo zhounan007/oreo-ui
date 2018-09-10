@@ -1,0 +1,28 @@
+@import './base/fn.less';
+@flexPrefixCls: oreo-flex;
+.@{flexPrefixCls} {
+    display: flex;
+    align-items: center;
+    &_row {
+        flex-direction: row;
+    }
+    &_column {
+        flex-direction: column;
+    }
+    &_justify-center {
+        justify-content: center;
+    }
+    &_justify-end {
+        justify-content: flex-end;
+    }
+    &_justify-space-between {
+        justify-content: space-between;
+    }
+    &_justify-space-around {
+        justify-content: space-around;
+    }
+    &__item {
+        flex: 1;
+        min-width: 20Px;
+    }
+}

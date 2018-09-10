@@ -1,0 +1,44 @@
+@font-face {
+    font-weight: normal;
+    font-style: normal;
+	font-family: "<%= fontName %>";
+	src: url('http://static.17wanxiao.com/oreo-ui/icon/<%= fontName %>.ttf') format('truetype');
+}
+
+[class^="oreo-icon-"],
+[class*=" oreo-icon-"] {
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+    font: normal normal normal 14px/1 "<%= fontName %>";
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    &:before {
+        // 平滑升级
+        display: inline-block;
+        margin-left: .2em;
+        margin-right: .2em; // position: absolute;
+        // left: 50%;
+        // top: 50%;
+        // transform: translate(-50%,-50%);
+    }
+}
+
+.<%= cssClass %>:before {
+	font-family: "<%= fontName %>";
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: normal;
+	/* speak: none; only necessary if not using the private unicode range (firstGlyph option) */
+	text-decoration: none;
+	text-transform: none;
+}
+
+<% _.each(glyphs, function(glyph) { %>
+.oreo-<%= cssClass %>-<%= glyph.fileName %>:before {
+	content: "\<%= glyph.codePoint %>";
+}
+<% }); %>

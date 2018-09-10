@@ -1,0 +1,73 @@
+@import './base/fn.less';
+@preloaderPrefixCls: oreo-preloader;
+
+.@{preloaderPrefixCls} {
+    width: 30px;
+    height: 30px;
+    position: relative;
+    display: inline-block;
+  
+    &_circle {
+      width: 100%;
+      height: 100%;
+      display: inline-block;
+  
+      animation: preloader-rotate 3s linear infinite;
+      circle {
+        stroke-dasharray: 90, 150;
+        stroke-dashoffset: 0;
+        stroke-width: 3;
+        stroke: #c9c9c9;
+        stroke-linecap: round;
+  
+        animation: preloader-circle 1.5s ease-in-out infinite;
+      }
+      &.@{preloaderPrefixCls}_light {
+        circle {
+          stroke: #fff;
+        }
+      }
+      &.@{preloaderPrefixCls}_primary {
+        circle {
+          stroke: #108ee9;
+        }
+      }
+    }
+    &_spinner {
+      width: 100%;
+      height: 100%;
+      display: inline-block;
+  
+      .svg-background-spinner("dark");
+      animation: preloader-spinner 1s steps(12, end) infinite;
+      &.@{preloaderPrefixCls}_light {
+        .svg-background-spinner("light");
+      }
+    }
+  }
+  @keyframes preloader-spinner {
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  
+  @keyframes preloader-rotate {
+    to {
+      transform: rotate(1turn);
+    }
+  }
+  @keyframes preloader-circle {
+    0% {
+      stroke-dasharray: 1, 200;
+      stroke-dashoffset: 0;
+    }
+    50% {
+      stroke-dasharray: 90, 150;
+      stroke-dashoffset: -40;
+    }
+    100% {
+      stroke-dasharray: 90, 150;
+      stroke-dashoffset: -120;
+    }
+  }
+  

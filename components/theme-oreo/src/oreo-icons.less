@@ -1,0 +1,83 @@
+@font-face {
+    font-weight: normal;
+    font-style: normal;
+	font-family: "oreo-icons";
+	src: url('http://static.17wanxiao.com/oreo-ui/icon/oreo-icons-ddee29.ttf') format('truetype');
+}
+
+[class^="oreo-icon-"],
+[class*=" oreo-icon-"] {
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+    font: normal normal normal 14px/1 "oreo-icons";
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    &:before {
+        // 平滑升级
+        display: inline-block;
+        margin-left: .2em;
+        margin-right: .2em; // position: absolute;
+        // left: 50%;
+        // top: 50%;
+        // transform: translate(-50%,-50%);
+    }
+}
+
+.icon:before {
+	font-family: "oreo-icons";
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: normal;
+	/* speak: none; only necessary if not using the private unicode range (firstGlyph option) */
+	text-decoration: none;
+	text-transform: none;
+}
+
+
+.oreo-icon-arrow-down:before {
+	content: "\E001";
+}
+
+.oreo-icon-arrow-up:before {
+	content: "\E002";
+}
+
+.oreo-icon-close:before {
+	content: "\E003";
+}
+
+.oreo-icon-down:before {
+	content: "\E004";
+}
+
+.oreo-icon-fail:before {
+	content: "\E005";
+}
+
+.oreo-icon-home:before {
+	content: "\E006";
+}
+
+.oreo-icon-left:before {
+	content: "\E007";
+}
+
+.oreo-icon-right:before {
+	content: "\E008";
+}
+
+.oreo-icon-success:before {
+	content: "\E009";
+}
+
+.oreo-icon-up:before {
+	content: "\E00A";
+}
+
+.oreo-icon-user:before {
+	content: "\E00B";
+}

@@ -1,0 +1,33 @@
+@import './base/fn.less';
+@actionPrefixCls: oreo-actionsheet;
+.@{actionPrefixCls} {
+    background-color: @fill-body;
+    .@{actionPrefixCls}__title {
+        position: relative;
+        color: @color-text-caption;
+        font-size: @font-size-base;
+        background: @fill-base;
+        .setHeight(@option-height);
+        text-align: center;
+        &:after {
+            .setBottomLine(@border-color-base);
+        }
+    }
+    .@{actionPrefixCls}__item {
+        position: relative;
+        text-align: center;
+        font-size: @font-size-headline;
+        background: @fill-base;
+        .setHeight(@option-height);
+        &:after {
+            .setBottomLine(@border-color-base);
+        }
+    }
+    .@{actionPrefixCls}__action {
+        position: relative;
+        &:before {
+            .setTopLine(@border-color-base);
+        }
+        margin-top: @v-spacing-sm;
+    }
+}

@@ -1,0 +1,44 @@
+@import './base/fn.less';
+@textareaPrefixCls: oreo-textarea;
+
+.@{textareaPrefixCls}{
+    position: relative;
+    display: flex;
+    padding: 0 @h-spacing-md;
+    min-height: @list-item-height;
+    background-color: @fill-base;
+    overflow: hidden;
+    transition: background-color .2s;
+    align-items: stretch;
+    justify-content: center;
+
+    .@{textareaPrefixCls}__control{
+        flex: 1;
+        padding: @v-spacing-md 0;
+
+        textarea{
+            display: block;
+            padding: 0;
+            border: 0;
+
+            width: 100%;
+            line-height: @line-height-paragraph * @font-size-base;
+
+            color: @color-text-base;
+            font-size: @font-size-base;
+            background-color: transparent;
+            overflow: visible;
+            resize: none;
+            word-break: break-all;
+            word-wrap: break-word;
+       }
+    }
+
+    .@{textareaPrefixCls}__count{
+        position: absolute;
+        bottom:3px;
+        right:3px;
+        color:@color-text-placeholder;
+        font-size: @font-size-base;
+    }
+}

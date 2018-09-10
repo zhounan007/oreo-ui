@@ -1,0 +1,18 @@
+@import "./base/reset.less";
+// @import "./icon/oreo-font.less";
+@prefix: oreo;
+// oreo-mask 遮罩
+.@{prefix}-mask {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: @modal-zindex;
+    background: @fill-mask;
+}
+
+// 防止遮罩层下面滚动
+.@{prefix}-overflow-hidden {
+    overflow: hidden !important;
+}

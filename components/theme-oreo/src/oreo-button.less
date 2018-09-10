@@ -1,0 +1,69 @@
+@import "./base/fn.less";
+@buttonPrefixCls: oreo-button;
+.@{buttonPrefixCls} {
+    display: block;
+    position: relative;
+    outline: 0;
+    padding: 0;
+    text-align: center;
+    font-size: @font-size-headline;
+    color: @brand-primary;
+    background: @fill-base;
+    box-shadow: 0 0 0 1px @brand-primary;
+    border-radius: @radius-md;
+    transition: all .2s ease-in-out;
+    .setHeight(@button-height);
+    &:active {
+        background-color: @brand-primary;
+        color: @color-text-base-inverse;
+    }
+    &_disabled {
+        .disabled()
+    }
+    &_primary {
+        .status(@brand-primary,@brand-primary-tap)
+    }
+    &_success {
+        .status(@brand-success,@brand-success-tap);
+    }
+    &_error {
+        .status(@brand-error,@brand-error-tap);
+    }
+    &_inline{
+        display: inline-block;
+        padding: 0 @h-spacing-lg;
+    }
+    &_round{
+        border-radius: @radius-max;
+    }
+    &_small{
+        .setHeight(@button-height-sm);
+    }
+}
+
+.status(@statusColor, @statusTapColor) {
+    color: @color-text-base-inverse;
+    background: @statusColor;
+    box-shadow: 0 0 0 1px @statusColor;
+     // &.@{buttonPrefixCls}-disabled{
+    //    opacity: .7!important;
+    // }
+    &:active {
+        background-color: @statusTapColor;
+    }
+    &.@{buttonPrefixCls}_disabled {
+        .disabled()
+    }
+}
+
+.disabled() {
+    cursor: not-allowed;
+    color: @color-text-disabled;
+    background: @fill-disabled;
+    border: 0;
+    box-shadow: 0 0 0 0;
+    &:active {
+        background-color: @fill-disabled;
+        color: @color-text-disabled;
+    }
+}

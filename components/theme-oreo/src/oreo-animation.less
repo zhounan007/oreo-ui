@@ -1,0 +1,62 @@
+@import './base/fn.less';
+
+
+@keyframes oreo-fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes oreo-fade-out {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes oreo-zoom-in {
+  0% {
+    opacity: 0;
+    transform: scale3d(0.3, 0.3, 0.3);
+  }
+
+  50% {
+    opacity: 1;
+  }
+}
+@keyframes oreo-zoom-out {
+  0% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0;
+    transform: scale3d(0.3, 0.3, 0.3);
+  }
+
+  to {
+    opacity: 0;
+  }
+}
+.oreo-zoom {
+  &-enter-active {
+    animation: oreo-zoom-in 0.4s cubic-bezier(0.55, 0, 0.1, 1);
+  }
+  &-leave-active {
+    animation: oreo-zoom-out 0.4s cubic-bezier(0.55, 0, 0.1, 1);
+  }
+}
+
+.oreo-fade {
+  &-enter-active {
+    animation: oreo-fade-in 0.4s cubic-bezier(0.55, 0, 0.1, 1);
+  }
+  &-leave-active {
+    animation: oreo-fade-out 0.4s cubic-bezier(0.55, 0, 0.1, 1);
+  }
+}

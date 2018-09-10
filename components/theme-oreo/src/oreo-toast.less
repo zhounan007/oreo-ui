@@ -1,0 +1,60 @@
+@import './base/fn.less';
+@toastPrefixCls: oreo-toast;
+.@{toastPrefixCls} {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate3d(-50%, -50%, 0);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: @font-size-base;
+    text-align: center;
+    &__text {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-width: @toast-width;
+        border-radius: @radius-sm;
+        color: @color-text-base-inverse;
+        background-color: @fill-overlay-inverse;
+        line-height: @line-height-paragraph;
+        padding: @v-spacing-md @h-spacing-lg;
+    }
+    &__text_horizontal {
+        flex-direction: row;
+        padding: @v-spacing-md @h-spacing-lg;
+        .@{toastPrefixCls}__icon {
+            font-size: @icon-size-md;
+        }
+        .@{toastPrefixCls}__msg {
+            margin: 0 0 0 @h-spacing-sm;
+        }
+    }
+    &__text_vertical {
+        flex-direction: column;
+        padding: @h-spacing-lg;
+        .@{toastPrefixCls}__icon {
+            font-size: @icon-size-xl;
+        }
+        .@{toastPrefixCls}__msg {
+            margin: @v-spacing-md 0 0 0;
+        }
+    }
+    &__icon,
+    &__msg {
+        display: flex;
+    }
+    &_success {
+        .svg-background("success");
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: 50% 50%;
+    }
+    &_failure {
+        .svg-background("failure");
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: 50% 50%;
+    }
+}

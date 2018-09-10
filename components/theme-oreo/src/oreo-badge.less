@@ -1,0 +1,28 @@
+@import './base/fn.less';
+@badgePrefixCls: oreo-badge;
+
+.@{badgePrefixCls}{
+    background-color:  @brand-important;;
+    border-radius: 10px;
+    color: @color-text-base-inverse;
+    display: inline-block;
+    font-size: 12px;
+    height: 18px;
+    line-height: 18px;
+    padding: 0 6px;
+    text-align: center;
+    white-space: nowrap;
+    // border: 1px solid @fill-base;
+}
+.@{badgePrefixCls}_fixed{
+    position: absolute;
+    top: 0;
+    right: 10px;
+    transform: translateX(100%);
+}
+.@{badgePrefixCls}_dot{
+    height: 8px;
+    width: 8px;
+    padding: 0;
+    border-radius: 50%;
+}
