@@ -1,84 +1,82 @@
-/*
- * 
- * webpack 基础配置
- * 
- * 
- * @Author: zhounan 
- * @Date: 2017-11-07 14:21:04 
- * @Last Modified by: zhounan
- * @Last Modified time: 2018-03-06 15:27:09
- */
+const path = require('path')
+const webpack = require('webpack')
+const { VueLoaderPlugin } = require('vue-loader');
 
-var path = require('path')
-var version = require('../package.json').version
-var vueLoaderConfig = require('./vue-loader.conf')
-var utils = require('./utils')
-// var config = require('../config')
-
-
+const ProgressBarPlugin = require('progress-bar-webpack-plugin')
+const config = require('./config')
 function resolve(dir) {
-  return path.join(__dirname, '..', dir)
+    return path.join(__dirname, '..', dir)
 }
 
 module.exports = {
-  resolve: {
-    extensions: ['.js', '.vue', '.json', '.less'],
-    alias: {
-      'vue$': 'vue/dist/vue.esm.js',
-      '@': resolve('src'),
-      '@c': resolve('components'),
-      '@e': resolve('example'),
-      'OreoUI': resolve('theme')
-    }
-  },
-  module: {
-    rules: [{
-        test: /\.(js|vue)$/,
-        loader: 'eslint-loader',
-        enforce: 'pre',
-        include: [resolve('src'), resolve('components'), resolve('example')],
-        options: {
-          formatter: require('eslint-friendly-formatter')
-        }
-      },
-      {
-        test: /\.vue$/,
-        loader: 'vue-loader',
-        options: vueLoaderConfig
-        // options: {
-        //   loaders: {
-        //     css: ['vue-style-loader', 'css-loader'],
-        //     less: ['vue-style-loader', 'css-loader', 'less-loader']
-        //   }
-        // }
-      },
-      {
-        test: /\.js$/,
-        loader: 'babel-loader',
-        include: [resolve('src'), resolve('components'), resolve('example'), resolve('node_modules/webpack-dev-server/')]
-      },
-      {
-        test: /\.(png|jpe?g|gif|svg)(\?.*)?$/, // |svg
-        loader: 'url-loader',
-        options: {
-          limit: 10000,
-          name: utils.assetsPath('img/[hash:7].[ext]')
+    entry: {
+        app: [path.resolve(__dirname, '../components/index.js')]
+    },
+    output: {
+        path: path.resolve(__dirname, '../lib'),
+        publicPath: '/',
+        filename: 'index.js',
+        chunkFilename: '[id].js',
+        libraryTarget: 'umd',
+        library: 'OREO',
+        umdNamedDefine: true
+    },
+    resolve: {
+        extensions: ['.js', '.vue', '.json'],
+        alias: config.alias
+    },
+    module: {
+        rules: [{
+            test: /\.(js|vue)$/,
+            loader: 'eslint-loader',
+            enforce: 'pre',
+            include: [resolve('src'), resolve('components'),],
+            options: {
+                formatter: require('eslint-friendly-formatter')
+            }
         },
-        exclude: [resolve('components/icon/assets')]
-      },
-      {
-        test: /\.svg$/,
-        loader: 'svg-sprite-loader',
-        include: [resolve('components/icon/assets')]
-      },
-      {
-        test: /\.(woff2?|eot|ttf|otf)(\?.*)?$/,
-        loader: 'url-loader',
-        options: {
-          limit: 10000,
-          name: utils.assetsPath('fonts/[name].[hash:7].[ext]')
+        {
+            test: /\.vue$/,
+            loader: 'vue-loader',
+            options: {
+                preserveWhitespace: false
+            }
+        },
+        {
+            test: /\.js$/,
+            loader: 'babel-loader',
+            include: [resolve('src'), resolve('components'), resolve('example')]
+        },
+        {
+            test: /\.less$/,
+            use: [
+                'style-loader',
+                'css-loader',
+                'less-loader'
+            ]
+        }, {
+            test: /\.css$/,
+            use: [
+                'style-loader',
+                'css-loader', 'postcss-loader'
+            ]
+        },
+        {
+            test: /\.(png|jpe?g|gif|svg)(\?.*)?$/, // |svg
+            loader: 'url-loader',
+            options: {
+                limit: 10000,
+                name: path.posix.join('static', 'img/[hash:7].[ext]')
+            }
+        },
+        {
+            test: /\.(woff2?|eot|ttf|otf)(\?.*)?$/,
+            loader: 'url-loader',
+            options: {
+                limit: 10000,
+                name: path.posix.join('static', 'fonts/[name].[hash:7].[ext]')
+            }
         }
-      }
-    ]
-  }
+        ]
+    }
 }
