@@ -1,0 +1,19 @@
+@import './base/fn.less';
+@infiniteScrollPrefixCls: oreo-infinite-scroll;
+.@{infiniteScrollPrefixCls} {
+    position: relative;
+    &__preloader {
+        text-align: center;
+        padding: 15px;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        font-size: @font-size-base;
+        color: @color-text-secondary;
+    }
+    &__text{
+        margin-left: 10px;
+    }
+}

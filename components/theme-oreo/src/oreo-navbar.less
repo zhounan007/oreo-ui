@@ -18,6 +18,9 @@
         left: 0;
         width: 100%;
         z-index: @navbar-zindex;
+        + div {
+            margin-top: @navbar-height;
+        }
     }
     &_dark {
         color: @color-text-base-inverse;
@@ -53,16 +56,15 @@
             .setHeight( @icon-size-md);
         }
     }
-    &_right{
+    &_right {
         justify-content: flex-end;
     }
-    &_center{
+    &_center {
         display: flex;
         flex-shrink: 10;
         align-items: center;
-
         width: 50%;
-        font-size:@font-size-display-sm;
+        font-size: @font-size-display-sm;
         color: @color-text-base;
         justify-content: center;
         .textOverflow();
