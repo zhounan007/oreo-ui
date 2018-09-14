@@ -1,7 +1,1 @@
-{
-  "button": "./components/button/index.js",
-  "toast": "./components/toast/index.js",
-  "modal": "./components/modal/index.js",
-  "dialog": "./components/dialog/index.js",
-  "grid": "./components/grid/index.js"
-}
+{"actionsheet":"./components/actionsheet/index.js","badge":"./components/badge/index.js","button":"./components/button/index.js","card":"./components/card/index.js","cell":"./components/cell/index.js","cell-group":"./components/cell-group/index.js","checkBox":"./components/checkBox/index.js","dialog":"./components/dialog/index.js","flex":"./components/flex/index.js","flex-item":"./components/flex-item/index.js","form":"./components/form/index.js","grid":"./components/grid/index.js","grid-item":"./components/grid-item/index.js","icon":"./components/icon/index.js","infinite-scroll":"./components/infinite-scroll/index.js","input":"./components/input/index.js","list":"./components/list/index.js","navbar":"./components/navbar/index.js","news-card":"./components/news-card/index.js","number-keyboard":"./components/number-keyboard/index.js","popup":"./components/popup/index.js","preloader":"./components/preloader/index.js","pull-to-refresh":"./components/pull-to-refresh/index.js","radio":"./components/radio/index.js","skeleton":"./components/skeleton/index.js","sticky":"./components/sticky/index.js","switch":"./components/switch/index.js","tabs":"./components/tabs/index.js","tag":"./components/tag/index.js","textarea":"./components/textarea/index.js","toast":"./components/toast/index.js"}

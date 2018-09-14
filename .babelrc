@@ -1,20 +1,52 @@
 {
   "presets": [
-    ["env", {
-      "targets": {
-        "browsers": ["Android >= 4", "Explorer >= 10", "iOS >= 7"]
-      },
-      "debug": true,
-      "include": [],
-      "useBuiltIns": false
-    }]
+    [
+      "env",
+      {
+        "targets": {
+          "browsers": [
+            "Android >= 4",
+            "Explorer >= 10",
+            "iOS >= 7"
+          ]
+        },
+        "debug": true,
+        "include": [],
+        "useBuiltIns": false
+      }
+    ]
   ],
-  "plugins": ["transform-runtime", "transform-object-rest-spread", "syntax-dynamic-import", "transform-es2015-block-scoping","transform-vue-jsx"],
+  "plugins": [
+    "transform-runtime",
+    "transform-object-rest-spread",
+    "syntax-dynamic-import",
+    "transform-es2015-block-scoping",
+    "transform-vue-jsx"
+  ],
   "comments": false,
   "env": {
     "test": {
-      "presets": ["env"],
-      "plugins": ["istanbul"]
+      "presets": [
+        "env"
+      ],
+      "plugins": [
+        "istanbul"
+      ]
+    },
+    "utils": {
+      "plugins": [
+        [
+          "module-resolver",
+          {
+            "root": [
+              "oreo-ui"
+            ],
+            "alias": {
+              "oreo-ui/src": "oreo-ui/lib"
+            }
+          }
+        ]
+      ]
     }
   }
 }

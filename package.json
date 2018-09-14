@@ -1,25 +1,31 @@
 {
-  "name": "vue-oreo",
+  "name": "oreo-ui",
   "version": "0.2.0",
   "description": "A Vue.js project",
   "author": "znsw007 <znsw007@163.com>",
+  "main": "lib/oreo-ui.common.js",
   "scripts": {
     "dev": "node build/dev-server.js",
-    "start": "webpack-dev-server --inline --progress --disable-host-check --host 0.0.0.0 --config ./build/webpack.dev.conf.js",
     "demo-build": "node build/example/build.js",
-    "build": "node build/build.js",
     "lint": "eslint --ext .js,.vue src",
-    "build:theme": "gulp build --gulpfile components/theme-oreo/gulpfile.js && cp-cli components/theme-oreo/lib lib/theme-oreo"
+    "start": "webpack-dev-server --inline --progress --disable-host-check --host 0.0.0.0 --config ./build/webpack.demo.conf.js",
+    "build:utils": "cross-env BABEL_ENV=utils babel components/utils --out-dir lib/utils ",
+    "build:mixins": "cross-env BABEL_ENV=utils babel components/mixins --out-dir lib/mixins ",
+    "build:locale": "cross-env BABEL_ENV=utils babel components/locale --out-dir lib/locale ",
+    "build:theme": "gulp build --gulpfile components/theme-oreo/gulpfile.js && cp-cli components/theme-oreo/lib lib/theme-oreo",
+    "build": "webpack  --config ./build/webpack.umd.conf.js && webpack --config ./build/webpack.common.conf.js && webpack --config ./build/webpack.components.conf.js && npm run build:utils && npm run build:mixins && npm run build:locale && npm run build:theme"
   },
   "peerDependencies": {
     "vue": "^2.4.4"
   },
   "devDependencies": {
     "autoprefixer": "^7.1.6",
+    "babel-cli": "^6.26.0",
     "babel-core": "^6.26.0",
     "babel-eslint": "^8.0.2",
     "babel-helper-vue-jsx-merge-props": "^2.0.3",
     "babel-loader": "^7.1.2",
+    "babel-plugin-module-resolver": "^3.1.1",
     "babel-plugin-syntax-jsx": "^6.18.0",
     "babel-plugin-transform-runtime": "^6.23.0",
     "babel-plugin-transform-vue-jsx": "^3.5.0",
@@ -32,6 +38,7 @@
     "conventional-changelog": "^1.1.24",
     "copy-webpack-plugin": "^4.2.0",
     "cp-cli": "^1.1.2",
+    "cross-env": "^5.2.0",
     "css-loader": "^0.28.7",
     "cz-conventional-changelog": "^2.1.0",
     "eslint": "^4.10.0",
@@ -52,18 +59,22 @@
     "less-loader": "^4.0.5",
     "optimize-css-assets-webpack-plugin": "^3.2.0",
     "ora": "^2.0.0",
+    "postcss": "^7.0.2",
+    "postcss-loader": "^3.0.0",
+    "progress-bar-webpack-plugin": "^1.11.0",
     "rimraf": "^2.6.2",
     "shelljs": "^0.8.1",
     "style-loader": "^0.19.0",
     "svg-sprite-loader": "^3.4.1",
     "url-loader": "^0.6.2",
     "vue": "^2.4.4",
-    "vue-loader": "^13.4.0",
+    "vue-loader": "^15.4.2",
     "vue-router": "^3.0.1",
     "vue-template-compiler": "^2.5.3",
     "webpack": "^3.8.1",
     "webpack-dev-server": "^2.9.4",
-    "webpack-merge": "^4.1.1"
+    "webpack-merge": "^4.1.1",
+    "webpack-node-externals": "^1.7.2"
   },
   "engines": {
     "node": ">= 4.0.0",

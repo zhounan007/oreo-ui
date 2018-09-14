@@ -1,5 +1,5 @@
 # vue-oreo
-A mobile UI Components based on Vue2.x &amp; [Oreo-UI](https://github.com/zhounan007/oreo-ui)
+A mobile UI Components based on Vue2.x 
 
 
 
