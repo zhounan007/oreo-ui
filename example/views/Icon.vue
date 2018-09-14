@@ -21,11 +21,12 @@
 <script>
 import flexview from './flexview'
 import scrollview from './scrollview'
+import Icons from '../icons.json'
 export default {
     name: 'flex',
     data() {
         return {
-            icons: ['arrow-down', 'arrow-up', 'close', 'down', 'fail', 'home', 'left', 'right', 'success', 'up', 'user']
+            icons: Icons
         }
     },
     components: {

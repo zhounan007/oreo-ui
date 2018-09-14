@@ -42,7 +42,7 @@
                     padding: 1rem;
                     background: #fff;
                     ">
-                     <h3>Default Popup</h3>
+                     <h3>Fullscreen</h3>
                     <div>
                         Hello world!!!
                        <oreo-button @click="show2 =!show2" type="primary" inline>Close</oreo-button>

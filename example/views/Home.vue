@@ -8,7 +8,8 @@
             </div>
     
             <oreo-grid :data="module" line @click="handlerModuleItem">
-                 <template slot-scope="{item}">{{item.text}}
+                 <template slot-scope="{item}">
+                     {{item.text}}
                     </template>
             </oreo-grid>
         </scrollview>

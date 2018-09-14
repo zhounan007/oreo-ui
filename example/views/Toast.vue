@@ -17,7 +17,7 @@
                 <oreo-button v-for="t in ['loading','success','fail']" :key="t" small @click="handlerByType(t)">{{t}}</oreo-button>
     
 
-                <oreo-toast v-model="show" message="正在努力加载中" type="home"></oreo-toast>
+                <oreo-toast v-model="show" message="正在努力加载中" type="loading"></oreo-toast>
             </div>
     
         </scrollview>

@@ -1,6 +1,8 @@
 <template>
   <transition :name="transitionName">
-    <router-view></router-view>
+    <keep-alive>
+      <router-view></router-view>
+    </keep-alive>
   </transition>
 </template>
 
@@ -17,7 +19,15 @@ export default {
       const toDept = to.path.split('/').length
       const fromDept = from.path.split('/').length
       console.log('to:' + toDept + ' , from:' + fromDept)
-      this.transitionName = toDept < fromDept ? 'slide-right' : 'slide-left'
+      if (to.path === from.path) {
+        this.transitionName = 'fade'
+      } else if (to.path === '/') {
+        this.transitionName = 'slide-right'
+      } else if (from.path === '/') {
+        this.transitionName = 'slide-left'
+      } else {
+        this.transitionName = toDept < fromDept ? 'slide-right' : 'slide-left'
+      }
     }
   }
 }

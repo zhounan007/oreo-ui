@@ -31,7 +31,7 @@
                 </h2>
                 <oreo-grid line square :data="basic" @click="handlerItem" :column="4">
                     <template slot-scope="{item}">
-                         <img :src="item.icon" style="width:80px">
+                         <img :src="item.icon" style="width:60px">
                         <div style="color:#409EFF;">{{item.text}}</div>
                     </template>
                 </oreo-grid>

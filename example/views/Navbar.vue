@@ -1,14 +1,16 @@
 
 <template>
     <flexview>
+        <oreo-navbar title="导航栏" fixed left-arrow @click-left="handleBack"></oreo-navbar>
         <scrollview title="Navbar 导航" sub-title="">
+            
             <div class="demo-body" >
                 <h2>
                     基本用法
                 </h2>
 
                 <oreo-navbar title="导航栏"></oreo-navbar>
-                <!-- <oreo-navbar title="导航栏" fixed left-arrow></oreo-navbar> -->
+                
                 <oreo-navbar title="导航栏"  dark left-arrow></oreo-navbar>
                 <oreo-navbar title="导航栏" left-arrow left-text="返回"></oreo-navbar>
                 <oreo-navbar title="导航栏" dark left-arrow left-text="返回"  right-text="前进"></oreo-navbar>
@@ -34,13 +36,16 @@ export default {
         scrollview
     },
     methods: {
+        handleBack() {
+            this.$router.back()
+        }
     }
 }
 </script>
 <style lang="less" scopd>
 .demo-body {
   .oreo-navbar {
-      margin-bottom: 20px;
+    margin-bottom: 20px;
   }
 }
 </style>

@@ -2,12 +2,10 @@
 <template>
     <flexview>
         <scrollview title="Pull Refresh 下拉刷新" sub-title="">
-            <oreo-pull-to-refresh v-model="isLoading" @refresh="onRefresh" style="margin-top: 160px;">
-                <section class="van-doc-demo-block">
+            <oreo-pull-to-refresh ref="list" v-model="isLoading" @refresh="onRefresh" style="margin-top: 80px;">
                     <oreo-cell-group>
                         <oreo-cell v-for="n in length" :key="n" :title=" n+'列表内容' "></oreo-cell>
                     </oreo-cell-group>
-                </section>
             </oreo-pull-to-refresh>
         </scrollview>
     </flexview>
@@ -31,6 +29,9 @@ export default {
     mounted() {
     },
     methods: {
+        handleClick() {
+            this.$refs.list.$el.scrollTop = 0
+        },
         onRefresh() {
             setTimeout(() => {
                 this.isLoading = false

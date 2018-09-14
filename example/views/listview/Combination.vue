@@ -2,7 +2,7 @@
 <template>
     <flexview>
         <scrollview title="下拉刷新 无限加载" sub-title="">
-            <oreo-pull-to-refresh v-model="isLoading" @refresh="onRefresh" style="margin-top:160px;">
+            <oreo-pull-to-refresh v-model="isLoading" @refresh="onRefresh" style="margin-top:80px;">
                 <oreo-infinite-scroll v-model="loading" @load="loadMore" :disabled="disabled">
                     <oreo-cell-group>
                         <oreo-cell v-for="item in list" :key="item" :title="item+''"></oreo-cell>
