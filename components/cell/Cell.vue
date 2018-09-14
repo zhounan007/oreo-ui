@@ -29,8 +29,8 @@
   </div>
 </template>
 <script>
-import RouterLink from '../mixins/router-link'
-import createBasic from '../utils/create-basic'
+import RouterLink from 'oreo-ui/components/mixins/router-link'
+import createBasic from 'oreo-ui/components/utils/create-basic'
 export default createBasic({
     name: 'cell',
     mixins: [RouterLink],

@@ -1,6 +1,6 @@
-import Touch from '../touch'
-import { on, off } from '../../utils/event'
-import scrollUtils from '../../utils/scroll'
+import Touch from 'oreo-ui/components/mixins/touch'
+import { on, off } from 'oreo-ui/components/utils/event'
+import scrollUtils from 'oreo-ui/components/utils/scroll'
 import context from './context'
 import manager from './manager'
 
@@ -17,6 +17,11 @@ export default {
         overlayClass: String,
         // 点击遮罩是否关闭
         closeOverlayByClick: Boolean,
+        // 是否在 hashchange 时关闭
+        closeOnHashChange: {
+            type: Boolean,
+            default: true
+        },
         // return the mount node for modal
         getContainer: Function,
         // 是否 禁止滚屏
@@ -24,6 +29,11 @@ export default {
             type: Boolean,
             default: true
         }
+        // model 模拟 android 物理返回键
+        // mockBack: {
+        //     type: Boolean,
+        //     default: true
+        // }
     },
     watch: {
         value(v) {
@@ -47,6 +57,9 @@ export default {
         if (this.value) {
             this.open()
         }
+        // if (this.closeOnHashChange) {
+        //     on(window, 'hashchange', this.close)
+        // }
     },
     activated() {
         if (this.value) {
@@ -54,10 +67,13 @@ export default {
         }
     },
     beforeDestroy() {
-        this.close()
+        // if (this.closeOnHashChange) {
+        //     off(window, 'hashchange', this.close)
+        // }
+        // this.close()
     },
     deactivated() {
-        this.close()
+        // this.close()
     },
     methods: {
         open() {
@@ -75,12 +91,18 @@ export default {
                 }
                 context.locked = true
             }
+            // if (this.mockBack) {
+            //     this.__pushState()
+            // }
         },
         close() {
-            // debugger
             if (!this.opened) {
                 return
             }
+            // if (this.mockBack && window.history.state && window.history.state.modalId) {
+            //     window.history.go(-1)
+            //     return
+            // }
             if (this.lockScroll) {
                 off(document, 'touchstart', this.touchStart)
                 off(document, 'touchmove', this.onTouchMove)
@@ -94,7 +116,6 @@ export default {
             this.$emit('input', false)
         },
         move() {
-            // debugger
             if (this.getContainer) {
                 this.getContainer().appendChild(this.$el)
             } else {
@@ -104,7 +125,6 @@ export default {
         onTouchMove() {
         },
         renderOverlay() {
-            // debugger
             if (this.overlay) {
                 manager.open(this, {
                     zIndex: context.increment('zIndex'),
@@ -116,5 +136,23 @@ export default {
             }
             this.$el.style.zIndex = context.increment('zIndex')
         }
+        // 
+        // __pushState() {
+        //     window.history.pushState({ modalId: this._maskId }, '')
+        //     this.__popState = () => {
+        //         // debugger
+        //         if (
+        //             window.history.state &&
+        //             window.history.state.modalId &&
+        //             window.history.state.modalId !== this._maskId
+        //         ) {
+        //             return
+        //         }
+        //         off(window, 'popstate', this.__popState)
+        //         // this.close()
+        //         this.$emit('input', false)
+        //     }
+        //     on(window, 'popstate', this.__popState)
+        // }
     }
 }

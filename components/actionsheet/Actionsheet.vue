@@ -12,8 +12,8 @@
   </oreo-popup>
 </template>
 <script>
-import OreoPopup from '../popup'
-import createBasic from '../utils/create-basic'
+import OreoPopup from 'oreo-ui/components/popup'
+import createBasic from 'oreo-ui/components/utils/create-basic'
 const empty = () => { }
 export default createBasic({
   name: 'actionsheet',
@@ -44,20 +44,6 @@ export default createBasic({
       this.$emit('click-overlay')
       this.$emit('input', false)
     },
-
-    // open(callback) {
-    //   this.$nextTick(() => {
-    //     this.$refs['sheetModal'].open(callback || empty)
-    //   })
-    // },
-    // cancel(callback) {
-    //   this.$nextTick(() => {
-    //     this.$refs['sheetModal'].close(callback || empty)
-    //   })
-    // },
-    // handleOpen() {
-    //   this.$emit('open')
-    // },
     handleClose() {
       this.$emit('input', false)
       // this.$emit('close')

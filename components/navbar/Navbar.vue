@@ -24,8 +24,8 @@
   </div>
 </template>
 <script>
-import createBasic from '../utils/create-basic'
-import OreoIcon from '../icon'
+import createBasic from 'oreo-ui/components/utils/create-basic'
+import OreoIcon from 'oreo-ui/components/icon'
 export default createBasic({
     name: 'navbar',
     components: {

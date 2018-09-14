@@ -1,5 +1,5 @@
-import defaultLang from './lang/zh-CN'
-import format from './format'
+import defaultLang from 'oreo-ui/components/locale/lang/zh-CN'
+import format from 'oreo-ui/components/locale/format'
 
 let lang = defaultLang
 

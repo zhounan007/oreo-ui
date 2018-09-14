@@ -1,25 +1,25 @@
 <template>
-  <div class="oreo-pull-refresh">
-      <div class="oreo-pull-refresh-track" 
+  <div :class="b()" >
+      <div :class="b('track')"
         :style="pullStyle"
         @touchstart="onTouchStart"
         @touchmove="onTouchMove"
         @touchend="onTouchEnd"
         @touchcancel="onTouchEnd"
       >
-          <div class="oreo-pull-refresh-head">
+          <div :class="b('head')">
               <slot name="normal" v-if="status==='normal'"></slot>
               <slot name="pulling" v-if="status==='pulling'">
-                  <span class="oreo-pull-refresh-text">{{pullingText}}</span>
+                    <oreo-icon name="arrow-down"></oreo-icon>
+                    <span :class="b('text')">{{pullingText}}</span>
               </slot>
               <slot name="loosing" v-if="status==='loosing'">
-                <span class="oreo-pull-refresh-text">{{loosingText}}</span>
+                    <oreo-icon name="arrow-up"></oreo-icon>
+                    <span :class="b('text')">{{loosingText}}</span>
               </slot>
               <slot name="loading" v-if="status==='loading'">
-                <div class="oreo-pull-refresh-loading">
-                  <span class=" oreo-loading-sm oreo-loading-dark"> </span>
-                  <span>{{loadingText}}</span>
-                </div>
+                    <oreo-preloader type="spinner" size="24px"></oreo-preloader>
+                    <span :class="b('text')">{{loadingText}}</span>
               </slot>
           </div>
           <slot></slot>
@@ -27,13 +27,19 @@
   </div>
 </template>
 <script>
-import createBasic from '../utils/create-basic'
-import scrollUtils from '../utils/scroll'
-import Touch from '../mixins/touch'
-import { t } from '../locale'
+import createBasic from 'oreo-ui/components/utils/create-basic'
+import scrollUtils from 'oreo-ui/components/utils/scroll'
+import Touch from 'oreo-ui/components/mixins/touch'
+import OreoIcon from 'oreo-ui/components/icon'
+import OreoPreloader from 'oreo-ui/components/preloader'
+import { t } from 'oreo-ui/components/locale'
 export default createBasic({
   name: 'pull-to-refresh',
   mixins: [Touch],
+  components: {
+    OreoIcon,
+    OreoPreloader
+  },
   data() {
     return {
       status: 'normal',
@@ -66,7 +72,7 @@ export default createBasic({
     },
     headHeight: {
       type: Number,
-      default: 100
+      default: 44
     },
     value: {
       type: Boolean,
@@ -165,39 +171,3 @@ export default createBasic({
   }
 })
 </script>
-<style lang="less">
-@prefix: oreo-pull-refresh;
-
-.@{prefix} {
-  position: absolute;
-  left: 0;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  overflow: auto;
-  background: #fff;
-  user-select: none;
-}
-.@{prefix}-track {
-  position: relative;
-}
-.@{prefix}-head {
-  width: 100%;
-  height: 100px;
-  line-height: 100px;
-  left: 0;
-  overflow: hidden;
-  position: absolute;
-  text-align: center;
-  top: -100px;
-  font-size: 28px;
-}
-.@{prefix}-text {
-  display: block;
-}
-.@{prefix}-loading {
-  display: inline-block;
-  vertical-align: middle;
-}
-</style>
-

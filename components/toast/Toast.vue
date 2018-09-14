@@ -12,10 +12,10 @@
     </transition>
 </template>
 <script>
-import createBasic from '../utils/create-basic'
-import OreoPreloader from '../preloader'
-import OreoIcon from '../icon'
-import Mask from '../mixins/mask'
+import createBasic from 'oreo-ui/components/utils/create-basic'
+import OreoPreloader from 'oreo-ui/components/preloader'
+import OreoIcon from 'oreo-ui/components/icon'
+import Mask from 'oreo-ui/components/mixins/mask'
 const prefixCls = 'oreo-toast'
 export default createBasic({
     name: 'toast',

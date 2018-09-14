@@ -8,7 +8,7 @@
     </div>
 </template>
 <script>
-import createBasic from '../utils/create-basic'
+import createBasic from 'oreo-ui/components/utils/create-basic'
 const prefix = 'oreo-number-keyboard'
 export default createBasic({
     name: 'number-key',

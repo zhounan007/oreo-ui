@@ -1,23 +1,4 @@
 <template>
-    <!-- <z-modal position="bottom" v-model="show" @close="handleClose" :mask="mask">
-        <div :class="classNames" slot="inner">
-        <slot name="title">
-            <div class="number-keyboard__title" v-if="title && theme!=='friday'" v-text="title"></div>
-        </slot>
-        <div class="number-keyboard__body">
-            <div class="number-keyboard__row" v-for="(row, index) in keys" :key="index">
-                <z-number-key v-for="(item,idx ) in row" :key="idx"
-                :type="item.type"
-                :text="item.text" @press="handleKey"></z-number-key>   
-            </div>
-        </div>
-        <div class="number-keyboard__sidebar" v-if="theme==='friday' ">
-             <z-number-key  :type="['del']" @press="handleKey"></z-number-key>   
-             <z-number-key  :type="['confirm']" :text="doneButtonText || t('oreo.numberKeyboard.doneButtonText')" @press="handleKey"></z-number-key>  
-        </div>
-        </div>
-    </z-modal>    -->
-
     <oreo-popup position="bottom" :overlay="false" v-model="visible" >
         <div :class="b({
             friday:theme ==='friday'
@@ -45,12 +26,12 @@
     </oreo-popup> 
 </template>
 <script>
-import createBasic from '../utils/create-basic'
+import createBasic from 'oreo-ui/components/utils/create-basic'
 // import ZModal from '../modal'
-import OreoPopup from '../popup'
+import OreoPopup from 'oreo-ui/components/popup'
 import OreoNumberKey from './NumberKey'
-import { chunk } from '../utils/index'
-import { t } from '../locale'
+import { chunk } from 'oreo-ui/components/utils/index'
+import { t } from 'oreo-ui/components/locale'
 const prefix = 'number-keyboard'
 export default createBasic({
     name: 'number-keyboard',

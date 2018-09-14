@@ -11,7 +11,7 @@
 </template>
 <script>
 
-import createBasic from '../utils/create-basic'
+import createBasic from 'oreo-ui/components/utils/create-basic'
 export default createBasic({
     name: 'input',
     props: {

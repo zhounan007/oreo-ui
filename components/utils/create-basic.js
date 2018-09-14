@@ -6,9 +6,9 @@
  * 基础组件工具
  */
 // 国际化
-import Locale from '../mixins/locale'
+import Locale from 'oreo-ui/components/mixins/locale'
 // Bem 样式
-import Bem from '../mixins/bem'
+import Bem from 'oreo-ui/components/mixins/bem'
 
 function install(Vue) {
     Vue.component(this.name, this)

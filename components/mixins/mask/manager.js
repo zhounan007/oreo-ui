@@ -1,6 +1,6 @@
 import Vue from 'vue'
-import ZMask from './Mask'
-import context from './context'
+import ZMask from 'oreo-ui/components/mixins/mask/Mask'
+import context from 'oreo-ui/components/mixins/mask/context'
 
 const defaultConfig = {
     className: '',
@@ -47,7 +47,7 @@ export default {
             targetNode.appendChild(mask.$el)
             Object.assign(mask, {
                 ...defaultConfig,
-                ...context,
+                ...config,
                 visible: true
             })
         }

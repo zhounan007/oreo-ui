@@ -1,26 +1,24 @@
 <template>
-  <div class="oreo-infinite-scroll">
+  <div :class="b()">
       <slot></slot>
-      <div class="oreo-infinite-scroll-preloader" v-show="value">
+      <div :class="b('preloader')" v-show="value">
           <slot name="loading">
-              <div class="oreo-pull-refresh-loading">
-                  <span class=" oreo-loading-sm oreo-loading-dark"> </span>
-                  <span>{{loadingText}}</span>
-                </div>
+              <oreo-preloader type="spinner" size="24px"></oreo-preloader>
+              <span :class="b('text')">{{loadingText}}</span>
           </slot>
       </div>
   </div>
 </template>
 <script>
-import scrollUtils from '../utils/scroll'
-import { on, off } from '../utils/event';
-const prefix = 'oreo-infinite-scroll'
-export default {
-    name: 'z-infinite-scroll',
-    data() {
-        return {
-
-        }
+import createBasic from 'oreo-ui/components/utils/create-basic'
+import scrollUtils from 'oreo-ui/components/utils/scroll'
+import { on, off } from 'oreo-ui/components/utils/event';
+import { t } from 'oreo-ui/components/locale'
+import OreoPreloader from 'oreo-ui/components/preloader'
+export default createBasic({
+    name: 'infinite-scroll',
+    components: {
+        OreoPreloader
     },
     props: {
         value: {
@@ -39,11 +37,10 @@ export default {
         },
         loadingText: {
             type: String,
-            default: '正在加载中...'
+            default() {
+                return t('oreo.infiniteScroll.loadingText')
+            }
         }
-    },
-    computed: {
-
     },
     watch: {
         value(val) {
@@ -114,18 +111,6 @@ export default {
         }
     }
 
-}
+})
 </script>
-<style lang="less">
-@prefix: oreo-infinite-scroll;
-
-.@{prefix} {
-  position: relative;
-  &-preloader {
-    text-align: center;
-    padding: 0.3rem;
-    position: relative;
-  }
-}
-</style>
 

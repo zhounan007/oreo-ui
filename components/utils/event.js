@@ -1,4 +1,4 @@
-import { isServer } from './index'
+import { isServer } from 'oreo-ui/components/utils/index'
 
 export let supportsPassive = false
 // web 滚动性能优化 参考:https://zhuanlan.zhihu.com/p/24555031

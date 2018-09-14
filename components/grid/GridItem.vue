@@ -13,8 +13,8 @@
     </oreo-flex-item>
 </template>
 <script>
-import OreoFlexItem from '../flex-item'
-import createBasic from '../utils/create-basic'
+import OreoFlexItem from 'oreo-ui/components/flex-item'
+import createBasic from 'oreo-ui/components/utils/create-basic'
 export default createBasic({
     name: 'grid-item',
     components: {

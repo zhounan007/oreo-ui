@@ -17,6 +17,8 @@ import Input from '@c/input'
 import Toast from '@c/toast'
 import Icon from '@c/icon'
 import Navbar from '@c/navbar'
+import PullToRefresh from '@c/pull-to-refresh'
+import InfiniteScroll from '@c/infinite-scroll'
 
 const version = '2.0.0'
 const components = [
@@ -38,7 +40,9 @@ const components = [
     Textarea,
     Toast,
     Icon,
-    Navbar
+    Navbar,
+    PullToRefresh,
+    InfiniteScroll
 ]
 
 const install = function (Vue, opts = {}) {
@@ -70,7 +74,9 @@ export {
     Input,
     Toast,
     Icon,
-    Navbar
+    Navbar,
+    PullToRefresh,
+    InfiniteScroll
 }
 export default {
     install,

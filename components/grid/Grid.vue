@@ -18,11 +18,11 @@
     </div>
 </template>
 <script>
-import OreoFlex from '../flex'
-import OreoGridItem from '../grid-item'
+import OreoFlex from 'oreo-ui/components/flex'
+import OreoGridItem from 'oreo-ui/components/grid-item'
 
-import { chunk } from '../utils'
-import createBasic from '../utils/create-basic'
+import { chunk } from 'oreo-ui/components/utils'
+import createBasic from 'oreo-ui/components/utils/create-basic'
 
 export default createBasic({
     name: 'grid',
