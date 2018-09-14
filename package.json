@@ -1,6 +1,6 @@
 {
   "name": "oreo-ui",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "A Vue.js project",
   "author": "znsw007 <znsw007@163.com>",
   "main": "lib/oreo-ui.common.js",
