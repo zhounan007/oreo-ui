@@ -2,15 +2,16 @@
   <div :class="className">
     <div :class="classNameLine">
       <div :class="classNameContent">
-        <div :class="classNameTitle" :style="titleStyle">{{title}}</div>
-        <div :class="classNameBrief" :style="briefStyle">{{brief}}</div>
+        <div :class="classNameTitle" :style="isCheck">{{title}}</div>
+        <div :class="classNameBrief" :style="isCheck">{{brief}}</div>
         <div :class="classNameInfo">
           <slot name="info">
             <div :class="classNameTag">
-              <z-tag :type="type" :text="info" size="small"></z-tag>
-              <span>{{source}}</span>
-              <span>{{num}}</span>
-              <span>{{date}}</span>
+              <!-- <z-tag :type="type" :text="info" size="small"></z-tag> -->
+              <span :class="zTagClass">{{info}}</span>
+              <span class="desc">{{source}}</span>
+              <span class="desc">{{num}}</span>
+              <span class="desc">{{date}}</span>
             </div>
           </slot>
           <slot name="delete">
@@ -20,7 +21,7 @@
       </div>
     </div>
     <div :class="classNameThumb" :style="imgSize">
-      <img :src="img" alt="">
+      <img :src="img" alt="" onerror='javascript:this.src="http://channeltest.17wanxiao.com:8081/test/bg_loading.png"'>
     </div>
   </div>
 </template>
@@ -41,31 +42,19 @@ export default {
     date: String,
     type: String,
     info: String,
-    titleStyle: {
-      type: Object,
-      default: function () {
-        return {
-          'font-size': '.36rem'
-          // 'margin-bottom': '.1rem'
-        }
-      }
-    },
     imgSize: {
       type: Object,
       default: function () {
         return {
-          'width': '2.26rem',
-          'height': '1.48rem'
+          'width': '2.28rem',
+          'height': '1.5rem',
+          'margin-left': '0.07rem'
         }
       }
     },
-    briefStyle: {
-      type: Object,
-      default: function () {
-        return {
-          'color': '#000000'
-        }
-      }
+    check: {
+      type: Boolean,
+      default: false
     }
   },
   computed: {
@@ -98,6 +87,19 @@ export default {
     },
     classNameTag() {
       return `${prefixCls}-info-tag`
+    },
+    isCheck() {
+      if (this.check) {
+        return {
+          'color': '#777777'
+        }
+      }
+    },
+    zTagClass() {
+      return {
+        'tag': true,
+        [`tag-color-${this.type}`]: true
+      }
     }
   }
 }
@@ -105,16 +107,62 @@ export default {
 <style lang="less" scoped>
 .oreo-list-item-info-tag {
   width: 92%;
-  // display: flex;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
-  // align-items: center;
   span {
-    margin-left: 0.1rem;
+    font-size: 0.22rem;
+    margin-right: 0.1rem;
   }
 }
 .oroe-list-item-check {
   color: #777777;
+}
+.oreo-list-item.oreo-list-item-search
+  .oreo-list-item-line
+  .oreo-list-item-content {
+  font-size: 0;
+  // position: relative;
+  // display: inline-block;
+}
+// .oreo-list-item.oreo-list-item-search
+//   .oreo-list-item-line.oreo-list-item-message
+//   .oreo-list-item-info {
+//   position: absolute;
+//   bottom: -0.12rem;
+//   left: 0;
+// }
+.oreo-list-item.oreo-list-item-search
+  .oreo-list-item-line
+  .oreo-list-item-content
+  .oreo-list-item-brief {
+  // min-height: 0.1rem;
+  // line-height: 0.3rem;
+  color: #222222;
+  font-size: 0.24rem;
+  // margin-top: 0.1rem;
+}
+.tag {
+  // width: 0.56rem;
+  // height: 0.28rem;
+  // line-height: 0.28rem;
+  // border-radius: 6px;
+  font-size: 0.22rem;
+  // padding: 5px 8px 5px 0;
+}
+.tag-color-blue {
+  color: #2075f4;
+}
+.tag-color-red {
+  color: #f64f4f;
+}
+.tag-color-green {
+  color: #52ba0d;
+}
+.tag-color-purple {
+  color: purple;
+}
+.tag-color-orange {
+  color: orange;
 }
 </style>

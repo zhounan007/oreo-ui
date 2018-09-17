@@ -22,8 +22,8 @@
                     <span :class="b('text')">{{loadingText}}</span>
               </slot>
           </div>
-          <slot></slot>
-      </div>
+      <slot></slot>
+    </div>
   </div>
 </template>
 <script>
@@ -141,7 +141,7 @@ export default createBasic({
           this.$emit('input', true);
           this.$emit('refresh');
         } else {
-          this.getStatus(0);
+          this.getStatus(10);
         }
       }
     },
