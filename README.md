@@ -6,7 +6,8 @@ A mobile UI Components based on Vue2.x
 ## 规范
 
 - `components`中名字均以小写出现,多个单词以`-`隔开,如`cell-group`
-- 
+
+- [相关描述](./REMARK.md)
 
 # 目前支持组件样式
 
@@ -16,21 +17,18 @@ A mobile UI Components based on Vue2.x
     - [x] Grid
 - [x] Form
     - [x] Button(按钮)
-    - [x] Radio(单选)
-    - [x] CheckBox(多选)
     - [x] Textarea(文本)
     - [x] Switch(开关)
-- [x] List(列表)
+- [x] Cell(列表)
 - [ ] Feedback
-    - [x] Modal
+    - [x] Popup
     - [x] Dialog(对话框)    
     - [x] Toast
-    - [x] Loading
-    - [ ] actionsheet
+    - [x] Actionsheet
 - [ ] Navigation
     - [x] Navbar(导航条)
     - [ ] Tabbar(标签栏)
-    - [x] Tabs(标签页)
+    - [ ] Tabs(标签页)
 - [ ] Display
     - [ ] Result(结果页)
     - [ ] Share(分享)
