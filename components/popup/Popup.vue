@@ -32,8 +32,8 @@ export default createBasic({
       default: ''
     },
     getContainer: {
-      type: Function,
-      default: () => document.body
+      type: Function
+      // default: () => document.body
     }
   },
   computed: {
@@ -42,12 +42,8 @@ export default createBasic({
     }
   },
   mounted() {
-    console.log('popup - mounted:')
-    window.addEventListener('hashchange', this.close)
   },
   beforeDestroy() {
-    console.log('popup - beforeDestroy:')
-    window.removeEventListener('hashchange', this.close)
   }
 })
 </script>
