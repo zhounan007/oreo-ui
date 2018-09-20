@@ -20,7 +20,7 @@ import flexview from './flexview'
 import scrollview from './scrollview'
 import pages from './set'
 export default {
-    name: 'button',
+    name: 'home',
     data() {
         return {
             module: []
