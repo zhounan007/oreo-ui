@@ -1,5 +1,5 @@
 <template>
-    <transition name="oreo-fade">
+    <transition name="oreo-dialog-zoom">
         <div :class="b([theme])" v-show="value">
               <div :class="b('inner')" v-if="title || message">
                     <div :class="b('title')">{{title}}</div>
@@ -61,8 +61,8 @@ export default createBasic({
             default: false
         },
         getContainer: {
-            type: Function,
-            default: () => document.body
+            type: Function
+            // default: () => document.body
         }
     },
     computed: {
