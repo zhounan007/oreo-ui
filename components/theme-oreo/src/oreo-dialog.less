@@ -94,8 +94,7 @@
         text-align: center;
     }
     .@{dialogPrefixCls}__field {
-        margin-top: @v-spacing-lg;
-        // border: 1px solid rgba(0, 0, 0, .3);
+        margin-top: @v-spacing-lg; // border: 1px solid rgba(0, 0, 0, .3);
         border: 1Px solid @border-color-base; // box-shadow: 0 0 0 1px  @border-color-base;
         border-radius: 2px;
     }
@@ -156,5 +155,26 @@
                 .removeLeftOrTopLine();
             }
         }
+    }
+}
+
+.@{dialogPrefixCls}-zoom {
+    &-enter-active {
+        animation: oreo-dialog-zoom-in 0.4s cubic-bezier(0.55, 0, 0.1, 1);
+    }
+    &-leave-active {
+        animation: oreo-fade-out 0.4s cubic-bezier(0.55, 0, 0.1, 1);
+    }
+}
+
+@keyframes oreo-dialog-zoom-in {
+    0% {
+        transform: translate(-50%, -50%) scale(0);
+    }
+    50% {
+        transform: translate(-50%, -50%) scale(1.1);
+    }
+    100%{
+        transform: translate(-50%, -50%) scale(1);
     }
 }

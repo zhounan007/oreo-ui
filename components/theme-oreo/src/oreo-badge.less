@@ -1,28 +1,45 @@
 @import './base/fn.less';
 @badgePrefixCls: oreo-badge;
-
-.@{badgePrefixCls}{
-    background-color:  @brand-important;;
-    border-radius: 10px;
-    color: @color-text-base-inverse;
+.@{badgePrefixCls} {
+    position: relative;
+    vertical-align: middle;
     display: inline-block;
-    font-size: 12px;
-    height: 18px;
-    line-height: 18px;
-    padding: 0 6px;
-    text-align: center;
-    white-space: nowrap;
-    // border: 1px solid @fill-base;
 }
-.@{badgePrefixCls}_fixed{
+
+.@{badgePrefixCls}__dot {
     position: absolute;
-    top: 0;
-    right: 10px;
-    transform: translateX(100%);
-}
-.@{badgePrefixCls}_dot{
+    transform: translateX(-50%);
+    transform-origin: 0 center;
+    top: -4px;
+    right: -8px;
     height: 8px;
     width: 8px;
-    padding: 0;
-    border-radius: 50%;
+    border-radius: 100%;
+    background: #ed4014;
+    z-index: 10;
+    box-shadow: 0 0 0 1px #fff;
 }
+
+.@{badgePrefixCls}__text {
+    font-family: Monospaced Number;
+    line-height: 1;
+    vertical-align: middle;
+    position: absolute;
+    transform: translateX(50%);
+    top: -10px;
+    right: 0;
+    height: 20px;
+    border-radius: 10px;
+    min-width: 20px;
+    background: #ed4014;
+    border: 1px solid transparent;
+    color: #fff;
+    line-height: 18px;
+    text-align: center;
+    padding: 0 6px;
+    font-size: 12px;
+    white-space: nowrap;
+    transform-origin: -10% center;
+    z-index: 10;
+    box-shadow: 0 0 0 1px #fff;
+} 
