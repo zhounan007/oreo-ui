@@ -18,10 +18,10 @@ export default {
         // 点击遮罩是否关闭
         closeOverlayByClick: Boolean,
         // 是否在 hashchange 时关闭
-        closeOnHashChange: {
-            type: Boolean,
-            default: true
-        },
+        // closeOnHashChange: {
+        //     type: Boolean,
+        //     default: true
+        // },
         // return the mount node for modal
         getContainer: Function,
         // 是否 禁止滚屏
@@ -57,9 +57,6 @@ export default {
         if (this.value) {
             this.open()
         }
-        // if (this.closeOnHashChange) {
-        //     on(window, 'hashchange', this.close)
-        // }
     },
     activated() {
         if (this.value) {
@@ -67,10 +64,6 @@ export default {
         }
     },
     beforeDestroy() {
-        // if (this.closeOnHashChange) {
-        //     off(window, 'hashchange', this.close)
-        // }
-        // this.close()
     },
     deactivated() {
         // this.close()
