@@ -12,3 +12,4 @@ yarn-error.log*
 REMARK.md
 lib
 package-lock.json
+docs
