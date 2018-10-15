@@ -86,3 +86,15 @@ export function isObj(x) {
     const type = typeof x
     return x !== null && (type === 'object' || type === 'function')
 }
+
+/**
+ * 数组随机打乱
+ * @param {Array} arr 
+ */
+export function shuffle(arr) {
+    let i = arr.length
+    while (i) {
+        let j = Math.floor(Math.random() * i--);
+        [arr[j], arr[i]] = [arr[i], arr[j]]
+    }
+}
