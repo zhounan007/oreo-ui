@@ -44,14 +44,13 @@ export default createBasic({
         },
         onFocus() {
             this.active = true
-
-            let text = ''
-            if (this.text !== '') {
-                text = this.text
-            } else {
-                text = this.type.join(',')
-            }
-            this.$emit('press', text)
+            // let text = ''
+            // if (this.text !== '') {
+            //     text = this.text
+            // } else {
+            //     text = this.type.join(',')
+            // }
+            this.$emit('press', this.text)
         }
     }
 })

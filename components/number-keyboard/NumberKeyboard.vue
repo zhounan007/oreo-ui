@@ -19,7 +19,7 @@
                 </div>
             </div>
             <div :class="b('sidebar')" v-if="theme==='friday' ">
-                <oreo-number-key  :type="['del']" text="" @press="handleKey"></oreo-number-key>   
+                <oreo-number-key  :type="['del']" text="del" @press="handleKey"></oreo-number-key>   
                 <oreo-number-key  :type="['confirm']" :text="doneButtonText" @press="handleKey"></oreo-number-key>  
             </div>
         </div>
@@ -30,7 +30,7 @@ import createBasic from 'oreo-ui/components/utils/create-basic'
 // import ZModal from '../modal'
 import OreoPopup from 'oreo-ui/components/popup'
 import OreoNumberKey from './NumberKey'
-import { chunk } from 'oreo-ui/components/utils/index'
+import { chunk, shuffle } from 'oreo-ui/components/utils/index'
 import { t } from 'oreo-ui/components/locale'
 const prefix = 'number-keyboard'
 export default createBasic({
@@ -62,6 +62,10 @@ export default createBasic({
                 return t('oreo.numberKeyboard.doneButtonText')
             }
         },
+        random: {
+            type: Boolean,
+            default: false
+        },
         mask: {
             type: Boolean,
             default: false
@@ -72,19 +76,6 @@ export default createBasic({
         }
     },
     computed: {
-        // classNames() {
-        //     return {
-        //         // 'oreo-modal-content': true,
-        //         [`${prefix}`]: true,
-        //         [`${prefix}_friday`]: this.theme === 'friday'
-        //     }
-        // },
-        // titleClassNames() {
-        //     return {
-        //         [`${prefix}__title`]: true,
-        //         [`${prefix}__key_active`]: this.active
-        //     }
-        // },
         visible: {
             get() {
                 return !!this.show
@@ -98,18 +89,21 @@ export default createBasic({
             for (let i = 1; i <= 9; i++) {
                 keys.push({ text: i })
             }
+            if (this.random) {
+                shuffle(keys)
+            }
             switch (this.theme) {
                 case 'default':
                     keys.push(
-                        { text: this.extraKey, type: ['dot'] },
+                        { text: this.extraKey, type: ['gray'] },
                         { text: 0 },
-                        { text: '', type: ['del'] }
+                        { text: 'del', type: ['del'] }
                     )
                     break;
                 case 'friday':
                     keys.push(
                         { text: 0, type: ['middle'] },
-                        { text: this.extraKey, type: ['dot'] }
+                        { text: this.extraKey }
                     )
                     break;
             }

@@ -12,8 +12,9 @@
                         :extraKey="t1.extraKey" 
                         :title="t1.title" 
                         @input="handleInput"
-                        @done="handleDone"
-                        @delete="handleDel"
+                        @done="handleDone('t1')"
+                        @delete="handleDel('t1')"
+                        random
                         >
     </oreo-number-keyboard>
 
@@ -22,8 +23,8 @@
                         :extraKey="t2.extraKey"
                         :title="t2.title"
                         @input="handleInput"
-                        @done="handleDone"
-                        @delete="handleDel"
+                        @done="handleDone('t2')"
+                        @delete="handleDel('t2')"
                         >
     </oreo-number-keyboard>
 
@@ -40,7 +41,7 @@ export default {
             current: '',
             t1: {
                 show: false,
-                extraKey: '.',
+                extraKey: '',
                 data: []
             },
             t2: {
@@ -71,12 +72,12 @@ export default {
             console.log(v)
             this[this.current].data.push(v)
         },
-        handleDone() {
-            this[this.current].show = false
-            console.log(this[this.current].data)
+        handleDone(c) {
+            this[c].show = false
+            console.log(this[c].data)
         },
-        handleDel() {
-            const t = this[this.current].data.pop()
+        handleDel(c) {
+            const t = this[c].data.pop()
             console.log(t)
         }
     }
