@@ -23,7 +23,7 @@
 <script>
 const prefix = 'oreo-mask'
 export default {
-    name: 'mask',
+    name: prefix,
     components: {
         // ZTransition
     },
