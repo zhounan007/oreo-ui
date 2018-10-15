@@ -4,11 +4,13 @@
               <div :class="b('inner')" v-if="title || message">
                     <div :class="b('title')">{{title}}</div>
                     <div :class="b('text')">{{message}}</div>
-                    <div :class="b('field')" v-if="fields && fields.length >0">
+                    <slot name="field">
+                    </slot>
+                    <!-- <div :class="b('field')" v-if="fields && fields.length >0">
                          <div :class="b('input')" v-for="(item,index) in fields" :key="index">
                             <input :type="item.type || 'text' " :placeholder="item.placeholder" >
                         </div>
-                    </div>
+                    </div> -->
               </div>
             
             <div :class="b('buttons',['vertical'])" v-if="buttons && buttons.length>0">
@@ -27,14 +29,20 @@
 </template>
 <script>
 import { device } from 'oreo-ui/components/utils/env'
+import { t } from 'oreo-ui/components/locale/index'
 import createBasic from 'oreo-ui/components/utils/create-basic'
 import Mask from 'oreo-ui/components/mixins/mask'
 export default createBasic({
     name: 'dialog',
     mixins: [Mask],
     props: {
-        title: String,
-        message: String,
+        title: {
+            type: String,
+            default: t('oreo.dialog.title')
+        },
+        message: {
+            type: String
+        },
         // ios or android
         theme: {
             type: String,
