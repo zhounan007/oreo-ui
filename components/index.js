@@ -19,6 +19,7 @@ import Icon from 'oreo-ui/components/icon'
 import Navbar from 'oreo-ui/components/navbar'
 import PullToRefresh from 'oreo-ui/components/pull-to-refresh'
 import InfiniteScroll from 'oreo-ui/components/infinite-scroll'
+import PasswordInput from 'oreo-ui/components/password-input'
 
 const version = '2.0.0'
 const components = [
@@ -42,7 +43,8 @@ const components = [
     Icon,
     Navbar,
     PullToRefresh,
-    InfiniteScroll
+    InfiniteScroll,
+    PasswordInput
 ]
 
 const install = function (Vue, opts = {}) {
@@ -76,7 +78,8 @@ export {
     Icon,
     Navbar,
     PullToRefresh,
-    InfiniteScroll
+    InfiniteScroll,
+    PasswordInput
 }
 export default {
     install,
