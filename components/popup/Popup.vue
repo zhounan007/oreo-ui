@@ -8,7 +8,6 @@
 <script>
 import createBasic from 'oreo-ui/components/utils/create-basic'
 import Mask from 'oreo-ui/components/mixins/mask'
-const prefixCls = 'oreo-popup'
 export default createBasic({
   name: 'popup',
   mixins: [Mask],
