@@ -1,15 +1,17 @@
 <template>
-    <oreo-popup position="bottom" :overlay="false" v-model="visible" >
+    <oreo-popup position="bottom" :overlay="overlay" v-model="visible" @click-overlay="handleOverlay">
         <div :class="b({
             friday:theme ==='friday'
         })" >
             <slot name="title">
-                <div :class="[b('title'),active?'number-keyboard__key_active':'']" v-if="theme!=='friday'"  
+                <div :class="[b('title'),active?'oreo-number-keyboard__key_active':'']" v-if="theme!=='friday'"  
                     @touchstart.stop.prevent="handleFocus" 
                     @touchend="handleBlur"
                     @touchcancel="handleBlur">
                     <span></span>
                 </div>
+            </slot>
+            <slot name="password">
             </slot>
             <div :class="b('body')">
                 <div :class="b('row')" v-for="(row, index) in keys" :key="index">
@@ -46,6 +48,10 @@ export default createBasic({
         }
     },
     props: {
+        overlay: {
+            type: Boolean,
+            default: false
+        },
         // title: String,
         show: Boolean,
         theme: {
@@ -111,6 +117,12 @@ export default createBasic({
         }
     },
     methods: {
+        handleOverlay() {
+            if (this.overlay) {
+                this.$emit('click-overlay')
+                // this.$emit('input', false)
+            }
+        },
         handleKey(text) {
             if (text === '') return
             if (text === 'del') {
