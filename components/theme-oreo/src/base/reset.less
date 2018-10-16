@@ -5,6 +5,7 @@
     box-sizing: inherit;
     -webkit-tap-highlight-color: transparent;
 }
+
 html,
 body {
     position: relative;
@@ -52,14 +53,27 @@ textarea {
 input {
     padding: 0
 }
+
 * {
-    -webkit-tap-highlight-color: rgba(0,0,0,0);
-    -webkit-touch-callout:none;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    -webkit-touch-callout: none;
 }
-a, input, textarea, select {
+
+a,
+input,
+textarea,
+select {
     outline: 0;
 }
+
 a {
     color: @brand-primary;
     text-decoration: none;
+}
+
+ol,
+ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
 }
