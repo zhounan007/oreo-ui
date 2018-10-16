@@ -15,7 +15,7 @@
                     ></oreo-cell>
                 </oreo-cell-group>
 
-                <oreo-cell-group header="图标" footer="角标" :line="false">
+                <oreo-cell-group header="图标" footer="角标" line>
                     <oreo-cell  
                         title="很长很长很长的标题" 
                         value=""
