@@ -1,6 +1,6 @@
 {
   "name": "theme-oreo",
-  "version": "0.6.0-alpha.1",
+  "version": "0.6.0-alpha.2",
   "description": "",
   "main": "index.js",
   "homepage": "https://github.com/zhounan007/oreo-ui",
@@ -20,6 +20,7 @@
     "gulp-iconfont-css": "^2.3.0",
     "gulp-less": "^4.0.1",
     "gulp-postcss": "^8.0.0",
+    "gulp-sequence": "^1.0.0",
     "md5-file": "^4.0.0"
   }
 }
