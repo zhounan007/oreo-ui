@@ -1,4 +1,4 @@
-# vue-oreo
+# Oreo-ui
 A mobile UI Components based on Vue2.x 
 
 
@@ -25,12 +25,13 @@ A mobile UI Components based on Vue2.x
     - [x] Dialog(对话框)    
     - [x] Toast
     - [x] Actionsheet
+- [ ] Component
+    - [x] Badge
+    - [x] Icon 
+    - [x] Keyboard(键盘)
+    - [x] PasswordInput(密码输入框)
+    - [x] Preloader(加载动画)
 - [ ] Navigation
     - [x] Navbar(导航条)
     - [ ] Tabbar(标签栏)
     - [ ] Tabs(标签页)
-- [ ] Display
-    - [ ] Result(结果页)
-    - [ ] Share(分享)
-    - [ ] Steps(步骤条)
-    - [ ] Card(卡片)

@@ -16,7 +16,8 @@ export default {
         },
         dialog: {
             okButtonText: '确定',
-            cancelButtonText: '取消'
+            cancelButtonText: '取消',
+            title: '提示'
         }
     }
 }

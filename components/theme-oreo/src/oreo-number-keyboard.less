@@ -1,16 +1,16 @@
 @import "./base/fn.less";
-@prefixCls: oreo-number-keyboard;
-.@{prefixCls} {
+@keyboardPrefixCls: oreo-number-keyboard;
+.@{keyboardPrefixCls} {
     position: relative;
 }
 
-.@{prefixCls}_friday {
+.@{keyboardPrefixCls}_friday {
     display: flex;
     flex-direction: row;
     width: 100%;
-    .@{prefixCls}__body {
+    .@{keyboardPrefixCls}__body {
         flex: 1;
-        .@{prefixCls}__key {
+        .@{keyboardPrefixCls}__key {
             &:after {
                 .setRightLine(@border-color-base)
             }
@@ -18,7 +18,7 @@
     }
 }
 
-.@{prefixCls}__title {
+.@{keyboardPrefixCls}__title {
     position: relative;
     background: @fill-base;
     .setHeight(36px);
@@ -39,11 +39,11 @@
     }
 }
 
-.@{prefixCls}__body {
+.@{keyboardPrefixCls}__body {
     background: @fill-base;
 }
 
-.@{prefixCls}__row {
+.@{keyboardPrefixCls}__row {
     position: relative;
     display: flex;
     &:after {
@@ -54,7 +54,7 @@
     }
 }
 
-.@{prefixCls}__key {
+.@{keyboardPrefixCls}__key {
     position: relative;
     text-align: center;
     font-size: @icon-size-md;
@@ -70,17 +70,17 @@
     }
 }
 
-.@{prefixCls}__key_middle {
+.@{keyboardPrefixCls}__key_middle {
     flex: 2;
 }
 
 
 
-.@{prefixCls}__key_dot {
+.@{keyboardPrefixCls}__key_gray {
     background-color: #f5f5f9;
 }
 
-.@{prefixCls}__key_del {
+.@{keyboardPrefixCls}__key_del {
     // background: @fill-body;
     // background: url("data:image/svg+xml;charset=utf-8,%3Csvg version='1' xmlns='http://www.w3.org/2000/svg' width='204' height='148' viewBox='0 0 153.000000 111.000000'%3E%3Cpath d='M46.9 4.7c-2.5 2.6-14.1 15.5-25.8 28.6L-.1 57l25.6 27 25.7 27.1 47.4-.3 47.4-.3 3.2-3.3 3.3-3.2V7l-3.3-3.2L146 .5 98.7.2 51.5-.1l-4.6 4.8zm97.9 3.5c1.7 1.7 1.7 92.9 0 94.6-.9.9-12.6 1.2-46.3 1.2H53.4L31.2 80.4 9 56.9l5.1-5.7c2.8-3.1 12.8-14.4 22.2-24.9L53.5 7h45c33.8 0 45.4.3 46.3 1.2z'/%3E%3Cpath d='M69.5 31c-1.9 2.1-1.7 2.2 9.3 13.3L90 55.5 78.8 66.7 67.5 78l2.3 2.2 2.2 2.3 11.3-11.3L94.5 60l11.2 11.2L117 82.5l2.2-2.3 2.3-2.2-11.3-11.3L99 55.5l11.2-11.2L121.5 33l-2.3-2.2-2.2-2.3-11.3 11.3L94.5 51l-11-11c-6-6-11.2-11-11.6-11-.3 0-1.4.9-2.4 2z'/%3E%3C/svg%3E");
     // background-size: 25px;
@@ -88,6 +88,7 @@
     // background-repeat: no-repeat;
     // color: transparent;
     background-color: #f5f5f9;
+    color: transparent;
     &:before {
         content: " ";
         position: absolute;
@@ -105,30 +106,30 @@
     }
 }
 
-.@{prefixCls}__dot {
-    background-color: @fill-body;
-}
+// .@{keyboardPrefixCls}__dot {
+//     background-color: @fill-body;
+// }
 
-.@{prefixCls}__key_active {
+.@{keyboardPrefixCls}__key_active {
     background-color: @fill-tap;
 }
 
-.@{prefixCls}__sidebar {
+.@{keyboardPrefixCls}__sidebar {
     background: @fill-base;
     width: 25%;
     display: flex;
     flex-direction: column;
-    .@{prefixCls}__key_confirm {
+    .@{keyboardPrefixCls}__key_confirm {
         background-color: @brand-primary;
         color: @color-text-base-inverse;
-        &.@{prefixCls}__key_active {
+        &.@{keyboardPrefixCls}__key_active {
             background-color: @brand-primary-tap;
         }
     }
-    .@{prefixCls}__key_del{
+    .@{keyboardPrefixCls}__key_del{
         background-color: #fff;
     }
-    .@{prefixCls}__key {
+    .@{keyboardPrefixCls}__key {
         display: flex;
         align-items: center;
         &:after {
@@ -138,7 +139,7 @@
             .removeRightOrBottomLine();
         }
     }
-    .@{prefixCls}__key_active{
+    .@{keyboardPrefixCls}__key_active{
         background-color: @fill-tap;
     }
 }

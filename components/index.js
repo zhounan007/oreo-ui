@@ -1,26 +1,27 @@
-import Grid from '@c/grid'
-import GridItem from '@c/grid-item'
-import ActionSheet from '@c/actionsheet'
-import Badge from '@c/badge'
-import Button from '@c/button'
-import Cell from '@c/cell'
-import CellGroup from '@c/cell-group'
-import Dialog from '@c/dialog'
-import Flex from '@c/flex'
-import FlexItem from '@c/flex-item'
-import NumberKeyboard from '@c/number-keyboard'
-import Popup from '@c/popup'
-import Preloader from '@c/preloader'
-import Switch from '@c/switch'
-import Textarea from '@c/textarea'
-import Input from '@c/input'
-import Toast from '@c/toast'
-import Icon from '@c/icon'
-import Navbar from '@c/navbar'
-import PullToRefresh from '@c/pull-to-refresh'
-import InfiniteScroll from '@c/infinite-scroll'
+import Grid from 'oreo-ui/components/grid'
+import GridItem from 'oreo-ui/components/grid-item'
+import ActionSheet from 'oreo-ui/components/actionsheet'
+import Badge from 'oreo-ui/components/badge'
+import Button from 'oreo-ui/components/button'
+import Cell from 'oreo-ui/components/cell'
+import CellGroup from 'oreo-ui/components/cell-group'
+import Dialog from 'oreo-ui/components/dialog'
+import Flex from 'oreo-ui/components/flex'
+import FlexItem from 'oreo-ui/components/flex-item'
+import NumberKeyboard from 'oreo-ui/components/number-keyboard'
+import Popup from 'oreo-ui/components/popup'
+import Preloader from 'oreo-ui/components/preloader'
+import Switch from 'oreo-ui/components/switch'
+import Textarea from 'oreo-ui/components/textarea'
+import Input from 'oreo-ui/components/input'
+import Toast from 'oreo-ui/components/toast'
+import Icon from 'oreo-ui/components/icon'
+import Navbar from 'oreo-ui/components/navbar'
+import PullToRefresh from 'oreo-ui/components/pull-to-refresh'
+import InfiniteScroll from 'oreo-ui/components/infinite-scroll'
+import PasswordInput from 'oreo-ui/components/password-input'
 
-const version = '2.0.0'
+const version = '0.2.2-alpha.2'
 const components = [
     Grid,
     GridItem,
@@ -42,7 +43,8 @@ const components = [
     Icon,
     Navbar,
     PullToRefresh,
-    InfiniteScroll
+    InfiniteScroll,
+    PasswordInput
 ]
 
 const install = function (Vue, opts = {}) {
@@ -76,7 +78,8 @@ export {
     Icon,
     Navbar,
     PullToRefresh,
-    InfiniteScroll
+    InfiniteScroll,
+    PasswordInput
 }
 export default {
     install,

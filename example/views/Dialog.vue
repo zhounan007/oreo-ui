@@ -23,11 +23,24 @@
                 <oreo-button small @click="show= !show">Operation</oreo-button>
 
                 <oreo-button small @click="show1= !show1">Operation</oreo-button>
+
+                <oreo-button small @click="show2= !show2">Login</oreo-button>
     
                 <oreo-dialog v-model="show" :buttons="opers" @select="handleOpers">
                 </oreo-dialog>
 
                 <oreo-dialog v-model="show1" :buttons="opers1" @select="handleOpers" title="请选择你的交通方式" closeOverlayByClick>
+                </oreo-dialog>
+
+                <oreo-dialog v-model="show2"  @ok="handleOk">
+                    <div class=" oreo-hairline oreo-hairline_surround" >
+                        <div class="oreo-dialog__input">
+                            <input type="text" placeholder="用户名" v-model="username">
+                        </div>
+                        <div class="oreo-dialog__input">
+                            <input type="password" placeholder="密码" v-model="password">
+                        </div>
+                    </div>
                 </oreo-dialog>
             </div>
         </scrollview>
@@ -42,6 +55,9 @@ export default {
         return {
             show: false,
             show1: false,
+            show2: false,
+            username: '',
+            password: '',
             opers: [
                 { text: '收藏' },
                 { text: '屏蔽' },
@@ -83,6 +99,9 @@ export default {
         },
         handleOpers(item) {
             console.log(item)
+        },
+        handleOk() {
+            console.log(this.username)
         }
     }
 

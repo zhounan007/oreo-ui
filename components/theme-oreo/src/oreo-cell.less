@@ -21,6 +21,16 @@
         position: relative;
         background-color: @fill-base;
     }
+    &_line {
+        .@{cellPrefixCls}-group__body {
+            &:before {
+                .setTopLine();
+            }
+            &:after {
+                .setBottomLine();
+            }
+        }
+    }
 }
 
 .@{cellPrefixCls} {

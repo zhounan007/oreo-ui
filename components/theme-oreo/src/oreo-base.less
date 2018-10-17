@@ -16,3 +16,38 @@
 .@{prefix}-overflow-hidden {
     overflow: hidden !important;
 }
+
+[class*='oreo-hairline'] {
+    position: relative;
+    .setOnepxBorder();
+}
+
+// 1px 细线
+.@{prefix}-hairline {
+    &_top {
+        &::after {
+            border-top-width: 1Px;
+        }
+    }
+    &_left {
+        &::after {
+            border-left-width: 1Px;
+        }
+    }
+    &_right {
+        &::after {
+            border-right-width: 1Px;
+        }
+    }
+    &_bottom {
+        &::after {
+            border-bottom-width: 1Px;
+        }
+    }
+    &_surround{
+        &::after {
+            border-width: 1Px;
+        }
+    }
+
+}

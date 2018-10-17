@@ -5,6 +5,7 @@ var less = require('gulp-less');
 var header = require('gulp-header');
 var cleancss = require('gulp-clean-css');
 var postcss = require('gulp-postcss');
+var sequence = require('gulp-sequence');
 var autoprefixer = require('autoprefixer');
 
 var iconfont = require('gulp-iconfont');
@@ -75,6 +76,7 @@ gulp.task('copyfont', ['svg2font'], function () {
     const ttfPath = resolve(`src/icon/${iconConfig.name}.ttf`)
     const hash = md5File.sync(ttfPath).slice(0, 6)
     fsExtra.renameSync(ttfPath, resolve(`./src/${iconConfig.name}-${hash}.ttf`))
+    // fsExtra.renameSync(ttfPath, resolve(`./lib/${iconConfig.name}-${hash}.ttf`))
 
     // copy src/icon/icons.less  to src/style/components/oreo-icons.less
     let source = fsExtra.readFileSync(resolve('src/icon/icons.less'), 'utf-8')
@@ -83,10 +85,9 @@ gulp.task('copyfont', ['svg2font'], function () {
 
     // generate oreo-icons-local.less 
     const localIconSource = iconLocalTemplate(iconConfig.name, hash)
-    fsExtra.writeFileSync(resolve(`src/${iconConfig.name}-local.less`), localIconSource)
+    fsExtra.writeFileSync(resolve(`src/${iconConfig.name}-local.less`), localIconSource);
 
-    return gulp.src('./src/*.ttf')
-        .pipe(gulp.dest(config.dist));
+    return gulp.src('./src/*.ttf').pipe(gulp.dest(config.dist));
 })
 
-gulp.task('build', ['compile', 'copyfont'])
+gulp.task('build', sequence('copyfont', 'compile'))
