@@ -21,7 +21,7 @@ import PullToRefresh from 'oreo-ui/components/pull-to-refresh'
 import InfiniteScroll from 'oreo-ui/components/infinite-scroll'
 import PasswordInput from 'oreo-ui/components/password-input'
 
-const version = '2.0.0'
+const version = '0.2.2-alpha.2'
 const components = [
     Grid,
     GridItem,

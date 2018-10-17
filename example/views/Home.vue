@@ -3,8 +3,8 @@
     <flexview>
         <scrollview>
             <div class="demo-hd">
-                <h2 class="demo-title">Oreo-Vue</h2>
-                <p class="demo-subtitle">A mobile UI Components based on Vue2.x &amp; Oreo-UI</p>
+                <h2 class="demo-title">Oreo-ui</h2>
+                <p class="demo-subtitle">A mobile UI Components based on Vue2.x </p>
             </div>
     
             <oreo-grid :data="module" line @click="handlerModuleItem">
