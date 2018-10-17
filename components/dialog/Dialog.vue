@@ -1,16 +1,11 @@
 <template>
     <transition name="oreo-dialog-zoom">
         <div :class="b([theme])" v-show="value">
-              <div :class="b('inner')" v-if="title || message">
-                    <div :class="b('title')">{{title}}</div>
-                    <div :class="b('text')">{{message}}</div>
-                    <slot name="field">
+              <div :class="b('inner')" v-if="title || message || $slots.default">
+                    <div :class="b('title')" v-if="title">{{title}}</div>
+                    <div :class="b('text')" v-if="message">{{message}}</div>
+                    <slot>
                     </slot>
-                    <!-- <div :class="b('field')" v-if="fields && fields.length >0">
-                         <div :class="b('input')" v-for="(item,index) in fields" :key="index">
-                            <input :type="item.type || 'text' " :placeholder="item.placeholder" >
-                        </div>
-                    </div> -->
               </div>
             
             <div :class="b('buttons',['vertical'])" v-if="buttons && buttons.length>0">
@@ -37,8 +32,7 @@ export default createBasic({
     mixins: [Mask],
     props: {
         title: {
-            type: String,
-            default: t('oreo.dialog.title')
+            type: String
         },
         message: {
             type: String

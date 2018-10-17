@@ -33,9 +33,12 @@
                 </oreo-dialog>
 
                 <oreo-dialog v-model="show2"  @ok="handleOk">
-                    <div class="oreo-dialog__field" slot="field">
+                    <div class=" oreo-hairline oreo-hairline_surround" >
                         <div class="oreo-dialog__input">
-                            <input type="text" placeholder="输入用户名" v-model="username">
+                            <input type="text" placeholder="用户名" v-model="username">
+                        </div>
+                        <div class="oreo-dialog__input">
+                            <input type="password" placeholder="密码" v-model="password">
                         </div>
                     </div>
                 </oreo-dialog>
@@ -54,6 +57,7 @@ export default {
             show1: false,
             show2: false,
             username: '',
+            password: '',
             opers: [
                 { text: '收藏' },
                 { text: '屏蔽' },
