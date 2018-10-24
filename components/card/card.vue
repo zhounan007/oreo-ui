@@ -1,41 +1,51 @@
 <template>
-    <div class="oreo-card">
-        <div class="oreo-card-header">
-            <slot name="card-header">
-                <div class="oreo-card-inner">
-                    <slot name="card-header-inner">
-                        {{header}}
-                    </slot>
-                </div>
-            </slot>
-        </div>
-        <div class="oreo-card-content">
-            <slot name="card-content"></slot>
-            <div :class="{'oreo-card-media': media, 'oreo-card-inner': contentInner}">
-                <slot name="card-content-inner">
-                    {{content}}
+    <div :class="b()">
+        <slot name="header">
+            <div :class="b('header')">
+                <span :class="b('title')">{{title}}</span>
+                <span :class="b('brief')">{{brief}}</span>
+            </div>
+        </slot>
+        <slot name="body">
+            <div :class="b('body')">
+                <slot>
+                    <p :class="b('body-text')">
+                        {{bodyText}}
+                    </p>
+                    <div :class="b('body-pic')">
+                        <img :class="formatPic" v-for="(item, index) in pic" :key="index" :src="item" alt="">
+                    </div>
                 </slot>
             </div>
-        </div>
-        <div class="oreo-card-footer">
-            {{footer}}
-            <slot name="card-footer" v-if="footer === void 0"></slot>
-        </div>
+        </slot>
+        <slot name="footer">
+            <div :class="b('footer')">
+                <span :class="b('tag')" v-for="(item, index ) in tag" :key="index">{{item}}</span>
+            </div>
+        </slot>
     </div>
 </template>
 <script>
-export default {
-    name: 'z-card',
+import createBasic from 'oreo-ui/components/utils/create-basic';
+export default createBasic({
+    name: 'card',
     props: {
-        header: String,
-        footer: String,
-        content: String,
-        media: Boolean
+        title: String,
+        brief: String,
+        tag: Array,
+        pic: Array,
+        bodyText: String
     },
     computed: {
-        contentInner() {
-            return this.content !== void 0 || this.$slots['card-content-inner']
+        formatPic() {
+            if (this.pic.length >= 3) {
+                return this.b('pic-multi')
+            } else {
+                return this.b('pic-one')
+            }
         }
     }
-}
+})
 </script>
+<style lang="less" scoped>
+</style>
