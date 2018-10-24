@@ -40,6 +40,8 @@ export default createBasic({
         formatPic() {
             if (this.pic.length >= 3) {
                 return this.b('pic-multi')
+            } else if (this.pic.length === 2) {
+                return this.b('pic-two')
             } else {
                 return this.b('pic-one')
             }
