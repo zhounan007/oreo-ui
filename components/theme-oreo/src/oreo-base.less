@@ -17,6 +17,10 @@
     overflow: hidden !important;
 }
 
+.@{prefix}-is-relative {
+    position: relative;
+}
+
 [class*='oreo-hairline'] {
     position: relative;
     .setOnepxBorder();
@@ -44,10 +48,9 @@
             border-bottom-width: 1Px;
         }
     }
-    &_surround{
+    &_surround {
         &::after {
             border-width: 1Px;
         }
     }
-
 }

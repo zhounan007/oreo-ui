@@ -20,6 +20,7 @@ import Navbar from 'oreo-ui/components/navbar'
 import PullToRefresh from 'oreo-ui/components/pull-to-refresh'
 import InfiniteScroll from 'oreo-ui/components/infinite-scroll'
 import PasswordInput from 'oreo-ui/components/password-input'
+import Loading from 'oreo-ui/components/loading'
 
 const version = '0.2.2-alpha.2'
 const components = [
@@ -44,7 +45,8 @@ const components = [
     Navbar,
     PullToRefresh,
     InfiniteScroll,
-    PasswordInput
+    PasswordInput,
+    Loading
 ]
 
 const install = function (Vue, opts = {}) {
@@ -79,7 +81,8 @@ export {
     Navbar,
     PullToRefresh,
     InfiniteScroll,
-    PasswordInput
+    PasswordInput,
+    Loading
 }
 export default {
     install,
