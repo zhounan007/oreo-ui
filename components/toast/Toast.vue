@@ -4,7 +4,7 @@
         <div :class="b('text',[type?mode:''])" >
             <oreo-preloader v-if="type === 'loading'" theme="light" :type="loadingType"></oreo-preloader>
             <oreo-icon v-else :class="b('icon')" :name="type" v-show="type"></oreo-icon>
-            <div :class="b('msg')">
+            <div :class="b('msg')" v-if="message">
                 {{message}}
             </div>
         </div>

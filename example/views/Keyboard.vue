@@ -18,13 +18,16 @@
                         >
     </oreo-number-keyboard>
 
-     <oreo-number-keyboard :show="t2.show"
+     <oreo-number-keyboard :show="t2.show" ref="keyboard"
                         :theme="t2.theme" 
                         :extraKey="t2.extraKey"
                         :title="t2.title"
                         @input="handleInput"
                         @done="handleDone('t2')"
                         @delete="handleDel('t2')"
+                        v-loading="t2.show"
+                        oreo-loading-text="安全检测中..."
+                        oreo-loading-custom-class="custom-yellow"
                         >
     </oreo-number-keyboard>
 
@@ -70,6 +73,13 @@ export default {
         },
         handleInput(v) {
             console.log(v)
+            if (this.current === 't2') {
+                const t = this.$loading({ target: this.$refs.keyboard.$el })
+
+                setTimeout(() => {
+                    t.close()
+                }, 5000)
+            }
             this[this.current].data.push(v)
         },
         handleDone(c) {
