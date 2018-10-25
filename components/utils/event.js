@@ -26,5 +26,5 @@ export function on(target, event, handler, passive = true) {
 
 export function off(target, event, handler) {
     !isServer &&
-        target.removeEventListener(event, handler)
+        target.removeEventListener(event, handler, false)
 }
