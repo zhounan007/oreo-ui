@@ -35,7 +35,7 @@
                 </div>
             </oreo-popup>
 
-            <oreo-popup  v-model="show2" @click-overlay="handleOverlay" position="right" :fullscreen="fullscreen" :overlay="false" transition="oreo-zoom">
+            <oreo-popup  v-model="show2" @click-overlay="handleOverlay" :fullscreen="fullscreen" :overlay="false" transition="oreo-zoom">
                 <div style="width: 5rem;
                     height: 3rem;
                     display: block;
@@ -50,7 +50,7 @@
                 </div>
             </oreo-popup>
 
-            <oreo-popup  :position="position" v-model="show1"  @click-overlay="handleOverlay">
+            <oreo-popup  :position="position" v-model="show1" fullscreen @click-overlay="handleOverlay">
                 <div style="
                     display: block;
                     padding: 1rem;
