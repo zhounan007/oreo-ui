@@ -1,3 +1,3 @@
-import ZCheckBox from './check-box'
+import Checkbox from './Checkbox'
 
-export default ZCheckBox
+export default Checkbox

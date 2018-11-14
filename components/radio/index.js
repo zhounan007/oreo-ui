@@ -1,3 +1,3 @@
-import ZRadio from './radio.vue'
+import Radio from './Radio.vue'
 
-export default ZRadio
+export default Radio
