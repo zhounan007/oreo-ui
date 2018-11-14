@@ -27,7 +27,7 @@ import PasswordInput from 'oreo-ui/components/password-input'
 import Card from 'oreo-ui/components/card'
 import Loading from 'oreo-ui/components/loading'
 
-const version = '0.2.2-alpha.2'
+const version = '0.2.3-alpha.1'
 const components = [
     Grid,
     GridItem,
