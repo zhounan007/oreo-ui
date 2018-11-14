@@ -1,0 +1,126 @@
+@import './base/fn.less';
+@checkboxPrefixCls: oreo-checkbox;
+
+.@{checkboxPrefixCls} {
+    position: relative;
+    // background-color: @fill-base;
+    padding: 0 16px;
+    // font-size: 20px;
+
+    &__wrap{
+        position: relative;
+        display: flex;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+        padding: 11px 0;
+    }
+
+    &_checked {
+        .@{checkboxPrefixCls}__icon {
+            color: @fill-base;
+            background-color: @brand-primary;
+            &:before {
+                content: "\E003";
+            }
+        }
+        &.@{checkboxPrefixCls}_disabled{
+            .@{checkboxPrefixCls}__icon{
+                background-color:  @fill-disabled;
+            }
+
+        }
+    }
+    
+    &_square {
+        .@{checkboxPrefixCls}__icon {
+            border-radius: 2px;
+        }
+       
+        &.@{checkboxPrefixCls}_checked{
+            .@{checkboxPrefixCls}__icon{
+                background-color:  @fill-base;
+                color:  @brand-primary;
+                &:before {
+                    content: "";
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    width: 50%;
+                    height: 50%;
+                    transform: translate(-50%, -50%);
+                    background-color: currentColor;
+                    border-radius: 2px;
+                }
+            }
+        }
+        &.@{checkboxPrefixCls}_disabled{
+            .@{checkboxPrefixCls}__icon {
+                color: @fill-disabled;
+                // &:before{
+                //     background-color: @fill-disabled;
+                // }
+            }
+        }
+    }
+    &_disabled {
+        .@{checkboxPrefixCls}__icon {
+            // background-color: @fill-disabled;
+            border-color: darken(@fill-disabled, 10%);
+        }
+        .@{checkboxPrefixCls}__label{
+            color: darken(@fill-disabled, 10%);
+        }
+    }
+    &__icon {
+        position: relative;
+        width: 1em;
+        height: 1em;
+
+        font-size: 22px;
+        margin-right: .42em;
+        line-height: 1;
+        border-radius: 50%;
+        border: 1px solid @brand-primary;
+        &:before {
+            content: ''
+        }
+    }
+    &__icon_right{
+        position: absolute;
+        right: 0;
+        margin-right: 0;
+    }
+    &__input {
+        position: absolute;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+    }
+    &__label {
+        // 目的：label 带链接,
+        a {
+            position: relative;
+            z-index: 1;
+        }
+    }
+}
+
+.@{checkboxPrefixCls}-group{
+     background-color: @fill-base;
+     margin-top: 35px;
+     .@{checkboxPrefixCls}{
+        &:not(:last-child) {
+            .@{checkboxPrefixCls}__wrap:after {
+                .setBottomLine();
+            }     
+
+        } 
+     } 
+}
+.@{checkboxPrefixCls}_active {
+    background: @fill-tap;
+}
