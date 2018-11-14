@@ -9,6 +9,8 @@
     "demo-build": "node build/example/build.js",
     "lint": "eslint --ext .js,.vue src",
     "start": "webpack-dev-server --inline --progress --disable-host-check --host 0.0.0.0 --config ./build/webpack.demo.conf.js",
+    "gen:icon": "node ./build/bin/gen-iconfile.js",
+    "gen:components": "node ./build/bin/gen-components.js",
     "build:utils": "cross-env BABEL_ENV=utils babel components/utils --out-dir lib/utils ",
     "build:mixins": "cross-env BABEL_ENV=utils babel components/mixins --out-dir lib/mixins ",
     "build:locale": "cross-env BABEL_ENV=utils babel components/locale --out-dir lib/locale ",
