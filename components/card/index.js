@@ -1,3 +1,3 @@
-import ZCard from './card.vue'
+import card from './card.vue';
 
-export default ZCard
+export default card;

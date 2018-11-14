@@ -1,6 +1,6 @@
 {
   "name": "oreo-ui",
-  "version": "0.2.2-alpha.2",
+  "version": "0.2.3-alpha.1",
   "description": "A Vue.js project",
   "author": "znsw007 <znsw007@163.com>",
   "main": "lib/oreo-ui.common.js",
@@ -9,6 +9,8 @@
     "demo-build": "node build/example/build.js",
     "lint": "eslint --ext .js,.vue src",
     "start": "webpack-dev-server --inline --progress --disable-host-check --host 0.0.0.0 --config ./build/webpack.demo.conf.js",
+    "gen:icon": "node ./build/bin/gen-iconfile.js",
+    "gen:components": "node ./build/bin/gen-components.js",
     "build:utils": "cross-env BABEL_ENV=utils babel components/utils --out-dir lib/utils ",
     "build:mixins": "cross-env BABEL_ENV=utils babel components/mixins --out-dir lib/mixins ",
     "build:locale": "cross-env BABEL_ENV=utils babel components/locale --out-dir lib/locale ",

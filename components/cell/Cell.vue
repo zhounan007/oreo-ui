@@ -47,20 +47,20 @@ export default createBasic({
             default: false
         },
         label: String,
-        index: [String, Number]
+        index: [String, Number],
+        clickable: {
+            type: Boolean,
+            default: false
+        }
     },
     methods: {
-        handleClick(e) {
-            this.$emit('click', this.index, e)
-            this.routerLink()
-        },
         handleBlur() {
-            if (this.link) {
+            if (this.link || this.clickable) {
                 this.active = false
             }
         },
         handleFocus(e) {
-            if (this.link) {
+            if (this.link || this.clickable) {
                 this.active = true
             }
             this.$emit('click', this.index, e)

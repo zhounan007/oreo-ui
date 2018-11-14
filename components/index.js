@@ -5,6 +5,8 @@ import Badge from 'oreo-ui/components/badge'
 import Button from 'oreo-ui/components/button'
 import Cell from 'oreo-ui/components/cell'
 import CellGroup from 'oreo-ui/components/cell-group'
+import Checkbox from 'oreo-ui/components/checkbox'
+import CheckboxGroup from 'oreo-ui/components/checkbox-group'
 import Dialog from 'oreo-ui/components/dialog'
 import Flex from 'oreo-ui/components/flex'
 import FlexItem from 'oreo-ui/components/flex-item'
@@ -18,10 +20,14 @@ import Toast from 'oreo-ui/components/toast'
 import Icon from 'oreo-ui/components/icon'
 import Navbar from 'oreo-ui/components/navbar'
 import PullToRefresh from 'oreo-ui/components/pull-to-refresh'
+import Radio from 'oreo-ui/components/radio'
+import RadioGroup from 'oreo-ui/components/radio-group'
 import InfiniteScroll from 'oreo-ui/components/infinite-scroll'
 import PasswordInput from 'oreo-ui/components/password-input'
+import Card from 'oreo-ui/components/card'
+import Loading from 'oreo-ui/components/loading'
 
-const version = '0.2.2-alpha.2'
+const version = '0.2.3-alpha.1'
 const components = [
     Grid,
     GridItem,
@@ -31,6 +37,8 @@ const components = [
     Button,
     Cell,
     CellGroup,
+    Checkbox,
+    CheckboxGroup,
     Dialog,
     Flex,
     FlexItem,
@@ -43,8 +51,12 @@ const components = [
     Icon,
     Navbar,
     PullToRefresh,
+    Radio,
+    RadioGroup,
     InfiniteScroll,
-    PasswordInput
+    PasswordInput,
+    Card,
+    Loading
 ]
 
 const install = function (Vue, opts = {}) {
@@ -65,6 +77,8 @@ export {
     Button,
     Cell,
     CellGroup,
+    Checkbox,
+    CheckboxGroup,
     Dialog,
     Flex,
     FlexItem,
@@ -78,8 +92,12 @@ export {
     Icon,
     Navbar,
     PullToRefresh,
+    Radio,
+    RadioGroup,
     InfiniteScroll,
-    PasswordInput
+    PasswordInput,
+    Card,
+    Loading
 }
 export default {
     install,

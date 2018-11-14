@@ -1,0 +1,56 @@
+@import './base/fn.less';
+@cardPrefixCls: oreo-card;
+.@{cardPrefixCls} {
+    position: relative;
+    padding-bottom: 23px;
+    &:after {
+        .setBottomLine();
+    }
+    &__header {
+        display: flex;
+        font-size: @font-size-title;
+        color: @color-text-base;
+        margin: 18px 0 16px;
+    }
+    &__brief {
+        color: @color-text-describe;
+        margin-left: 16px;
+    }
+    &__body-text {
+        font-size: @font-size-caption;
+        margin-bottom: 13px;
+        font-weight: 400;
+    }
+    &__body-pic {
+        margin-bottom: 23px;
+    }
+    &__pic-one {
+        width: 153px;
+        height: 153px;
+        vertical-align: bottom;
+    }
+    &__pic-two {
+        width: 114px;
+        height: 114px;
+        margin: 5px 0 0 5px;
+        vertical-align: bottom;
+    }
+    &__pic-multi {
+        width: 32%;
+        height: 111px;
+        margin: 5px 0 0 5px;
+        vertical-align: bottom;
+        &:nth-child(1),
+        &:nth-child(4),
+        &:nth-child(7) {
+            margin-left: 0;
+        }
+    }
+    &__footer {
+        font-size: @font-size-caption-sm;
+        color: @color-text-base;
+    }
+    &__tag:nth-child(n+2) {
+        margin-left: 39px;
+    }
+}
